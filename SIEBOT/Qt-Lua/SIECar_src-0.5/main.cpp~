@@ -1,0 +1,17 @@
+#include <QtGui/QApplication>
+#include "ui/output.h"
+#include "ui/splashscreen.h"
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    QApplication::setOverrideCursor(Qt::BlankCursor);
+    Output *w = new Output(24);
+    SplashScreen *splash = new SplashScreen(4000);
+    //splash->showFullScreen();
+    splash->show();
+    splash->setCursor(Qt::WaitCursor);
+    splash->setGeometry(0,0,320,240);
+    splash->connect(splash,SIGNAL(startApp()),w,SLOT(start()));
+
+  return a.exec();
+}

@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/corporative">
+        <file>images/splash.png</file>
+    </qresource>
+    <qresource prefix="/backgrounds">
+        <file>images/move.png</file>
+        <file>images/turn.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,24 @@
+#include "splashscreen.h"
+#include <QResizeEvent>
+#include <QTimer>
+#include <QDebug>
+#include <QFile>
+SplashScreen::SplashScreen(int timeout,QWidget *parent) :
+    QSplashScreen(parent)
+{
+	QFile file;
+	qDebug()<< "found splash image "<<file.exists(":/corporative/images/splash.png");
+    horizontal = new QPixmap(":/corporative/images/splash.png");
+    if(timeout)
+        QTimer::singleShot(timeout,this,SLOT(closeAndDelete()));
+    this->setPixmap(*horizontal);
+}
+
+
+void SplashScreen::closeAndDelete()
+{
+    delete horizontal;
+    close();
+    emit startApp();
+    delete this;
+}

@@ -1,0 +1,39 @@
+#include "output.h"
+
+Output::Output(QWidget *parent)
+    : QWidget(parent)
+{
+
+    conf = Configuration::getInstance();
+    /*static struct luaL_reg sie_Llib[] = {
+        {"delayMs", &SIEmethods::delayMs},
+        {"pwm", &SIEmethods::pwm},
+        {"move", &SIEmethods::move},
+        {"encoder", &SIEmethods::encoder},
+        //{"clear", &clear},
+        {NULL,NULL} //must be here!
+    };*/
+
+    conf->start();
+    conf->execute();
+}
+
+Output::~Output()
+{
+
+}
+
+bool Output::event(QEvent *event)
+{
+    /*if(event->type() ==QEvent::MouseButtonPress)
+    {
+        QMouseEvent *e = static_cast<QMouseEvent*>(event);
+        qDebug()<<e->pos();
+    }*/
+    return false;
+}
+
+QSize Output::sizeHint()
+{
+    return QSize(320,240);
+}

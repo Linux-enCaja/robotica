@@ -1,0 +1,22 @@
+/* ---- DOMOTI S.A.S. ----
+ * Originaly made by Domoti S.A.S.
+ * Calle 98 No 8 28 Of 501 Bogot� Col
+ * info@domoti-sas.com
+ */
+
+#ifndef SIEEVENT_H
+#define SIEEVENT_H
+#include <QEvent>
+
+class QSieEvent :public QEvent
+{
+public:
+    static const QEvent::Type PWMEvent = static_cast<QEvent::Type>(1024);
+    static const QEvent::Type GPSEvent = static_cast<QEvent::Type>(1025);
+    static const QEvent::Type MoveEvent = static_cast<QEvent::Type>(1026);
+    static const QEvent::Type EncoderEvent = static_cast<QEvent::Type>(1027);
+    QSieEvent(QEvent::Type type):QEvent(type){}
+};
+
+
+#endif // SIEEVENT_H

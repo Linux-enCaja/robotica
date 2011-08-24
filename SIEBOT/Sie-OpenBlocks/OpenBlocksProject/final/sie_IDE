@@ -1,0 +1,5 @@
+#!/bin/sh
+## Inicio del programa en java de openblocks
+
+java -jar /home/juanjo/CEIMTUN/Curso_sistemas_embebidos/Sie-Ide\ java/OpenBlocksProject/final/OpenBlocks.jar
+

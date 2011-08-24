@@ -1,0 +1,218 @@
+#include "output.h"
+#include <QFile>
+int counter;
+Output::Output(int fps,QWidget *parent)
+    : QWidget(parent)
+{
+    if(fps)
+    {
+        freq = 1000/fps;
+        fpsControl.start();
+    }else
+        freq=0;
+    conf = Configuration::getInstance();
+    conf->start();
+    MW::getInstance()->mainWindow = this; 
+    backPix = new QPixmap();
+    delayed=false;
+    counter=0; // for test purpouses only
+}
+
+void Output::start()
+{
+    this->show();
+    this->setGeometry(0,0,320,240);
+    conf->execute();
+    this->setCursor(Qt::BlankCursor);
+}
+Output::~Output()
+{
+    backPix->detach();
+    delete backPix;
+    delete conf;
+}
+
+bool Output::event(QEvent *event)
+{
+    
+    titleFromEvent(event);
+    
+    if(event->type() == QSieEvent::MoveEvent)
+    {
+        if(freq)
+        {
+            if(fpsControl.elapsed()<freq)
+                return QWidget::event(event); //FPS CONTROL
+            fpsControl.restart();
+        }
+        QSieMoveEvent *e = static_cast<QSieMoveEvent*>(event);
+        
+        switch(e->direction())
+        {
+        case QSieMoveEvent::Forward:
+            adjustBack(MOVE);
+            //       adjustMovie(FORWARD);
+            repaint();
+            break;
+        case QSieMoveEvent::Backward:
+            adjustBack(MOVE);
+            //     adjustMovie(BACKWARD);
+            repaint();
+            break;
+
+        case QSieMoveEvent::TurnLeft:
+            adjustBack(TURN);
+            //   adjustMovie(LEFT);
+            repaint();
+            break;
+
+        case QSieMoveEvent::TurnRight:
+            adjustBack(TURN);
+            // adjustMovie(RIGHT);
+            repaint();
+            break;
+        case QSieMoveEvent::Stop:
+            repaint();
+            break;
+        }
+        e->accept();
+
+    }
+    if(event->type() == QSieEvent::MessageEvent)
+    {
+        message2 = static_cast<QSIEMessageEvent*>(event)->message();
+        showMessage = true;
+        QTimer::singleShot(static_cast<QSIEMessageEvent*>(event)->time(),this,SLOT(hideMessage()));
+    }
+    if(event->type() == QSieEvent::EncoderEvent)
+    {
+        QSIEEncoderEvent *e = static_cast<QSIEEncoderEvent*>(event);
+        if(e->side() == QSIEEncoderEvent::Left)
+            mL = QString::number(e->steps());
+        if(e->side() == QSIEEncoderEvent::Right)
+            mR = QString::number(e->steps());
+    }
+    if(event->type() == QSieEvent::GPSEvent)
+    {
+        QSieGPSEvent *e = static_cast<QSieGPSEvent*>(event);
+        adjustBack(GPS);
+    }
+    if(event->type() == QSieEvent::DelayEvent)
+    {
+        if(static_cast<QSIEDelayEvent*>(event)->time()>0)
+            delayed=true;
+        else
+            delayed=false;
+        repaint();
+    }
+    return QWidget::event(event);
+}
+
+
+void Output::adjustBack(BACK back)
+{
+    if(!backPix->isNull())
+    {
+        backPix->detach();
+    }
+        
+    switch(back)
+    {
+    case MOVE:
+        if(!QPixmapCache::find(QString("move"),backPix))
+        {
+            QPixmap pm(":/backgrounds/images/move.png");
+            QPixmapCache::insert(QString("move"),pm);
+            QPixmapCache::find(QString("move"),backPix);
+        }
+        break;
+    case TURN:
+        if(!QPixmapCache::find(QString("turn"),backPix))
+        {
+            QPixmap pm(":/backgrounds/images/turn.png");
+            QPixmapCache::insert(QString("turn"),pm);
+            QPixmapCache::find(QString("turn"),backPix);
+        }
+        break;
+    case GPS:
+        if(!QPixmapCache::find(QString("gps"),backPix))
+        {
+            QPixmap pm(":/backgrounds/images/gps.png");
+            QPixmapCache::insert(QString("gps"),pm);
+            QPixmapCache::find(QString("gps"),backPix);
+        }
+        break;
+    }
+}
+
+void Output::titleFromEvent(QEvent *event)
+{
+    if(event->type()== QSieEvent::MoveEvent)
+    {
+        QSieMoveEvent *e = static_cast<QSieMoveEvent*>(event);
+        switch(e->direction())
+        {
+        case QSieMoveEvent::Stop:
+            title = tr("Detenido");
+            break;
+        case QSieMoveEvent::Forward:
+            title = tr("Adelante");
+            break;
+        case QSieMoveEvent::Backward:
+            title = tr("Atras");
+            break;
+        case QSieMoveEvent::TurnRight:
+            title = tr("Girando Derecha");
+            break;
+        case QSieMoveEvent::TurnLeft:
+            title = tr("Girando Izquierda");
+        break;
+        }
+    }
+
+    if(event->type()== QSieEvent::PWMEvent)
+    {
+        title = tr("Señal PWM");
+    }
+    if(event->type()== QSieEvent::GPSEvent)
+    {
+        title = tr("GPS");
+    }
+    if(event->type()== QSieEvent::DelayEvent)
+    {
+        message = tr("Esperando ") + QString::number(static_cast<QSIEDelayEvent*>(event)->time());
+    }
+}
+
+void Output::paintEvent(QPaintEvent *)
+{
+    QPainter painter(this);
+
+    painter.drawPixmap(backPix->rect(),*backPix);
+
+    painter.drawText(QRect(0,0,320,40),Qt::AlignHCenter,title.toUpper());
+
+    if(!delayed){
+        QString motorRStatus = tr("Motor Derecho: ") + mR;
+        QString motorLStatus = tr("Motor Izquierdo: ") + mL;
+        painter.drawText(QRect(160,15,160,20),Qt::AlignRight,motorRStatus);
+        painter.drawText(QRect(160,30,160,20),Qt::AlignRight,motorLStatus);
+    }else
+    {
+        painter.drawText(QRect(0,15,320,40),Qt::AlignHCenter,message);
+    }if(showMessage)
+    {
+        painter.drawText(QRect(0,220,320,40),Qt::AlignHCenter,message);
+    }
+    painter.end();
+}
+
+void Output::hideMessage()
+{
+    showMessage=false;
+}
+
+QSize Output::sizeHint()
+{
+    return QSize(320,240);
+}

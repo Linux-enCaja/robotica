@@ -1,0 +1,11 @@
+Lista de pendientes en la interfáz de java para la Sie:
+
+*   Terminar de Implementar funciones deshacer/rehacer para openblocks
+*   Terminar de Implementar funciones copiar cortar pegar para los bloques
+*   Expansión automática del espacio de trabajo (especialmente hacia abajo)
+*   Implementar bloque para funciones externas a "setup" y "forever"
+*   Salir del modod edición de bloques con click (tal como sucede con enter)
+*   Mostar la salida del compilador de Lua en la Sie (success/error)
+*   XML issue comas y caracteres especiales
+*   Agregar una ventana de configuración en la que se puedan ajustar constantes
+    como la velocidad máxima (max PWM), la IP, el nombre de usuario...

@@ -1,0 +1,27 @@
+/* ---- DOMOTI S.A.S. ----
+ * Originaly made by Domoti S.A.S.
+ * Calle 98 No 8 28 Of 501 Bogot� Col
+ * info@domoti-sas.com
+ */
+
+#ifndef MESSAGEEVENT_H
+#define MESSAGEEVENT_H
+#include <QtCore>
+#include "SIEEvent.h"
+
+class QSIEMessageEvent :public QSieEvent
+{
+public:
+    QSIEMessageEvent(const char *mess,int time):QSieEvent(QSieEvent::MessageEvent)
+    {
+        _message = QString(mess);
+        _time = time;
+    }
+    QString message(){return _message;}
+    int time(){return _time;}
+protected:
+    QString _message;
+    int _time;
+};
+
+#endif // MESSAGEEVENT_H

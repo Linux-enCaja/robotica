@@ -1,0 +1,20 @@
+#ifndef OUTPUT_H
+#define OUTPUT_H
+
+#include <QtGui/QWidget>
+#include "globals/configuration.h"
+
+class Output : public QWidget
+{
+    Q_OBJECT
+
+public:
+    Output(QWidget *parent = 0);
+    ~Output();
+    virtual bool event(QEvent *event);
+    QSize sizeHint();
+protected:
+//Configuration *conf;
+};
+
+#endif // OUTPUT_H

@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/corporative">
+        <file>images/splash.png</file>
+    </qresource>
+    <qresource prefix="/backgrounds">
+        <file>images/move.png</file>
+        <file>images/turn.png</file>
+        <file>images/gps.gif</file>
+    </qresource>
+    <qresource prefix="/cursor">
+        <file>images/cursor.png</file>
+    </qresource>
+    <qresource prefix="/fonts">
+        <file alias="Bold">fonts/TCB.TTF</file>
+        <file alias="MT">fonts/TCM.TTF</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file alias="green1">images/green1.png</file>
+        <file alias="green2">images/green2.png</file>
+        <file alias="red">images/red.png</file>
+    </qresource>
+    <qresource prefix="/animations">
+        <file>images/gps.gif</file>
+        <file>images/moveback.gif</file>
+        <file>images/movefor.gif</file>
+        <file>images/turnleft.gif</file>
+        <file>images/turnright.gif</file>
+    </qresource>
+</RCC>

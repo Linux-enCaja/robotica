@@ -1,0 +1,5 @@
+#!/bin/sh
+QT_BASE_DIR="/home/juanjo/NanoNote/openwrt-xburst/build_dir/target-mipsel_uClibc-0.9.30.1/qt-everywhere-opensource-src-4.7.0/"
+${QT_BASE_DIR}/bin/qmake -spec ${QT_BASE_DIR}mkspecs/qws/linux-openwrt-g++ -unix -o Makefile
+make
+

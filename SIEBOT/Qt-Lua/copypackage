@@ -1,0 +1,4 @@
+#!/bin/sh
+sudo ifconfig usb0 192.168.254.100 up
+scp $1 root@192.168.254.101:~
+echo "done copying package $1"

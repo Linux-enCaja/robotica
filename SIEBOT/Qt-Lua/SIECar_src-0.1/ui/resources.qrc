@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/corporative">
+        <file>images/unal.jpg</file>
+    </qresource>
+</RCC>

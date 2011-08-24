@@ -1,0 +1,51 @@
+#ifndef OUTPUT_H
+#define OUTPUT_H
+
+#include <QtGui/QWidget>
+#include "globals/configuration.h"
+#include <QMovie>
+#include <QLabel>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QMouseEvent>
+#include <QTimerEvent>
+#include <QPaintEvent>
+#include <QPainter>
+#include <QPixmapCache>
+class Output : public QWidget
+{
+    Q_OBJECT
+private:
+    enum BACK{
+        MOVE,TURN,GPS
+            };enum MOVIE{
+        FORWARD,BACKWARD,LEFT,RIGHT
+    };
+
+public:
+    Output(int fps=0,QWidget *parent = 0);
+    ~Output();
+    virtual bool event(QEvent *event);
+
+    QSize sizeHint();
+    public slots:
+    void start();
+
+    //virtual void timerEvent(QTimerEvent *);
+    virtual void paintEvent(QPaintEvent *);
+private slots:
+    void hideMessage();
+private:
+    void titleFromEvent(QEvent *event);
+    void adjustBack(BACK back);
+protected:
+    Configuration *conf;
+    QPixmap *backPix;
+    QString title,mR,mL,message;
+    QTime fpsControl;
+private:
+    bool delayed,showMessage;
+    int freq;
+};
+
+#endif // OUTPUT_H

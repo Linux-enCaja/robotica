@@ -1,0 +1,18 @@
+#include <QtGui/QApplication>
+#include "ui/output.h"
+#include "ui/splashscreen.h"
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    Configuration::getInstance()->mainWindow = new Output();
+    Output *w = static_cast<Output*>(Configuration::getInstance()->mainWindow); 
+//    w.show();
+    SplashScreen *splash = new SplashScreen(4000);
+    splash->show();
+    qDebug()<<w;
+    
+    Q_ASSERT(SIEmethods::mW);
+    
+    splash->connect(splash,SIGNAL(startApp()),w,SLOT(start()));
+  return a.exec();
+}
