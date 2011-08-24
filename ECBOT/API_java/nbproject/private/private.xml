@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/home/solid/workspace/Java/NetBeans/Soft_ii/ecbot~subversion/Ecbot/src/control/ControlInstruction.java</file>
+        <file>file:/home/solid/workspace/Java/NetBeans/Soft_ii/ecbot~subversion/Ecbot/src/control/ConnectionManager.java</file>
+        <file>file:/home/solid/workspace/Java/NetBeans/Soft_ii/ecbot~subversion/Ecbot/src/control/BlocksControl.java</file>
+        <file>file:/home/solid/workspace/Java/NetBeans/Soft_ii/ecbot~subversion/Ecbot/src/control/BlockInterpreter.java</file>
+        <file>file:/home/solid/workspace/Java/NetBeans/Soft_ii/ecbot~subversion/Ecbot/src/entity/Ecbot.java</file>
+        <file>file:/home/solid/workspace/Java/NetBeans/Soft_ii/ecbot~subversion/Ecbot/src/entity/Instruction.java</file>
+        <file>file:/home/solid/workspace/Java/NetBeans/Soft_ii/ecbot~subversion/Ecbot/src/entity/InstructionInterface.java</file>
+        <file>file:/home/solid/workspace/Java/NetBeans/Soft_ii/ecbot~subversion/Ecbot/src/entity/LoopInstruction.java</file>
+        <file>file:/home/solid/workspace/Java/NetBeans/Soft_ii/ecbot~subversion/Ecbot/src/entity/Rutine.java</file>
+    </open-files>
+</project-private>

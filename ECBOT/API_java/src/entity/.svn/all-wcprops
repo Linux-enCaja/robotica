@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/ecbot~subversion/!svn/ver/26/Ecbot/src/entity
+END
+Instruction.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/ecbot~subversion/!svn/ver/23/Ecbot/src/entity/Instruction.java
+END
+InstructionInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/ecbot~subversion/!svn/ver/23/Ecbot/src/entity/InstructionInterface.java
+END
+Rutine.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/ecbot~subversion/!svn/ver/24/Ecbot/src/entity/Rutine.java
+END
+LoopInstruction.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ecbot~subversion/!svn/ver/23/Ecbot/src/entity/LoopInstruction.java
+END
+Ecbot.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/ecbot~subversion/!svn/ver/26/Ecbot/src/entity/Ecbot.java
+END

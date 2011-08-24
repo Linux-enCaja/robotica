@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/ecbot~subversion/!svn/ver/26/Ecbot/src/control
+END
+ControlInstruction.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ecbot~subversion/!svn/ver/26/Ecbot/src/control/ControlInstruction.java
+END
+ConnectionManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/ecbot~subversion/!svn/ver/23/Ecbot/src/control/ConnectionManager.java
+END
+BlockInterpreter.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ecbot~subversion/!svn/ver/26/Ecbot/src/control/BlockInterpreter.java
+END
+BlocksControl.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/ecbot~subversion/!svn/ver/26/Ecbot/src/control/BlocksControl.java
+END
