@@ -1,0 +1,350 @@
+EESchema Schematic File Version 2  date dom 03 oct 2010 18:02:12 COT
+LIBS:dc-dc
+LIBS:headers
+LIBS:lm3478
+LIBS:mpc17529
+LIBS:mmbt2222a
+LIBS:mm74hc14m
+LIBS:device
+LIBS:hole
+LIBS:SIE_power_module-cache
+EELAYER 24  0
+EELAYER END
+$Descr A4 11700 8267
+Sheet 1 5
+Title ""
+Date "3 oct 2010"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Bus Line
+	6350 4150 7000 4150
+Wire Bus Line
+	6350 3950 7000 3950
+Wire Bus Line
+	6350 3000 7000 3000
+Wire Notes Line
+	4100 5900 4100 5050
+Wire Notes Line
+	4500 5900 4000 5900
+Wire Notes Line
+	4500 5900 4500 6600
+Wire Notes Line
+	4500 6600 4000 6600
+Wire Notes Line
+	4000 6600 4000 5900
+Wire Notes Line
+	4650 5900 4650 5300
+Wire Notes Line
+	4650 5300 5150 5300
+Wire Notes Line
+	4550 6600 4550 5900
+Wire Notes Line
+	4550 6600 5050 6600
+Wire Notes Line
+	5050 6600 5050 5900
+Wire Notes Line
+	5050 5900 4550 5900
+Wire Wire Line
+	7000 2900 6350 2900
+Wire Notes Line
+	6400 5150 7900 5150
+Wire Notes Line
+	6950 6000 6950 5400
+Wire Notes Line
+	6400 5450 6550 5450
+Wire Notes Line
+	6350 5350 6350 5500
+Wire Notes Line
+	6350 5350 6400 5350
+Wire Notes Line
+	6400 5350 6400 5500
+Wire Notes Line
+	6400 5500 6350 5500
+Wire Wire Line
+	7000 3150 6350 3150
+Wire Wire Line
+	7000 3250 6350 3250
+Wire Wire Line
+	7000 3400 6350 3400
+Wire Notes Line
+	6550 5450 6550 6000
+Wire Notes Line
+	7550 6000 7550 5950
+Wire Notes Line
+	7550 5950 7500 5950
+Wire Notes Line
+	6600 6000 6600 5950
+Wire Notes Line
+	6600 5950 6550 5950
+Wire Notes Line
+	6500 6750 6500 6800
+Wire Notes Line
+	6500 6750 7000 6750
+Wire Notes Line
+	7000 6750 7000 6800
+Wire Notes Line
+	7000 6800 6500 6800
+Wire Notes Line
+	6950 6600 6950 6650
+Wire Notes Line
+	6950 6600 6550 6600
+Wire Notes Line
+	6550 6600 6550 6650
+Wire Notes Line
+	5150 5400 4750 5400
+Wire Wire Line
+	7000 2450 6350 2450
+Wire Notes Line
+	4950 3050 5200 3050
+Wire Notes Line
+	4950 2750 5200 2750
+Wire Notes Line
+	4950 2900 5200 2900
+Wire Notes Line
+	4850 2150 4850 3700
+Wire Notes Line
+	4900 2400 5250 2400
+Wire Notes Line
+	4900 2300 5250 2300
+Wire Notes Line
+	5300 2450 5300 2250
+Wire Notes Line
+	5300 2450 5250 2450
+Wire Notes Line
+	5250 2450 5250 2250
+Wire Notes Line
+	5250 2250 5300 2250
+Wire Notes Line
+	5300 3250 5300 2550
+Wire Notes Line
+	5300 3250 5200 3250
+Wire Notes Line
+	5200 3250 5200 2550
+Wire Notes Line
+	5200 2550 5300 2550
+Wire Notes Line
+	4850 2150 3100 2150
+Wire Notes Line
+	3100 2150 3100 3700
+Wire Notes Line
+	3100 3700 4850 3700
+Wire Notes Line
+	5300 3950 5300 4650
+Wire Notes Line
+	4850 2900 4850 2950
+Wire Notes Line
+	4850 2450 4900 2450
+Wire Notes Line
+	4900 2450 4900 2250
+Wire Notes Line
+	4900 2250 4850 2250
+Wire Notes Line
+	5250 2350 4900 2350
+Wire Notes Line
+	4850 2550 4950 2550
+Wire Notes Line
+	4950 2550 4950 3250
+Wire Notes Line
+	4950 3250 4850 3250
+Wire Notes Line
+	4950 2800 5200 2800
+Wire Notes Line
+	4950 3000 5200 3000
+Wire Wire Line
+	6350 2250 7000 2250
+Wire Notes Line
+	5300 5250 5150 5250
+Wire Notes Line
+	5150 5250 5150 5450
+Wire Notes Line
+	5150 5450 5300 5450
+Wire Notes Line
+	5300 5400 5300 5200
+Wire Notes Line
+	6500 6600 6500 6000
+Wire Notes Line
+	6500 6600 7000 6600
+Wire Notes Line
+	7000 6600 7000 6000
+Wire Notes Line
+	7000 6000 6500 6000
+Wire Notes Line
+	6700 6750 6700 6650
+Wire Notes Line
+	6700 6800 6800 6800
+Wire Notes Line
+	6800 6650 6800 6750
+Wire Notes Line
+	6550 6650 6950 6650
+Wire Notes Line
+	7500 6650 7900 6650
+Wire Notes Line
+	7750 6650 7750 6750
+Wire Notes Line
+	7650 6800 7750 6800
+Wire Notes Line
+	7650 6750 7650 6650
+Wire Notes Line
+	7950 6000 7450 6000
+Wire Notes Line
+	7950 6000 7950 6600
+Wire Notes Line
+	7950 6600 7450 6600
+Wire Notes Line
+	7450 6600 7450 6000
+Wire Notes Line
+	7500 6650 7500 6600
+Wire Notes Line
+	7500 6600 7900 6600
+Wire Notes Line
+	7900 6600 7900 6650
+Wire Notes Line
+	7950 6800 7450 6800
+Wire Notes Line
+	7950 6800 7950 6750
+Wire Notes Line
+	7950 6750 7450 6750
+Wire Notes Line
+	7450 6750 7450 6800
+Wire Notes Line
+	6900 6000 6900 5950
+Wire Notes Line
+	6900 5950 6950 5950
+Wire Notes Line
+	7850 6000 7850 5950
+Wire Notes Line
+	7850 5950 7900 5950
+Wire Notes Line
+	7900 5150 7900 6000
+Wire Wire Line
+	7000 2400 6350 2400
+Wire Wire Line
+	6350 3300 7000 3300
+Wire Wire Line
+	6350 3200 7000 3200
+Wire Notes Line
+	6400 5250 6350 5250
+Wire Notes Line
+	6400 5250 6400 5100
+Wire Notes Line
+	6400 5100 6350 5100
+Wire Notes Line
+	6350 5100 6350 5250
+Wire Notes Line
+	6950 5400 6400 5400
+Wire Notes Line
+	6400 5200 7500 5200
+Wire Notes Line
+	7500 5200 7500 6000
+Wire Wire Line
+	7000 2950 6350 2950
+Wire Notes Line
+	5300 5200 5150 5200
+Wire Notes Line
+	5150 5200 5150 5000
+Wire Notes Line
+	5150 5000 5300 5000
+Wire Notes Line
+	4750 5400 4750 5900
+Wire Notes Line
+	4200 5900 4200 5150
+Wire Notes Line
+	4200 5150 5150 5150
+Wire Notes Line
+	4100 5050 5150 5050
+Wire Bus Line
+	6350 3900 7000 3900
+Wire Bus Line
+	6350 4100 7000 4100
+Text Notes 6500 4100 0    60   ~ 0
+<----
+Text Notes 6500 3900 0    60   ~ 0
+---->
+$Sheet
+S 7000 3800 1250 500 
+U 4C96A606
+F0 "Sheet4C96A605" 60
+F1 "encoders.sch" 60
+F2 "ENC[0..3]" B L 7000 3900 20 
+F3 "IRANODE[0..1]" B L 7000 3950 20 
+F4 "ANALOG[0..1]" B L 7000 4150 20 
+F5 "ENC_SIGNALS[0..3]" B L 7000 4100 20 
+$EndSheet
+Text Notes 4100 2950 0    60   ~ 0
+SIE
+Text Notes 4050 6250 0    60   ~ 0
+VMOTOR\n  BAT
+Text Notes 4650 6250 0    60   ~ 0
+Li-Po
+Text Notes 4800 5150 0    40   ~ 0
+GNDMOTOR
+Text Notes 4800 5050 0    40   ~ 0
+VMOTOR
+$Sheet
+S 7000 2150 1000 400 
+U 4C5F33B1
+F0 "Sheet4C5F33B0" 60
+F1 "dc-dc.sch" 60
+F2 "GND" B L 7000 2450 20 
+F3 "5V" B L 7000 2400 20 
+F4 "VMAIN" B L 7000 2250 20 
+$EndSheet
+Text Notes 6500 3150 0    60   ~ 0
+<----
+Text Notes 6500 2900 0    60   ~ 0
+---->
+$Sheet
+S 5300 2150 1050 3400
+U 4C5F27E9
+F0 "Sheet4C5F27E8" 60
+F1 "connectors.sch" 60
+F2 "GND" B R 6350 2450 20 
+F3 "3.3V" B R 6350 2950 20 
+F4 "MOTR_B" B R 6350 3200 20 
+F5 "MOTR_A" B R 6350 3150 20 
+F6 "MOTL_B" B R 6350 3300 20 
+F7 "MOTL_A" B R 6350 3250 20 
+F8 "VMAIN" B R 6350 2250 20 
+F9 "DIG[0..3]" B R 6350 3000 20 
+F10 "GND" B R 6350 3400 20 
+F11 "5V" B R 6350 2400 20 
+F12 "VMOTOR" B R 6350 2900 20 
+F13 "IRANODE[0..1]" B R 6350 3950 20 
+F14 "ANALOG[0..1]" B R 6350 4150 20 
+F15 "ENC_SIGNALS[0..3]" B R 6350 4100 20 
+F16 "ENC[0..3]" B R 6350 3900 20 
+$EndSheet
+Text Notes 6850 2400 2    60   ~ 0
+<----
+Text Notes 6850 2250 2    60   ~ 0
+---->
+Text Notes 7600 6350 0    60   ~ 0
+MOTR
+Text Notes 6650 6350 0    60   ~ 0
+MOTL
+Text Notes 4850 5300 0    40   ~ 0
+VMAIN
+Text Notes 4850 5400 0    40   ~ 0
+GND
+$Sheet
+S 7000 2850 1250 650 
+U 4C5F7992
+F0 "Sheet4C5F7991" 60
+F1 "h-bridge.sch" 60
+F2 "VMOTOR" B L 7000 2900 20 
+F3 "GND" B L 7000 3400 20 
+F4 "MOTR_B" B L 7000 3200 20 
+F5 "MOTR_A" B L 7000 3150 20 
+F6 "MOTL_B" B L 7000 3300 20 
+F7 "MOTL_A" B L 7000 3250 20 
+F8 "DIG[0..3]" B L 7000 3000 20 
+F9 "3.3V" B L 7000 2950 20 
+$EndSheet
+Text Notes 4850 3200 1    60   ~ 0
+HEADER20x2
+$EndSCHEMATC

@@ -1,0 +1,342 @@
+EESchema Schematic File Version 2  date dom 03 oct 2010 18:02:12 COT
+LIBS:dc-dc
+LIBS:headers
+LIBS:lm3478
+LIBS:mpc17529
+LIBS:mmbt2222a
+LIBS:mm74hc14m
+LIBS:device
+LIBS:hole
+LIBS:SIE_power_module-cache
+EELAYER 24  0
+EELAYER END
+$Descr A4 11700 8267
+Sheet 3 5
+Title ""
+Date "3 oct 2010"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text GLabel 9500 4150 2    20   BiDi ~ 0
+5V
+Text GLabel 9500 4350 2    20   BiDi ~ 0
+5V
+Wire Wire Line
+	5800 5950 5250 5950
+Wire Wire Line
+	5250 5550 5800 5550
+Wire Wire Line
+	8100 4150 7550 4150
+Wire Wire Line
+	9200 4350 9500 4350
+Wire Wire Line
+	7600 4300 7600 4000
+Wire Wire Line
+	5150 3050 5200 3050
+Connection ~ 6300 4050
+Wire Wire Line
+	6450 4050 6300 4050
+Wire Wire Line
+	6800 3350 6600 3350
+Wire Wire Line
+	3450 4000 3100 4000
+Wire Wire Line
+	3100 4000 3100 3600
+Connection ~ 2950 3600
+Wire Wire Line
+	3100 3600 2950 3600
+Connection ~ 6800 3350
+Wire Wire Line
+	6650 2750 6800 2750
+Wire Wire Line
+	6800 3550 6600 3550
+Wire Wire Line
+	5400 3750 5400 2350
+Wire Wire Line
+	5400 2350 4050 2350
+Wire Wire Line
+	4500 3050 4650 3050
+Wire Wire Line
+	4600 3450 4500 3450
+Wire Wire Line
+	2550 3250 2550 3050
+Wire Wire Line
+	2550 3050 3300 3050
+Wire Wire Line
+	3200 3450 3300 3450
+Wire Wire Line
+	5250 4350 5250 4400
+Wire Wire Line
+	5350 4400 5350 4500
+Wire Wire Line
+	5250 3850 5250 3750
+Connection ~ 5400 3250
+Connection ~ 5400 3450
+Wire Wire Line
+	5400 3450 5600 3450
+Wire Wire Line
+	5600 3250 5400 3250
+Wire Wire Line
+	2550 3750 2550 3850
+Wire Wire Line
+	2950 4200 2950 4300
+Wire Wire Line
+	2950 3700 2950 3250
+Wire Wire Line
+	2550 4250 2550 4400
+Wire Wire Line
+	5150 3250 5250 3250
+Wire Wire Line
+	5250 3250 5250 3550
+Wire Wire Line
+	5250 3550 5600 3550
+Wire Wire Line
+	5400 3350 5600 3350
+Connection ~ 5400 3350
+Wire Wire Line
+	5250 3750 5500 3750
+Wire Wire Line
+	5500 3750 5500 3900
+Connection ~ 5400 3750
+Wire Wire Line
+	5250 4400 5500 4400
+Wire Wire Line
+	5500 4400 5500 4300
+Connection ~ 5350 4400
+Wire Wire Line
+	2950 3250 3300 3250
+Wire Wire Line
+	3300 2850 3000 2850
+Wire Wire Line
+	3000 2850 3000 2350
+Wire Wire Line
+	3000 2350 3550 2350
+Wire Wire Line
+	4650 3250 4500 3250
+Wire Wire Line
+	5850 2750 4650 2750
+Wire Wire Line
+	4650 2750 4650 2850
+Wire Wire Line
+	4650 2850 4500 2850
+Wire Wire Line
+	6800 3250 6600 3250
+Connection ~ 6800 3250
+Wire Wire Line
+	6600 3450 6800 3450
+Connection ~ 6800 3450
+Wire Wire Line
+	4100 4000 3950 4000
+Wire Wire Line
+	6800 2750 6800 3800
+Wire Wire Line
+	6800 3800 6300 3800
+Wire Wire Line
+	6300 3800 6300 4250
+Wire Wire Line
+	6300 4250 6450 4250
+Connection ~ 6800 3550
+Wire Wire Line
+	7600 4700 7600 4800
+Wire Wire Line
+	9300 4950 9300 4850
+Wire Wire Line
+	5500 2650 5500 2750
+Connection ~ 5500 2750
+Connection ~ 7600 4150
+Wire Wire Line
+	9200 4150 9500 4150
+Wire Wire Line
+	9300 4450 9300 4350
+Connection ~ 9300 4350
+Wire Wire Line
+	8000 4400 8000 4350
+Wire Wire Line
+	8000 4350 8100 4350
+Wire Wire Line
+	5250 5750 5800 5750
+Text GLabel 5250 5950 0    60   BiDi ~ 0
+GND
+Text GLabel 5250 5750 0    60   BiDi ~ 0
+5V
+Text GLabel 5250 5550 0    60   BiDi ~ 0
+VMAIN
+Text GLabel 5500 2650 2    20   BiDi ~ 0
+VMAIN
+Text GLabel 8000 4400 3    20   BiDi ~ 0
+GND
+Text Label 7600 4000 0    60   ~ 0
+DC-DC_OUT
+Text HLabel 5800 5950 2    60   BiDi ~ 0
+GND
+Text HLabel 5800 5750 2    60   BiDi ~ 0
+5V
+Text HLabel 5800 5550 2    60   BiDi ~ 0
+VMAIN
+$Comp
+L R R11
+U 1 1 4C5F75A3
+P 2950 3950
+F 0 "R11" V 3030 3950 50  0000 C CNN
+F 1 "1K" V 2950 3950 50  0000 C CNN
+	1    2950 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R10
+U 1 1 4C5F75A2
+P 2550 3500
+F 0 "R10" V 2630 3500 50  0000 C CNN
+F 1 "1K" V 2550 3500 50  0000 C CNN
+	1    2550 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C1
+U 1 1 4C5F75A1
+P 2550 4050
+F 0 "C1" H 2600 4150 50  0000 L CNN
+F 1 "220n" H 2600 3950 50  0000 L CNN
+	1    2550 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R13
+U 1 1 4C5F75A0
+P 3800 2350
+F 0 "R13" V 3880 2350 50  0000 C CNN
+F 1 "604" V 3800 2350 50  0000 C CNN
+	1    3800 2350
+	0    1    1    0   
+$EndComp
+$Comp
+L IRF8113 U2
+U 1 1 4C5F759F
+P 6100 3400
+F 0 "U2" H 6000 3650 60  0000 C CNN
+F 1 "IRF8113" H 6100 3150 60  0000 C CNN
+	1    6100 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R15
+U 1 1 4C5F759E
+P 4900 3250
+F 0 "R15" V 4980 3250 50  0000 C CNN
+F 1 "0" V 4900 3250 50  0000 C CNN
+	1    4900 3250
+	0    1    1    0   
+$EndComp
+$Comp
+L R R16
+U 1 1 4C5F759D
+P 5250 4100
+F 0 "R16" V 5330 4100 50  0000 C CNN
+F 1 "0.015" V 5250 4100 50  0000 C CNN
+	1    5250 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C2
+U 1 1 4C5F759C
+P 5500 4100
+F 0 "C2" H 5550 4200 50  0000 L CNN
+F 1 "10n" H 5550 4000 50  0000 L CNN
+	1    5500 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R14
+U 1 1 4C5F759B
+P 4900 3050
+F 0 "R14" V 4980 3050 50  0000 C CNN
+F 1 "56.2K" V 4900 3050 50  0000 C CNN
+	1    4900 3050
+	0    1    1    0   
+$EndComp
+$Comp
+L LM3478 U1
+U 1 1 4C5F759A
+P 3900 3150
+F 0 "U1" H 3750 3600 60  0000 C CNN
+F 1 "LM3478" H 3800 2700 60  0000 C CNN
+	1    3900 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L IHLP2525CZER8R2M01 L1
+U 1 1 4C5F7599
+P 6250 2750
+F 0 "L1" V 6100 2700 60  0000 C CNN
+F 1 "IHLP2525CZER8R2M01" V 6350 2600 60  0000 C CNN
+	1    6250 2750
+	0    1    1    0   
+$EndComp
+$Comp
+L MBRD1035CTL U3
+U 1 1 4C5F7598
+P 7000 4150
+F 0 "U3" H 6850 4400 60  0000 C CNN
+F 1 "MBRD1035CTL" H 7000 3900 60  0000 C CNN
+	1    7000 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R12
+U 1 1 4C5F7597
+P 3700 4000
+F 0 "R12" V 3780 4000 50  0000 C CNN
+F 1 "6.2k" V 3700 4000 50  0000 C CNN
+	1    3700 4000
+	0    1    1    0   
+$EndComp
+Text Label 4100 4000 0    60   ~ 0
+DC-DC_OUT
+$Comp
+L CP1 C3
+U 1 1 4C5F7596
+P 7600 4500
+F 0 "C3" H 7650 4600 50  0000 L CNN
+F 1 "47uF-16V" H 7650 4400 50  0000 L CNN
+	1    7600 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L LT1117CST-5 U4
+U 1 1 4C5F7595
+P 8650 4250
+F 0 "U4" H 8500 4500 60  0000 C CNN
+F 1 "LT1117CST-5" H 8650 4000 60  0000 C CNN
+	1    8650 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C4
+U 1 1 4C5F7594
+P 9300 4650
+F 0 "C4" H 9350 4750 50  0000 L CNN
+F 1 "100n" H 9350 4550 50  0000 L CNN
+	1    9300 4650
+	1    0    0    -1  
+$EndComp
+Text GLabel 5200 3050 2    20   BiDi ~ 0
+GND
+Text GLabel 4600 3450 2    20   BiDi ~ 0
+GND
+Text GLabel 2950 4300 3    20   BiDi ~ 0
+GND
+Text GLabel 2550 4400 3    20   BiDi ~ 0
+GND
+Text GLabel 3200 3450 0    20   BiDi ~ 0
+GND
+Text GLabel 5350 4500 3    20   BiDi ~ 0
+GND
+Text GLabel 9300 4950 3    20   BiDi ~ 0
+GND
+Text GLabel 7600 4800 3    20   BiDi ~ 0
+GND
+$EndSCHEMATC

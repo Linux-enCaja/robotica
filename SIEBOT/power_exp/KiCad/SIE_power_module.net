@@ -1,0 +1,1020 @@
+# EESchema Netlist Version 1.1 created  jue 09 jun 2011 15:52:16 COT
+(
+ ( /4C96A606/4C96BB56 $noname  U6 MM74HC14M {Lib=MM74HC14M}
+  (    1 /Sheet4C96A605/A1 )
+  (    2 DIG11 )
+  (    3 /Sheet4C96A605/A2 )
+  (    4 DIG12 )
+  (    5 /Sheet4C96A605/A3 )
+  (    6 DIG13 )
+  (    7 GND )
+  (    8 DIG10 )
+  (    9 /Sheet4C96A605/A4 )
+  (   10 ? )
+  (   11 ? )
+  (   12 ? )
+  (   13 ? )
+  (   14 3.3V )
+ )
+ ( /4C96A606/4C96B477 $noname  R26 10K {Lib=R}
+  (    1 3.3V )
+  (    2 ANALOG0 )
+ )
+ ( /4C96A606/4C96B476 $noname  Q6 MMBT2222A {Lib=MMBT2222A}
+  (    1 IRANODE1 )
+  (    2 ANALOG1 )
+  (    3 GND )
+ )
+ ( /4C96A606/4C96B475 $noname  Q5 MMBT2222A {Lib=MMBT2222A}
+  (    1 IRANODE0 )
+  (    2 ANALOG0 )
+  (    3 GND )
+ )
+ ( /4C96A606/4C96B474 $noname  R25 10K {Lib=R}
+  (    1 3.3V )
+  (    2 ANALOG1 )
+ )
+ ( /4C96A606/4C96B371 $noname  R23 10K {Lib=R}
+  (    1 3.3V )
+  (    2 /Sheet4C96A605/A3 )
+ )
+ ( /4C96A606/4C96B370 $noname  Q3 MMBT2222A {Lib=MMBT2222A}
+  (    1 RIGHT_ENCODER_1 )
+  (    2 /Sheet4C96A605/A3 )
+  (    3 GND )
+ )
+ ( /4C96A606/4C96B36F $noname  Q4 MMBT2222A {Lib=MMBT2222A}
+  (    1 RIGHT_ENCODER_2 )
+  (    2 /Sheet4C96A605/A2 )
+  (    3 GND )
+ )
+ ( /4C96A606/4C96B36E $noname  R24 10K {Lib=R}
+  (    1 3.3V )
+  (    2 /Sheet4C96A605/A2 )
+ )
+ ( /4C96A606/4C96B365 $noname  R22 10K {Lib=R}
+  (    1 3.3V )
+  (    2 /Sheet4C96A605/A4 )
+ )
+ ( /4C96A606/4C96B364 $noname  Q2 MMBT2222A {Lib=MMBT2222A}
+  (    1 LEFT_ENCODER_2 )
+  (    2 /Sheet4C96A605/A4 )
+  (    3 GND )
+ )
+ ( /4C96A606/4C96B07F $noname  Q1 MMBT2222A {Lib=MMBT2222A}
+  (    1 LEFT_ENCODER_1 )
+  (    2 /Sheet4C96A605/A1 )
+  (    3 GND )
+ )
+ ( /4C96A606/4C96A67C $noname  R21 10K {Lib=R}
+  (    1 3.3V )
+  (    2 /Sheet4C96A605/A1 )
+ )
+ ( /4C5F33B1/4C5F75A3 $noname  R11 1K {Lib=R}
+  (    1 N-000060 )
+  (    2 GND )
+ )
+ ( /4C5F33B1/4C5F75A2 $noname  R10 1K {Lib=R}
+  (    1 N-000062 )
+  (    2 N-000061 )
+ )
+ ( /4C5F33B1/4C5F75A1 $noname  C1 220n {Lib=C}
+  (    1 N-000061 )
+  (    2 GND )
+ )
+ ( /4C5F33B1/4C5F75A0 $noname  R13 604 {Lib=R}
+  (    1 N-000064 )
+  (    2 N-000056 )
+ )
+ ( /4C5F33B1/4C5F759F $noname  U2 IRF8113 {Lib=IRF8113}
+  (    1 N-000064 )
+  (    2 N-000064 )
+  (    3 N-000064 )
+  (    4 N-000057 )
+  (    5 N-000059 )
+  (    6 N-000059 )
+  (    7 N-000059 )
+  (    8 N-000059 )
+ )
+ ( /4C5F33B1/4C5F759E $noname  R15 0 {Lib=R}
+  (    1 N-000057 )
+  (    2 N-000055 )
+ )
+ ( /4C5F33B1/4C5F759D $noname  R16 0.015 {Lib=R}
+  (    1 N-000064 )
+  (    2 GND )
+ )
+ ( /4C5F33B1/4C5F759C $noname  C2 10n {Lib=C}
+  (    1 N-000064 )
+  (    2 GND )
+ )
+ ( /4C5F33B1/4C5F759B $noname  R14 56.2K {Lib=R}
+  (    1 GND )
+  (    2 N-000063 )
+ )
+ ( /4C5F33B1/4C5F759A $noname  U1 LM3478 {Lib=LM3478}
+  (    1 N-000056 )
+  (    2 N-000062 )
+  (    3 N-000060 )
+  (    4 GND )
+  (    5 GND )
+  (    6 N-000055 )
+  (    7 N-000063 )
+  (    8 VMAIN )
+ )
+ ( /4C5F33B1/4C5F7599 $noname  L1 IHLP2525CZER8R2M01 {Lib=IHLP2525CZER8R2M01}
+  (    1 VMAIN )
+  (    2 N-000059 )
+ )
+ ( /4C5F33B1/4C5F7598 $noname  U3 MBRD1035CTL {Lib=MBRD1035CTL}
+  (    1 N-000059 )
+  (    3 N-000059 )
+  (    4 /Sheet4C5F33B0/DC-DC_OUT )
+ )
+ ( /4C5F33B1/4C5F7597 $noname  R12 6.2k {Lib=R}
+  (    1 /Sheet4C5F33B0/DC-DC_OUT )
+  (    2 N-000060 )
+ )
+ ( /4C5F33B1/4C5F7596 $noname  C3 47uF-16V {Lib=CP1}
+  (    1 /Sheet4C5F33B0/DC-DC_OUT )
+  (    2 GND )
+ )
+ ( /4C5F33B1/4C5F7595 $noname  U4 LT1117CST-5 {Lib=LT1117CST-5}
+  (    1 GND )
+  (    2 5V )
+  (    3 /Sheet4C5F33B0/DC-DC_OUT )
+  (    4 5V )
+ )
+ ( /4C5F33B1/4C5F7594 $noname  C4 100n {Lib=C}
+  (    1 5V )
+  (    2 GND )
+ )
+ ( /4C5F27E9/4CA8F8B9 $noname  J23 HOLE {Lib=HOLE}
+ )
+ ( /4C5F27E9/4CA8F8AC $noname  J22 HOLE {Lib=HOLE}
+ )
+ ( /4C5F27E9/4C98B50D $noname  J21 HEADER_4 {Lib=HEADER_4}
+  (    1 3.3V )
+  (    2 TX1_FPGA )
+  (    3 RX1_FPGA )
+  (    4 GND )
+ )
+ ( /4C5F27E9/4C98B248 $noname  J17 HEADER_4 {Lib=HEADER_4}
+  (    1 JZ4725_SDA )
+  (    2 JZ4725_SCK )
+  (    3 TX1_FPGA )
+  (    4 RX1_FPGA )
+ )
+ ( /4C5F27E9/4C96AA49 $noname  J15 HEADER_4X2 {Lib=HEADER_4X2}
+  (    1 RIGHT_ENCODER_1 )
+  (    2 3.3V )
+  (    3 3.3V )
+  (    4 N-000014 )
+  (    5 RIGHT_ENCODER_2 )
+  (    6 3.3V )
+  (    7 3.3V )
+  (    8 N-000016 )
+ )
+ ( /4C5F27E9/4C96AA48 $noname  R8 150 {Lib=R}
+  (    1 N-000014 )
+  (    2 GND )
+ )
+ ( /4C5F27E9/4C96AA47 $noname  R9 150 {Lib=R}
+  (    1 GND )
+  (    2 N-000016 )
+ )
+ ( /4C5F27E9/4C96A99C $noname  R7 150 {Lib=R}
+  (    1 GND )
+  (    2 N-000017 )
+ )
+ ( /4C5F27E9/4C96A993 $noname  R6 150 {Lib=R}
+  (    1 N-000011 )
+  (    2 GND )
+ )
+ ( /4C5F27E9/4C96A8DC $noname  J14 HEADER_4X2 {Lib=HEADER_4X2}
+  (    1 LEFT_ENCODER_1 )
+  (    2 3.3V )
+  (    3 3.3V )
+  (    4 N-000011 )
+  (    5 LEFT_ENCODER_2 )
+  (    6 3.3V )
+  (    7 3.3V )
+  (    8 N-000017 )
+ )
+ ( /4C5F27E9/4C96A85D $noname  J9 HEADER_5 {Lib=HEADER_5}
+  (    1 5V )
+  (    2 3.3V )
+  (    3 /Sheet4C5F27E8/TX1_JZ4725 )
+  (    4 /Sheet4C5F27E8/RX1_JZ4725 )
+  (    5 GND )
+ )
+ ( /4C5F27E9/4C91659B $noname  R5 1K {Lib=R}
+  (    1 /Sheet4C5F27E8/GNDIR_LED_1 )
+  (    2 GND )
+ )
+ ( /4C5F27E9/4C916588 $noname  R4 1K {Lib=R}
+  (    1 /Sheet4C5F27E8/GNDIR_LED_0 )
+  (    2 GND )
+ )
+ ( /4C5F27E9/4C7596E6 $noname  J19 HEADER_2 {Lib=HEADER_2}
+  (    1 VSERVOS )
+  (    2 GND )
+ )
+ ( /4C5F27E9/4C7593B3 $noname  J20 HEADER_3X2 {Lib=HEADER_3X2}
+  (    1 /Sheet4C5F27E8/DIG2 )
+  (    2 /Sheet4C5F27E8/DIG3 )
+  (    3 VSERVOS )
+  (    4 VSERVOS )
+  (    5 GND )
+  (    6 GND )
+ )
+ ( /4C5F27E9/4C75936B $noname  J11 HEADER_3X2 {Lib=HEADER_3X2}
+  (    1 /Sheet4C5F27E8/DIG4 )
+  (    2 /Sheet4C5F27E8/DIG5 )
+  (    3 VSERVOS )
+  (    4 VSERVOS )
+  (    5 GND )
+  (    6 GND )
+ )
+ ( /4C5F27E9/4C753CB1 $noname  J5 HEADER_4 {Lib=HEADER_4}
+  (    1 ANALOG1 )
+  (    2 /Sheet4C5F27E8/ANALOG3 )
+  (    3 /Sheet4C5F27E8/ANALOG5 )
+  (    4 /Sheet4C5F27E8/ANALOG7 )
+ )
+ ( /4C5F27E9/4C753CAD $noname  J2 HEADER_4 {Lib=HEADER_4}
+  (    1 ANALOG0 )
+  (    2 /Sheet4C5F27E8/ANALOG2 )
+  (    3 /Sheet4C5F27E8/ANALOG4 )
+  (    4 /Sheet4C5F27E8/ANALOG6 )
+ )
+ ( /4C5F27E9/4C753C2F $noname  J6 HEADER_4 {Lib=HEADER_4}
+  (    1 /Sheet4C5F27E8/DIG17 )
+  (    2 /Sheet4C5F27E8/DIG19 )
+  (    3 /Sheet4C5F27E8/DIG21 )
+  (    4 /Sheet4C5F27E8/DIG23 )
+ )
+ ( /4C5F27E9/4C753C2B $noname  J4 HEADER_4 {Lib=HEADER_4}
+  (    1 /Sheet4C5F27E8/DIG16 )
+  (    2 /Sheet4C5F27E8/DIG18 )
+  (    3 /Sheet4C5F27E8/DIG20 )
+  (    4 /Sheet4C5F27E8/DIG22 )
+ )
+ ( /4C5F27E9/4C753B87 $noname  J1 HEADER_4 {Lib=HEADER_4}
+  (    1 /Sheet4C5F27E8/DIG9 )
+  (    2 /Sheet4C5F27E8/DIG8 )
+  (    3 /Sheet4C5F27E8/DIG7 )
+  (    4 /Sheet4C5F27E8/DIG6 )
+ )
+ ( /4C5F27E9/4C75378C $noname  J8 HEADER_2 {Lib=HEADER_2}
+  (    1 MOTL_A )
+  (    2 MOTL_B )
+ )
+ ( /4C5F27E9/4C753787 $noname  J16 HEADER_2 {Lib=HEADER_2}
+  (    1 MOTR_A )
+  (    2 MOTR_B )
+ )
+ ( /4C5F27E9/4C7404B5 $noname  R1 330 {Lib=R}
+  (    1 N-000021 )
+  (    2 5V )
+ )
+ ( /4C5F27E9/4C7404A1 $noname  D1 LED {Lib=LED}
+  (    1 N-000021 )
+  (    2 GND )
+ )
+ ( /4C5F27E9/4C740223 $noname  SW1 SW_PUSH {Lib=SW_PUSH}
+  (    1 GND )
+  (    2 /Sheet4C5F27E8/DIG6 )
+ )
+ ( /4C5F27E9/4C740222 $noname  R2 4.7K {Lib=R}
+  (    1 3.3V )
+  (    2 /Sheet4C5F27E8/DIG6 )
+ )
+ ( /4C5F27E9/4C740221 $noname  R3 4.7K {Lib=R}
+  (    1 3.3V )
+  (    2 /Sheet4C5F27E8/DIG7 )
+ )
+ ( /4C5F27E9/4C740220 $noname  SW2 SW_PUSH {Lib=SW_PUSH}
+  (    1 GND )
+  (    2 /Sheet4C5F27E8/DIG7 )
+ )
+ ( /4C5F27E9/4C73D7C1 $noname  J18 HEADER_4X2 {Lib=HEADER_4X2}
+  (    1 3.3V )
+  (    2 IRANODE0 )
+  (    3 3.3V )
+  (    4 IRANODE1 )
+  (    5 5V )
+  (    6 /Sheet4C5F27E8/GNDIR_LED_0 )
+  (    7 5V )
+  (    8 /Sheet4C5F27E8/GNDIR_LED_1 )
+ )
+ ( /4C5F27E9/4C72762C $noname  J10 HEADER_4 {Lib=HEADER_4}
+  (    1 3.3V )
+  (    2 JZ4725_SDA )
+  (    3 JZ4725_SCK )
+  (    4 GND )
+ )
+ ( /4C5F27E9/4C71CE1F $noname  J13 HEADER_4 {Lib=HEADER_4}
+  (    1 3.3V )
+  (    2 /Sheet4C5F27E8/TX1_JZ4725 )
+  (    3 /Sheet4C5F27E8/RX1_JZ4725 )
+  (    4 5V )
+ )
+ ( /4C5F27E9/4C703269 $noname  J12 HEADER_2 {Lib=HEADER_2}
+  (    1 VMOTOR )
+  (    2 GND )
+ )
+ ( /4C5F27E9/4C5F3291 $noname  J3 HEADER_20X2 {Lib=HEADER_20X2}
+  (    1 DIG13 )
+  (    2 GND )
+  (    3 DIG11 )
+  (    4 DIG12 )
+  (    5 /Sheet4C5F27E8/DIG9 )
+  (    6 DIG10 )
+  (    7 /Sheet4C5F27E8/DIG7 )
+  (    8 /Sheet4C5F27E8/DIG8 )
+  (    9 /Sheet4C5F27E8/DIG5 )
+  (   10 /Sheet4C5F27E8/DIG6 )
+  (   11 /Sheet4C5F27E8/DIG3 )
+  (   12 /Sheet4C5F27E8/DIG4 )
+  (   13 MOTL_B_IN )
+  (   14 /Sheet4C5F27E8/DIG2 )
+  (   15 MOTR_B_IN )
+  (   16 MOTL_A_IN )
+  (   17 /Sheet4C5F27E8/DIG16 )
+  (   18 MOTR_A_IN )
+  (   19 /Sheet4C5F27E8/DIG18 )
+  (   20 /Sheet4C5F27E8/DIG17 )
+  (   21 /Sheet4C5F27E8/DIG20 )
+  (   22 /Sheet4C5F27E8/DIG19 )
+  (   23 /Sheet4C5F27E8/DIG22 )
+  (   24 /Sheet4C5F27E8/DIG21 )
+  (   25 GND )
+  (   26 /Sheet4C5F27E8/DIG23 )
+  (   27 3.3V )
+  (   28 3.3V )
+  (   29 3.3V )
+  (   30 3.3V )
+  (   31 /Sheet4C5F27E8/ANALOG7 )
+  (   32 /Sheet4C5F27E8/ANALOG6 )
+  (   33 /Sheet4C5F27E8/ANALOG5 )
+  (   34 /Sheet4C5F27E8/ANALOG4 )
+  (   35 /Sheet4C5F27E8/ANALOG3 )
+  (   36 /Sheet4C5F27E8/ANALOG2 )
+  (   37 ANALOG1 )
+  (   38 ANALOG0 )
+  (   39 /Sheet4C5F27E8/AN_GND )
+  (   40 /Sheet4C5F27E8/AN_GND )
+ )
+ ( /4C5F27E9/4C5F328F $noname  J7 HEADER_2 {Lib=HEADER_2}
+  (    1 VMAIN )
+  (    2 GND )
+ )
+ ( /4C5F7992/4C702BD5 $noname  C5 100n {Lib=C}
+  (    1 VMOTOR )
+  (    2 GND )
+ )
+ ( /4C5F7992/4C702B0C $noname  C10 100n {Lib=C}
+  (    1 /Sheet4C5F7991/C1H )
+  (    2 /Sheet4C5F7991/C1L )
+ )
+ ( /4C5F7992/4C702AFE $noname  C9 100n {Lib=C}
+  (    1 /Sheet4C5F7991/C2H )
+  (    2 /Sheet4C5F7991/C2L )
+ )
+ ( /4C5F7992/4C7029EC $noname  C8 100n {Lib=C}
+  (    1 /Sheet4C5F7991/CRES )
+  (    2 GND )
+ )
+ ( /4C5F7992/4C70297A $noname  C6 100n {Lib=C}
+  (    1 VMOTOR )
+  (    2 GND )
+ )
+ ( /4C5F7992/4C700B25 $noname  U5 MPC17529 {Lib=MPC17529}
+  (    1 3.3V )
+  (    2 N-000068 )
+  (    3 N-000073 )
+  (    4 GND )
+  (    5 MOTL_A )
+  (    6 GNDMOTOR )
+  (    7 MOTR_A )
+  (    8 VMOTOR )
+  (    9 /Sheet4C5F7991/CRES )
+  (   10 /Sheet4C5F7991/C2H )
+  (   11 /Sheet4C5F7991/C1H )
+  (   12 /Sheet4C5F7991/C1L )
+  (   13 /Sheet4C5F7991/C2L )
+  (   14 MOTR_B )
+  (   15 GNDMOTOR )
+  (   16 MOTL_B )
+  (   17 VMOTOR )
+  (   18 N-000067 )
+  (   19 N-000074 )
+  (   20 GND )
+ )
+ ( /4C5F7992/4C656F91 $noname  C7 100n {Lib=C}
+  (    1 3.3V )
+  (    2 GND )
+ )
+ ( /4C5F7992/4C5F79BA $noname  R20 470 {Lib=R}
+  (    1 MOTL_B_IN )
+  (    2 N-000067 )
+ )
+ ( /4C5F7992/4C5F79B9 $noname  R19 470 {Lib=R}
+  (    1 MOTL_A_IN )
+  (    2 N-000074 )
+ )
+ ( /4C5F7992/4C5F79B8 $noname  R17 470 {Lib=R}
+  (    1 N-000068 )
+  (    2 MOTR_A_IN )
+ )
+ ( /4C5F7992/4C5F79B7 $noname  R18 470 {Lib=R}
+  (    1 N-000073 )
+  (    2 MOTR_B_IN )
+ )
+)
+*
+{ Allowed footprints by component:
+$component R26
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R25
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R23
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R24
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R22
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R21
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R11
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R10
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component R13
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R15
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R16
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component R14
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R12
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component C3
+ CP*
+ SM*
+$endlist
+$component C4
+ SM*
+ C?
+ C1-1
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R9
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component C5
+ SM*
+ C?
+ C1-1
+$endlist
+$component C10
+ SM*
+ C?
+ C1-1
+$endlist
+$component C9
+ SM*
+ C?
+ C1-1
+$endlist
+$component C8
+ SM*
+ C?
+ C1-1
+$endlist
+$component C6
+ SM*
+ C?
+ C1-1
+$endlist
+$component C7
+ SM*
+ C?
+ C1-1
+$endlist
+$component R20
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R19
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R17
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R18
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 1 "5V" "5V"
+ J9 1
+ J18 5
+ J18 7
+ U4 2
+ U4 4
+ C4 1
+ R1 2
+ J13 4
+Net 2 "VMAIN" "VMAIN"
+ J7 1
+ U1 8
+ L1 1
+Net 3 "MOTR_A" "MOTR_A"
+ U5 7
+ J16 1
+Net 4 "3.3V" "3.3V"
+ J3 30
+ J3 29
+ J18 1
+ J18 3
+ R2 1
+ R3 1
+ J21 1
+ J3 27
+ J3 28
+ R24 1
+ C7 1
+ R25 1
+ R26 1
+ R23 1
+ U6 14
+ R21 1
+ U5 1
+ R22 1
+ J10 1
+ J13 1
+ J14 7
+ J14 6
+ J15 7
+ J15 6
+ J9 2
+ J14 3
+ J15 2
+ J14 2
+ J15 3
+Net 5 "MOTL_A" "MOTL_A"
+ U5 5
+ J8 1
+Net 6 "MOTL_B" "MOTL_B"
+ J8 2
+ U5 16
+Net 7 "MOTR_B" "MOTR_B"
+ U5 14
+ J16 2
+Net 8 "VMOTOR" "VMOTOR"
+ C5 1
+ C6 1
+ U5 17
+ U5 8
+ J12 1
+Net 9 "GND" "GND"
+ J3 2
+ J11 6
+ J11 5
+ D1 2
+ SW1 1
+ SW2 1
+ J20 5
+ J12 2
+ J10 4
+ C7 2
+ R9 1
+ Q5 3
+ R8 2
+ Q6 3
+ C8 2
+ Q3 3
+ C6 2
+ R7 1
+ U5 20
+ U5 4
+ R6 2
+ Q2 3
+ Q4 3
+ Q1 3
+ U6 7
+ J20 6
+ R11 2
+ C3 2
+ U4 1
+ C4 2
+ C2 2
+ R14 1
+ U1 4
+ U1 5
+ C5 2
+ C1 2
+ R16 2
+ R4 2
+ J3 25
+ J19 2
+ J9 5
+ J21 4
+ R5 2
+ J7 2
+Net 10 "LEFT_ENCODER_1" "LEFT_ENCODER_1"
+ Q1 1
+ J14 1
+Net 11 "" ""
+ R6 1
+ J14 4
+Net 12 "LEFT_ENCODER_2" "LEFT_ENCODER_2"
+ J14 5
+ Q2 1
+Net 13 "RIGHT_ENCODER_1" "RIGHT_ENCODER_1"
+ Q3 1
+ J15 1
+Net 14 "" ""
+ J15 4
+ R8 1
+Net 15 "RIGHT_ENCODER_2" "RIGHT_ENCODER_2"
+ J15 5
+ Q4 1
+Net 16 "" ""
+ J15 8
+ R9 2
+Net 17 "" ""
+ J14 8
+ R7 2
+Net 18 "/Sheet4C5F27E8/RX1_JZ4725" "RX1_JZ4725"
+ J9 4
+ J13 3
+Net 19 "/Sheet4C5F27E8/TX1_JZ4725" "TX1_JZ4725"
+ J9 3
+ J13 2
+Net 20 "/Sheet4C5F27E8/GNDIR_LED_1" "GNDIR_LED_1"
+ J18 8
+ R5 1
+Net 21 "" ""
+ R1 1
+ D1 1
+Net 22 "TX1_FPGA" "TX1_FPGA"
+ J17 3
+ J21 2
+Net 23 "RX1_FPGA" "RX1_FPGA"
+ J17 4
+ J21 3
+Net 24 "VSERVOS" "VSERVOS"
+ J11 3
+ J20 3
+ J19 1
+ J20 4
+ J11 4
+Net 25 "DIG11" "DIG11"
+ U6 2
+ J3 3
+Net 26 "DIG12" "DIG12"
+ U6 4
+ J3 4
+Net 27 "DIG10" "DIG10"
+ J3 6
+ U6 8
+Net 28 "DIG13" "DIG13"
+ J3 1
+ U6 6
+Net 29 "/Sheet4C5F27E8/DIG9" "DIG9"
+ J1 1
+ J3 5
+Net 30 "MOTR_B_IN" "MOTR_B_IN"
+ R18 2
+ J3 15
+Net 31 "/Sheet4C5F27E8/ANALOG3" "ANALOG3"
+ J3 35
+ J5 2
+Net 32 "MOTR_A_IN" "MOTR_A_IN"
+ J3 18
+ R17 2
+Net 33 "/Sheet4C5F27E8/DIG22" "DIG22"
+ J3 23
+ J4 4
+Net 34 "/Sheet4C5F27E8/ANALOG5" "ANALOG5"
+ J3 33
+ J5 3
+Net 35 "/Sheet4C5F27E8/DIG21" "DIG21"
+ J3 24
+ J6 3
+Net 36 "/Sheet4C5F27E8/ANALOG4" "ANALOG4"
+ J3 34
+ J2 3
+Net 37 "/Sheet4C5F27E8/DIG23" "DIG23"
+ J6 4
+ J3 26
+Net 38 "/Sheet4C5F27E8/ANALOG2" "ANALOG2"
+ J2 2
+ J3 36
+Net 39 "/Sheet4C5F27E8/DIG16" "DIG16"
+ J3 17
+ J4 1
+Net 40 "/Sheet4C5F27E8/DIG18" "DIG18"
+ J4 2
+ J3 19
+Net 41 "/Sheet4C5F27E8/DIG7" "DIG7"
+ R3 2
+ SW2 2
+ J3 7
+ J1 3
+Net 42 "/Sheet4C5F27E8/DIG8" "DIG8"
+ J1 2
+ J3 8
+Net 43 "/Sheet4C5F27E8/DIG5" "DIG5"
+ J3 9
+ J11 2
+Net 44 "/Sheet4C5F27E8/DIG6" "DIG6"
+ J3 10
+ J1 4
+ R2 2
+ SW1 2
+Net 45 "/Sheet4C5F27E8/DIG17" "DIG17"
+ J6 1
+ J3 20
+Net 46 "/Sheet4C5F27E8/AN_GND" "AN_GND"
+ J3 39
+ J3 40
+Net 47 "/Sheet4C5F27E8/DIG20" "DIG20"
+ J4 3
+ J3 21
+Net 48 "/Sheet4C5F27E8/ANALOG7" "ANALOG7"
+ J3 31
+ J5 4
+Net 49 "/Sheet4C5F27E8/DIG4" "DIG4"
+ J3 12
+ J11 1
+Net 50 "/Sheet4C5F27E8/DIG19" "DIG19"
+ J3 22
+ J6 2
+Net 51 "/Sheet4C5F27E8/ANALOG6" "ANALOG6"
+ J2 4
+ J3 32
+Net 52 "/Sheet4C5F27E8/GNDIR_LED_0" "GNDIR_LED_0"
+ R4 1
+ J18 6
+Net 53 "JZ4725_SDA" "JZ4725_SDA"
+ J17 1
+ J10 2
+Net 54 "JZ4725_SCK" "JZ4725_SCK"
+ J17 2
+ J10 3
+Net 55 "" ""
+ U1 6
+ R15 2
+Net 56 "" ""
+ R13 2
+ U1 1
+Net 57 "" ""
+ R15 1
+ U2 4
+Net 58 "/Sheet4C5F33B0/DC-DC_OUT" "DC-DC_OUT"
+ C3 1
+ U4 3
+ U3 4
+ R12 1
+Net 59 "" ""
+ U3 3
+ L1 2
+ U3 1
+ U2 5
+ U2 6
+ U2 7
+ U2 8
+Net 60 "" ""
+ R12 2
+ U1 3
+ R11 1
+Net 61 "" ""
+ C1 1
+ R10 2
+Net 62 "" ""
+ R10 1
+ U1 2
+Net 63 "" ""
+ R14 2
+ U1 7
+Net 64 "" ""
+ U2 1
+ R16 1
+ U2 2
+ C2 1
+ R13 1
+ U2 3
+Net 65 "GNDMOTOR" "GNDMOTOR"
+ U5 6
+ U5 15
+Net 66 "/Sheet4C5F7991/CRES" "CRES"
+ C8 1
+ U5 9
+Net 67 "" ""
+ U5 18
+ R20 2
+Net 68 "" ""
+ U5 2
+ R17 1
+Net 69 "/Sheet4C5F7991/C2H" "C2H"
+ U5 10
+ C9 1
+Net 70 "/Sheet4C5F7991/C2L" "C2L"
+ C9 2
+ U5 13
+Net 71 "/Sheet4C5F7991/C1L" "C1L"
+ U5 12
+ C10 2
+Net 72 "/Sheet4C5F7991/C1H" "C1H"
+ C10 1
+ U5 11
+Net 73 "" ""
+ U5 3
+ R18 1
+Net 74 "" ""
+ U5 19
+ R19 2
+Net 76 "/Sheet4C96A605/A1" "A1"
+ U6 1
+ R21 2
+ Q1 2
+Net 77 "/Sheet4C96A605/A2" "A2"
+ R24 2
+ Q4 2
+ U6 3
+Net 78 "/Sheet4C96A605/A3" "A3"
+ Q3 2
+ R23 2
+ U6 5
+Net 82 "/Sheet4C96A605/A4" "A4"
+ U6 9
+ R22 2
+ Q2 2
+Net 86 "ANALOG1" "ANALOG1"
+ J3 37
+ J5 1
+ R25 2
+ Q6 2
+Net 87 "ANALOG0" "ANALOG0"
+ R26 2
+ J2 1
+ J3 38
+ Q5 2
+Net 88 "IRANODE1" "IRANODE1"
+ Q6 1
+ J18 4
+Net 89 "IRANODE0" "IRANODE0"
+ Q5 1
+ J18 2
+Net 91 "/Sheet4C5F27E8/DIG3" "DIG3"
+ J3 11
+ J20 2
+Net 92 "/Sheet4C5F27E8/DIG2" "DIG2"
+ J20 1
+ J3 14
+Net 93 "MOTL_B_IN" "MOTL_B_IN"
+ R20 1
+ J3 13
+Net 94 "MOTL_A_IN" "MOTL_A_IN"
+ R19 1
+ J3 16
+}
+#End
