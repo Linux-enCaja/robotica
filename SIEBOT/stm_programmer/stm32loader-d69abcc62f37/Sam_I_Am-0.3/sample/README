@@ -1,0 +1,20 @@
+This directory contains a simple application for the Atmel
+AT91SAM7S64-EK development board. It simply blinks an LED on
+the development board 5 times. The application demonstrates
+the process of compilation and downloading to the board using
+Sam_I_Am.
+
+This application was compiled using the GNUARM tools version
+3.4.6.
+
+The .samiamrc file in this directory contains the 'open' command
+that establishes a connection to the development board. If your
+board does not appear as device /dev/ttyUSB0, then you should
+edit .samiamrc accordingly.
+
+Type 'make' to compile the application, and 'make run' to run
+it.
+
+A FLASH-based version of the application is also compiled. Type
+'make flash' to program FLASH with the application (it will not
+overwrite SAM-BA) and 'make runflash' to run it from FLASH.

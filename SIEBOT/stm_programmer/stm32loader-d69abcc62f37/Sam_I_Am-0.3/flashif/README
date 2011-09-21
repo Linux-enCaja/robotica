@@ -1,0 +1,13 @@
+This directory contains the helper application that is used to perform FLASH
+programming. When the Sam_I_Am 'flash' command is given, this application is
+loaded into RAM and is executed. Sam_I_Am then communicates with this
+application to perform the actual FLASH programming. Once the process is
+complete, control returns to SAM-BA.
+
+The contents of this directory are provided only for reference. There is no
+need to compile this application as it is already a part of Sam_I_Am.
+
+Specifically, the flashif.py file in Sam_I_Am contains an embedded version of
+the Intel HEX records for this program (flashif.hex), obtained by typing
+'make'. If you want to make changes, then recompile this program and update
+flashif.py with the new HEX file contents.

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 20 Sep 2011 03:35:58 PM COT
+EESchema Schematic File Version 2  date Wed 21 Sep 2011 02:34:46 PM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -62,7 +62,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 5
 Title ""
-Date "20 sep 2011"
+Date "21 sep 2011"
 Rev ""
 Comp ""
 Comment1 ""
@@ -71,10 +71,18 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 7700 2450 950  150 
+S 7600 2250 1350 1100
 U 4E78AF25
 F0 "STM32" 60
 F1 "STM32.sch" 60
+F2 "BOOT0" B L 7600 2450 60 
+F3 "JNRST" B L 7600 2750 60 
+F4 "JTMS" B L 7600 2850 60 
+F5 "JTCK" B L 7600 2950 60 
+F6 "JTDO" B L 7600 3050 60 
+F7 "JTDI" B L 7600 3150 60 
+F8 "RESET" B L 7600 2350 60 
+F9 "STM32_FP[0..42]" B R 8950 2800 60 
 $EndSheet
 Wire Wire Line
 	3000 4050 3150 4050

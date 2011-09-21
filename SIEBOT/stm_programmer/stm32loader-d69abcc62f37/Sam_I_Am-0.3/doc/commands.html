@@ -1,0 +1,335 @@
+<HTML>
+<HEAD>
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+  <TITLE>Sam_I_Am -- An interface for Atmel AT91SAM7S microcontrollers -- Commands</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#0000c0" VLINK="#8f008f">
+
+<P><FONT SIZE="+2">Sam_I_Am -- Commands</FONT></P>
+
+<BLOCKQUOTE>
+  <P><A HREF="http://claymore.engineer.gvsu.edu/~steriana"><FONT
+   SIZE="-1">Andrew Sterian</FONT></A><FONT SIZE="-1"><BR>
+  Padnos College of Engineering and Computing<BR>
+  Grand Valley State University</FONT></P>
+</BLOCKQUOTE>
+
+<P><HR ALIGN=LEFT><TABLE WIDTH="100%" BORDER="0" CELLSPACING="2"
+CELLPADDING="0">
+  <TR>
+    <TD><A HREF="index.html">Top-Level</A> | <A HREF="connecting.html">Connecting the Device</A> | <A HREF="invoking.html">Program Operation</A> | Commands</TD>
+  </TR>
+  <TR>
+    <TD>&nbsp;</TD>
+  </TR>
+  <TR>
+    <TD>
+    <FONT SIZE="-1"><A HREF="#Device">Device Control</A> | <A HREF="#BasicIO">Basic I/O</A> | <A HREF="#Files">Sending/Receiving Files</A> | 
+    <A HREF="#Go">Running Programs</A> | <A HREF="#Parameters">Program Parameters</A> | <A HREF="#Info">Device Information</A> | <A HREF="#Misc">Miscellaneous Commands</A></TD>
+  </TR>
+</TABLE><HR ALIGN=LEFT></P>
+
+<H2>Introduction</H2>
+
+SAM-BA interprets single-line commands either typed interactively or from files (either a <A HREF="invoking.html#RCFiles">startup script</A> or by using the <TT>source</TT> command). A command comprises a word followed by zero or more parameters. For example:
+<PRE>    dump 202000 20</PRE>
+executes the <TT>dump</TT> command with two parameters.
+<P>Numeric constants are, by default, interpreted as hexadecimal constants, unless otherwise noted. The numeric base
+of a constant can be explicitly specified with the following prefixes:
+<UL>
+<LI><TT>0x</TT> or <TT>0X</TT> for hexadecimal constants (e.g., 0x202000)</LI>
+<LI><TT>0d</TT> or <TT>0D</TT> for decimal constants (e.g., 0d500)</LI>
+<LI><TT>0b</TT> or <TT>0B</TT> for binary constants (e.g., 0b101)</LI>
+</UL>
+
+<P>The Python <A HREF="http://docs.python.org/lib/module-readline.html"><TT>readline</TT></A> module is used for input
+so that command-line recall and editing are available. A variety of <A HREF="http://docs.python.org/tut/node15.html">key
+bindings</A> can be used for line editing. The most common are shown in the following table.
+<TABLE BORDER=1 CELLSPACING=2 ALIGN=CENTER>
+<TR>
+ <TH>Key Sequence</TH><TH>Action</TH>
+</TR>
+<TR>
+  <TD>Left/Right Arrow</TD>
+  <TD>Cursor left/right</TD>
+</TR>  
+<TR>
+  <TD>Ctrl-A</TD>
+  <TD>Cursor to start-of-line</TD>
+</TR>  
+<TR>
+  <TD>Ctrl-E</TD>
+  <TD>Cursor to end-of-line</TD>
+</TR>  
+<TR>
+  <TD>Ctrl-D</TD>
+  <TD>Delete character at cursor</TD>
+</TR>  
+<TR>
+  <TD>Ctrl-K</TD>
+  <TD>Delete to end-of-line</TD>
+</TR>  
+<TR>
+  <TD>Ctrl-_</TD>
+  <TD>Undo last change</TD>
+</TR>  
+<TR>
+  <TD>Ctrl-P</TD>
+  <TD>Recall previous command in history</TD>
+</TR>  
+<TR>
+  <TD>Ctrl-N</TD>
+  <TD>Recall next command in history</TD>
+</TR>  
+<TR>
+  <TD>Ctrl-R</TD>
+  <TD>Begin incremental reverse search through history</TD>
+</TR>  
+<TR>
+  <TD>Ctrl-S</TD>
+  <TD>Begin incremental forward search through history</TD>
+</TR>  
+</TABLE>
+
+<P>Help can be obtained on any command by typing '<B>help command</B>'.
+
+<P><A NAME="Device"></A>
+<H2>Device Control</H2>
+
+<DL>
+<DT><B>open [devname [baudrate [timeout]]]</B></DT>
+<DD>This command must be issued before any attempt to communicate with SAM-BA.
+If specified, the command connects to the given device name, e.g.,
+<TT>/dev/ttyUSB0</TT>, else a default device name is used. See the <A
+HREF="connecting.html">Connecting the Device</A> page for more information on
+determining the appropriate device name. The optional baud rate parameter
+specifies a communication baud rate (115200 should work) while the timeout
+parameter specifies a time duration in milliseconds. If SAM-BA does not respond
+to a command within this time interval, Sam_I_Am gives up on expecting a response.</DD>
+<DT><B>close</B></DT>
+<DD>This command closes a currently open connection to a device. A <TT>close</TT>
+command is automatically issued when Sam_I_Am exits thus it is not necessary to
+explicitly type this command before closing the program.</DD>
+</DL>
+
+<P><A NAME="BasicIO"></A>
+<H2>Basic I/O</H2>
+
+The following commands can be used for basic read/write operations on the microcontroller. In order to prevent
+an unintentional data abort, consider using the memory protection feature
+of Sam_I_Am (see the <TT>set</TT> command description in the <A HREF="#Parameters">Program Parameters</A> section
+below).
+
+<DL>
+<DT><B>readb address</B></DT>
+<DD>Reads a single byte at the given address.</DD>
+<DT><B>readh address</B></DT>
+<DD>Reads a halfword (16 bits) at the given address. The address must be aligned to a halfword boundary.</DD>
+<DT><B>readw address</B></DT>
+<DD>Reads a word (32 bits) at the given address. The address must be aligned to a word boundary.</DD>
+<DT><B>writeb address byte</B></DT>
+<DD>Writes a byte at the given address.</DD>
+<DT><B>writeh address hword</B></DT>
+<DD>Writes a halfword (16 bits) at the given address. The address must be aligned to a halfword boundary.</DD>
+<DT><B>writew address word</B></DT>
+<DD>Writes a word (32 bits) at the given address. The address must be aligned to a word boundary.</DD>
+<DT><B>dump address [bytes]</B></DT>
+<DD>Prints a formatted display of words in memory beginning at the given
+address. With no third parameter, 128 bytes (32 words) are displayed, otherwise
+the specified number of bytes are displayed (rounded up to a multiple of 4
+bytes). The address need not be aligned.</DD>
+</DL>
+
+<P><A NAME="Files"></A>
+<H2>Sending/Receiving Files</H2>
+
+The following commands can be used for transferring data in bulk between the
+microcontroller and local files. In order to prevent an unintentional data
+abort, consider using the memory protection feature of Sam_I_Am (see the
+<TT>set</TT> command description in the <A HREF="#Parameters">Program
+Parameters</A> section below).
+
+<DL>
+<DT><B>recv file.hex address numbytes</B></DT>
+<DD>Download a sequence of numbytes from the microcontroller beginning at the given address and store them
+in the given file. The data is stored in the file in Intel HEX format.</DD>
+<DT><B>send file.hex</B></DT>
+<DD>Upload a file in Intel HEX format to the microcontroller. This command can only be used to upload data
+to RAM. The <TT>flash</TT> command must be used to upload data to FLASH.
+<P>The start address stored in the HEX file is saved. A subsequent <TT>go</TT> command without an explicit
+target address will use the address saved by the last <TT>send</TT> or <TT>flash</TT> command.</DD>
+<DT><B>flash file.hex</B></DT>
+<DD>This command can be used to program the FLASH. The given filename must be in Intel HEX format
+and must represent data stored at valid FLASH addresses. This command can only be used to program the
+FLASH. The <TT>send</TT> command must be used to modify RAM.
+<P>Note that this command does not automatically unlock the lock regions to be programmed. This must
+be done manually beforehand otherwise FLASH programming will fail.
+<P>Only the pages that represent data to be programmed are erased. All other pages are not erased.
+<P>The start address stored in the HEX file is saved. A subsequent <TT>go</TT> command without an explicit
+target address will use the address saved by the last <TT>send</TT> or <TT>flash</TT> command.
+<P>This command uploads a small program to RAM at address 0x202000 so whatever
+is already there will be overwritten.
+</DD>
+</DL>
+
+<P><A NAME="Go"></A>
+<H2>Running Programs</H2>
+
+In order to reduce the possibility of branching to an illegal address,
+consider using the memory protection
+feature of Sam_I_Am (see the <TT>set</TT> command
+description in the <A HREF="#Parameters">Program Parameters</A> section below).
+
+<DL>
+<DT><B>go [address]</B></DT>
+<DD>Transfer program execution to the given word-aligned address in ARM mode
+(i.e., not Thumb mode). If no address is specified, the last start address
+specified from a <TT>send</TT> or <TT>flash</TT> command is used.
+<P>If the program returns, control passes back to SAM-BA, otherwise no further
+communication with SAM-BA is possible until the system is reset.</DD>
+
+<DT><B>tgo [address]</B></DT>
+<DD>Transfer program execution to the given halfword-aligned address in Thumb mode.
+If no address is specified, the last start address specified from
+a <TT>send</TT> or <TT>flash</TT> command is used.
+<P>If the program returns, control passes back to SAM-BA, otherwise no further
+communication with SAM-BA is possible until the system is reset.</DD>
+
+<DT><B>disp</B></DT>
+<DD>Displays any output from an executing user program. This command waits
+for the amount of time specified in the Timeout parameter of the <TT>open</TT>
+command (by default, 500 milliseconds) for any characters to be sent from
+the microcontroller. Any received characters are displayed. Once no characters
+arrive for the timeout interval, the command is complete.</DD>
+</DL>
+
+<P><A NAME="Parameters"></A>
+<H2>Program Parameters</H2>
+
+<DL>
+<DT><B>set [parameter [arguments ...]]</B></DT>
+<DD>This command is used to set program operating parameters. Without any arguments, the command is equivalent to
+a <TT>show</TT> command, i.e., it displays all program parameters. The following parameters are implemented:
+<DL>
+<DT><B>set readallow {all} | {startaddr numbytes}</B></DT>
+<DD>This parameter defines a region of memory that may be read (e.g., using
+commands such as <TT>readb</TT> or <TT>recv</TT>). Attempted accesses outside
+this region are blocked before being passed to SAM-BA in order to prevent
+SAM-BA from generating a data abort exception. The memory region is defined by
+a start address and the number of bytes in the region. Multiple instances of
+this command can be used to construct a list of allowable regions. The special
+form <TT>set readallow all</TT> clears the list of regions and allows memory
+accesses anywhere.</DD>
+<DT><B>set execallow {all} | {startaddr numbytes}</B></DT>
+<DD>This parameter defines a region of memory that may contain executable code,
+thus is a valid target for the <TT>go</TT> command. Attemps to execute the
+<TT>go</TT> command at addresses outside this region are blocked before being
+passed to SAM-BA in order to prevent SAM-BA from generating a prefetch abort
+exception. The memory region is defined by a start address and the number of
+bytes in the region. Multiple instances of this command can be used to
+construct a list of allowable regions. The special form <TT>set execallow
+all</TT> clears the list of regions and allows program execution anywhere.</DD>
+<DT><B>set ramwriteallow {all} | {startaddr numbytes}</B></DT>
+<DD>This parameter defines a region of RAM memory that may be written (e.g., using
+commands such as <TT>writeb</TT> or <TT>send</TT>). Attempted accesses outside
+this region are blocked before being passed to SAM-BA in order to prevent
+SAM-BA from generating a data abort exception. The memory region is defined by
+a start address and the number of bytes in the region. Multiple instances of
+this command can be used to construct a list of allowable regions. The special
+form <TT>set ramwriteallow all</TT> clears the list of regions and allows RAM
+writes anywhere. The <TT>flash</TT> command is not affected by the regions
+defined with <TT>set ramwriteallow</TT>.</DD>
+<DT><B>set flashwriteallow {all} | {startaddr numbytes}</B></DT>
+<DD>This parameter defines a region of FLASH memory that may be written using
+the <TT>flash</TT> command. The memory region is defined by a start address
+and the number of bytes in the region. Multiple instances of this command can
+be used to construct a list of allowable regions. The special form <TT>set
+flashwriteallow all</TT> clears the list of regions and allows FLASH writes
+anywhere. Only the <TT>flash</TT> command is affected by the regions defined
+with <TT>set flashwriteallow</TT>.</DD>
+</DL></DD>
+<DT><B>show [parameter]</B></DT>
+<DD>This command displays the current value of all parameters that can be
+set using the <TT>set</TT> command. Without an argument, all parameters
+are displayed.</DD>
+</DL>
+
+<P><A NAME="Info"></A>
+<H2>Device Information</H2>
+
+The following commands all read the microcontroller's peripheral registers and
+present a human-readable interpretation of the register contents.
+
+<DL>
+<DT><B>info</B></DT>
+<DD>This command displays a list of names for all the systems on the microcontroller.
+Each name can be used as an additional parameter to the <TT>info</TT> command, as
+described below.</DD>
+<DT><B>info power</B></DT>
+<DD>Display information on the Power Management Controller and Clock Generator
+peripherals.</DD>
+<DT><B>info reset</B></DT>
+<DD>Display information on the Reset Controller.</DD>
+<DT><B>info rtt</B></DT>
+<DD>Display information on the Real-Time Timer.</DD>
+<DT><B>info pit</B></DT>
+<DD>Display information on the Periodic Interval Timer.</DD>
+<DT><B>info wd</B></DT>
+<DD>Display information on the Watchdog Timer.</DD>
+<DT><B>info memory</B></DT>
+<DD>Display information on the Memory Controller.</DD>
+<DT><B>info flash</B></DT>
+<DD>Display information on the Flash Controller.</DD>
+<DT><B>info aic</B></DT>
+<DD>Display information on the Advanced Interrupt Controller.</DD>
+<DT><B>info pio</B></DT>
+<DD>Display information on the Parallel I/O Controller.</DD>
+<DT><B>info spi</B></DT>
+<DD>Display information on the SPI Controller.</DD>
+<DT><B>info twi</B></DT>
+<DD>Display information on the TWI Controller.</DD>
+<DT><B>info usart</B></DT>
+<DD>Display information on the USART Controller.</DD>
+<DT><B>info ssc</B></DT>
+<DD>Display information on the Synchronous Serial Controller.</DD>
+<DT><B>info tc</B></DT>
+<DD>Display information on the Timer/Counter.</DD>
+<DT><B>info pwm</B></DT>
+<DD>Display information on the Pulse-Width Modulation Controller.</DD>
+<DT><B>info usb</B></DT>
+<DD>Display information on the USB Controller.</DD>
+<DT><B>info ad</B></DT>
+<DD>Display information on the A/D Converter.</DD>
+<DT><B>info dbgu</B></DT>
+<DD>Display information on the Debug Unit.</DD>
+</DL>
+
+<P><A NAME="Misc"></A>
+<H2>Miscellaneous Commands</H2>
+
+<DL>
+<DT><B>exit</B></DT>
+<DD>This command exits Sam_I_Am. The <TT>quit</TT> command is a synonym, and pressing Ctrl-D also quits the program.</DD>
+<DT><B>quit</B></DT>
+<DD>This command exits Sam_I_Am. The <TT>exit</TT> command is a synonym, and pressing Ctrl-D also quits the program.</DD>
+<DT><B>shell [program [args ...]]</B></DT>
+<DD>This command runs the given program and arguments in a sub-shell. With no program or argument parameters,
+an interactive shell is launched. The single-letter command <TT>!</TT> is a synonym for this command.</DD>
+<DT><B>! [program [args ...]]</B></DT>
+<DD>This is a synonym for the <TT>shell</TT> command.</DD>
+<DT><B>source filename</B></DT>
+<DD>This command will execute the lines in the given text file as if they had been typed interactively. The
+<TT>source</TT> command can be nested arbitrarily (i.e., script files can source other script files).</DD>
+<DT><B>echo [args ...]</B></DT>
+<DD>The given arguments are simply displayed. This command is only useful for debugging.</DD>
+<DT><B>Version</B></DT>
+<DD>This command displays the Sam_I_Am program version.</DD>
+</DL>
+
+<HR ALIGN=LEFT>
+
+<P><CENTER><FONT SIZE="-1">&COPY; 2006, Copyright by <A HREF="http://claymore.engineer.gvsu.edu/~steriana">Andrew
+Sterian</A>; All Rights Reserved. mailto: <A HREF="mailto:steriana@claymore.engineer.gvsu.edu?subject=Sam_I_Am">steriana@claymore.engineer.gvsu.edu</A></FONT></CENTER>
+
+</BODY>
+</HTML>

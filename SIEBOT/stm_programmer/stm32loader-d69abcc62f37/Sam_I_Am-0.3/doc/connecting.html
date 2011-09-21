@@ -1,0 +1,159 @@
+<HTML>
+<HEAD>
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+  <TITLE>Sam_I_Am -- An interface for Atmel AT91SAM7S microcontrollers -- Connecting the Device</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#0000c0" VLINK="#8f008f">
+
+<P><FONT SIZE="+2">Sam_I_Am -- Connecting the Device</FONT></P>
+
+<BLOCKQUOTE>
+  <P><A HREF="http://claymore.engineer.gvsu.edu/~steriana"><FONT
+   SIZE="-1">Andrew Sterian</FONT></A><FONT SIZE="-1"><BR>
+  Padnos College of Engineering and Computing<BR>
+  Grand Valley State University</FONT></P>
+</BLOCKQUOTE>
+
+<P><HR ALIGN=LEFT><TABLE WIDTH="100%" BORDER="0" CELLSPACING="2"
+CELLPADDING="0">
+  <TR>
+    <TD><A HREF="index.html">Top-Level</A> | Connecting the Device | <A HREF="invoking.html">Program Operation</A> | <A HREF="commands.html">Commands</A></TD>
+  </TR>
+  <TR>
+    <TD>&nbsp;</TD>
+  </TR>
+  <TR>
+    <TD>
+    <FONT SIZE="-1"><A HREF="#InstallingSAMBA">Installing SAM-BA</A> | <A HREF="#SerialDriver">USB Serial Driver</A> | 
+    <A HREF="#CDCDriver">USB Communications Device Class Driver</A></TD>
+  </TR>
+</TABLE><HR ALIGN=LEFT></P>
+
+<H2>Introduction</H2>
+
+Sam_I_Am expects to communicate with SAM-BA over a USB interface, not a serial port (even though SAM-BA can do both). This means that:
+<UL>
+<LI>The microcontroller must be on a board that uses the microcontroller's USB peripheral</LI>
+<LI>The microcontroller must be clocked by a 18.432 MHz crystal/oscillator</LI>
+<LI>SAM-BA must be installed on the microcontroller</LI>
+<LI>The Linux kernel must recognize the microcontroller when the USB cable is plugged in and then load the correct driver</LI>
+</UL>
+
+<P>The first two points above are either true or not -- there's not much you can do if they're not. The Atmel AT91SAM7S64-EK development kit satisfies both of these points. This board was used for developing Sam_I_Am thus is known to work.
+<P>The sections below address the last two points.
+
+<P><A NAME="InstallingSAMBA"></A>
+<H2>Installing SAM-BA</H2>
+
+The SAM-BA monitor code is always present on the AT91SAM7S microcontrollers in
+a hidden read-only memory. For SAM-BA to run, it must be copied into the
+microcontroller's FLASH memory. The procedure for doing this is as follows:
+
+<OL>
+<LI>With the microcontroller board power off, connect the TST pin on the microcontroller to VDDIO (e.g., 3.3V if VDDIO is 3.3V). On
+the AT91SAM7S64-EK development kit, this is accomplished by installing the TST jumper (JP5).</LI>
+<LI>Ensure that pins PA0, PA1, and PA2 are high (they have internal pullups so if they are left disconnected then they will read as high).</LI>
+<LI>Apply power to the microcontroller. Wait 10 seconds. Remove power.</LI>
+<LI>Remove the TST pin connection to VDDIO.</LI>
+</OL>
+<P>The effect of this process is that the first two pages of FLASH memory will be overwritten with the SAM-BA program. When power is applied to the microcontroller again, SAM-BA will automatically execute.
+
+<P><A NAME="SerialDriver"></A>
+<H2>USB Serial Driver</H2>
+
+The easiest way to have Linux recognize the microcontroller's USB peripheral is to use the <TT>usbserial</TT> kernel module.
+You simply have to type (as root):
+
+<PRE>   modprobe usbserial vendor=0x03EB product=0x6124</PRE>
+
+<P>If the above worked without any error messages, you can plug in your device.
+
+<P>You can then talk to SAM-BA using a standard terminal emulator (such as minicom) using the <TT>/dev/ttyUSB0</TT> device, or whatever device name has been created on your system with a major device number of 188. This device name may be <TT>/dev/ttyUSB1</TT>, etc. if you are already using the serial driver for other devices. If you are using devfs, you should see your device as <TT>/dev/usb/tts/0</TT>, or <TT>/dev/usb/tts/1</TT>, etc.
+<P>If you cannot find either of the above filenames, you can find the right device by searching for the
+special device file name that corresponds to the major device number of 188:
+
+<PRE>   find /dev -inum `ls -liR /dev | fgrep "188," | head -1 | sed -e "s/^ *//" | cut -d" " -f1`</PRE>
+
+<P>If the above command does not display any files, then the distribution you are using did not create a file association
+to the <TT>usbserial</TT> driver. You can easily create one on your own. As root, type:
+
+<PRE>   mknod -m 0666 /dev/ttyUSB0 c 188 0</PRE>
+
+<P>This will create the character-special file <TT>/dev/ttyUSB0</TT> (with
+read-write permissions for everyone) and associate it with a major device
+number of 188 and minor number of 0.
+
+<P>The <TT>modprobe</TT> command will fail if you do not have the
+<TT>usbserial</TT> kernel module compiled, in which case you will have to learn
+about compiling a kernel and installing it. This process is well-described by
+the <A HREF="http://www.digitalhermit.com/linux/Kernel-Build-HOWTO.html">Kernel
+Rebuild Guide</A>.
+
+<P>You may have to be root to access the special file (<TT>/dev/ttyUSB0</TT>). If you want to be able to access the special device as
+a normal user, you will have to use the <TT>chmod</TT> command to give regular users permission to read and write from it:
+
+<PRE>   chmod a+rw /dev/ttyUSB0</PRE>
+
+<P>The process may also fail you have another kernel module that interferes with <TT>usbserial</TT>. The <TT>acm</TT> module in 2.4 kernels and the <TT>cdc-acm</TT> module in 2.6 kernels may be the source of this interference as they implement the USB Communications Device Class
+(see the next section). Try removing those modules (using <TT>modprobe -r acm</TT> or <TT>modprobe -r cdc-acm</TT>) first.
+
+<P>As a last resort, try running the <TT>depmod</TT> command (as root) to make sure your module dependencies are up-to-date.
+
+<P><A NAME="CDCDriver"></A>
+<H2>USB Communications Device Class Driver</H2>
+
+The SAM-BA documentation indicates that it configures the AT91SAM7S microcontroller as a USB Communications Device Class device. Thus,
+the Linux <TT>acm</TT> (for 2.4 kernels) or <TT>cdc-acm</TT> (for 2.6 kernels) should be usable.
+<P>No instructions for the 2.4 kernel <TT>acm</TT> driver are available yet.
+<P>For the 2.6 kernel <TT>cdc-acm</TT> driver, the driver source code must be patched and the kernel module recompiled in order to
+recognize the microcontroller.
+
+The first step is to modify the <TT>cdc-acm.c</TT> file in the kernel source tree (e.g., /usr/src/linux-2.6.14.3/drivers/usb/class/cdc-acm.c) to add the following three lines marked with '+' signs:
+
+<PRE>
+      { USB_DEVICE(0x0482, 0x0203), /* KYOCERA AH-K3001V */
+      .driver_info = NO_UNION_NORMAL, /* has no union descriptor */
+      },
+    + { USB_DEVICE(0x03EB, 0x6124), /* Atmel AT91SAM7S microcontrollers (SAM-BA) */
+    + .driver_info = NO_UNION_NORMAL,
+    + },
+      /* control interfaces with various AT-command sets */
+      { USB_INTERFACE_INFO(USB_CLASS_COMM, USB_CDC_SUBCLASS_ACM,
+</PRE>
+
+Next, recompile the kernel and ensure that the <TT>cdc-acm</TT> driver is compiled as a module.
+
+The new kernel has to be installed and booted. The new kernel module can then be installed with (as root):
+
+<PRE>  modprobe cdc-acm</PRE>
+
+When you plug in the microcontroller device, you should be able to communicate
+with it using a filename of <TT>/dev/usb/acm/0</TT>, or <TT>/dev/ttyACM0</TT>,
+or other names depending on your distribution. You can try to find the right
+name on your system using the same type of command used to find the <TT>usbserial</TT> devices
+from the previous section:
+
+<PRE>   find /dev -inum `ls -liR /dev | fgrep "166," | head -1 | sed -e "s/^ *//" | cut -d" " -f1`</PRE>
+
+<P>The major device number for the <TT>cdc-acm</TT> module is 166. If this
+special file has not been created, you can create it yourself (as root):
+
+<PRE>
+     mkdir -p /dev/usb/acm
+     chmod -R a+rx /dev/usb
+     mknod /dev/usb/acm/0 c 166 0
+     mknod /dev/usb/acm/1 c 166 1
+     mknod /dev/usb/acm/2 c 166 2
+     chmod -R a+rwx /dev/usb/acm
+</PRE>
+
+<P>The above allows anyone on the system access to these devices. You may want to modify your <TT>chmod</TT> commands for alternative
+access arrangements if you are running a multi-user system.
+
+<HR ALIGN=LEFT>
+
+<P><CENTER><FONT SIZE="-1">&COPY; 2006, Copyright by <A HREF="http://claymore.engineer.gvsu.edu/~steriana">Andrew
+Sterian</A>; All Rights Reserved. mailto: <A HREF="mailto:steriana@claymore.engineer.gvsu.edu?subject=Sam_I_Am">steriana@claymore.engineer.gvsu.edu</A></FONT></CENTER>
+
+</BODY>
+</HTML>

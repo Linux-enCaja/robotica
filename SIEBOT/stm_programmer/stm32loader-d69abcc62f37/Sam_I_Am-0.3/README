@@ -1,0 +1,44 @@
+This is Sam_I_Am, a program for working with Atmel AT91SAM7S
+microcontrollers running the built-in SAM-BA program. Sam_I_Am
+runs under Linux and connects to the microcontroller over
+a USB connection.
+
+The main documentation for this program is in doc/index.html.
+Quick start information is below for the impatient; more detailed
+installation and execution information is in doc/index.html.
+
+Quick Start
+===========
+
+Requirements:
+
+  - Linux kernel 2.4 or 2.6 with USB generic serial or Communication Device
+    Class drivers available as modules (see doc/connecting.html for details)
+
+  - Python 2.3 or later
+          http://www.python.org
+
+Download Sam_I_Am:
+
+   http://claymore.engineer.gvsu.edu/~steriana/Python
+
+Installation:
+
+   python setup.py install      (as root)
+
+Running:
+
+   /usr/local/bin/Sam_I_Am  or /usr/bin/Sam_I_Am
+
+License:
+
+   Sam_I_Am is free software, licensed under the GNU General Public
+   License (GPL). See the file COPYING for the license details.
+
+Contact:
+
+  Andrew Sterian
+  Padnos College of Engineering and Computing
+  Grand Valley State University
+  <steriana@claymore.engineer.gvsu.edu>
+  <http://claymore.engineer.gvsu.edu/~steriana>

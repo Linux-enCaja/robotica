@@ -1,0 +1,149 @@
+<HTML>
+<HEAD>
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+  <TITLE>Sam_I_Am -- An interface for Atmel AT91SAM7S microcontrollers -- Program Operation</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#0000c0" VLINK="#8f008f">
+
+<P><FONT SIZE="+2">Sam_I_Am -- Program Operation</FONT></P>
+
+<BLOCKQUOTE>
+  <P><A HREF="http://claymore.engineer.gvsu.edu/~steriana"><FONT
+   SIZE="-1">Andrew Sterian</FONT></A><FONT SIZE="-1"><BR>
+  Padnos College of Engineering and Computing<BR>
+  Grand Valley State University</FONT></P>
+</BLOCKQUOTE>
+
+<P><HR ALIGN=LEFT><TABLE WIDTH="100%" BORDER="0" CELLSPACING="2"
+CELLPADDING="0">
+  <TR>
+    <TD><A HREF="index.html">Top-Level</A> | <A HREF="connecting.html">Connecting the Device</A> | Program Operation | <A HREF="commands.html">Commands</A></TD>
+  </TR>
+  <TR>
+    <TD>&nbsp;</TD>
+  </TR>
+  <TR>
+    <TD>
+    <FONT SIZE="-1"><A HREF="#Options">Command-Line Options</A> | <A HREF="#RCFiles">Startup Files</A> | 
+    <A HREF="#SingleCmds">Command-Line Commands</A></TD>
+  </TR>
+</TABLE><HR ALIGN=LEFT></P>
+
+<H2>Introduction</H2>
+
+Sam_I_Am is invoked from the command line within a terminal/shell/console
+program (rxvt, xterm, Konsole, gnome-terminal, etc.) After opening a console,
+you should simply be able to type:
+
+<PRE>    Sam_I_Am --version</PRE>
+
+This will verify that Sam_I_Am is properly installed and accessible. If this
+does not work, you need to find out where Sam_I_Am was installed. Type the
+following:
+
+<PRE>    python -c "import sys; print sys.prefix+'/lib/python'+sys.version[:3]"</PRE>
+
+You should see a directory name such as <TT>/usr/lib/python2.3</TT>. You can
+then invoke Sam_I_Am as follows:
+
+<PRE>    python /usr/lib/python2.3/site-packages/Sam_I_Am/samiam.py</PRE>
+
+If this still does not work, try the <A HREF="index.html#Installation">Installation</A> instructions again.
+
+<P><A NAME="Options"></A>
+<H2>Command-Line Options</H2>
+
+By default, simply typing <TT>Sam_I_Am</TT> will perform the following tasks:
+<OL>
+<LI>Find and execute the commands in any startup script files (see the <A HREF="#RCFiles">Startup Files</A> below)</LI>
+<LI>Enter an interactive command mode</LI>
+</OL>
+
+The following command-line options modify this default behavior:
+
+<DL>
+<DT><B><TT>-x FILE</TT></B> or <B><TT>--rc-file=FILE</TT></B></DT>
+<DD>The default startup script file is either <TT>.samiamrc</TT> in the current directory or, if not found, the file
+<TT>.samiamrc</TT> in the HOME directory (i.e., <TT>${HOME}/.samiamrc</TT>). With this option specified, however,
+the startup script file in this option is used instead.</DD>
+
+<DT><B><TT>-X</TT></B> or <B><TT>--norc-file</TT></B></DT>
+<DD>This option prevents Sam_I_Am from executing any startup script files.</DD>
+
+<DT><B><TT>-i</TT></B> or <B><TT>--interactive</TT></B></DT>
+<DD>Normally, when command-line commands are given (see the <A
+HREF="#SingleCmds">Command-Line Commands</A> section below) Sam_I_Am will
+perform those commands and exit. With this option specified, Sam_I_Am will
+perform the commands and then remain in interactive mode.</DD>
+</DL>
+
+Finally, the <TT>--help</TT> and <TT>--version</TT> command-line options print a brief help summary and program
+version, respectively.
+
+<P><A NAME="RCFiles"></A>
+<H2>Startup Files</H2>
+
+Sam_I_Am can execute a sequence of commands stored in a file every time it runs. This behavior can be useful to, for
+example, automatically connect to SAM-BA, set protected memory regions, and so on.
+
+<P>In its normal mode of operation, Sam_I_Am looks in the current directory for a file named <TT>.samiamrc</TT>. If
+found, the commands in this file are executed as if they had been typed by you at the keyboard in interactive mode.
+Once all commands are executed, Sam_I_Am enters interactive mode in which you can begin typing your own commands.
+
+<P>If no <TT>.samiamrc</TT> file is found in your current directory, the same file name is loaded, if it exists,
+from your home directory (i.e., <TT>${HOME}/.samiamrc</TT>). If this file does not exist here either, then no startup
+file is loaded.
+
+<P>Here is a sample <TT>.samiamrc</TT> file that opens a connection to SAM-BA, prints the SAM-BA version, then
+sets allowable memory accesses to correspond to the memory map of an AT91SAM7S256 device:
+<PRE>
+      open /dev/ttyUSB0
+      version
+      set readallow 0 0x300000
+      set ramwriteallow 0x202000 57344
+      set flashwriteallow 0x100000 0x40000
+</PRE>      
+<P>Sam_I_Am can be told to either ignore startup files or execute a startup
+file other than <TT>.samiamrc</TT> depending upon the command-line options
+presented in the previous section.
+
+<P><A NAME="SingleCmds"></A>
+<H2>Command-Line Commands</H2>
+
+Additional arguments to Sam_I_Am on the command line are interpreted as
+commands as if they were typed in interactive mode. These commands are
+performed <I>after</I> executing any startup files. For example:
+<PRE>
+    Sam_I_Am dump 0x202000
+</PRE>
+The above command would rely upon the presence of a <TT>.samiamrc</TT> file
+that contained an <TT>open</TT> command so that the <TT>dump</TT> command would
+be successful.
+
+<P>Multiple commands can be executed by separating them with isolated commas.
+After all commands are performed, Sam_I_Am exits (unless the <B><TT>-i</TT></B>
+or <B><TT>--interactive</TT></B> command-line option is specified).
+
+<P>For example:
+<PRE>
+    Sam_I_Am open /dev/ttyUSB0 , send program.hex , go
+</PRE>
+The above command opens the device port (assuming no <TT>.samiamrc</TT> file
+does so), uploads a HEX file, and runs the program uploaded. As soon as the GO
+command is issued, Sam_I_Am exits (though the uploaded program continues to
+run).
+
+<P>The following example uses the <TT>source</TT> command to effectively execute two
+startup files, <TT>.samiamrc</TT> and <TT>run.sam</TT>, and then remain in
+interactive mode to accept more commands:
+<PRE>
+    Sam_I_Am -i source run.sam
+</PRE>    
+
+<HR ALIGN=LEFT>
+
+<P><CENTER><FONT SIZE="-1">&COPY; 2006, Copyright by <A HREF="http://claymore.engineer.gvsu.edu/~steriana">Andrew
+Sterian</A>; All Rights Reserved. mailto: <A HREF="mailto:steriana@claymore.engineer.gvsu.edu?subject=Sam_I_Am">steriana@claymore.engineer.gvsu.edu</A></FONT></CENTER>
+
+</BODY>
+</HTML>

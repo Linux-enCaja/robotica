@@ -1,0 +1,218 @@
+<HTML>
+<HEAD>
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+  <META HTTP-EQUIV="Description" CONTENT="
+BEGIN PYTHON-PACKAGE-INFO 1.0
+Current-Version:        0.3
+Title:                  Sam_I_Am -- An interface for Atmel AT91SAM7S microcontrollers
+Home-page:              http://claymore.engineer.gvsu.edu/~steriana/Software
+Description:            Interacts with an AT91SAM7S microcontroller
+Keywords:               AT91SAM7S SAM-BA Linux interface
+Author:                 Andrew Sterian, mailto:steriana@gvsu.edu
+Maintained-by:          The author
+Primary-site:           http://claymore.engineer.gvsu.edu/~steriana/Software
+Alternate-site:         None
+Original-site:          Same as primary site
+Platform:               Linux
+Copying-policy:         Free software, see copyright info below for details
+Difficulty-rating:      Some installation required
+System-requirements:    None
+Software-requirements:  Python 2.3
+
+This program is useful for USB communication with an Atmel AT91SAM7S
+microcontroller running the SAM-BA monitor program. It allows you to read and
+write memory, send programs to RAM or FLASH, and display device information.
+
+END PYTHON-PACKAGE-INFO
+">
+  <TITLE>Sam_I_Am -- An interface for Atmel AT91SAM7S microcontrollers</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff" LINK="#0000c0" VLINK="#8f008f">
+
+<!-- -->
+
+<P><FONT SIZE="+2">Sam_I_Am -- An interface for Atmel AT91SAM7S microcontrollers </FONT></P>
+
+<BLOCKQUOTE>
+  <P><A HREF="http://claymore.engineer.gvsu.edu/~steriana"><FONT
+   SIZE="-1">Andrew Sterian</FONT></A><FONT SIZE="-1"><BR>
+  Padnos College of Engineering and Computing<BR>
+  Grand Valley State University</FONT></P>
+</BLOCKQUOTE>
+
+<P><HR ALIGN=LEFT><TABLE WIDTH="100%" BORDER="0" CELLSPACING="2"
+CELLPADDING="0">
+  <TR>
+    <TD>Top-Level | <A HREF="connecting.html">Connecting the Device</A> | <A HREF="invoking.html">Program Operation</A> | <A HREF="commands.html">Commands</A></TD>
+    <TD ALIGN="RIGHT"><FONT SIZE="-1">Version 0.3</FONT></TD>
+  </TR>
+  <TR>
+    <TD><!-- --></TD>
+    <TD ALIGN="RIGHT"><FONT SIZE="-1">August 5, 2006</FONT></TD> 
+  </TR>
+  <TR>
+    <TD>
+    <FONT SIZE="-1"><A HREF="#Installation">Installation</A> | <A HREF="#Requirements">Requirements</A> | <A HREF="#Copyright">Copyright</A> | <A HREF="#Todo">To Do</A> | <A HREF="#Credits">Credits</A> | <A HREF="#History">History</A></FONT></TD> 
+    <TD><!-- --></TD>
+  </TR>
+</TABLE><HR ALIGN=LEFT></P>
+
+<H2>What's New</H2>
+<P>In release 0.3:
+<UL>
+<LI>Fixed a bug that prevented <TT>go</TT> commands from properly executing
+in some cases when it was the last command specified on the command line. Thanks
+to Edwin Olson for tracking this down.</LI>
+<LI>The <TT>info aic</TT> command had the sense of external and internal
+interrupt sources reversed in the <TT>AIC_SMRx</TT> register.</LI>
+<LI>The <TT>info tc</TT> command had the TIOA and TIOB sources reversed
+when displaying external trigger sources.</LI>
+<LI>The <TT>help flash</TT> command mistakenly said the command was used
+to program RAM.</LI>
+</UL>
+
+<P>In release 0.2:
+<UL>
+<LI>FLASH programming is now supported.</LI>
+<LI>More <TT>info</TT> displayers were added.</LI>
+<LI>Added <TT>tgo</TT> command to execute Thumb code.</LI>
+<LI>Added <TT>disp</TT> command to display user program output.</LI>
+</UL>
+
+<P>In release 0.1:
+<UL>
+<LI>First release</LI>
+</UL>
+
+<P><A NAME="Introduction"></A></P>
+<H2>Introduction</H2>
+
+  <P>Sam_I_Am is a program for interacting with an Atmel <A HREF="http://www.at91.com">AT91SAM7S</A> microcontroller running the SAM-BA monitor program. It
+  was specifically designed for Linux users who want to connect to their
+  device using the USB port. Neither Windows nor the serial port is supported.
+  <P>Using Sam_I_Am a developer can:
+  <UL>
+  <LI>Read and write memory/peripheral locations</LI>
+  <LI>Send and receive Intel HEX format files to either RAM or FLASH</LI>
+  <LI>Execute code on the microcontroller</LI>
+  <LI>Display microcontroller peripheral status</LI>
+  </UL>
+  
+  <P>You can download the latest version of Sam_I_Am from:
+  <P><CENTER><A HREF="http://claymore.engineer.gvsu.edu/~steriana/Software"><CODE>http://claymore.engineer.gvsu.edu/~steriana/Software</CODE></A></CENTER>
+
+<P><A NAME="Requirements"></A></P>
+<H2>Requirements</H2>
+  <P>Sam_I_Am is written in pure <A HREF="http://www.python.org">Python</A>. It
+  depends upon the following software packages for operation:
+  <UL>
+  <LI><A HREF="http://www.python.org">Python</A> version 2.3 or later</LI>
+  </UL>
+
+  <P>Sam_I_Am only runs under Linux. It requires a 2.4 or 2.6 kernel with
+  the <TT>usbserial</TT> generic USB serial driver. Sam_I_Am does not work
+  with a standard serial port nor with a USB-to-serial converter.
+
+<P><A NAME="Installation"></A></P>
+<H2>Installation</H2>
+
+<P>First, install all of the packages listed above in the Requirements section.
+
+<P>Extract the <TT>Sam_I_Am.XX.YY.tar.gz</TT> file (where XX.YY is the version) then install as follows:</P>
+<UL>
+<TT>python setup.py install</TT>&nbsp;&nbsp;&nbsp;(You may need to be root to install to system directories)
+</UL>
+<P>The installer will create and populate the following directories/files:</P>
+<UL>
+<PRE>
+/usr/lib/python2.3/site-packages/Sam_I_Am
+/usr/lib/python2.3/Sam_I_Am
+/usr/bin/Sam_I_Am
+</PRE>
+</UL>
+<P>The above assumes your Python library directory is as indicated (it may be
+elsewhere but the installer should be able to find it, so don't worry about
+it). The first directory is where the actual program resides. The second
+directory contains the documentation, example files, etc. A sample program for
+invoking Sam_I_Am is installed as <TT>/usr/bin/Sam_I_Am</TT>...feel free to rename it or move it somewhere else.
+
+<P><A NAME="Running"></A></P>
+<H2>Running Sam_I_Am</H2>
+
+<P>You run Sam_I_Am in a console/terminal session. You must invoke the Python interpreter on the <TT>samiam.py</TT> file of the <TT>Sam_I_Am</TT> package. For example:</P>
+<PRE><CENTER>python /usr/lib/python2.3/site-packages/Sam_I_Am/samiam.py</CENTER></PRE>
+<P>The <TT>Sam_I_Am</TT> shell script that comes with this software contains an
+example for running Sam_I_Am, modelled on the above. By default, this shell
+script is installed in <TT>/usr/bin</TT> so you should just be able
+to type <TT>Sam_I_Am</TT> from a shell prompt.
+
+<P>The <A HREF="invoking.html">Program Operation</A> page describes the
+operation of the program and its command-line options. The <A HREF="connecting.html">Connecting the Device</A> page describes the process of connecting the
+microcontroller board to your computer using USB.
+
+<P>A sample application is included in the <TT>sample</TT> subdirectory of the Sam_I_Am installation, most likely
+<TT>/usr/lib/python2.3/Sam_I_Am/sample</TT> or similar.
+
+<P><A NAME="Copyright"></A></P>
+<H2>Copyright &amp; License</H2>
+
+  <P>Copyright &COPY; 2006 <A HREF="http://claymore.engineer.gvsu.edu/~steriana">Andrew Sterian</A>. All Rights Reserved.
+  mailto: <A HREF="mailto:steriana@claymore.engineer.gvsu.edu?subject=Sam_I_Am">steriana@claymore.engineer.gvsu.edu</A>
+  <P>Sam_I_Am comes with ABSOLUTELY NO WARRANTY. This
+  is free software licensed under the terms of the <A HREF="gpl.html">GNU General
+  Public License</A>. You are welcome to redistribute this software
+  under certain conditions. For more details, see the previous link or
+  visit <A HREF="http://www.fsf.org">The Free Software Foundation</A>.
+
+<P><A NAME="Todo"></A></P>
+<H2>To Do</H2>
+
+  <OL>
+    <LI>Finish all <TT>info</TT> displayers</LI>
+    <LI>FLASH region locking/unlocking</LI>
+  </OL>
+
+<P><A NAME="Credits"></A></P>
+
+<H2>Credits</H2>
+  <P>This help file is based on a template for the help file for mxTools by <A
+  HREF="http://starship.python.net/crew/lemburg">M.A. Lemburg</A>. This
+  software was created with <A HREF="http://www.vim.org/">VIM</A>; thanks to
+  the authors of this program and special thanks for the Python syntax support.
+  Thanks to the <A HREF="http://www.python.org">Python</A> developers and
+  support community. Thanks to <A HREF="http://www.atmel.com">Atmel</A> for
+  making SAM-BA an open interface format, and for even providing its source
+  code. Thanks to all the hard-working people who developed the <A
+  HREF="http://gcc.gnu.org">GCC toolchain</A> for ARM.</P>
+
+<P><A NAME="History"></A></P>
+
+<H2>History</H2>
+
+  <P>Version 0.3 -- August 5, 2006
+  <UL>
+    <LI>Added <TT>tcdrain()</TT> to GO command to make sure it actually
+    gets sent, since SAM-BA sends no acknowledgment.</LI>
+    <LI>Fixed <TT>info</TT> command for AIC and TC peripherals.</LI>
+    <LI>Fixed <TT>help flash</TT> information.</LI>
+  </UL>
+  <P>Version 0.2 -- June 11, 2006
+  <UL>
+    <LI>FLASH programming supported</LI>
+    <LI>More <TT>info</TT> displayers</LI>
+    <LI>Added <TT>tgo</TT> command</LI>
+    <LI>Added <TT>disp</TT> command</LI>
+  </UL>
+
+  <P>Version 0.1 -- May 30, 2006
+  <UL>
+    <LI>Initial release</LI>
+  </UL>
+
+<HR ALIGN=LEFT>
+
+<P><CENTER><FONT SIZE="-1">&COPY; 2006, Copyright by <A HREF="http://claymore.engineer.gvsu.edu/~steriana">Andrew
+Sterian</A>; All Rights Reserved. mailto: <A HREF="mailto:steriana@claymore.engineer.gvsu.edu?subject=Sam_I_Am">steriana@claymore.engineer.gvsu.edu</A></FONT></CENTER>
+
+</BODY>
+</HTML>

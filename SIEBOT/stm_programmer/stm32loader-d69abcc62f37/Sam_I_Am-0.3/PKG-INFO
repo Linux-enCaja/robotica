@@ -1,0 +1,21 @@
+Metadata-Version: 1.0
+Name: Sam_I_Am
+Version: 0.3
+Summary: Interact with an Atmel AT91SAM7S microcontroller running SAM-BA
+Home-page: http://claymore.engineer.gvsu.edu/~steriana/Python
+Author: Andrew Sterian
+Author-email: steriana@claymore.engineer.gvsu.edu
+License: GPL
+Description: Sam_I_Am is an interface to Atmel AT91SAM7S microcontrollers
+        running the built-in SAM-BA program. It allows reading and
+        writing memory locations, displaying peripheral status, and
+        writing programs to either RAM or FLASH.
+        
+        To run the program, invoke the Python interpreter on the
+        samiam.py file. The Sam_I_Am shell script in /usr/bin or
+        /usr/local/bin (or similar) can be used to perform this action.
+        
+        For more details on installation or running Sam_I_Am, see the
+        URL below.
+        
+Platform: Linux
