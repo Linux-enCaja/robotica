@@ -1,4 +1,4 @@
-update=Wed 21 Sep 2011 01:43:36 PM COT
+update=Thu 22 Sep 2011 10:17:53 AM COT
 version=1
 last_client=pcbnew
 [general]
@@ -96,6 +96,7 @@ LibName53=../components/ABM8G
 LibName54=../components/usb_a
 LibName55=../components/Reset
 LibName56=/home/cain/Embedded/robotica/SIEBOT/PCB_V2/components/stm32f100vxx
+LibName57=/home/cain/Embedded/robotica/SIEBOT/PCB_V2/components/lt1117cst
 [pcbnew]
 version=1
 PadDrlX=0
@@ -141,3 +142,4 @@ LibName23=LED0603
 LibName24=RSA5M
 LibName25=LogoCL
 LibName26=w_smd_lqfp
+LibName27=LT1117
