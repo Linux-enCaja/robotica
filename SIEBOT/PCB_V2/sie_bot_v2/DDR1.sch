@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 28 Sep 2011 07:26:12 AM COT
+EESchema Schematic File Version 2  date Wed 28 Sep 2011 02:09:01 PM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
