@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 30 Sep 2011 09:06:52 AM COT
+EESchema Schematic File Version 2  date Fri 30 Sep 2011 12:12:55 PM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -56,6 +56,7 @@ LIBS:usb_a
 LIBS:Reset
 LIBS:stm32f100vxx
 LIBS:lt1117cst
+LIBS:zxmhc3f381n8
 LIBS:i.mx233stamp-cache
 EELAYER 25  0
 EELAYER END
