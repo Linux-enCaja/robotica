@@ -1,8 +1,6 @@
-update=Thu 22 Sep 2011 10:17:53 AM COT
+update=Fri 30 Sep 2011 11:20:10 AM COT
 version=1
-last_client=pcbnew
-[general]
-version=1
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -143,3 +141,5 @@ LibName24=RSA5M
 LibName25=LogoCL
 LibName26=w_smd_lqfp
 LibName27=LT1117
+[general]
+version=1
