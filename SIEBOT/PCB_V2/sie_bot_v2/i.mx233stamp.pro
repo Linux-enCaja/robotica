@@ -1,4 +1,4 @@
-update=Fri 30 Sep 2011 12:32:13 PM COT
+update=Sat 01 Oct 2011 01:51:50 PM COT
 version=1
 last_client=pcbnew
 [cvpcb]
@@ -145,3 +145,4 @@ LibName25=LogoCL
 LibName26=w_smd_lqfp
 LibName27=LT1117
 LibName28=ABM3B
+LibName29=BS170F
