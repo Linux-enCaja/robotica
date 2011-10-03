@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 03 Oct 2011 08:26:32 AM COT
+EESchema Schematic File Version 2  date Mon 03 Oct 2011 02:17:11 PM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -72,66 +72,67 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 8900 8350 0    60   ~ 0
-VMTR3
-Text Label 8900 8550 0    60   ~ 0
-C2M3
+$Comp
+L 3V3 #PWR8
+U 1 1 4E8A099D
+P 6050 8950
+F 0 "#PWR8" H 6050 9050 30  0001 C CNN
+F 1 "3V3" H 6050 9060 30  0000 C CNN
+	1    6050 8950
+	0    1    1    0   
+$EndComp
+$Comp
+L 3V3 #PWR3
+U 1 1 4E8A0997
+P 3700 7900
+F 0 "#PWR3" H 3700 8000 30  0001 C CNN
+F 1 "3V3" H 3700 8010 30  0000 C CNN
+	1    3700 7900
+	1    0    0    -1  
+$EndComp
+$Comp
+L 3V3 #PWR2
+U 1 1 4E8A0992
+P 1500 7900
+F 0 "#PWR2" H 1500 8000 30  0001 C CNN
+F 1 "3V3" H 1500 8010 30  0000 C CNN
+	1    1500 7900
+	1    0    0    -1  
+$EndComp
+Text Label 4000 8950 0    60   ~ 0
+GND
+Text Label 3200 8000 0    60   ~ 0
+GND
+Text Label 1650 8000 0    60   ~ 0
+GND
+Wire Wire Line
+	3700 8000 3000 8000
+Wire Wire Line
+	1500 7900 2200 7900
 Wire Wire Line
 	8850 8350 9250 8350
 Wire Wire Line
 	8850 8450 9250 8450
 Wire Wire Line
 	8850 8550 9250 8550
-Text Label 8900 8450 0    60   ~ 0
-M32
-Text Label 7700 8450 0    60   ~ 0
-M31
-Text Label 7700 8350 0    60   ~ 0
-GMTR3
-Text Label 7700 8550 0    60   ~ 0
-C1M3
 Wire Wire Line
 	7700 8550 8050 8550
 Wire Wire Line
 	7700 8450 8050 8450
 Wire Wire Line
 	7700 8350 8050 8350
-Text Label 10650 6050 0    60   ~ 0
-M22
 Wire Wire Line
 	10600 6150 11000 6150
 Wire Wire Line
 	10600 6050 11000 6050
 Wire Wire Line
 	10600 5950 11000 5950
-Text Label 10650 6150 0    60   ~ 0
-C2M2
-Text Label 10650 5950 0    60   ~ 0
-VMTR2
 Wire Wire Line
 	9450 5950 9800 5950
 Wire Wire Line
 	9450 6050 9800 6050
 Wire Wire Line
 	9450 6150 9800 6150
-Text Label 9450 6150 0    60   ~ 0
-C1M2
-Text Label 9450 5950 0    60   ~ 0
-GMTR2
-Text Label 9450 6050 0    60   ~ 0
-M21
-Text Label 9050 6050 0    60   ~ 0
-M12
-Text Label 7850 6050 0    60   ~ 0
-M11
-Text Label 9050 5950 0    60   ~ 0
-VMTR1
-Text Label 7850 5950 0    60   ~ 0
-GMTR1
-Text Label 9050 6150 0    60   ~ 0
-C2M1
-Text Label 7850 6150 0    60   ~ 0
-C1M1
 Wire Wire Line
 	9000 5950 9400 5950
 Wire Wire Line
@@ -614,6 +615,46 @@ Wire Wire Line
 Connection ~ 8650 5300
 Wire Wire Line
 	7850 5950 8200 5950
+Wire Wire Line
+	1500 8000 2200 8000
+Wire Wire Line
+	3700 7900 3000 7900
+Text Label 8900 8350 0    60   ~ 0
+VMTR3
+Text Label 8900 8550 0    60   ~ 0
+C2M3
+Text Label 8900 8450 0    60   ~ 0
+M32
+Text Label 7700 8450 0    60   ~ 0
+M31
+Text Label 7700 8350 0    60   ~ 0
+GMTR3
+Text Label 7700 8550 0    60   ~ 0
+C1M3
+Text Label 10650 6050 0    60   ~ 0
+M22
+Text Label 10650 6150 0    60   ~ 0
+C2M2
+Text Label 10650 5950 0    60   ~ 0
+VMTR2
+Text Label 9450 6150 0    60   ~ 0
+C1M2
+Text Label 9450 5950 0    60   ~ 0
+GMTR2
+Text Label 9450 6050 0    60   ~ 0
+M21
+Text Label 9050 6050 0    60   ~ 0
+M12
+Text Label 7850 6050 0    60   ~ 0
+M11
+Text Label 9050 5950 0    60   ~ 0
+VMTR1
+Text Label 7850 5950 0    60   ~ 0
+GMTR1
+Text Label 9050 6150 0    60   ~ 0
+C2M1
+Text Label 7850 6150 0    60   ~ 0
+C1M1
 $Comp
 L CONN_3X2 P13
 U 1 1 4E88DB7E
@@ -857,7 +898,7 @@ FP7
 Text Label 5550 8050 0    60   ~ 0
 FP15
 Text Label 5550 8150 0    60   ~ 0
-FP8
+FP9
 Text Label 5550 8250 0    60   ~ 0
 FP29
 Text Label 5550 8350 0    60   ~ 0
@@ -1012,10 +1053,10 @@ F 1 "GND" H 6900 1180 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 3V3 #PWR10
+L 3V3 #PWR13
 U 1 1 4E7B4482
 P 8150 900
-F 0 "#PWR10" H 8150 1000 30  0001 C CNN
+F 0 "#PWR13" H 8150 1000 30  0001 C CNN
 F 1 "3V3" H 8150 1010 30  0000 C CNN
 	1    8150 900 
 	1    0    0    -1  
@@ -1110,19 +1151,19 @@ F 2 "SM0603" H 11350 2500 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L 3V3 #PWR20
+L 3V3 #PWR23
 U 1 1 4E78C5F0
 P 10750 2150
-F 0 "#PWR20" H 10750 2250 30  0001 C CNN
+F 0 "#PWR23" H 10750 2250 30  0001 C CNN
 F 1 "3V3" H 10750 2260 30  0000 C CNN
 	1    10750 2150
 	1    0    0    -1  
 $EndComp
 $Comp
-L 3V3 #PWR13
+L 3V3 #PWR16
 U 1 1 4E78C319
 P 8550 2150
-F 0 "#PWR13" H 8550 2250 30  0001 C CNN
+F 0 "#PWR16" H 8550 2250 30  0001 C CNN
 F 1 "3V3" H 8550 2260 30  0000 C CNN
 	1    8550 2150
 	1    0    0    -1  
@@ -1167,10 +1208,10 @@ JTDO
 Text HLabel 6100 6000 2    60   BiDi ~ 0
 JTDI
 $Comp
-L 3V3 #PWR2
+L 3V3 #PWR4
 U 1 1 4E78BA06
 P 4150 1100
-F 0 "#PWR2" H 4150 1200 30  0001 C CNN
+F 0 "#PWR4" H 4150 1200 30  0001 C CNN
 F 1 "3V3" H 4150 1210 30  0000 C CNN
 	1    4150 1100
 	1    0    0    -1  
@@ -1186,28 +1227,28 @@ F 2 "SM1206" H 8350 2500 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 3V3 #PWR12
+L 3V3 #PWR15
 U 1 1 4E2A2E11
 P 8350 2150
-F 0 "#PWR12" H 8350 2250 30  0001 C CNN
+F 0 "#PWR15" H 8350 2250 30  0001 C CNN
 F 1 "3V3" H 8350 2260 30  0000 C CNN
 	1    8350 2150
 	1    0    0    -1  
 $EndComp
 $Comp
-L 3V3 #PWR15
+L 3V3 #PWR18
 U 1 1 4E2A2E03
 P 8750 1000
-F 0 "#PWR15" H 8750 1100 30  0001 C CNN
+F 0 "#PWR18" H 8750 1100 30  0001 C CNN
 F 1 "3V3" H 8750 1110 30  0000 C CNN
 	1    8750 1000
 	1    0    0    -1  
 $EndComp
 $Comp
-L 3V3 #PWR4
+L 3V3 #PWR6
 U 1 1 4E2A2DF0
 P 4700 1150
-F 0 "#PWR4" H 4700 1250 30  0001 C CNN
+F 0 "#PWR6" H 4700 1250 30  0001 C CNN
 F 1 "3V3" H 4700 1260 30  0000 C CNN
 	1    4700 1150
 	1    0    0    -1  
