@@ -1,13 +1,11 @@
-update=Sat 01 Oct 2011 01:51:50 PM COT
+update=Sun 02 Oct 2011 10:33:14 PM COT
 version=1
-last_client=pcbnew
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -146,3 +144,5 @@ LibName26=w_smd_lqfp
 LibName27=LT1117
 LibName28=ABM3B
 LibName29=BS170F
+[general]
+version=1
