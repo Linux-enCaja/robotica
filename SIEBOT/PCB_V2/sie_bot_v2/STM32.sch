@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 02 Oct 2011 08:48:42 PM COT
+EESchema Schematic File Version 2  date Mon 03 Oct 2011 08:26:41 AM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -72,30 +72,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 10650 8450 0    60   ~ 0
-M42
-Wire Wire Line
-	10600 8550 11000 8550
-Wire Wire Line
-	10600 8450 11000 8450
-Wire Wire Line
-	10600 8350 11000 8350
-Text Label 10650 8550 0    60   ~ 0
-C2M4
-Text Label 10650 8350 0    60   ~ 0
-VMTR4
-Wire Wire Line
-	9450 8350 9800 8350
-Wire Wire Line
-	9450 8450 9800 8450
-Wire Wire Line
-	9450 8550 9800 8550
-Text Label 9450 8550 0    60   ~ 0
-C1M4
-Text Label 9450 8350 0    60   ~ 0
-GMTR4
-Text Label 9450 8450 0    60   ~ 0
-M41
 Text Label 8900 8350 0    60   ~ 0
 VMTR3
 Text Label 8900 8550 0    60   ~ 0
@@ -166,45 +142,6 @@ Wire Wire Line
 	7850 6150 8200 6150
 Wire Wire Line
 	7850 6050 8200 6050
-Connection ~ 11100 7650
-Wire Wire Line
-	11100 7650 11100 7350
-Wire Wire Line
-	11100 6650 11100 7050
-Wire Wire Line
-	9550 7050 9400 7050
-Wire Wire Line
-	9400 7050 9400 7950
-Wire Wire Line
-	9400 7950 10150 7950
-Wire Wire Line
-	11100 7350 10950 7350
-Wire Wire Line
-	10050 7650 9650 7650
-Wire Wire Line
-	10150 6350 9500 6350
-Wire Wire Line
-	9550 7350 9500 7350
-Wire Wire Line
-	11100 7050 10950 7050
-Wire Wire Line
-	9000 7150 9550 7150
-Wire Wire Line
-	11350 7150 10950 7150
-Wire Wire Line
-	9000 7250 9550 7250
-Wire Wire Line
-	11200 7250 10950 7250
-Wire Wire Line
-	10050 6650 9650 6650
-Wire Wire Line
-	11350 6650 10450 6650
-Connection ~ 11100 6650
-Wire Wire Line
-	11350 7650 10450 7650
-Wire Wire Line
-	9500 7350 9500 6350
-Connection ~ 11350 7150
 Connection ~ 8850 7150
 Wire Wire Line
 	7000 7350 7000 6350
@@ -678,16 +615,6 @@ Connection ~ 8650 5300
 Wire Wire Line
 	7850 5950 8200 5950
 $Comp
-L CONN_3X2 P14
-U 1 1 4E88DB80
-P 10200 8500
-F 0 "P14" H 10200 8750 50  0000 C CNN
-F 1 "CONN_3X2" V 10200 8550 40  0000 C CNN
-F 2 "pin_array_3x2" H 10200 8500 60  0001 C CNN
-	1    10200 8500
-	1    0    0    -1  
-$EndComp
-$Comp
 L CONN_3X2 P13
 U 1 1 4E88DB7E
 P 8450 8500
@@ -717,10 +644,6 @@ F 2 "pin_array_3x2" H 8600 6100 60  0001 C CNN
 	1    8600 6100
 	1    0    0    -1  
 $EndComp
-Text Label 9600 7950 0    60   ~ 0
-C2M4
-Text Label 9600 6350 0    60   ~ 0
-C1M4
 Text Label 7150 6350 0    60   ~ 0
 C1M3
 Text Label 7100 7950 0    60   ~ 0
@@ -733,68 +656,6 @@ Text Label 7200 5600 0    60   ~ 0
 C2M1
 Text Label 7200 4000 0    60   ~ 0
 C1M1
-$Comp
-L ZXMHC3F381N8 U15
-U 1 1 4E87675C
-P 10300 7600
-F 0 "U15" H 10300 7600 60  0000 C CNN
-F 1 "ZXMHC3F381N8" H 10250 8300 60  0000 C CNN
-F 2 "-SO8" H 10300 7600 60  0001 C CNN
-	1    10300 7600
-	1    0    0    -1  
-$EndComp
-Text Label 11000 7150 0    60   ~ 0
-VMTR4
-Text Label 9100 7250 0    60   ~ 0
-GMTR4
-Text Label 9100 7150 0    60   ~ 0
-M41
-Text Label 11000 7250 0    60   ~ 0
-M42
-$Comp
-L MOSFET_N_OPENDOUS Q8
-U 1 1 4E87675B
-P 10250 6550
-F 0 "Q8" H 10250 6740 30  0000 R CNN
-F 1 "BS170F" H 10250 6370 30  0000 R CNN
-F 2 "BS170F" H 10250 6550 60  0001 C CNN
-	1    10250 6550
-	0    1    1    0   
-$EndComp
-$Comp
-L R R42
-U 1 1 4E87675A
-P 11350 6900
-F 0 "R42" V 11430 6900 50  0000 C CNN
-F 1 "2.2k" V 11350 6900 50  0000 C CNN
-F 2 "SM0603" H 11350 6900 60  0001 C CNN
-	1    11350 6900
-	-1   0    0    1   
-$EndComp
-Text Label 9700 6650 0    60   ~ 0
-GMTR4
-Text Label 9700 7650 0    60   ~ 0
-GMTR4
-$Comp
-L R R43
-U 1 1 4E876759
-P 11350 7400
-F 0 "R43" V 11430 7400 50  0000 C CNN
-F 1 "2.2k" V 11350 7400 50  0000 C CNN
-F 2 "SM0603" H 11350 7400 60  0001 C CNN
-	1    11350 7400
-	-1   0    0    -1  
-$EndComp
-$Comp
-L MOSFET_N_OPENDOUS Q9
-U 1 1 4E876758
-P 10250 7750
-F 0 "Q9" H 10250 7940 30  0000 R CNN
-F 1 "BS170F" H 10250 7570 30  0000 R CNN
-F 2 "BS170F" H 10250 7750 60  0001 C CNN
-	1    10250 7750
-	0    1    -1   0   
-$EndComp
 $Comp
 L MOSFET_N_OPENDOUS Q7
 U 1 1 4E876537
