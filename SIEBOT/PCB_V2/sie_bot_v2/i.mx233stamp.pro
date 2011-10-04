@@ -93,9 +93,9 @@ LibName52=../components/mcp130
 LibName53=../components/ABM8G
 LibName54=../components/usb_a
 LibName55=../components/Reset
-LibName56=../componentes/stm32f100vxx
-LibName57=../componentes/lt1117cst
-LibName58=../componentes/zxmhc3f381n8
+LibName56=../components/stm32f100vxx
+LibName57=../components/lt1117cst
+LibName58=../components/zxmhc3f381n8
 [pcbnew]
 version=1
 PadDrlX=0

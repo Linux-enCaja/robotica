@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 03 Oct 2011 02:28:03 PM COT
+EESchema Schematic File Version 2  date Tue 04 Oct 2011 08:25:17 AM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -64,7 +64,7 @@ $Descr User 12000 10000
 encoding utf-8
 Sheet 2 5
 Title ""
-Date "3 oct 2011"
+Date "4 oct 2011"
 Rev ""
 Comp ""
 Comment1 ""
@@ -1509,7 +1509,7 @@ $EndComp
 Text Notes 8500 1850 0    60   ~ 0
 DECOUPLING
 Text Label 4500 900  3    60   ~ 0
-VDDA
+VDDAST
 Text Label 9800 2300 2    60   ~ 0
 VDDAST
 Text Label 2500 2400 0    60   ~ 0
