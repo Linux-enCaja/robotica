@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 04 Oct 2011 08:23:37 AM COT
+EESchema Schematic File Version 2  date Wed 05 Oct 2011 12:38:04 PM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -64,7 +64,7 @@ $Descr User 12000 10000
 encoding utf-8
 Sheet 2 5
 Title ""
-Date "4 oct 2011"
+Date "5 oct 2011"
 Rev ""
 Comp ""
 Comment1 ""
@@ -72,39 +72,12 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L 3V3 #PWR8
-U 1 1 4E8A099D
-P 6050 8950
-F 0 "#PWR8" H 6050 9050 30  0001 C CNN
-F 1 "3V3" H 6050 9060 30  0000 C CNN
-	1    6050 8950
-	0    1    1    0   
-$EndComp
-$Comp
-L 3V3 #PWR3
-U 1 1 4E8A0997
-P 3700 7900
-F 0 "#PWR3" H 3700 8000 30  0001 C CNN
-F 1 "3V3" H 3700 8010 30  0000 C CNN
-	1    3700 7900
-	1    0    0    -1  
-$EndComp
-$Comp
-L 3V3 #PWR2
-U 1 1 4E8A0992
-P 1500 7900
-F 0 "#PWR2" H 1500 8000 30  0001 C CNN
-F 1 "3V3" H 1500 8010 30  0000 C CNN
-	1    1500 7900
-	1    0    0    -1  
-$EndComp
-Text Label 4000 8950 0    60   ~ 0
-GND
-Text Label 3200 8000 0    60   ~ 0
-GND
-Text Label 1650 8000 0    60   ~ 0
-GND
+Text Label 2050 7100 0    60   ~ 0
+I2C1_SDA
+Text Label 2050 7250 0    60   ~ 0
+I2C1_SCL
+Wire Wire Line
+	2550 7250 2000 7250
 Wire Wire Line
 	3700 8000 3000 8000
 Wire Wire Line
@@ -619,6 +592,49 @@ Wire Wire Line
 	1500 8000 2200 8000
 Wire Wire Line
 	3700 7900 3000 7900
+Wire Wire Line
+	2550 7100 2000 7100
+Text HLabel 2000 7250 0    60   BiDi ~ 0
+I2C1_SCL
+Text HLabel 2000 7100 0    60   BiDi ~ 0
+I2C1_SDA
+Text Label 1800 8300 0    60   ~ 0
+I2C1_SCL
+Text Label 3400 8400 0    60   ~ 0
+I2C1_SDA
+$Comp
+L 3V3 #PWR8
+U 1 1 4E8A099D
+P 6050 8950
+F 0 "#PWR8" H 6050 9050 30  0001 C CNN
+F 1 "3V3" H 6050 9060 30  0000 C CNN
+	1    6050 8950
+	0    1    1    0   
+$EndComp
+$Comp
+L 3V3 #PWR3
+U 1 1 4E8A0997
+P 3700 7900
+F 0 "#PWR3" H 3700 8000 30  0001 C CNN
+F 1 "3V3" H 3700 8010 30  0000 C CNN
+	1    3700 7900
+	1    0    0    -1  
+$EndComp
+$Comp
+L 3V3 #PWR2
+U 1 1 4E8A0992
+P 1500 7900
+F 0 "#PWR2" H 1500 8000 30  0001 C CNN
+F 1 "3V3" H 1500 8010 30  0000 C CNN
+	1    1500 7900
+	1    0    0    -1  
+$EndComp
+Text Label 4000 8950 0    60   ~ 0
+GND
+Text Label 3200 8000 0    60   ~ 0
+GND
+Text Label 1650 8000 0    60   ~ 0
+GND
 Text Label 8900 8350 0    60   ~ 0
 VMTR3
 Text Label 8900 8550 0    60   ~ 0
@@ -939,7 +955,7 @@ Text Label 3200 8600 0    60   ~ 0
 FP41
 Text Label 3200 8500 0    60   ~ 0
 FP27
-Text Label 3200 8400 0    60   ~ 0
+Text Label 3050 8400 0    60   ~ 0
 FP25
 Text Label 3200 8300 0    60   ~ 0
 FP19
@@ -961,7 +977,7 @@ Text Label 1650 8500 0    60   ~ 0
 FP35
 Text Label 1650 8400 0    60   ~ 0
 FP26
-Text Label 1650 8300 0    60   ~ 0
+Text Label 1550 8300 0    60   ~ 0
 FP24
 Text Label 1650 8200 0    60   ~ 0
 FP16
