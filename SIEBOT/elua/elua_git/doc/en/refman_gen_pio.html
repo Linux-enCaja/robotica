@@ -1,0 +1,134 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This module contains functions for accessing the CPU's PIO (Programmable Input Output) pins. It contains two sets of functions with identical   names and behaviour. One set groups the functions used to access individual pins from ports, the other groups the functions used to access full ports.</p>   <p>With the <b>pio</b> module, you specify names of <b>ports</b> as they appear in your <b>eLua</b>'s CPU datasheet. For example, if your CPU's ports are named <b>PA, PB</b>    and <b>PC</b>, you can refer to them using <b>pio.PA</b>, <b>pio.PB</b> and <b>pio.PC</b>, respectively. If your CPU uses <b>P0</b>, <b>P1</b>, <b>P2</b> instead of <b>PA</b>, <b>PB</b> and <b>PC</b>,    you can simply use <b>pio.P0</b>, <b>pio.P1</b> and <b>pio.P2</b> instead.</p>   <p>You can also refer to individual <b>pins</b> instead of ports. With the same notation as above, <b>pio.PA_0</b> refers to the first pin of port <b>PA</b>,    <b>P0_15</b> refers to the 16th pin of port <b>P0</b> and so on.   </p>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="pio.pin.setdir" /><pre><code>pio.pin.setdir( direction, pin1, pin2, ..., pinn )</code></pre>
+<p>Set pin(s) direction</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>direction</b> - the pin direction, can be either <b>pio.INPUT</b> or <b>pio.OUTPUT</b></li>
+  <li><b>pin1</b> - the first pin</li>
+  <li><b>pin2 (optional)</b> - the second pin</li>
+  <li><b>pinn (optional)</b> - the <i>n</i>-th pin</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="pio.pin.setpull" /><pre><code>pio.pin.setpull( type, pin1, pin2, ..., pinn )</code></pre>
+<p>Enable/disable pullups/pulldowns on the specified pin(s)</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>type</b> - 'pull' type, can be either <b>pio.PULLUP</b> to enable pullups, <b>pio.PULLDOWN</b> to enable pulldowns, or <b>pio.NOPULL</b> to disable both pullups and         pulldowns</li>
+  <li><b>pin1</b> - the first pin</li>
+  <li><b>pin2 (optional)</b> - the second pin</li>
+  <li><b>pinn (optional)</b> - the <i>n</i>-th pin</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="pio.pin.setval" /><pre><code>pio.pin.setval( value, pin1, pin2, ..., pinn )</code></pre>
+<p>Set pin(s) value</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>value</b> - pin value, can be either 0 or 1</li>
+  <li><b>pin1</b> - the first pin</li>
+  <li><b>pin2 (optional)</b> - the second pin</li>
+  <li><b>pinn (optional)</b> - the <i>n</i>-th pin</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="pio.pin.getval" /><pre><code>val1, val2, ..., valn = pio.pin.getval( pin1, pin2, ..., pinn )</code></pre>
+<p>Get value of pin(s)</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>pin1</b> - the first pin</li>
+  <li><b>pin2 (optional)</b> - the second pin</li>
+  <li><b>pinn (optional)</b> - the <i>n</i>-th pin</li>
+</ul>
+<p><b>Returns</b>: The value(s) of the pin(s), either 0 or 1</p>
+
+<a name="pio.pin.sethigh" /><pre><code>pio.pin.sethigh( pin1, pin2, ..., pinn )</code></pre>
+<p>Set pin(s) to 1 (high)</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>pin1</b> - the first pin</li>
+  <li><b>pin2 (optional)</b> - the second pin</li>
+  <li><b>pinn (optional)</b> - the <i>n</i>-th pin</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="pio.pin.setlow" /><pre><code>pio.pin.setlow( pin1, pin2, ..., pinn )</code></pre>
+<p>Set pin(s) to 0 (low)</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>pin1</b> - the first pin</li>
+  <li><b>pin2 (optional)</b> - the second pin</li>
+  <li><b>pinn (optional)</b> - the <i>n</i>-th pin</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="pio.port.setdir" /><pre><code>pio.port.setdir( direction, port1, port2, ..., portn )</code></pre>
+<p>Set port(s) direction</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>direction</b> - the port direction, can be either <b>pio.INPUT</b> or <b>pio.OUTPUT</b></li>
+  <li><b>port1</b> - the first port</li>
+  <li><b>port2 (optional)</b> - the second port</li>
+  <li><b>portn (optional)</b> - the <i>n</i>-th port</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="pio.port.setpull" /><pre><code>pio.port.setpull( type, port1, port2, ..., portn )</code></pre>
+<p>Enable/disable pullups/pulldowns on the specified port(s)</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>type</b> - 'pull' type, can be either <b>pio.PULLUP</b> to enable pullups, <b>pio.PULLDOWN</b> to enable pulldowns, or <b>pio.NOPULL</b> to disable both pullups and         pulldowns</li>
+  <li><b>port1</b> - the first port</li>
+  <li><b>port2 (optional)</b> - the second port</li>
+  <li><b>portn (optional)</b> - the <i>n</i>-th port</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="pio.port.setval" /><pre><code>pio.port.setval( value, port1, port2, ..., portn )</code></pre>
+<p>Set port(s) value</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>value</b> - port value</li>
+  <li><b>port1</b> - the first port</li>
+  <li><b>port2 (optional)</b> - the second port</li>
+  <li><b>portn (optional)</b> - the <i>n</i>-th port</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="pio.port.getval" /><pre><code>val1, val2, ..., valn = pio.port.getval( port1, port2, ..., portn )</code></pre>
+<p>Get value of port(s)</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>port1</b> - the first port</li>
+  <li><b>port2 (optional)</b> - the second port</li>
+  <li><b>portn (optional)</b> - the <i>n</i>-th port</li>
+</ul>
+<p><b>Returns</b>: The value(s) of the port(s)</p>
+
+<a name="pio.port.sethigh" /><pre><code>pio.port.sethigh( port1, port2, ..., portn )</code></pre>
+<p>Set port(s) to all 1 (high)</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>port1</b> - the first port</li>
+  <li><b>port2 (optional)</b> - the second port</li>
+  <li><b>portn (optional)</b> - the <i>n</i>-th port</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="pio.port.setlow" /><pre><code>pio.port.setlow( port1, port2, ..., portn )</code></pre>
+<p>Set port(s) to all 0 (low)</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>port1</b> - the first port</li>
+  <li><b>port2 (optional)</b> - the second port</li>
+  <li><b>portn (optional)</b> - the <i>n</i>-th port</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+</div>
+$$FOOTER$$

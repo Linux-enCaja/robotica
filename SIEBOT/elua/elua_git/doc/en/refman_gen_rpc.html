@@ -1,0 +1,43 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>LuaRPC allows one to remotely control a lua state running on another machine or microcontroller.</p>   <p>It works by providing a <b>handle</b> to the client session which allows control over remote state. Functions can   be called in the remote environment and variables can be manipulated by treating the <b>handle</b> (representing    the remote global table) as if it were a local table.</p>   <p>In order to open a connection, it is necessary to specify the interface through wich the connection is made.   Currently the connections are limited to serial ports on the desktop side, and uart devices on the <b>eLua</b> side.   For a number of the connections below, a parameter labeled <b>transport_identifiers</b> is used to specify the port   to be used in a platform specific manner.:   <ul>     <li><b>eLua</b>: <b>transport_identifiers</b> = <b>uart_id</b>, <b>timer_id</b>       <ul>         <li><b>uart_id</b> - the ID of the serial port (as in the <a href="refman_gen_uart.html">uart module</a>). This uart must already be configured using <b>uart.setup</b> before being used in this module.</li>         <li><b>timer_id</b> - the ID of the timer for send/receive timeouts (as with send/receive functions in the <a href="refman_gen_uart.html">uart module</a>)</li>       </ul>     </li>     <li>Linux/Mac OS X luarpc: <b>transport_identifiers</b> = <b>uart_path</b>       <ul>         <li><b>uart_path</b> - the path to the serial port to use (e.g.: "/dev/ttyS0")</li>       </ul>     </li>   </ul>   </p>      <p>See <a href="using.html#rpc">Using <b>eLua</b></a> for a basic tutorial on getting started with the RPC module.</p>    <p><span class="warning">NOTE</span>: This module is considered experimental. It currently works over a    serial port with <b>eLua</b> targets and on desktop systems implementing POSIX serial communications (Linux, Mac OS X, etc).   </p>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="rpc.connect" /><pre><code>handle = rpc.connect( transport_identifiers )</code></pre>
+<p>Initiate connection from client to server.</p>
+<p><b>Arguments</b>: <b>transport_identifiers</b> - platform-specific serial port identification (see <a href="#overview">overview</a>)</p>
+<p><b>Returns</b>: <b>handle</b> - handle used to interact with the remote Lua state.  Usage styles are as follows:</p>     <table style="text-align: left; margin-left: 2em;">     <tbody>     <tr>       <th style="text-align: left; width: 20em;">Usage Style</th>       <th style="text-align: left;">Meaning</th>     </tr>     <tr>       <td><b>handle</b>.<b>remote_var</b> = <b>local_var</b></td>       <td>send contents of <b>local_var</b> to remote host and assign to <b>remote_var</b> (registered on global table). This also works where the destination variable is nested within tables.</td>     </tr>     <tr>       <td><b>local_var</b> = <b>handle</b>.<b>remote_var</b>:get()</td>       <td>get contents of <b>remote_var</b> from remote global table and assign to <b>local_var</b>.</td>     </tr>     <tr>       <td><b>val1</b>, <b>val2</b>, <b>valn</b> = <b>handle</b>.<b>remote_func</b>()</td>       <td>call <b>remote_func</b> on the server side, and return values to local state</td>     </tr>     <tr>       <td><b>helper</b> = <b>handle</b>.<b>remote_var</b></td>       <td>create a <b>helper</b> which points to <b>remote_var</b>, and can be used as shorthand later (e.g.: <b>helper</b>:get() would get the contents of the remote variable. If <b>remote_var</b> were a table with functions on it: <b>helper</b>.<b>funcname</b>() would call <b>funcname</b>, on table <b>remote_var</b> on the server, and return any results.)</td>     </tr>     </tbody>     </table>     
+
+<a name="rpc.close" /><pre><code>rpc.close( handle )</code></pre>
+<p>Close an active RPC session.</p>
+<p><b>Arguments</b>: <b>handle</b> - handle associated with the connection.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="rpc.server" /><pre><code>rpc.server( transport_identifiers )</code></pre>
+<p>Start a blocking/captive RPC server, which will wait for incoming connections.</p>
+<p><b>Arguments</b>: <b>transport_identifiers</b> - platform-specific serial port identification (see <a href="#overview">overview</a>)</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="rpc.on_error" /><pre><code>rpc.on_error( err_handler )</code></pre>
+<p>Define client-side error handler to deal with server-side error responses.</p>
+<p><b>Arguments</b>: <b>err_handler</b> - function to handle error messages. string error messages may be passed to this function.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="rpc.listen" /><pre><code>server_handle = rpc.listen( transport_identifiers )</code></pre>
+<p>Open a listener on transport and await incoming connections.</p>
+<p><b>Arguments</b>: <b>transport_identifiers</b> - platform-specific serial port identification (see <a href="#overview">overview</a>)</p>
+<p><b>Returns</b>: server handle to use with <a href="#rpc.peek">rpc.peek</a> and <a href="#rpc.dispatch">rpc.dispatch</a></p>
+
+<a name="rpc.peek" /><pre><code>data_available = rpc.peek( server_handle )</code></pre>
+<p>Check if data are available to read on transport.</p>
+<p><b>Arguments</b>: <b>server_handle</b> - handle to refer to server session, created by <a href="#rpc.listen">rpc.listen</a></p>
+<p><b>Returns</b>: <b>data_available</b> - 1 if data are available, 0 if data are unavailable</p>
+
+<a name="rpc.dispatch" /><pre><code>rpc.dispatch( server_handle )</code></pre>
+<p>Read transport and handle incoming command.</p>
+<p><b>Arguments</b>: <b>server_handle</b> - handle to refer to server session, created by <a href="#rpc.listen">rpc.listen</a></p>
+<p><b>Returns</b>: nothing.</p>
+
+</div>
+$$FOOTER$$

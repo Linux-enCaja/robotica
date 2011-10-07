@@ -1,0 +1,70 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This part of the platform interface groups functions related to the CPU and its functional modules (interrupt controller, memory controller and others).</p>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="platform_cpu_set_global_interrupts" /><pre><code>int platform_cpu_set_global_interrupts( int status );</code></pre>
+<p>Set or clear the global interrupt flag of the CPU.</p>
+<p><b>Arguments</b>: <b>status</b> - <b>PLATFORM_CPU_ENABLE</b> to set the global interrupt flag or <b>PLATFORM_CPU_DISABLE</b> to clear the global interrupt flag.</p>
+<p><b>Returns</b>: the previous value of the global interrupt flag (1 if set, 0 otherwise).</p>
+
+<a name="platform_cpu_get_global_interrupts" /><pre><code>int platform_cpu_get_global_interrupts();</code></pre>
+<p>Get the value of the global interrupt flag of the CPU.</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: the value of the global interrupt flag (1 if set, 0 otherwise).</p>
+
+<a name="platform_cpu_set_interrupt" /><pre><code>int platform_cpu_set_interrupt( elua_int_id id, elua_int_resnum resnum, int status );</code></pre>
+<p>Enable or disable a specific CPU interrupt for a given resource ID.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the interrupt ID, as defined in <i>platform_conf.h</i>.</li>
+  <li><b>resnum</b> - the resource ID.</li>
+  <li><b>status</b> - <b>PLATFORM_CPU_ENABLE to enable the interrupt or </b>PLATFORM_CPU_DISABLE$ to disable the interrupt.</li>
+</ul>
+<p><b>Returns</b>: </p>
+<ul>
+  <li><b>PLATFORM_INT_INVALID</b> - invalid interrupt ID</li>
+  <li><b>PLATFORM_INT_NOT_HANDLED</b> - this interrupt cannot be enabled/disabled</li>
+  <li><b>PLATFORM_INT_BAD_RESNUM</b> - this resource ID can't be used to enable/disable the interrupt</li>
+  <li>the previous status of the interrupt (1 if enabled, 0 otherwise) if no error occured.</li>
+</ul>
+
+<a name="platform_cpu_get_interrupt" /><pre><code>int platform_cpu_get_interrupt( elua_int_id id, elua_int_resnum resnum );</code></pre>
+<p>Get the interrupt enabled status of a specific CPU interrupt for a given resource ID.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the interrupt ID, as defined in <i>platform_conf.h</i></li>
+  <li><b>resnum</b> - the resource ID</li>
+</ul>
+<p><b>Returns</b>: </p>
+<ul>
+  <li><b>PLATFORM_INT_INVALID</b> - invalid interrupt ID</li>
+  <li><b>PLATFORM_INT_NOT_HANDLED</b> - this interrupt cannot be enabled/disabled</li>
+  <li><b>PLATFORM_INT_BAD_RESNUM</b> - this resource ID can't be used to enable/disable the interrupt</li>
+  <li>the status of the interrupt (1 if enabled, 0 otherwise) if no error occured.</li>
+</ul>
+
+<a name="platform_cpu_get_interrupt_flag" /><pre><code>int platform_cpu_get_interrupt_flag( elua_int_id id, elua_int_resnum resnum, int clear );</code></pre>
+<p>Return the interrupt pending flag of a specific CPU interrupt or a given resource ID and optionally clear it.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the interrupt ID, as defined in <i>platform_conf.h</i>.</li>
+  <li><b>resnum</b> - the resource ID.</li>
+  <li><b>clear</b> - 1 to clear the interrupt pending flag if it is set, 0 otherwise.</li>
+</ul>
+<p><b>Returns</b>: </p>
+<ul>
+  <li><b>PLATFORM_INT_INVALID</b> - invalid interrupt ID.</li>
+  <li><b>PLATFORM_INT_NOT_HANDLED</b> - this interrupt's flag cannot be read.</li>
+  <li><b>PLATFORM_INT_BAD_RESNUM</b> - this resource ID can't be used to read this interrupt's flag.</li>
+  <li>the value of the interrupt pending flag if no error occured.</li>
+</ul>
+
+<a name="platform_cpu_get_frequency" /><pre><code>u32 platform_cpu_get_frequency();</code></pre>
+<p>Get the CPU frequency.</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: the CPU <b>core</b> frequency (in Hertz).</p>
+
+</div>
+$$FOOTER$$

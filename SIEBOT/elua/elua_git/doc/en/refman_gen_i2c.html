@@ -1,0 +1,57 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This module contains functions for accessing the I2C interfaces of the <b>eLua</b> CPU.</p>   <p><span class="warning">IMPORTANT</span>: right now, only master I2C mode is implemented in <b>eLua</b>.</p>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="i2c.setup" /><pre><code>speed = i2c.setup( id, speed )</code></pre>
+<p>Setup the I2C interface.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the I2C interface.</li>
+  <li><b>speed</b> - the clock frequency of the I2C interface. It can be <b>i2c.FAST</b> (400KHz), <b>i2c.SLOW</b> (100KHz) or a number giving the required I2C bus clock speed in Hz.</li>
+</ul>
+<p><b>Returns</b>: the actual speed of the I2C interface.</p>
+
+<a name="i2c.start" /><pre><code>i2c.start( id )</code></pre>
+<p>Send a START on the specified I2C interface.</p>
+<p><b>Arguments</b>: <b>id</b> - the ID of the I2C interface.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="i2c.stop" /><pre><code>i2c.stop( id )</code></pre>
+<p>Send a STOP on the specified I2C interface.</p>
+<p><b>Arguments</b>: <b>id</b> - the ID of the I2C interface.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="i2c.address" /><pre><code>acked = i2c.address( id, address, direction )</code></pre>
+<p>Send an address on the I2C interface.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the I2C interface.</li>
+  <li><b>address</b> - the address.</li>
+  <li><b>direction</b> - <b>i2c.TRANSMITTER</b> if the master wants to send data, or <b>i2c.RECEIVER</b> if the master wants to receive data.</li>
+</ul>
+<p><b>Returns</b>: <b>true</b> if the address was acknowledged by an I2C slave, <b>false</b> otherwise.</p>
+
+<a name="i2c.write" /><pre><code>wrote = i2c.write( id, data1, [data2], ..., [datan] )</code></pre>
+<p>Writes data to a slave that has already acknowledged an <a href="#i2c.address">i2c.address</a> call.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the I2C interface.</li>
+  <li><b>data1</b> - the data to send. It can be either a number between 0 and 255, a string or a table (array) of numbers.</li>
+  <li><b>data2 (optional)</b> - the second data to send.</li>
+  <li><b>datan (optional)</b> - the <i>n</i>-th data to send.</li>
+</ul>
+<p><b>Returns</b>: the number of bytes actually written.</p>
+
+<a name="i2c.read" /><pre><code>data = i2c.read( id, numbytes )</code></pre>
+<p>Reads a number of bytes from a slave that has already acknowledged an <a href="#i2c.address">i2c.address</a> call. It acknowledges all the bytes received except for the last one.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the I2C interface.</li>
+  <li><b>numbytes</b> - the number of bytes to read.</li>
+</ul>
+<p><b>Returns</b>: a string with all the data read from the I2C interface.</p>
+
+</div>
+$$FOOTER$$

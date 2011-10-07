@@ -1,0 +1,122 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This module contains functions for accessing a TCP/IP network from <b>eLua</b>. It can be enabled only if networking support is also enabled   (see <a href="building.html">building</a> for details).</p>   <p><span class="warning">NOTE:</span> TCP/IP support is <b>experimental</b> in <b>eLua</b>. While functional, it's still slow and suffers from a number of   other issues. It will most likely change a lot in the future, so expect major changes to this module as well.</p>   <p><span class="warning">NOTE:</span> currently, only TCP sockets are supported by <b>eLua</b>.</p>
+
+<a name="structures" /><h3>Data structures, constants and types</h3>
+<a name="error_codes" /><pre><code>// <b>eLua</b> net error codes
+enum
+{
+  ELUA_NET_ERR_OK = 0,            // exported as <b>net.ERR_OK</b>
+  ELUA_NET_ERR_TIMEDOUT,          // exported as <b>net.ERR_TIMEDOUT</b>
+  ELUA_NET_ERR_CLOSED,            // exported as <b>net.ERR_CLOSED</b>
+  ELUA_NET_ERR_ABORTED,           // exported as <b>net.ERR_ABORTED</b>
+  ELUA_NET_ERR_OVERFLOW           // exported as <b>net.ERR_OVERFLOW</b>
+};</code></pre>
+<div class="docdiv">
+<p>These are the error codes defined by the <b>eLua</b> networking layer and they are also returned by a number of functions in this module.</p>
+</div>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="net.packip" /><pre><code>ip = net.packip( ip1, ip2, ip3, ip4 )</code></pre>
+<p>Returns an internal representation of an IP address that can be used with all function from the <b>net</b> module that expect an IP address argument. The IP is considered to be in the format <i>ip1.ip2.ip3.ip4</i>.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>ip1</b> - the first part of the IP address.</li>
+  <li><b>ip2</b> - the second part of the IP address.</li>
+  <li><b>ip3</b> - the third part of the IP address.</li>
+  <li><b>ip4</b> - the fourth part of the IP address.</li>
+</ul>
+<p><b>Returns</b>: An integer that encodes the IP address in an internal format.</p>
+
+<a name="net.packip" /><pre><code>ip = net.packip( 'ip' )</code></pre>
+<p>Returns an internal representation of an IP address that can be used with all function from the <b>net</b> module that expect an IP address argument. The IP is given as a string.</p>
+<p><b>Arguments</b>: <b>ip</b> - the IP address in string format.</p>
+<p><b>Returns</b>: An integer that encodes the IP address in an internal format.</p>
+
+<a name="net.unpackip" /><pre><code>ip1, ip2, ip3, ip4 = net.unpackip( ip, '*n' )</code></pre>
+<p>Returns an unpacked representation of an IP address encoded by <a href="#net.packip">net.packip</a>.</p>
+<p><b>Arguments</b>: <b>ip</b> - the encoded IP address.</p>
+<p><b>Returns</b>: </p>
+<ul>
+  <li><b>ip1</b> - the first part of the IP address.</li>
+  <li><b>ip2</b> - the second part of the IP address.</li>
+  <li><b>ip3</b> - the third part of the IP address.</li>
+  <li><b>ip4</b> - the fourth part of the IP address.</li>
+</ul>
+
+<a name="net.unpackip" /><pre><code>ip = net.unpackip( ip, '*s' )</code></pre>
+<p>Returns an unpacked representation of an IP address encoded by <a href="#net.packip">net.packip</a>.</p>
+<p><b>Arguments</b>: <b>ip</b> - the encoded IP address.</p>
+<p><b>Returns</b>: The IP address in string format.</p>
+
+<a name="net.lookup" /><pre><code>ip = net.lookup( hostname )</code></pre>
+<p>Does a DNS lookup.</p>
+<p><b>Arguments</b>: <b>hostname</b> - the name of the computer.</p>
+<p><b>Returns</b>: The IP address of the computer.</p>
+
+<a name="net.socket" /><pre><code>socket = net.socket( type )</code></pre>
+<p>Create a socket for TCP/IP communication.</p>
+<p><b>Arguments</b>: <b>type</b> - can be either <b>net.SOCK_STREAM</b> for TCP sockets or <b>net.SOCK_DGRAM</b> for UDP sockets (<span class="warning">not yet supported</span>).</p>
+<p><b>Returns</b>: The socket that will be used in subsequent operations.</p>
+
+<a name="net.close" /><pre><code>res = net.close( socket )</code></pre>
+<p>Close a socket.</p>
+<p><b>Arguments</b>: <b>socket</b> - the socket to close.</p>
+<p><b>Returns</b>: An error code, as defined <a href="#error_codes">here</a>.</p>
+
+<a name="net.connect" /><pre><code>err = net.connect( sock, ip, port )</code></pre>
+<p>Connect a socket to a remote system.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>sock</b> - a socket obtained from <a href="#net.socket">net.socket</a>.</li>
+  <li><b>ip</b> - the IP address obtained from <a href="#net.packip">net.packip</a>.</li>
+  <li><b>port</b> - the port to connecto to.</li>
+</ul>
+<p><b>Returns</b>: <b>err</b> - the error code, as defined <a href="#error_codes">here</a>.</p>
+
+<a name="net.accept" /><pre><code>socket, remoteip, err = net.accept( port, [timer_id, timeout] )</code></pre>
+<p>Accept a connection from a remote system with an optional timeout.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>port</b> - the port to wait for connections from the remote system.</li>
+  <li><b>timer_id (optional)</b> - the timer ID of the timer used to timeout the accept function after a specified time. If this is specified, <b>timeout</b> must also be specified.</li>
+  <li><b>timeout (optional)</b> - the timeout, in microseconds, after which the accept function returns if no connection was requested.</li>
+</ul>
+<p><b>Returns</b>: </p>
+<ul>
+  <li><b>socket</b> - the socket created after accepting the remote connection.</li>
+  <li><b>remoteip</b> - the IP of the remote system.</li>
+  <li><b>err</b> - an error code, as defined <a href="#error_codes">here</a>.</li>
+</ul>
+
+<a name="net.send" /><pre><code>res, err = net.send( sock, str )</code></pre>
+<p>Send data to a socket.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>sock</b> - the socket.</li>
+  <li><b>str</b> - the data to send.</li>
+</ul>
+<p><b>Returns</b>: </p>
+<ul>
+  <li><b>res</b> - the number of bytes actually sent or -1 for error.</li>
+  <li><b>err</b> - the error code, as defined <a href="#error_codes">here</a>.</li>
+</ul>
+
+<a name="net.recv" /><pre><code>res, err = net.recv( sock, format, [timer_id, timeout] )</code></pre>
+<p>Read data from a socket.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>sock</b> - the socket.</li>
+  <li><b>format</b> - how to read the data. This can be either: <ul>   <li><b>"*l"</b>: read a line (until the next '\n' character).</li>   <li><b>an integer</b>: read up to that many bytes.</li> </ul></li>
+  <li><b>timer_id (optional)</b> - the timer ID of the timer used to timeout the recv function after a specified time. If this is specified, <b>timeout</b> must also be specified.</li>
+  <li><b>timeout (optional)</b> - the timeout, in microseconds, after which the recv function returns if no connection was requested.</li>
+</ul>
+<p><b>Returns</b>: </p>
+<ul>
+  <li><b>res</b> - the number of bytes read.</li>
+  <li><b>err</b> - the error code, as defined <a href="#error_codes">here</a>.</li>
+</ul>
+
+</div>
+$$FOOTER$$

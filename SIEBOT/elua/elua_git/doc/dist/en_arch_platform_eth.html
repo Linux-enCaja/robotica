@@ -1,0 +1,799 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>eLua - eLua platform interface - Ethernet support</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="subject" content="eLua - Lua for the embedded world" />
+<meta name="Description" content="eLua stands for Embedded Lua and the project aims to offer the full set of features of the Lua Programming Language to the embedded world." />
+<meta name="Keywords" content="eLua, lua, embedded, ARM, Cortex-M3, AVR32, ARM7TDMI, microcontroller, mcu, programming, electronics, tools, development" />
+<link href="menu.css" rel="stylesheet" type="text/css" />
+<link href="style1.css" rel="stylesheet" type="text/css" />
+<link REL="SHORTCUT ICON" HREF="images/eLua_16x16.ico">
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+sfHover = function() {
+	var sfEls = document.getElementById("nav").getElementsByTagName("LI");
+	for (var i=0; i<sfEls.length; i++) {
+		sfEls[i].onmouseover=function() {
+			this.className+=" sfhover";
+		}
+		sfEls[i].onmouseout=function() {
+			this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+		}
+	}
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
+
+//--><!]]></script>
+</head>
+
+
+<body>
+<form method="get" action="http://www.google.com/search">   
+<div id="logo">
+  <table border="0" style="width: 100%;" cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="middle" style="width: 90px;"><img src="images/eLuaLogo.png" alt="eLua logo" class="logo_elua" /></td>
+      <td class="header_title" valign="middle">eLua - Embedded Lua</td> 
+      
+      <td style="width: 280px;" align="center" valign="middle">   
+        <table border="0" cellspacing="0" cellpadding="0">        
+        <tr style="height: 40px;">
+          <td colspan="2">
+            <input type="hidden" name="ie" value="utf-8" />
+            <input type="hidden" name="oe" value="utf-8" />
+            <input type="text" name="q" size="21" maxlength="255" value="" />
+          </td>
+          <td style="padding-left: 5px;">
+            <input type="submit" name="btnG" value="Search" style="height: 21px; font-size: x-small;" />
+            <input type="hidden" name="domains" value="http://www.eluaproject.net" />
+            <input type="hidden" name="sitesearch" value="http://www.eluaproject.net" />
+          </td>
+        </tr>
+        <tr>
+          <td align="center"><h6>Language:</h6></td>
+          <td align="center"><h6 class="selected"><img src="images/En.jpg" alt="en" style="border: 0;" /></h6></td>
+          <td align="center">&nbsp;</td>          
+        </tr>        
+        </table>       
+      </td>
+    </tr>
+  </table>
+</div>
+</form>
+
+<div id="nav">
+    <ul id="menu">
+      <li class="sep">eLua project</li>
+      <li><a href="en_overview.html" rel="s_2_overview"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Overview</a>
+        <ul id="s_2_overview">      
+          <li><a href="en_overview.html#whatis">What is eLua?</a></li>
+          <li><a href="en_overview.html#features">Features</a></li>
+          <li><a href="en_overview.html#audience">Audience</a></li>
+          <li><a href="en_overview.html#authors">Authors</a></li>
+          <li><a href="en_overview.html#contacts">Contacts</a></li>
+          <li><a href="en_overview.html#license">License</a></li>
+        </ul>
+     </li>
+      <li><a href="en_comunity.html" rel="s_3_comunity"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Community</a>
+        <ul id="s_3_comunity">      
+          <li><a href="en_comunity.html#lists">Discussion Lists</a></li>
+          <li><a href="en_comunity.html#forums">Forums</a></li>
+          <li><a href="en_comunity.html#irc">IRC</a></li>
+          <li><a href="en_comunity.html#twitter">Twitter</a></li>
+          <li><a href="en_comunity.html#userswiki">Wiki</a></li>
+          <li><a href="en_comunity.html#credits">Credits</a></li>
+          <li><a href="en_comunity.html#donations">Donations</a></li>
+        </ul>
+     </li>
+      <li><a href="en_news.html">News</a>
+     </li>
+      <li><a href="en_media.html">Media</a>
+     </li>
+      <li><a href="http://wiki.eluaproject.net">eLua Wiki</a>
+     </li>
+      <li><a href="http://builder.eluaproject.net">eLua Web builder</a>
+     </li>
+      <li><a href="http://tracker.eluaproject.net">eLua bug tracker</a>
+     </li>
+      <li><a href="en_status.html" rel="s_9_status"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Status</a>
+        <ul id="s_9_status">      
+          <li><a href="en_status.html">Supported platforms</a></li>
+          <li><a href="en_status.html#plat_modules">Modules per platform table</a></li>
+          <li><a href="en_status.html#gen_modules">Modules overview status</a></li>
+          <li><a href="en_status.html#roadmap">Roadmap</a></li>
+        </ul>
+     </li>
+      <li class="sep">Using eLua</li>
+      <li><a href="en_downloads.html" rel="s_11_downloads"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Downloads</a>
+        <ul id="s_11_downloads">      
+          <li><a href="en_downloads.html#binaries">Binaries</a></li>
+          <li><a href="en_downloads.html#source"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Source code</a>
+          <ul>
+            <li><a href="en_downloads.html#official">Official releases</a></li>
+            <li><a href="en_downloads.html#svnpublic">Bleeding edge (SVN)</a></li>
+            <li><a href="en_downloads.html#svndev">Developers</a></li>
+          </ul></li>
+          <li><a href="en_dl_old.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Old versions</a>
+          <ul>
+            <li><a href="en_dl_old.html#v070">0.7</a></li>
+            <li><a href="en_dl_old.html#v060">0.6</a></li>
+            <li><a href="en_dl_old.html#v050">0.5</a></li>
+            <li><a href="en_dl_old.html#v041">0.4.1</a></li>
+            <li><a href="en_dl_old.html#v04">0.4</a></li>
+            <li><a href="en_dl_old.html#v03">0.3</a></li>
+            <li><a href="en_dl_old.html#v02">0.2</a></li>
+            <li><a href="en_dl_old.html#v01">0.1</a></li>
+            <li><a href="en_versionhistory.html">Version history</a></li>
+          </ul></li>
+        </ul>
+     </li>
+      <li><a href="en_using.html" rel="s_12_using"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Generic info</a>
+        <ul id="s_12_using">      
+          <li><a href="en_using.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Using eLua</a>
+          <ul>
+            <li><a href="en_using.html#uart">Over UART</a></li>
+            <li><a href="en_using.html#tcpip">Over TCP/IP</a></li>
+            <li><a href="en_using.html#pc">On PC</a></li>
+            <li><a href="en_using.html#shell">The shell</a></li>
+            <li><a href="en_linenoise.html">Linenoise</a></li>
+            <li><a href="en_using.html#cross">Cross-compiling</a></li>
+            <li><a href="en_using.html#rpc">LuaRPC</a></li>
+            <li><a href="en_sermux.html">The serial multiplexer</a></li>
+          </ul></li>
+          <li><a href="en_examples.html">Code examples</a></li>
+          <li><a href="en_faq.html">FAQ</a></li>
+          <li><a href="en_filesystems.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />eLua file systems</a>
+          <ul>
+            <li><a href="en_arch_romfs.html">Read-Only FS in MCU Flash</a></li>
+            <li><a href="en_fatfs.html">R/W FAT FS in SD/MMC Cards</a></li>
+            <li><a href="en_arch_rfs.html">Remote file system (RFS)</a></li>
+          </ul></li>
+          <li><a href="en_inthandlers.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />eLua interrupt handlers</a>
+          <ul>
+            <li><a href="en_inthandlers.html">In Lua</a></li>
+            <li><a href="en_inthandlers.html#cints">In C</a></li>
+          </ul></li>
+          <li><a href="en_building.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Building eLua</a>
+          <ul>
+            <li><a href="en_building_unix.html">Building eLua in Linux</a></li>
+            <li><a href="en_building_win.html">Building eLua in Windows</a></li>
+          </ul></li>
+        </ul>
+     </li>
+      <li><a href="en_installing.html" rel="s_13_installing"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Platform info</a>
+        <ul id="s_13_installing">      
+          <li><a href="en_installing_at91sam7x.html">AT91SAM7x</a></li>
+          <li><a href="en_installing_avr32.html">AVR32</a></li>
+          <li><a href="en_installing_i386.html">i386</a></li>
+          <li><a href="en_installing_lm3s.html">LM3S</a></li>
+          <li><a href="en_installing_lpc2888.html">LPC2888</a></li>
+          <li><a href="en_installing_str7.html">STR7</a></li>
+          <li><a href="en_installing_str9.html">STR9</a></li>
+          <li><a href="en_installing_stm32.html">STM32</a></li>
+          <li><a href="en_installing_lpc2468.html">LPC2468</a></li>
+        </ul>
+     </li>
+      <li class="sep">eLua internals</li>
+      <li><a href="en_arch_overview.html" rel="s_15_arch_overview"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Overview</a>
+        <ul id="s_15_arch_overview">      
+          <li><a href="en_arch_overview.html#structure">eLua's Architecture</a></li>
+          <li><a href="en_arch_overview.html#common">Common code</a></li>
+          <li><a href="en_arch_overview.html#platform">Interface architecture</a></li>
+          <li><a href="en_arch_overview.html#boot">Booting eLua</a></li>
+          <li><a href="en_arch_overview.html#platforms">Platforms and ports</a></li>
+          <li><a href="en_arch_newport.html">Adding a new port</a></li>
+          <li><a href="en_arch_ints.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Implementing interrupts</a>
+          <ul>
+            <li><a href="en_arch_ints.html#intlist">Interrupt list</a></li>
+          </ul></li>
+        </ul>
+     </li>
+      <li><a class="current" href="en_arch_platform.html" rel="s_16_arch_platform"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Platform interface</a>
+        <ul id="s_16_arch_platform">      
+          <li><a href="en_arch_platform_adc.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />ADC</a>
+          <ul>
+            <li><a href="en_arch_platform_adc.html#overview">Overview</a></li>
+            <li><a href="en_arch_platform_adc.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_arch_platform_adc.html#platform_adc_exists">platform_adc_exists</a></li>
+              <li><a href="en_arch_platform_adc.html#platform_adc_get_maxval">platform_adc_get_maxval</a></li>
+              <li><a href="en_arch_platform_adc.html#platform_adc_set_smoothing">platform_adc_set_smoothing</a></li>
+              <li><a href="en_arch_platform_adc.html#platform_adc_set_blocking">platform_adc_set_blocking</a></li>
+              <li><a href="en_arch_platform_adc.html#platform_adc_is_done">platform_adc_is_done</a></li>
+              <li><a href="en_arch_platform_adc.html#platform_adc_set_timer">platform_adc_set_timer</a></li>
+              <li><a href="en_arch_platform_adc.html#platform_adc_set_clock">platform_adc_set_clock</a></li>
+              <li><a href="en_arch_platform_adc.html#platform_adc_check_timer_id">platform_adc_check_timer_id</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_arch_platform_can.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />CAN</a>
+          <ul>
+            <li><a href="en_arch_platform_can.html#overview">Overview</a></li>
+            <li><a href="en_arch_platform_can.html#structures"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Data structures</a>
+            <ul>
+              <li><a href="en_arch_platform_can.html#can_id_types">CAN ID types</a></li>
+            </ul></li>
+            <li><a href="en_arch_platform_can.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_arch_platform_can.html#platform_can_exists">platform_can_exists</a></li>
+              <li><a href="en_arch_platform_can.html#platform_can_setup">platform_can_setup</a></li>
+              <li><a href="en_arch_platform_can.html#platform_can_send">platform_can_send</a></li>
+              <li><a href="en_arch_platform_can.html#platform_can_recv">platform_can_recv</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_arch_platform_cpu.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />CPU</a>
+          <ul>
+            <li><a href="en_arch_platform_cpu.html#overview">Overview</a></li>
+            <li><a href="en_arch_platform_cpu.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_arch_platform_cpu.html#platform_cpu_set_global_interrupts">platform_cpu_set_global_interrupts</a></li>
+              <li><a href="en_arch_platform_cpu.html#platform_cpu_get_global_interrupts">platform_cpu_get_global_interrupts</a></li>
+              <li><a href="en_arch_platform_cpu.html#platform_cpu_set_interrupt">platform_cpu_set_interrupt</a></li>
+              <li><a href="en_arch_platform_cpu.html#platform_cpu_get_interrupt">platform_cpu_get_interrupt</a></li>
+              <li><a href="en_arch_platform_cpu.html#platform_cpu_get_interrupt_flag">platform_cpu_get_interrupt_flag</a></li>
+              <li><a href="en_arch_platform_cpu.html#platform_cpu_get_frequency">platform_cpu_get_frequency</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_arch_platform_eth.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Ethernet</a>
+          <ul>
+            <li><a href="en_arch_platform_eth.html#overview">Overview</a></li>
+            <li><a href="en_arch_platform_eth.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_arch_platform_eth.html#platform_eth_send_packet">platform_eth_send_packet</a></li>
+              <li><a href="en_arch_platform_eth.html#platform_eth_get_packet_nb">platform_eth_get_packet_nb</a></li>
+              <li><a href="en_arch_platform_eth.html#platform_eth_force_interrupt">platform_eth_force_interrupt</a></li>
+              <li><a href="en_arch_platform_eth.html#platform_eth_get_elapsed_time">platform_eth_get_elapsed_time</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_arch_platform_i2c.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />I2C</a>
+          <ul>
+            <li><a href="en_arch_platform_i2c.html#overview">Overview</a></li>
+            <li><a href="en_arch_platform_i2c.html#structures"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Data structures</a>
+            <ul>
+              <li><a href="en_arch_platform_i2c.html#i2c_speed">I2C speed</a></li>
+              <li><a href="en_arch_platform_i2c.html#i2c_transfer_direction">I2C transfer direction</a></li>
+            </ul></li>
+            <li><a href="en_arch_platform_i2c.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_arch_platform_i2c.html#platform_i2c_exists">platform_i2c_exists</a></li>
+              <li><a href="en_arch_platform_i2c.html#platform_i2c_setup">platform_i2c_setup</a></li>
+              <li><a href="en_arch_platform_i2c.html#platform_i2c_send_start">platform_i2c_send_start</a></li>
+              <li><a href="en_arch_platform_i2c.html#platform_i2c_send_stop">platform_i2c_send_stop</a></li>
+              <li><a href="en_arch_platform_i2c.html#platform_i2c_send_address">platform_i2c_send_address</a></li>
+              <li><a href="en_arch_platform_i2c.html#platform_i2c_send_byte">platform_i2c_send_byte</a></li>
+              <li><a href="en_arch_platform_i2c.html#platform_i2c_recv_byte">platform_i2c_recv_byte</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_arch_platform_ll.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Low-level</a>
+          <ul>
+            <li><a href="en_arch_platform_ll.html#overview">Overview</a></li>
+            <li><a href="en_arch_platform_ll.html#structures"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Data structures</a>
+            <ul>
+              <li><a href="en_arch_platform_ll.html#status_codes">Status codes</a></li>
+            </ul></li>
+            <li><a href="en_arch_platform_ll.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_arch_platform_ll.html#platform_init">platform_init</a></li>
+              <li><a href="en_arch_platform_ll.html#platform_get_first_free_ram">platform_get_first_free_ram</a></li>
+              <li><a href="en_arch_platform_ll.html#platform_get_last_free_ram">platform_get_last_free_ram</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_arch_platform_pio.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />PIO</a>
+          <ul>
+            <li><a href="en_arch_platform_pio.html#overview">Overview</a></li>
+            <li><a href="en_arch_platform_pio.html#structures"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Data structures</a>
+            <ul>
+              <li><a href="en_arch_platform_pio.html#pio_operations">PIO operations</a></li>
+              <li><a href="en_arch_platform_pio.html#pio_data_type">PIO data type</a></li>
+            </ul></li>
+            <li><a href="en_arch_platform_pio.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_arch_platform_pio.html#platform_pio_has_port">platform_pio_has_port</a></li>
+              <li><a href="en_arch_platform_pio.html#platform_pio_has_pin">platform_pio_has_pin</a></li>
+              <li><a href="en_arch_platform_pio.html#platform_pio_get_prefix">platform_pio_get_prefix</a></li>
+              <li><a href="en_arch_platform_pio.html#platform_pio_op">platform_pio_op</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_arch_platform_pwm.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />PWM</a>
+          <ul>
+            <li><a href="en_arch_platform_pwm.html#overview">Overview</a></li>
+            <li><a href="en_arch_platform_pwm.html#structures"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Data structures</a>
+            <ul>
+              <li><a href="en_arch_platform_pwm.html#pwm_operations">PWM operations</a></li>
+            </ul></li>
+            <li><a href="en_arch_platform_pwm.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_arch_platform_pwm.html#platform_pwm_exists">platform_pwm_exists</a></li>
+              <li><a href="en_arch_platform_pwm.html#platform_pwm_setup">platform_pwm_setup</a></li>
+              <li><a href="en_arch_platform_pwm.html#platform_pwm_start">platform_pwm_start</a></li>
+              <li><a href="en_arch_platform_pwm.html#platform_pwm_stop">platform_pwm_stop</a></li>
+              <li><a href="en_arch_platform_pwm.html#platform_pwm_set_clock">platform_pwm_set_clock</a></li>
+              <li><a href="en_arch_platform_pwm.html#platform_pwm_get_clock">platform_pwm_get_clock</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_arch_platform_spi.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />SPI</a>
+          <ul>
+            <li><a href="en_arch_platform_spi.html#overview">Overview</a></li>
+            <li><a href="en_arch_platform_spi.html#structures"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Data structures</a>
+            <ul>
+              <li><a href="en_arch_platform_spi.html#chip_select">Chip select</a></li>
+              <li><a href="en_arch_platform_spi.html#spi_mode">SPI mode</a></li>
+              <li><a href="en_arch_platform_spi.html#spi_data_type">SPI data type</a></li>
+            </ul></li>
+            <li><a href="en_arch_platform_spi.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_arch_platform_spi.html#platform_spi_exists">platform_spi_exists</a></li>
+              <li><a href="en_arch_platform_spi.html#platform_spi_setup">platform_spi_setup</a></li>
+              <li><a href="en_arch_platform_spi.html#platform_spi_send_recv">platform_spi_send_recv</a></li>
+              <li><a href="en_arch_platform_spi.html#platform_spi_select">platform_spi_select</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_arch_platform_timers.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Timers</a>
+          <ul>
+            <li><a href="en_arch_platform_timers.html#overview">Overview</a></li>
+            <li><a href="en_arch_platform_timers.html#structures"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Data structures</a>
+            <ul>
+              <li><a href="en_arch_platform_timers.html#timer_data_type">Timer data type</a></li>
+              <li><a href="en_arch_platform_timers.html#timer_operations">Timer operations</a></li>
+            </ul></li>
+            <li><a href="en_arch_platform_timers.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_arch_platform_timers.html#platform_timer_exists">platform_timer_exists</a></li>
+              <li><a href="en_arch_platform_timers.html#platform_timer_delay">platform_timer_delay</a></li>
+              <li><a href="en_arch_platform_timers.html#platform_s_timer_delay">platform_s_timer_delay</a></li>
+              <li><a href="en_arch_platform_timers.html#platform_timer_op">platform_timer_op</a></li>
+              <li><a href="en_arch_platform_timers.html#platform_s_timer_op">platform_s_timer_op</a></li>
+              <li><a href="en_arch_platform_timers.html#platform_timer_get_diff_us">platform_timer_get_diff_us</a></li>
+              <li><a href="en_arch_platform_timers.html#platform_timer_set_match_int">platform_timer_set_match_int</a></li>
+            </ul></li>
+            <li><a href="en_arch_platform_timers.html#virtual_timers">Virtual timers</a></li>
+          </ul></li>
+          <li><a href="en_arch_platform_uart.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />UART</a>
+          <ul>
+            <li><a href="en_arch_platform_uart.html#overview">Overview</a></li>
+            <li><a href="en_arch_platform_uart.html#structures"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Data structures</a>
+            <ul>
+              <li><a href="en_arch_platform_uart.html#uart_parity">UART parity</a></li>
+              <li><a href="en_arch_platform_uart.html#uart_stop_bits">UART stop bits</a></li>
+              <li><a href="en_arch_platform_uart.html#uart_timeout">UART timeout</a></li>
+              <li><a href="en_arch_platform_uart.html#virtual_uart_ids">Virtual UART IDs</a></li>
+              <li><a href="en_arch_platform_uart.html#flow_control_type">Flow control type</a></li>
+            </ul></li>
+            <li><a href="en_arch_platform_uart.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_arch_platform_uart.html#platform_uart_exists">platform_uart_exists</a></li>
+              <li><a href="en_arch_platform_uart.html#platform_uart_setup">platform_uart_setup</a></li>
+              <li><a href="en_arch_platform_uart.html#platform_uart_send">platform_uart_send</a></li>
+              <li><a href="en_arch_platform_uart.html#platform_s_uart_send">platform_s_uart_send</a></li>
+              <li><a href="en_arch_platform_uart.html#platform_uart_recv">platform_uart_recv</a></li>
+              <li><a href="en_arch_platform_uart.html#platform_s_uart_recv">platform_s_uart_recv</a></li>
+              <li><a href="en_arch_platform_uart.html#platform_uart_set_buffer">platform_uart_set_buffer</a></li>
+              <li><a href="en_arch_platform_uart.html#platform_uart_set_flow_control">platform_uart_set_flow_control</a></li>
+              <li><a href="en_arch_platform_uart.html#platform_s_uart_set_flow_control">platform_s_uart_set_flow_control</a></li>
+            </ul></li>
+          </ul></li>
+        </ul>
+      </li>
+      <li><a href="#" rel="s_17_"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />More information</a>
+        <ul id="s_17_">      
+          <li><a href="en_arch_con_term.html">Consoles and terminals</a></li>
+          <li><a href="en_arch_tcpip.html">TCP/IP in eLua</a></li>
+          <li><a href="en_arch_ltr.html">LTR (Lua Tiny RAM) in eLua</a></li>
+          <li><a href="en_elua_egc.html">EGC (Emergency GC) in eLua</a></li>
+          <li><a href="en_tut_bootpc.html">Booting on a PC</a></li>
+          <li><a href="en_tut_bootstick.html">Booting from a PenDrive</a></li>
+          <li><a href="en_tut_openocd.html">Using OpenOCD</a></li>
+          <li><a href="en_toolchains.html">eLua toolchains</a></li>
+          <li><a href="en_tchainbuild.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Building toolchains</a>
+          <ul>
+            <li><a href="en_tc_arm.html">ARM7 and ARM9</a></li>
+            <li><a href="en_tc_cortex.html">ARM Cortex-M3</a></li>
+            <li><a href="en_tc_386.html">i386</a></li>
+          </ul></li>
+          <li><a href="en_arch_coding.html">eLua coding style</a></li>
+        </ul>
+     </li>
+      <li class="sep">Reference Manual</li>
+      <li><a href="en_refman_gen.html" rel="s_19_refman_gen"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Generic modules</a>
+        <ul id="s_19_refman_gen">      
+          <li><a href="en_refman_gen_adc.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />adc</a>
+          <ul>
+            <li><a href="en_refman_gen_adc.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_adc.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_adc.html#adc.sample">adc.sample</a></li>
+              <li><a href="en_refman_gen_adc.html#adc.getsample">adc.getsample</a></li>
+              <li><a href="en_refman_gen_adc.html#adc.getsamples">adc.getsamples</a></li>
+              <li><a href="en_refman_gen_adc.html#adc.insertsamples">adc.insertsamples</a></li>
+              <li><a href="en_refman_gen_adc.html#adc.maxval">adc.maxval</a></li>
+              <li><a href="en_refman_gen_adc.html#adc.setclock">adc.setclock</a></li>
+              <li><a href="en_refman_gen_adc.html#adc.isdone">adc.isdone</a></li>
+              <li><a href="en_refman_gen_adc.html#adc.setblocking">adc.setblocking</a></li>
+              <li><a href="en_refman_gen_adc.html#adc.setsmoothing">adc.setsmoothing</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_refman_gen_bit.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />bit</a>
+          <ul>
+            <li><a href="en_refman_gen_bit.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_bit.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_bit.html#bit.bit">bit.bit</a></li>
+              <li><a href="en_refman_gen_bit.html#bit.isset">bit.isset</a></li>
+              <li><a href="en_refman_gen_bit.html#bit.isclear">bit.isclear</a></li>
+              <li><a href="en_refman_gen_bit.html#bit.set">bit.set</a></li>
+              <li><a href="en_refman_gen_bit.html#bit.clear">bit.clear</a></li>
+              <li><a href="en_refman_gen_bit.html#bit.bnot">bit.bnot</a></li>
+              <li><a href="en_refman_gen_bit.html#bit.band">bit.band</a></li>
+              <li><a href="en_refman_gen_bit.html#bit.bor">bit.bor</a></li>
+              <li><a href="en_refman_gen_bit.html#bit.bxor">bit.bxor</a></li>
+              <li><a href="en_refman_gen_bit.html#bit.lshift">bit.lshift</a></li>
+              <li><a href="en_refman_gen_bit.html#bit.rshift">bit.rshift</a></li>
+              <li><a href="en_refman_gen_bit.html#bit.arshift">bit.arshift</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_refman_gen_can.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />can</a>
+          <ul>
+            <li><a href="en_refman_gen_can.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_can.html#structures"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Data structures</a>
+            <ul>
+              <li><a href="en_refman_gen_can.html#can_id_types">CAN ID types</a></li>
+            </ul></li>
+            <li><a href="en_refman_gen_can.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_can.html#can.setup">can.setup</a></li>
+              <li><a href="en_refman_gen_can.html#can.send">can.send</a></li>
+              <li><a href="en_refman_gen_can.html#can.recv">can.recv</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_refman_gen_cpu.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />cpu</a>
+          <ul>
+            <li><a href="en_refman_gen_cpu.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_cpu.html#structures"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Data structures</a>
+            <ul>
+              <li><a href="en_refman_gen_cpu.html#cpu_constants">CPU constants</a></li>
+            </ul></li>
+            <li><a href="en_refman_gen_cpu.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_cpu.html#cpu.w32">cpu.w32</a></li>
+              <li><a href="en_refman_gen_cpu.html#cpu.r32">cpu.r32</a></li>
+              <li><a href="en_refman_gen_cpu.html#cpu.w16">cpu.w16</a></li>
+              <li><a href="en_refman_gen_cpu.html#cpu.r16">cpu.r16</a></li>
+              <li><a href="en_refman_gen_cpu.html#cpu.w8">cpu.w8</a></li>
+              <li><a href="en_refman_gen_cpu.html#cpu.r8">cpu.r8</a></li>
+              <li><a href="en_refman_gen_cpu.html#cpu.cli">cpu.cli</a></li>
+              <li><a href="en_refman_gen_cpu.html#cpu.sei">cpu.sei</a></li>
+              <li><a href="en_refman_gen_cpu.html#cpu.clock">cpu.clock</a></li>
+              <li><a href="en_refman_gen_cpu.html#cpu.set_int_handler">cpu.set_int_handler</a></li>
+              <li><a href="en_refman_gen_cpu.html#cpu.get_int_handler">cpu.get_int_handler</a></li>
+              <li><a href="en_refman_gen_cpu.html#cpu.get_int_flag">cpu.get_int_flag</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_refman_gen_elua.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />elua</a>
+          <ul>
+            <li><a href="en_refman_gen_elua.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_elua.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_elua.html#elua.egc_setup">elua.egc_setup</a></li>
+              <li><a href="en_refman_gen_elua.html#elua.save_history">elua.save_history</a></li>
+              <li><a href="en_refman_gen_elua.html#elua.version">elua.version</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_refman_gen_i2c.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />i2c</a>
+          <ul>
+            <li><a href="en_refman_gen_i2c.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_i2c.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_i2c.html#i2c.setup">i2c.setup</a></li>
+              <li><a href="en_refman_gen_i2c.html#i2c.start">i2c.start</a></li>
+              <li><a href="en_refman_gen_i2c.html#i2c.stop">i2c.stop</a></li>
+              <li><a href="en_refman_gen_i2c.html#i2c.address">i2c.address</a></li>
+              <li><a href="en_refman_gen_i2c.html#i2c.write">i2c.write</a></li>
+              <li><a href="en_refman_gen_i2c.html#i2c.read">i2c.read</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_refman_gen_net.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />net</a>
+          <ul>
+            <li><a href="en_refman_gen_net.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_net.html#structures"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Data structures</a>
+            <ul>
+              <li><a href="en_refman_gen_net.html#error_codes">Error codes</a></li>
+            </ul></li>
+            <li><a href="en_refman_gen_net.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_net.html#net.packip">net.packip</a></li>
+              <li><a href="en_refman_gen_net.html#net.packip">net.packip</a></li>
+              <li><a href="en_refman_gen_net.html#net.unpackip">net.unpackip</a></li>
+              <li><a href="en_refman_gen_net.html#net.unpackip">net.unpackip</a></li>
+              <li><a href="en_refman_gen_net.html#net.lookup">net.lookup</a></li>
+              <li><a href="en_refman_gen_net.html#net.socket">net.socket</a></li>
+              <li><a href="en_refman_gen_net.html#net.close">net.close</a></li>
+              <li><a href="en_refman_gen_net.html#net.connect">net.connect</a></li>
+              <li><a href="en_refman_gen_net.html#net.accept">net.accept</a></li>
+              <li><a href="en_refman_gen_net.html#net.send">net.send</a></li>
+              <li><a href="en_refman_gen_net.html#net.recv">net.recv</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_refman_gen_pack.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />pack</a>
+          <ul>
+            <li><a href="en_refman_gen_pack.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_pack.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_pack.html#pack.pack">pack.pack</a></li>
+              <li><a href="en_refman_gen_pack.html#pack.unpack">pack.unpack</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_refman_gen_pd.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />pd</a>
+          <ul>
+            <li><a href="en_refman_gen_pd.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_pd.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_pd.html#pd.platform">pd.platform</a></li>
+              <li><a href="en_refman_gen_pd.html#pd.cpu">pd.cpu</a></li>
+              <li><a href="en_refman_gen_pd.html#pd.board">pd.board</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_refman_gen_pio.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />pio</a>
+          <ul>
+            <li><a href="en_refman_gen_pio.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_pio.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_pio.html#pio.pin.setdir">pio.pin.setdir</a></li>
+              <li><a href="en_refman_gen_pio.html#pio.pin.setpull">pio.pin.setpull</a></li>
+              <li><a href="en_refman_gen_pio.html#pio.pin.setval">pio.pin.setval</a></li>
+              <li><a href="en_refman_gen_pio.html#pio.pin.getval">pio.pin.getval</a></li>
+              <li><a href="en_refman_gen_pio.html#pio.pin.sethigh">pio.pin.sethigh</a></li>
+              <li><a href="en_refman_gen_pio.html#pio.pin.setlow">pio.pin.setlow</a></li>
+              <li><a href="en_refman_gen_pio.html#pio.port.setdir">pio.port.setdir</a></li>
+              <li><a href="en_refman_gen_pio.html#pio.port.setpull">pio.port.setpull</a></li>
+              <li><a href="en_refman_gen_pio.html#pio.port.setval">pio.port.setval</a></li>
+              <li><a href="en_refman_gen_pio.html#pio.port.getval">pio.port.getval</a></li>
+              <li><a href="en_refman_gen_pio.html#pio.port.sethigh">pio.port.sethigh</a></li>
+              <li><a href="en_refman_gen_pio.html#pio.port.setlow">pio.port.setlow</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_refman_gen_pwm.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />pwm</a>
+          <ul>
+            <li><a href="en_refman_gen_pwm.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_pwm.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_pwm.html#pwm.setup">pwm.setup</a></li>
+              <li><a href="en_refman_gen_pwm.html#pwm.start">pwm.start</a></li>
+              <li><a href="en_refman_gen_pwm.html#pwm.stop">pwm.stop</a></li>
+              <li><a href="en_refman_gen_pwm.html#pwm.setclock">pwm.setclock</a></li>
+              <li><a href="en_refman_gen_pwm.html#pwm.getclock">pwm.getclock</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_refman_gen_rpc.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />rpc</a>
+          <ul>
+            <li><a href="en_refman_gen_rpc.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_rpc.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_rpc.html#rpc.connect">rpc.connect</a></li>
+              <li><a href="en_refman_gen_rpc.html#rpc.close">rpc.close</a></li>
+              <li><a href="en_refman_gen_rpc.html#rpc.server">rpc.server</a></li>
+              <li><a href="en_refman_gen_rpc.html#rpc.on_error">rpc.on_error</a></li>
+              <li><a href="en_refman_gen_rpc.html#rpc.listen">rpc.listen</a></li>
+              <li><a href="en_refman_gen_rpc.html#rpc.peek">rpc.peek</a></li>
+              <li><a href="en_refman_gen_rpc.html#rpc.dispatch">rpc.dispatch</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_refman_gen_spi.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />spi</a>
+          <ul>
+            <li><a href="en_refman_gen_spi.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_spi.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_spi.html#spi.setup">spi.setup</a></li>
+              <li><a href="en_refman_gen_spi.html#spi.sson">spi.sson</a></li>
+              <li><a href="en_refman_gen_spi.html#spi.ssoff">spi.ssoff</a></li>
+              <li><a href="en_refman_gen_spi.html#spi.write">spi.write</a></li>
+              <li><a href="en_refman_gen_spi.html#spi.readwrite">spi.readwrite</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_refman_gen_term.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />term</a>
+          <ul>
+            <li><a href="en_refman_gen_term.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_term.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_term.html#term.clrscr">term.clrscr</a></li>
+              <li><a href="en_refman_gen_term.html#term.clreol">term.clreol</a></li>
+              <li><a href="en_refman_gen_term.html#term.moveto">term.moveto</a></li>
+              <li><a href="en_refman_gen_term.html#term.moveup">term.moveup</a></li>
+              <li><a href="en_refman_gen_term.html#term.movedown">term.movedown</a></li>
+              <li><a href="en_refman_gen_term.html#term.moveleft">term.moveleft</a></li>
+              <li><a href="en_refman_gen_term.html#term.moveright">term.moveright</a></li>
+              <li><a href="en_refman_gen_term.html#term.getlines">term.getlines</a></li>
+              <li><a href="en_refman_gen_term.html#term.getcols">term.getcols</a></li>
+              <li><a href="en_refman_gen_term.html#term.print">term.print</a></li>
+              <li><a href="en_refman_gen_term.html#term.getcx">term.getcx</a></li>
+              <li><a href="en_refman_gen_term.html#term.getcy">term.getcy</a></li>
+              <li><a href="en_refman_gen_term.html#term.getchar">term.getchar</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_refman_gen_tmr.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />tmr</a>
+          <ul>
+            <li><a href="en_refman_gen_tmr.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_tmr.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_tmr.html#tmr.delay">tmr.delay</a></li>
+              <li><a href="en_refman_gen_tmr.html#tmr.read">tmr.read</a></li>
+              <li><a href="en_refman_gen_tmr.html#tmr.start">tmr.start</a></li>
+              <li><a href="en_refman_gen_tmr.html#tmr.gettimediff">tmr.gettimediff</a></li>
+              <li><a href="en_refman_gen_tmr.html#tmr.getmindelay">tmr.getmindelay</a></li>
+              <li><a href="en_refman_gen_tmr.html#tmr.getmaxdelay">tmr.getmaxdelay</a></li>
+              <li><a href="en_refman_gen_tmr.html#tmr.setclock">tmr.setclock</a></li>
+              <li><a href="en_refman_gen_tmr.html#tmr.getclock">tmr.getclock</a></li>
+              <li><a href="en_refman_gen_tmr.html#tmr.set_match_int">tmr.set_match_int</a></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_refman_gen_uart.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />uart</a>
+          <ul>
+            <li><a href="en_refman_gen_uart.html#overview">Overview</a></li>
+            <li><a href="en_refman_gen_uart.html#structures"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Data structures</a>
+            <ul>
+              <li><a href="en_refman_gen_uart.html#uart_constants">UART constants</a></li>
+            </ul></li>
+            <li><a href="en_refman_gen_uart.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+            <ul>
+              <li><a href="en_refman_gen_uart.html#uart.setup">uart.setup</a></li>
+              <li><a href="en_refman_gen_uart.html#uart.write">uart.write</a></li>
+              <li><a href="en_refman_gen_uart.html#uart.getchar">uart.getchar</a></li>
+              <li><a href="en_refman_gen_uart.html#uart.read">uart.read</a></li>
+              <li><a href="en_refman_gen_uart.html#uart.set_buffer">uart.set_buffer</a></li>
+              <li><a href="en_refman_gen_uart.html#uart.set_flow_control">uart.set_flow_control</a></li>
+            </ul></li>
+          </ul></li>
+        </ul>
+     </li>
+      <li><a href="en_refman_dep.html" rel="s_20_refman_dep" style="border-bottom-width: 0"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Platform modules</a>
+        <ul id="s_20_refman_dep">      
+          <li><a href="en_modules_lm3s.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />lm3s</a>
+          <ul>
+            <li><a href="en_refman_ps_lm3s_disp.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />disp</a>
+            <ul>
+              <li><a href="en_refman_ps_lm3s_disp.html#overview">Overview</a></li>
+              <li><a href="en_refman_ps_lm3s_disp.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+              <ul>
+                <li><a href="en_refman_ps_lm3s_disp.html#lm3s.disp.init">lm3s.disp.init</a></li>
+                <li><a href="en_refman_ps_lm3s_disp.html#lm3s.disp.enable">lm3s.disp.enable</a></li>
+                <li><a href="en_refman_ps_lm3s_disp.html#lm3s.disp.disable">lm3s.disp.disable</a></li>
+                <li><a href="en_refman_ps_lm3s_disp.html#lm3s.disp.on">lm3s.disp.on</a></li>
+                <li><a href="en_refman_ps_lm3s_disp.html#lm3s.disp.off">lm3s.disp.off</a></li>
+                <li><a href="en_refman_ps_lm3s_disp.html#lm3s.disp.clear">lm3s.disp.clear</a></li>
+                <li><a href="en_refman_ps_lm3s_disp.html#lm3s.disp.print">lm3s.disp.print</a></li>
+                <li><a href="en_refman_ps_lm3s_disp.html#lm3s.disp.draw">lm3s.disp.draw</a></li>
+              </ul></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_modules_str9.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />str9</a>
+          <ul>
+            <li><a href="en_refman_ps_str9_pio.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />pio</a>
+            <ul>
+              <li><a href="en_refman_ps_str9_pio.html#overview">Overview</a></li>
+              <li><a href="en_refman_ps_str9_pio.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+              <ul>
+                <li><a href="en_refman_ps_str9_pio.html#str9.pio.setpin">str9.pio.setpin</a></li>
+              </ul></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_modules_mbed.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />mbed</a>
+          <ul>
+            <li><a href="en_refman_ps_mbed_pio.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />pio</a>
+            <ul>
+              <li><a href="en_refman_ps_mbed_pio.html#overview">Overview</a></li>
+              <li><a href="en_refman_ps_mbed_pio.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+              <ul>
+                <li><a href="en_refman_ps_mbed_pio.html#mbed.pio.configpin">mbed.pio.configpin</a></li>
+              </ul></li>
+            </ul></li>
+          </ul></li>
+          <li><a href="en_modules_mizar32.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />mizar32</a>
+          <ul>
+            <li><a href="en_refman_ps_mizar32_lcd.html"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />lcd</a>
+            <ul>
+              <li><a href="en_refman_ps_mizar32_lcd.html#overview">Overview</a></li>
+              <li><a href="en_refman_ps_mizar32_lcd.html#funcs"><img class="rightarrowpointer" src="ddlevelsfiles/arrow-right.gif" alt="right arrow" />Functions</a>
+              <ul>
+                <li><a href="en_refman_ps_mizar32_lcd.html#mizar32.lcd.reset">mizar32.lcd.reset</a></li>
+                <li><a href="en_refman_ps_mizar32_lcd.html#mizar32.lcd.setup">mizar32.lcd.setup</a></li>
+                <li><a href="en_refman_ps_mizar32_lcd.html#mizar32.lcd.clear">mizar32.lcd.clear</a></li>
+                <li><a href="en_refman_ps_mizar32_lcd.html#mizar32.lcd.home">mizar32.lcd.home</a></li>
+                <li><a href="en_refman_ps_mizar32_lcd.html#mizar32.lcd.goto">mizar32.lcd.goto</a></li>
+                <li><a href="en_refman_ps_mizar32_lcd.html#mizar32.lcd.print">mizar32.lcd.print</a></li>
+                <li><a href="en_refman_ps_mizar32_lcd.html#mizar32.lcd.cursor">mizar32.lcd.cursor</a></li>
+                <li><a href="en_refman_ps_mizar32_lcd.html#mizar32.lcd.display">mizar32.lcd.display</a></li>
+                <li><a href="en_refman_ps_mizar32_lcd.html#mizar32.lcd.definechar">mizar32.lcd.definechar</a></li>
+              </ul></li>
+            </ul></li>
+          </ul></li>
+        </ul>
+     </li>
+    </ul>  
+</div>
+<div id="content">
+<div class="sectionbody">
+<a name="overview" /><h3>Overview</h3>
+<p><span style="color: red;"><b>NOTE</b>: TCP/IP support is experimental in <b>eLua</b>. Although functional, it's quite incomplete at the moment.</span></p>   <p>This part of the platform interface groups functions related to accessing the Ethernet interface (internal or external) of the CPU. Note that unlike the   other parts of the platform interface this one is dedicated for TCP/IP support and thus it does not correspond directly to an <b>eLua</b> module, although   the <a href="en_refman_gen_net.html">net module</a> is implemented with functions that rely on this part of the platform interface. Currently only   the <a href="http://www.sics.se/~adam/uip/index.php/Main_Page">uIP</a> TCP/IP stack is supported by <b>eLua</b>.</p>   <p>uIP is implemented in <b>eLua</b> using two hardware interrupts (that should be available on your platform): the Ethernet receive interrupt (to handle   incoming packets) and a timer interrupt (timers are used internally by uIP). However, the uIP main loop is only called from the Ethernet interrupt handler   in <b>eLua</b>, so in order to acknowledge the timer interrupt (as well as to provide some optimizations) a function that "forces" an Ethernet interrupt   must also be provided by the platform interface (see <a href="#platform_eth_force_interrupt">here</a> for details).</p>   <p>To put everything together, part of the Ethernet platform interface for the <b>lm3s</b> platform is given below:</p>   <pre class="code">u32 platform_eth_get_elapsed_time()
+  {
+    if( eth_timer_fired )
+    {
+      eth_timer_fired = 0;
+      return SYSTICKMS;
+    }
+    else
+      return 0;
+  }
+
+  void SysTickIntHandler()
+  {
+    // Handle virtual timers
+    cmn_virtual_timer_cb();
+
+    // Indicate that a SysTick interrupt has occurred.
+    eth_timer_fired = 1;
+
+    // Generate a fake Ethernet interrupt.  This will perform the actual work
+    // of incrementing the timers and taking the appropriate actions.
+    <b>platform_eth_force_interrupt();</b>
+  }
+
+  void EthernetIntHandler()
+  {
+    u32 temp;
+
+    // Read and Clear the interrupt.
+    temp = EthernetIntStatus( ETH_BASE, false );
+    EthernetIntClear( ETH_BASE, temp );
+
+    // Call the UIP main loop
+    <b>elua_uip_mainloop();</b>
+  }</pre>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="platform_eth_send_packet" /><pre><code>void platform_eth_send_packet( const void* src, u32 size )</code></pre>
+<p>Sends an Ethernet packet to the network</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>src</b> - start address of the Ethernet packet</li>
+  <li><b>size</b> - size of the Ethernet packet</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="platform_eth_get_packet_nb" /><pre><code>u32 platform_eth_get_packet_nb( void* buf, u32 maxlen );</code></pre>
+<p>Non-blocking read of an Ethernet packet from the network</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>buf</b> - start address of the receive buffer</li>
+  <li><b>maxlen</b> - maximum length of the Ethernet packet</li>
+</ul>
+<p><b>Returns</b>: the size of the read packet or 0 if no packet is available</p>
+
+<a name="platform_eth_force_interrupt" /><pre><code>void platform_eth_force_interrupt();</code></pre>
+<p>Force the Ethernet interrupt on the platform (see <a href="#overview">overview</a> above for details)</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="platform_eth_get_elapsed_time" /><pre><code>u32 platform_eth_get_elapsed_time();</code></pre>
+<p>Get the elapsed time (in ms) since the last invocation of the uIP main loop (<b>elua_uip_mainloop</b>, from which this function is called). See <a href="#overview">overview</a> for a possible    implementation of this function).</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: </p>
+<ul>
+  <li>0 if the uIP loop was called because of Ethernet activity, not because a timer expired</li>
+  <li>the Ethernet timer period in ms (which indicates timer activity)</li>
+</ul>
+
+</div>
+</div></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11834941-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

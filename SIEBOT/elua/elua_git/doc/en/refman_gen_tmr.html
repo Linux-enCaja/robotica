@@ -1,0 +1,71 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This module contains functions for accessing the hardware timers of the <b>eLua</b> CPU. In addition, if virtual timers are enabled    (see <a href="arch_platform_timers.html#virtual_timers">here</a> and <a href="building.html">here</a> for details), they can be used just like the "regular" (hardware)   timers with a single exception: you can't set the clock of a virtual timer (using <a href="#tmr.setclock">tmr.setclock</a>). To use virtual timers with this   module, specify <b>tmr.VIRTx</b> as the timer ID instead of a number. For example, if the <b>eLua</b> image was configured to support 4 virtual timers, they will   be available by using <b>tmr.VIRT0</b> to <b>tmr.VIRT3</b> as timer IDs.</p>   <p>All "time units" (delays, differences in time) in this module, as well as in other parts of <b>eLua</b> (timeouts) are expressed in microseconds. However,   please keep in mind that the actual timer resolution depends on many factors. For example, it's very likely that the <a href="#tmr.delay">tmr.delay</a> function won't   be able to delay for the exact amount you specify (in us), as the real delay depends on a number of variables, most notably the base clock of the timer    and the size of the timer counter register (32 bits on some platforms, 16 bits on most platforms, other values are less common). To ensure that the delay    you're requesting is achievable, use <a href="#tmr.getmindelay">tmr.getmindelay</a> and <a href="#tmr.getmaxdelay">tmr.getmaxdelay</a> to obtain the maximum and the minimum    achievable wait times on your timer, respectively. Even if your delay is within these limits, the <b>precision</b> of this function still varies a lot,    mainly as a function of the timer base clock.</p>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="tmr.delay" /><pre><code>tmr.delay( id, period )</code></pre>
+<p>Waits for the specified period, then returns.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>period</b> - the timer ID.</li>
+  <li><b>period</b> - how long to wait (in us).</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="tmr.read" /><pre><code>counter = tmr.read( id )</code></pre>
+<p>Reads the timer counter register.</p>
+<p><b>Arguments</b>: <b>id</b> - the timer ID.</p>
+<p><b>Returns</b>: The value of the timer counter register.</p>
+
+<a name="tmr.start" /><pre><code>counter = tmr.start( id )</code></pre>
+<p>Starts the specified timer.</p>
+<p><b>Arguments</b>: <b>id</b> - the timer ID.</p>
+<p><b>Returns</b>: The value of the timer counter register when the timer started.</p>
+
+<a name="tmr.gettimediff" /><pre><code>delta = tmr.gettimediff( id, counter1, counter2 )</code></pre>
+<p>Computes the time difference between two timer counter values (you can get counter values by calling <a href="#tmr.read">tmr.read</a> or <a href="#tmr.start">tmr.start</a>).</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the timer ID.</li>
+  <li><b>counter1</b> - the first counter value.</li>
+  <li><b>counter2</b> - the second counter value.</li>
+</ul>
+<p><b>Returns</b>: The time difference (in us).</p>
+
+<a name="tmr.getmindelay" /><pre><code>mindelay = tmr.getmindelay( id )</code></pre>
+<p>Get the minimum achievable delay on the specified timer.</p>
+<p><b>Arguments</b>: <b>id</b> - the timer ID.</p>
+<p><b>Returns</b>: The minimum achievable delay on the specified timer (in us).</p>
+
+<a name="tmr.getmaxdelay" /><pre><code>maxdelay = tmr.getmaxdelay( id )</code></pre>
+<p>Get the maximum achievable delay on the specified timer.</p>
+<p><b>Arguments</b>: <b>id</b> - the timer ID.</p>
+<p><b>Returns</b>: The maximum achievable delay on the specified timer (in us).</p>
+
+<a name="tmr.setclock" /><pre><code>clock = tmr.setclock( id, clock )</code></pre>
+<p>Set the timer clock (the clock used to increment the timer counter register).</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the timer ID.</li>
+  <li><b>clock</b> - the timer clock (in Hz).</li>
+</ul>
+<p><b>Returns</b>: The actual clock set on the timer (in Hz). Depending on the hardware, this might have a different value than the <b>clock</b> argument.  <b>NOTE:</b> this function does not work with virtual timers.</p>
+
+<a name="tmr.getclock" /><pre><code>clock = tmr.getclock( id )</code></pre>
+<p>Get the timer clock (the clock used to increment the timer counter register).</p>
+<p><b>Arguments</b>: <b>id</b> - the timer ID.</p>
+<p><b>Returns</b>: The timer clock (in Hz).</p>
+
+<a name="tmr.set_match_int" /><pre><code>tmr.set_match_int( id, period, type )</code></pre>
+<p>Setup the timer match interrupt. Only available if interrupt support is enabled, check <a href="inthandlers.html">here</a> for details.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the timer ID.</li>
+  <li><b>period</b> - the interrupt period in microseconds. Setting this to 0 disabled the timer match interrupt.</li>
+  <li><b>type</b> - <b>tmr.INT_ONESHOT</b> to generate a single interrupt after *period* microseconds, or <b>tmr.INT_CYCLIC</b> to generate interrupts every <b>period</b> microseconds.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+</div>
+$$FOOTER$$

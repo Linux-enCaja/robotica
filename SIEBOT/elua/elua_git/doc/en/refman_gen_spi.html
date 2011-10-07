@@ -1,0 +1,53 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This module contains functions for accessing the SPI interfaces of the <b>eLua</b> CPU.</p>   <p><span class="warning">IMPORTANT</span>: right now, only master SPI mode is implemented in <b>eLua</b>.</p>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="spi.setup" /><pre><code>clock = spi.setup( id, type, clock, cpol, cpha, databits )</code></pre>
+<p>Setup the SPI interface</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the SPI interface.</li>
+  <li><b>type</b> - SPI interface type, can be either <b>spi.MASTER</b> or <b>spi.SLAVE</b>. <b>NOTE: currently, only master SPI mode is supported</b>.</li>
+  <li><b>clock</b> - the clock of the SPI interface.</li>
+  <li><b>cpol</b> - the clock polarity (0 or 1).</li>
+  <li><b>cpha</b> - the clock phase (0 or 1).</li>
+  <li><b>databits</b> - the length of the SPI data word.</li>
+</ul>
+<p><b>Returns</b>: The actual clock set on the SPI interface. Depending on the hardware, this might have a different value than the <b>clock</b> parameter.</p>
+
+<a name="spi.sson" /><pre><code>spi.sson( id )</code></pre>
+<p>Select the SS line (Slave Select) of the SPI interface. This is only applicable for SPI interfaces with a dedicated SS pin.</p>
+<p><b>Arguments</b>: <b>id</b> - the ID of the SPI interface.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="spi.ssoff" /><pre><code>spi.ssoff( id )</code></pre>
+<p>Deselect the SS line (Slave Select) of the SPI interface. This is only applicable for SPI interfaces with a dedicated SS pin.</p>
+<p><b>Arguments</b>: <b>id</b> - the ID of the SPI interface.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="spi.write" /><pre><code>spi.write( id, data1, [data2], ..., [datan] )</code></pre>
+<p>Write one or more strings/numbers to the SPI interface.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the SPI interface.</li>
+  <li><b>data1</b> - the first string/number to send.</li>
+  <li><b>data2 (optional)</b> - the second string/number to send.</li>
+  <li><b>datan (optional)</b> - the <i>n</i>-th string/number to send.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="spi.readwrite" /><pre><code>spi.readwrite( id, data1, [data2], ..., [datan] )</code></pre>
+<p>Write one or more strings/numbers to the SPI interface and return the data read from the same interface.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the SPI interface.</li>
+  <li><b>data1</b> - the first string/number to send.</li>
+  <li><b>data2 (optional)</b> - the second string/number to send.</li>
+  <li><b>datan (optional)</b> - the <i>n</i>-th string/number to send.</li>
+</ul>
+<p><b>Returns</b>: An array with all the data read from the SPI interface.</p>
+
+</div>
+$$FOOTER$$

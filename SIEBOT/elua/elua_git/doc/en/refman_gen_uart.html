@@ -1,0 +1,79 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This module contains functions for accessing the serial ports (UARTs) of the <b>eLua</b> CPU.</p>
+
+<a name="structures" /><h3>Data structures, constants and types</h3>
+<a name="uart_constants" /><pre><code>uart.VUART0
+uart.VUART1
+.............
+uart.VUART7</code></pre>
+<div class="docdiv">
+<p>If <a href="sermux.html">virtual UART</a> support is enabled in <b>eLua</b> these constants are automatically defined to the IDs of the virtual UARTs in the system.</p>
+</div>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="uart.setup" /><pre><code>baud = uart.setup( id, baud, databits, parity, stopbits )</code></pre>
+<p>Setup the serial port. Note that you can't call this function for a <a href="sermux.html">virtual UART</a>.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the serial port</li>
+  <li><b>baud</b> - serial baud rate</li>
+  <li><b>databits</b> - number of data bits</li>
+  <li><b>parity</b> - parity type, can be either <b>uart.PAR_EVEN</b>, <b>uart.PAR_ODD</b> or <b>uart.PAR_NONE</b></li>
+  <li><b>stopbits</b> - the number of stop bits, can be either <b>uart.STOP_1</b> (for 1 stop bit), <b>uart.STOP_1_5</b> (for 1.5 stop bits) or <b>uart.STOP_2</b>  (for 2 stop bits)</li>
+</ul>
+<p><b>Returns</b>: The actual baud rate set on the serial port. Depending on the hardware, this might have a different value than the <b>baud</b> parameter</p>
+
+<a name="uart.write" /><pre><code>uart.write( id, data1, [data2], ..., [datan] )</code></pre>
+<p>Write one or more strings or 8-bit integers (raw data) to the serial port. If writing raw data, its value (represented by an integer) must be between 0 and 255.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the serial port.</li>
+  <li><b>data1</b> - the first string/8-bit integer to write.</li>
+  <li><b>data2 (optional)</b> - the second string/8-bit integer to write.</li>
+  <li><b>datan (optional)</b> - the <i>n</i>-th string/8-bit integer to write.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="uart.getchar" /><pre><code>str = uart.getchar( id, [timeout], [timer_id] )</code></pre>
+<p>Read a single character from the serial port</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the serial port</li>
+  <li><b>timeout (optional)</b> - timeout of the receive operation, can be either <b>uart.NO_TIMEOUT</b> or 0 for non-blocking operation, <b>uart.INF_TIMEOUT</b> for  blocking operation, or a positive number that specifies the timeout in microseconds (in this case, the <b>timer_id</b> parameter is also required). The default value of this argument is <b>uart.INF_TIMEOUT</b></li>
+  <li><b>timer_id (optional)</b> - the ID of the timer for the receive operation, needed if the <b>timeout</b> parameter specifies an actual timeout (that is, <b>timeout</b> is neither <b>uart.NO_TIMEOUT</b>, nor <b>uart.INF_TIMEOUT</b>).</li>
+</ul>
+<p><b>Returns</b>: The character read from the serial port as a string, or the empty string it timeout occured while waiting for the character.</p>
+
+<a name="uart.read" /><pre><code>str = uart.read( id, format, [timeout], [timer_id] )</code></pre>
+<p>Reads one or more characters from the serial port according to a format specifier</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the serial port</li>
+  <li><b>format</b> - format of data to read. This can be either: <ul>   <li><b>'*l'</b> - read until an end of line character (a <b>\n</b>) is found (the <b>\n</b> is not returned) or a timeout occurs.</li>   <li><b>'*n'</b> - read an integer. The integer can optionally have a sign. Reading continues until the first non-digit character is detected or a timeout occurs. This is the only case in which <b>read</b> returns a number instead of an integer.</li>   <li><b>'*s'</b> - read until a spacing character (like a space or a TAB) is found (the spacing character is not returned) or a timeout occurs.</li>   <li><b>a positive number</b> - read at most this many characters before returning (reading can stop earlier if a timeout occurs).</li> </ul></li>
+  <li><b>timeout (optional)</b> - timeout of the receive operation, can be either <b>uart.NO_TIMEOUT</b> or 0 for non-blocking operation, <b>uart.INF_TIMEOUT</b> for  blocking operation, or a positive number that specifies the inter-char timeout in microseconds (in this case, the <b>timer_id</b> parameter is also required). The default value of this argument is <b>uart.INF_TIMEOUT</b></li>
+  <li><b>timer_id (optional)</b> - the ID of the timer for the receive operation, needed if the <b>timeout</b> parameter specifies an actual timeout (that is, <b>timeout</b> is neither <b>uart.NO_TIMEOUT</b>, nor <b>uart.INF_TIMEOUT</b>).</li>
+</ul>
+<p><b>Returns</b>: The data read from the serial port as a string (or as a number if <b>format</b> is <b>'*n'</b>). If a timeout occures, only the data read before the timeout is returned. If the function times out while trying to read the first character, the empty string is returned</p>
+
+<a name="uart.set_buffer" /><pre><code>uart.set_buffer( id, bufsize )</code></pre>
+<p>Sets the size of the UART buffer. Note that calling this function with bufsize = 0 for a <a href="sermux.html">virtual UART</a> is not allowed.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the serial port</li>
+  <li><b>bufsize</b> - the size of the buffer (must be a power of 2) or 0 to disable buffering on the specified UART.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="uart.set_flow_control" /><pre><code>uart.set_flow_control( id, type )</code></pre>
+<p>Sets the flow control on the UART. Note that this function works only on physical ports, it will return an error if called on a virtual UART.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the serial port.</li>
+  <li><b>type</b> - the flow control type, it can be either <b>uart.FLOW_NONE</b> (no flow control), <b>uart.FLOW_RTS</b> for RTS flow control, <b>uart.FLOW_CTS</b> for CTS flow control or            <b>uart.FLOW_RTS + uart.FLOW_CTS</b> for full RTS/CTS flow control.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+</div>
+$$FOOTER$$

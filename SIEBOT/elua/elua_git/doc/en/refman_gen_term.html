@@ -1,0 +1,84 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This module contains functions for accessing ANSI-compatible terminals (and terminal emulators) from Lua.</p>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="term.clrscr" /><pre><code>term.clrscr()</code></pre>
+<p>Clear the screen</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="term.clreol" /><pre><code>term.clreol()</code></pre>
+<p>Clear from the current cursor position to the end of the line</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="term.moveto" /><pre><code>term.moveto( x, y )</code></pre>
+<p>Move the cursor to the specified coordinates</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>x</b> - the column (starting with 1)</li>
+  <li><b>y</b> - the line (starting with 1)</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="term.moveup" /><pre><code>term.moveup( delta )</code></pre>
+<p>Move the cursor up</p>
+<p><b>Arguments</b>: <b>delta</b> - number of lines to move the cursor up</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="term.movedown" /><pre><code>term.movedown( delta )</code></pre>
+<p>Move the cursor down</p>
+<p><b>Arguments</b>: <b>delta</b> - number of lines to move the cursor down</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="term.moveleft" /><pre><code>term.moveleft( delta )</code></pre>
+<p>Move the cursor left</p>
+<p><b>Arguments</b>: <b>delta</b> - number of columns to move the cursor left</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="term.moveright" /><pre><code>term.moveright( delta )</code></pre>
+<p>Move the cursor right</p>
+<p><b>Arguments</b>: <b>delta</b> - number of columns to move the cursor right</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="term.getlines" /><pre><code>numlines = term.getlines()</code></pre>
+<p>Get the number of lines in the terminal</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: The number of lines in the terminal</p>
+
+<a name="term.getcols" /><pre><code>numcols = term.getcols()</code></pre>
+<p>Get the number of columns in the terminal</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: The number of columns in the terminal</p>
+
+<a name="term.print" /><pre><code>term.print( [ x, y ], str1, [ str2, ..., strn ] )</code></pre>
+<p>Write one or more strings in the terminal</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>x (optional)</b> - write the string at this column. If <b>x</b> is specified, <b>y</b> must also be specified</li>
+  <li><b>y (optional)</b> - write the string at this line. If <b>y</b> is specified, <b>x</b> must also be specified</li>
+  <li><b>str1</b> - the first string to write</li>
+  <li><b>str2 (optional)</b> - the second string to write</li>
+  <li><b>strn (optional)</b> - the nth string to write</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="term.getcx" /><pre><code>cx = term.getcx()</code></pre>
+<p>Get the current column of the cursor</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: The column of the cursor</p>
+
+<a name="term.getcy" /><pre><code>cy = term.getcy()</code></pre>
+<p>Get the current line of the cursor</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: The line of the cursor</p>
+
+<a name="term.getchar" /><pre><code>ch = term.getchar( [ mode ] )</code></pre>
+<p>Read a char (a key press) from the terminal</p>
+<p><b>Arguments</b>: <b>mode (optional)</b> - terminal input mode. It can be either:</p>   <ul>     <li><b>term.WAIT</b> - wait for a key to be pressed, then return it. This is the default behaviour if <b>mode</b> is not specified. </li>     <li><b>term.NOWAIT</b> - if a key was pressed on the terminal return it, otherwise return -1.</li>   </ul>
+<p><b>Returns</b>: The char read from a terminal or -1 if no char is available. The 'char' can be an actual ASCII char, or a 'pseudo-char' which encodes special keys on   the keyboard. The list of the special chars and their meaning is given in the table below:</p> <table style="text-align: left; margin-left: 2em;"> <tbody> <tr>   <th style="text-align: left;">Key code</th>   <th style="text-align: left;">Meaning</th> </tr> <tr>   <td><b>term.KC_UP</b></td>   <td>the UP key on the terminal</td> </tr> <tr>   <td><b>term.KC_DOWN</b></td>   <td>the DOWN key on the terminal</td> </tr> <tr>   <td><b>term.KC_LEFT</b></td>   <td>the LEFT key on the terminal</td> </tr> <tr>   <td><b>term.KC_RIGHT</b></td>   <td>the RIGHT key on the terminal</td> </tr> <tr>   <td><b>term.KC_HOME</b></td>   <td>the HOME key on the terminal</td> </tr> <tr>   <td><b>term.KC_END</b></td>   <td>the END key on the terminal</td> </tr> <tr>   <td><b>term.KC_PAGEUP</b></td>   <td>the PAGE UP key on the terminal</td> </tr> <tr>   <td><b>term.KC_PAGEDOWN</b></td>   <td>the PAGE DOWN key on the terminal</td> </tr> <tr>   <td><b>term.KC_ENTER</b></td>   <td>the ENTER (CR) key on the terminal</td> </tr> <tr>   <td><b>term.KC_TAB</b></td>   <td>the TAB key on the terminal</td> </tr> <tr>   <td><b>term.KC_BACKSPACE</b></td>   <td>the BACKSPACE key on the terminal</td> </tr> <tr>   <td><b>term.KC_ESC</b></td>   <td>the ESC (escape) key on the terminal</td> </tr> </tbody> </table> 
+
+</div>
+$$FOOTER$$

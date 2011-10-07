@@ -1,0 +1,64 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This part of the platform interface groups functions related to the PWM channel(s) of the MCU.</p>
+
+<a name="structures" /><h3>Data structures, constants and types</h3>
+<a name="pwm_operations" /><pre><code>// PWM operations
+enum
+{
+  PLATFORM_PWM_OP_START,
+  PLATFORM_PWM_OP_STOP,
+  PLATFORM_PWM_OP_SET_CLOCK,
+  PLATFORM_PWM_OP_GET_CLOCK
+} </code></pre>
+<div class="docdiv">
+<p>This enum lists all the operations that can be executed on a given PWM channel.</p>
+</div>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="platform_pwm_exists" /><pre><code>int platform_pwm_exists( unsigned id );</code></pre>
+<p>Checks if the platform has the PWM channel specified as argument. Implemented in <i>src/common.c</i>, it uses the <b>NUM_PWM</b> macro that must be defined in the   platform's <b>platform_conf.h</b> file (see <a href="arch_overview.html#platforms">here</a> for details). For example:</p>   <pre class="code">#define NUM_PWM   4      <b>// The platform has 4 PWM channels</b></pre>
+<p><b>Arguments</b>: <b>id</b> - PWM channel ID</p>
+<p><b>Returns</b>: 1 if the specified PWM channel exists, 0 otherwise</p>
+
+<a name="platform_pwm_setup" /><pre><code>u32 platform_pwm_setup( unsigned id, u32 frequency, unsigned duty );</code></pre>
+<p>Sets up a PWM channel</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - PWM channel ID</li>
+  <li><b>frequency</b> - PWM channel frequency (in hertz)</li>
+  <li><b>duty</b> - PWM channel duty cycle, specified as percent (from 0 to 100). Note that some platform don't allow the full 0<i>-100</i> duty cycle</li>
+</ul>
+<p><b>Returns</b>: The actual frequency set on the PWM channel, which might differ from the <b>frequency</b> parameter, depeding on the hardware</p>
+
+<a name="platform_pwm_start" /><pre><code>u32 platform_pwm_start( unsigned id );</code></pre>
+<p>Starts PWM generation on the specified channel</p>
+<p><b>Arguments</b>: <b>id</b> - PWM channel ID</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="platform_pwm_stop" /><pre><code>u32 platform_pwm_stop( unsigned id );</code></pre>
+<p>Stops PWM generation on the specified channel</p>
+<p><b>Arguments</b>: <b>id</b> - PWM channel ID</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="platform_pwm_set_clock" /><pre><code>u32 platform_pwm_set_clock( unsigned id, u32 clock );</code></pre>
+<p>Sets the <b>base</b> clock of the specified PWM channel         (which will be used to generate the frequencies requested by          <a href="#platform_pwm_setup">platform_pwm_setup</a>) to <b>data</b> hertz.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - PWM channel ID</li>
+  <li><b>clock</b> - the desired frequency of the base clock.</li>
+</ul>
+<p><b>Returns</b>: The actual value of the base clock, which might be different         from <b>data</b> depending on the hardware</p>
+
+<a name="platform_pwm_get_clock" /><pre><code>u32 platform_pwm_get_clock( unsigned id );</code></pre>
+<p>Gets the <b>base</b> clock of the specified PWM channel</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - PWM channel ID</li>
+  <li><b>clock</b> - the desired frequency of the base clock.</li>
+</ul>
+<p><b>Returns</b>: the value of the base clock</p>
+
+</div>
+$$FOOTER$$

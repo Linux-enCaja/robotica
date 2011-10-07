@@ -1,0 +1,68 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This part of the platform interface groups functions related to the ADC interface(s) of the MCU.</p>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="platform_adc_exists" /><pre><code>int platform_adc_exists( unsigned id );</code></pre>
+<p>Checks if the platform has the hardware ADC specified as argument. Implemented in <i>src/common.c</i>, it uses the <b>NUM_ADC</b> macro that must be defined in the   platform's <b>platform_conf.h</b> file (see <a href="arch_overview.html#platforms">here</a> for details). For example:</p>   <pre class="code">#define NUM_ADC   1      <b>// The platform has 1 ADC interface</b></pre>
+<p><b>Arguments</b>: <b>id</b> - ADC interface ID</p>
+<p><b>Returns</b>: 1 if the ADC interface exists, 0 otherwise</p>
+
+<a name="platform_adc_get_maxval" /><pre><code>u32 platform_adc_get_maxval( unsigned id );</code></pre>
+<p>Gets the maximum conversion value the channel may supply (based on channel resolution)</p>
+<p><b>Arguments</b>: <b>id</b> - ADC channel ID</p>
+<p><b>Returns</b>: the maximum possible conversion value</p>
+
+<a name="platform_adc_set_smoothing" /><pre><code>u32 platform_adc_set_smoothing( unsigned id, u32 length );</code></pre>
+<p>Sets the length of the moving average smoothing filter</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - ADC channel ID</li>
+  <li><b>length</b> - the length of the moving average filter (must be a power of 2). If it is 1, the filter is disabled.</li>
+</ul>
+<p><b>Returns</b>: <b>PLATFORM_OK</b> if the operation succeeded, <b>PLATFORM_ERR</b> otherwise.</p>
+
+<a name="platform_adc_set_blocking" /><pre><code>void platform_adc_set_blocking( unsigned id, u32 mode );</code></pre>
+<p>Sets whether or not sample requests should block, waiting for additional samples</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - ADC channel ID</li>
+  <li><b>mode</b> - specifies whether or not sample requests block.  If 1, requests will block until enough samples are available or sampling has ended. If 0, requests will return immediately with up to the number of samples requested.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="platform_adc_is_done" /><pre><code>u32 platform_adc_is_done( unsigned id );</code></pre>
+<p>Checks whether sampling has completed</p>
+<p><b>Arguments</b>: <b>id</b> - ADC channel ID</p>
+<p><b>Returns</b>: 1 if sampling has completed, 0 if not</p>
+
+<a name="platform_adc_set_timer" /><pre><code>void platform_adc_set_timer( unsigned id, u32 timer );</code></pre>
+<p>Selects a timer to control the sampling frequency</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - ADC channel ID</li>
+  <li><b>timer</b> - the ID of the timer to use to control the sampling frequency.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="platform_adc_set_clock" /><pre><code>u32 platform_adc_set_clock( unsigned id, u32 freq );</code></pre>
+<p>Set the frequency of sample acquisition</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - ADC channel ID</li>
+  <li><b>freq</b> - the frequency of sample collection in Hz (number of samples per second). If 0, the timer is not used and samples are acquired as quickly as possible.</li>
+</ul>
+<p><b>Returns</b>: the actual sampling frequency that will be used, which might be different from the requested frequency, depending on the hardware</p>
+
+<a name="platform_adc_check_timer_id" /><pre><code>int platform_adc_check_timer_id( unsigned id, unsigned timer_id );</code></pre>
+<p>Checks whether a timer may be used with a particular ADC channel</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - ADC channel ID</li>
+  <li><b>timer_id</b> - Timer ID</li>
+</ul>
+<p><b>Returns</b>: 1 if the timer may be used to trigger the ADC channel, 0 if not</p>
+
+</div>
+$$FOOTER$$

@@ -1,0 +1,27 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This module is an interface to the core system and services of <b>eLua</b>. Some functions from this module can change the runtime behaviour of <b>eLua</b>, which in turn can lead to instability or unexpected program behaviour. <b>Use this module with care</b>.</p>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="elua.egc_setup" /><pre><code>elua.egc_setup( mode, [memlimit] )</code></pre>
+<p>Change the emergency garbage collector operation mode and memory limit (see <a href="elua_egc.html">here</a> for details).</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>mode</b> - the EGC operation mode. Can be either <b>elua.EGC_NOT_ACTIVE</b>, <b>elua.EGC_ON_ALLOC_FAILURE</b>, <b>elua.EGC_ON_MEM_LIMIT</b>, <b>elua.EGC_ALWAYS</b> or a combination between the last 3 modes in this list (they can be combined both with bitwise OR operations, using the <a href="refman_gen_bit.html">bit</a> module, or simply by adding them).</li>
+  <li><b>memlimit</b> - required only when <b>elua.EGC_ON_MEM_LIMIT</b> is specified in <b>mode</b>, specifies the EGC upper memory limit.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="elua.save_history" /><pre><code>elua.save_history( filename )</code></pre>
+<p>Save the interpreter line history. Only available if linenoise is enabled, check <a href="linenoise.html">here</a> for details.</p>
+<p><b>Arguments</b>: <b>filename</b> - the name of the file where the history will be saved. <b>CAUTION</b>: the file will be overwritten.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="elua.version" /><pre><code>version = elua.version()</code></pre>
+<p>Returns the current <b>eLua</b> version as a string</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: the <b>eLua</b> version currently running.</p>
+
+</div>
+$$FOOTER$$

@@ -1,0 +1,35 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This module allows for arbitrary packing of data into Lua strings and unpacking data from Lua strings. In this way, a string can be used to store data in a platform-independent  manner. It is based on the <a href="http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/#lpack">lpack</a> module from Luiz Henrique de Figueiredo (with some minor tweaks). </p> <p>Both methods of this module (<a href="#pack">pack</a> and <a href="#unpack">unpack</a>) use a <b>format string</b> to describe how to pack/unpack the data. The format string contains one or more <b>data specifiers</b>, each data specifier is applied to a single variable that must be packed/unpacked. The data specifier has the following general format:</p> <pre class="code">[endianness]&lt;format specifier&gt;[count]</pre> <p>where:</p> <ul>   <li><b>endianness</b> is an optional endian flags that specifies how the numbers that are to be packed/unpacked are stored in memory. It can be either:   <ol>     <li><b>'&lt;'</b> for little endian.</li>     <li><b>'&gt;'</b> for big endian.</li>     <li><b>'='</b> for native endian (the platform's endian order, default).</li>   </ol></li>   <li><b>format specifier</b> describes what kind of variable will be packed/unpacked. <b>The format specifier is case-sensitive</b>. The possible values of this parameter are summarized in the table below:   <p/>   <table class="table_center" style="margin-top: 4px; margin-bottom: 4px;">   <tbody>   <tr>     <th>Format specifier</th>     <th>Corresponding variable type</th>   </tr>   <tr>     <td>'z'</td>     <td>zero-terminated string</td>   </tr>     <tr>     <td>'p'   </td>     <td>string preceded by length byte</td>   </tr>     <tr>     <td>'P'   </td>     <td>string preceded by length word</td>   </tr>     <tr>     <td>'a'   </td>     <td>string preceded by length size_t</td>   </tr>     <tr>     <td>'A'   </td>     <td>string</td>   </tr>     <tr>     <td>'f'   </td>     <td>float</td>   </tr>     <tr>     <td>'d'   </td>     <td>double</td>   </tr>     <tr>     <td>'n'   </td>     <td>Lua number</td>   </tr>     <tr>     <td>'c'   </td>     <td>char</td>   </tr>     <tr>     <td>'b'   </td>     <td>byte = unsigned char</td>   </tr>     <tr>     <td>'h'   </td>     <td>short</td>   </tr>     <tr>     <td>'H'   </td>     <td>unsigned short</td>   </tr>     <tr>     <td>'i'   </td>     <td>int</td>   </tr>     <tr>     <td>'I'   </td>     <td>unsigned int</td>   </tr>     <tr>     <td>'l'   </td>     <td>long</td>   </tr>     <tr>     <td>'L'   </td>     <td>unsigned long</td>   </tr>     </tbody>   </table></li>   <li><b>count</b> is an optional counter for the <b>format specifier</b>. For example, <b>i5</b> instructs the code to pack/unpack 5 integer variables, as opposed to <b>i</b> that specifies a   single integer variable.</li> </ul>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="pack.pack" /><pre><code>packed = pack.pack( format, val1, val2, ..., valn )</code></pre>
+<p>Packs variables in a string.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>format</b> - format specifier (as described <a href="#overview">here</a>).</li>
+  <li><b>val1</b> - first variable to pack.</li>
+  <li><b>val2</b> - second variable to pack.</li>
+  <li><b>valn</b> - nth variable to pack.</li>
+</ul>
+<p><b>Returns</b>: <b>packed</b> - a string containing the packed representation of all variables according to the format.</p>
+
+<a name="pack.unpack" /><pre><code>nextpos, val1, val2, ..., valn = pack.unpack( string, format, [ init ] )</code></pre>
+<p>Unpacks a string</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>string</b> - the string to unpack.</li>
+  <li><b>format</b> - format specifier (as described <a href="#overview">here</a>).</li>
+  <li><b>init</b> - <b>(optional)</b> marks where in <b>string</b> the unpacking should start (1 if not specified).</li>
+</ul>
+<p><b>Returns</b>: </p>
+<ul>
+  <li><b>nextpos</b> - the position in the string after unpacking.</li>
+  <li><b>val1</b> - the first unpacked value.</li>
+  <li><b>val2</b> - the second unpacked value.</li>
+  <li><b>valn</b> - the nth unpacked value.</li>
+</ul>
+
+</div>
+$$FOOTER$$

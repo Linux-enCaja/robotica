@@ -1,0 +1,20 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This module contains functions for accessing the particular features of the PIO subsystem of the STR9 family of CPUs. This subsystem is very flexible, allowing things like   configurable output types (push-pull or open collector), multiple alternate functions for the PIO pins, and others. For a full description of the STR9 PIO module check the STR9 CPU   Reference manual, available from ST at <a href="http://www.st.com/mcu/devicedocs-STR912FAW44-101.html">this address</a>. Note that this module is a supplement of the platform independent    <a href="refman_gen_pio.html">pio</a> module, not a replacement. Use this module only for setting up the STR9 PIO pins, and the <a href="refman_gen_pio.html">pio</a> module for all the other PIO related operations.</p>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="str9.pio.setpin" /><pre><code>str9.pio.setpin( pin, direction, type, ipconnected, alternate )</code></pre>
+<p>Setup the pin.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>pin</b> - the pin, as encoded in the <a href="refman_gen_pio.html">pio</a> module.</li>
+  <li><b>direction</b> - the pin direction, can be either <b>str9.pio.INTPUT</b> or <b>str9.pio.OUTPUT</b>,</li>
+  <li><b>type</b> - the type of the pin, can be either <b>str9.pio.OUTPUT_PUSHPULL</b> (push-pull) or <b>str9.pio.OUTPUT_OC</b> (open collector).</li>
+  <li><b>ipconnected</b> - <b>true</b> to connect the pin to its corresponding peripheral(s), <b>false</b> otherwise.</li>
+  <li><b>alternate</b> - alternate pin function. Must be either <b>str9.pio.ALT_INPUT</b>, <b>str9.pio.ALT_OUTPUT1</b>, <b>str9.pio.ALT_OUTPUT2</b>, <b>str9.pio.ALT_OUTPUT3</b>.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+</div>
+$$FOOTER$$

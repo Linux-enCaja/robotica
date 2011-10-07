@@ -1,0 +1,144 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This part of the platform interface groups functions related to the UART interface(s) of the MCU.</p>
+
+<a name="structures" /><h3>Data structures, constants and types</h3>
+<a name="uart_parity" /><pre><code>// Parity
+enum
+{
+  PLATFORM_UART_PARITY_EVEN,
+  PLATFORM_UART_PARITY_ODD,
+  PLATFORM_UART_PARITY_NONE
+};</code></pre>
+<div class="docdiv">
+<p>Constants used to specify the UART parity mode.</p>
+</div>
+
+<a name="uart_stop_bits" /><pre><code>// Stop bits
+enum
+{
+  PLATFORM_UART_STOPBITS_1,
+  PLATFORM_UART_STOPBITS_1_5,
+  PLATFORM_UART_STOPBITS_2
+};</code></pre>
+<div class="docdiv">
+<p>Constants used to specify the number of UART stop bits.</p>
+</div>
+
+<a name="uart_timeout" /><pre><code>// "Infinite timeout" constant for recv
+#define PLATFORM_UART_INFINITE_TIMEOUT        (-1)</code></pre>
+<div class="docdiv">
+<p>This constant is used as a special timeout value (infinite timeout) in the UART functions that expect a timeout as argument.</p>
+</div>
+
+<a name="virtual_uart_ids" /><pre><code>// Virtual UART IDs
+#define SERMUX_SERVICE_ID_FIRST  0xD0
+#define SERMUX_SERVICE_ID_LAST   0xD7
+</code></pre>
+<div class="docdiv">
+<p>If <a href="sermux.html">virtual UART</a> support is enabled these constants define the IDs of the virtual UARTs in the system (defined in <i>inc/sermux.h</i>).</p>
+</div>
+
+<a name="flow_control_type" /><pre><code>// Flow control type
+#define PLATFORM_UART_FLOW_NONE               0
+#define PLATFORM_UART_FLOW_RTS                1
+#define PLATFORM_UART_FLOW_CTS                2
+</code></pre>
+<div class="docdiv">
+<p>Used to set the flow control type on a serial interface. These constans can be ORed together (<b>PLATFORM_UART_FLOW_RTS | PLATFORM_UART_FLOW_CTS</b>)</p>
+</div>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="platform_uart_exists" /><pre><code>int platform_uart_exists( unsigned id );</code></pre>
+<p>Checks if the platform has the hardware UART specified as argument. Implemented in <i>src/common.c</i>, it uses the <b>NUM_UART</b> macro that must be defined in the   platform's <b>platform_conf.h</b> file (see <a href="arch_overview.html#platforms">here</a> for details). For example:</p>   <pre class="code">#define NUM_UART   2      <b>// The platform has 2 UART interfaces</b></pre>
+<p><b>Arguments</b>: <b>id</b> - UART interface ID</p>
+<p><b>Returns</b>: 1 if the specified UART exists, 0 otherwise</p>
+
+<a name="platform_uart_setup" /><pre><code>u32 platform_uart_setup( unsigned id, u32 baud, int databits, int parity, int stopbits );</code></pre>
+<p>This function is used to initialize the parameters of the UART interface.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - UART interface ID.</li>
+  <li><b>baud</b> - baud rate.</li>
+  <li><b>databits</b> - number of databits (maximum 8).</li>
+  <li><b>parity</b> - parity type (can be either <b>PLATFORM_UART_PARITY_EVEN</b>, <b>PLATFORM_UART_PARITY_ODD</b> or <b>PLATFORM_UART_PARITY_NONE</b>, see <a href="#uart_parity">here</a>).</li>
+  <li><b>stopbits</b> - number of stop bits (can be either <b>PLATFORM_UART_STOPBITS_1</b>, <b>PLATFORM_UART_STOPBITS_1_5</b> or <b>PLATFORM_UART_STOPBITS_2</b>, see            <a href="#uart_stop_bits">here</a>).</li>
+</ul>
+<p><b>Returns</b>: the actual baud rate. Depending on the hardware, this may have a different value than the <b>baud</b> argument.</p>
+
+<a name="platform_uart_send" /><pre><code>void platform_uart_send( unsigned id, u8 data );</code></pre>
+<p>Send data to an UART interface. This is a blocking operation (it doesn't return until the data was sent).<br>       This function is "split" in two parts: a platform-independent part that is implemented in <i>src/common.c</i> and a platform-dependent part that must be implemented       by each platform in a function named <a href="#platform_s_uart_send">platform_s_uart_send</a>.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - UART interface ID.</li>
+  <li><b>data</b> - data to be sent.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="platform_s_uart_send" /><pre><code>void platform_s_uart_send( unsigned id, u8 data );</code></pre>
+<p>This is the platform-dependent part of <a href="#platform_uart_send">platform_uart_send</a>. It doesn't need to take care of <a href="sermux.html">virtual UARTs</a> or other system       configuration parameters, it just needs to instruct the CPU to send the data on the specified ID. This function will always be called with a physical uart ID.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - UART interface ID.</li>
+  <li><b>data</b> - data to be sent.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="platform_uart_recv" /><pre><code>int platform_uart_recv( unsigned id, unsigned timer_id, s32 timeout );</code></pre>
+<p>Receive data from the UART interface (blocking/non blocking with timeout/immediate).<br>   This function is "split" in two parts: a platform-independent part that is implemented in <i>src/common.c</i> and a platform-dependent part that must be implemented by each   platform in a function named <a href="#platform_s_uart_recv">platform_s_uart_recv</a>.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - UART interface ID.</li>
+  <li><b>timer_id</b> - the ID of the timer used in this operation (see <a href="arch_platform_timers.html">here</a> for details). See also the description of the <b>timeout</b> argument.</li>
+  <li><b>timeout</b> - specifies a timeout for the receive operation as follows:   <ul>     <li><b>timeout > 0</b>: the timer with the specified <b>timer_id</b> will be used to timeout the receive operation after <b>timeout</b> microseconds.</li>     <li><b>timeout = 0</b>: the function returns immediately regardless of data being available or not. <b>timer_id</b> is ignored.</li>     <li><b>timeout</b> = <a href="#uart_timeout">PLATFORM_UART_INFINITE_TIMEOUT</a>: the function waits indefinitely for UART data to be available and returns it. In this mode the function doesn't          time out, so <b>timer_id</b> is ignored.</li>   </ul></li>
+</ul>
+<p><b>Returns</b>: </p>
+<ul>
+  <li>if <b>timeout > 0</b> and data from the UART is available in <b>timeout</b> microseconds of less it is returned, otherwise -1 is returned</li>
+  <li>if <b>timeout = 0</b> and data from the UART is available when the function is called it is returned, otherwise -1 is returned</li>
+  <li>if <b>timeout</b> = <a href="#uart_timeout">PLATFORM_UART_INIFINITE_TIMEOUT</a> it returns the data read from the UART after it becomes available</li>
+</ul>
+
+<a name="platform_s_uart_recv" /><pre><code>int platform_s_uart_recv( unsigned id, s32 timeout );</code></pre>
+<p>This is the platform-dependent part of the UART receive function <a href="#platform_uart_recv">platform_uart_recv</a> and is in fact a "subset" of the full function    (thus being easier to implement by each platform in part). In particular, it never needs to deal with the <b>timeout &amp;gt; 0</b> case, which is handled by <a href="#platform_uart_recv">platform_uart_recv</a>.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - UART interface ID.</li>
+  <li><b>timeout</b> - specifies a timeout for the receive operation as follows:   <ul>     <li><b>timeout = 0</b>: the function returns immediately regardless of data being available or not.</li>     <li><b>timeout</b> = <a href="#uart_timeout">PLATFORM_UART_INFINITE_TIMEOUT</a>: the function waits indefinitely for UART data to be available and returns it.</li>   </ul></li>
+</ul>
+<p><b>Returns</b>: </p>
+<ul>
+  <li>if <b>timeout = 0</b> and data from the UART is available when the function is called it is returned, otherwise -1 is returned</li>
+  <li>if <b>timeout</b> = <a href="#uart_timeout">PLATFORM_UART_INIFINITE_TIMEOUT</a> it returns the data read from the UART after it becomes available</li>
+</ul>
+
+<a name="platform_uart_set_buffer" /><pre><code>int platform_uart_set_buffer( unsigned id, unsigned log2size );</code></pre>
+<p>Sets the buffer for the specified UART. This function is fully implemented in <i>src/common.c</i>.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - UART interface ID.</li>
+  <li><b>data</b> - the base 2 logarithm of the buffer size or 0 to disable buffering on the UART. Note that disabling buffering on a virtual UART is an invalid operation.</li>
+</ul>
+<p><b>Returns</b>: <b>PLATFORM_OK</b> if the operation succeeded, <b>PLATFORM_ERR</b> otherwise.</p>
+
+<a name="platform_uart_set_flow_control" /><pre><code>int platform_uart_set_flow_control( unsigned id, int type );</code></pre>
+<p>Sets the flow control type.<br>       This function is "split" in two parts: a platform independent part that is implemented in <i>src/common.c</i> and a platform-dependent part that must be implemented by each       platform in a function named <a href="#platform_s_uart_set_flow_control">platform_s_uart_set_flow_control</a>.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - UART interface ID.</li>
+  <li><b>type</b> - the desired flow control. It can be either <b>PLATFORM_UART_FLOW_NONE</b>, <b>PLATFORM_UART_FLOW_RTS</b> or <b>PLATFORM_UART_FLOW_CTS</b> or a bitwise combination of these constants         (see <a href="#flow_control_type">here</a> for details).</li>
+</ul>
+<p><b>Returns</b>: <b>PLATFORM_OK</b> if the operation succeeded, <b>PLATFORM_ERR</b> otherwise.</p>
+
+<a name="platform_s_uart_set_flow_control" /><pre><code>int platform_s_uart_set_flow_control( unsigned id, int type );</code></pre>
+<p>This is the platform-dependent part of the UART set flow control function <a href="#platform_uart_set_flow_control">platform_uart_set_flow_control</a> and is in fact a "subset" of the       full function (thus being easier to implement by each platform in part). In particular, it never needs to deal with virtual UARTs.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - UART interface ID.</li>
+  <li><b>type</b> - the desired flow control. It can be either <b>PLATFORM_UART_FLOW_NONE</b>, <b>PLATFORM_UART_FLOW_RTS</b> or <b>PLATFORM_UART_FLOW_CTS</b> or a bitwise combination of these constants         (see <a href="#flow_control_type">here</a> for details).</li>
+</ul>
+<p><b>Returns</b>: <b>PLATFORM_OK</b> if the operation succeeded, <b>PLATFORM_ERR</b> otherwise.</p>
+
+</div>
+$$FOOTER$$

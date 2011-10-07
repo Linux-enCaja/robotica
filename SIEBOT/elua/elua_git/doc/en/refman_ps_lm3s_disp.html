@@ -1,0 +1,61 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This module contains functions for working with the RIT OLED display on the Luminary Micro EKx-LM3S8962 boards and others.</p>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="lm3s.disp.init" /><pre><code>lm3s.disp.init( frequency )</code></pre>
+<p>Initialize the display.</p>
+<p><b>Arguments</b>: <b>frequency</b> - Number, the clock frequency (in Hertz) of the SSI interface used to control the display.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="lm3s.disp.enable" /><pre><code>lm3s.disp.enable( frequency )</code></pre>
+<p>Enable the display.</p>
+<p><b>Arguments</b>: <b>frequency</b> - Number, the clock frequency (in Hertz) of the SSI interface used to control the display.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="lm3s.disp.disable" /><pre><code>lm3s.disp.disable()</code></pre>
+<p>Disable the display.</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="lm3s.disp.on" /><pre><code>lm3s.disp.on()</code></pre>
+<p>Turn the display on.</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="lm3s.disp.off" /><pre><code>lm3s.disp.off()</code></pre>
+<p>Turn the display off.</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="lm3s.disp.clear" /><pre><code>lm3s.disp.clear()</code></pre>
+<p>Clear the display.</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="lm3s.disp.print" /><pre><code>lm3s.disp.print( str, x, y, col )</code></pre>
+<p>Write a string on the display. A 5x7 font (in a 6x8 cell) is used for drawing the text.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>str</b> - String, the text to be written on the display.</li>
+  <li><b>x</b> - Number [0-127], the horizonal position of the text (specified in columns).</li>
+  <li><b>y</b> - Number [0-95], the vertical position of the text (specified in lines).</li>
+  <li><b>col</b> - Number [0-15], the 4-bit gray scale value to be used for the text.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="lm3s.disp.draw" /><pre><code>lm3s.disp.draw( img, x, y, width, height )</code></pre>
+<p>Draw an image on the display.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>img</b> - String, the image to draw in string format.</li>
+  <li><b>x</b> - Number [0-127], the horizontal position of the image (specified in pixels).</li>
+  <li><b>y</b> - Number [0-95], the vertical position of the image (specified in pixels).</li>
+  <li><b>width</b> - Number [1-127], the width of the image.</li>
+  <li><b>height</b> - Number [1-95], the height of the image.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+</div>
+$$FOOTER$$

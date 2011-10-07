@@ -1,0 +1,58 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This part of the platform interface groups functions related to the CAN interface(s) of the MCU..</p>
+
+<a name="structures" /><h3>Data structures, constants and types</h3>
+<a name="can_id_types" /><pre><code>// <b>eLua</b> CAN ID types
+enum
+{
+  ELUA_CAN_ID_STD = 0,
+  ELUA_CAN_ID_EXT
+};
+</code></pre>
+<div class="docdiv">
+<p>Constants used to define whether the message ID is standard or extended..</p>
+</div>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="platform_can_exists" /><pre><code>int platform_can_exists( unsigned id );</code></pre>
+<p>Checks if the platform has the hardware CAN specified as argument. Implemented in <i>src/common.c</i>, it uses the <b>NUM_CAN</b> macro that must be defined in the   platform's <b>platform_conf.h</b> file (see <a href="arch_overview.html#platforms">here</a> for details). For example:</p>   <pre class="code">#define NUM_CAN   1      <b>// The platform has one CAN interface</b></pre>
+<p><b>Arguments</b>: <b>id</b> - CAN interface ID.</p>
+<p><b>Returns</b>: 1 if the CAN interface exists, 0 otherwise</p>
+
+<a name="platform_can_setup" /><pre><code>u32 platform_can_setup( unsigned id, u23 clock );</code></pre>
+<p>This function is used to initialize the CAN hardware and set the bus clock.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - CAN interface ID.</li>
+  <li><b>clock</b> - the clock of the CAN bus, maximum speed is generally 1000000 (1 Mbit)</li>
+</ul>
+<p><b>Returns</b>: the actual speed set for the CAN interface. Depending on the hardware, this may have a different value than the <b>clock</b> argument.</p>
+
+<a name="platform_can_send" /><pre><code>void platform_can_send( unsigned id, u32 canid, u8 idtype, u8 len, const u8 *data );</code></pre>
+<p>Send message over the CAN bus.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - CAN interface ID.</li>
+  <li><b>canid</b> - CAN identifier number.</li>
+  <li><b>canidtype</b> - identifier type as defined <a href="#can_id_types">here</a></li>
+  <li><b>len</b> - message length in bytes (8 or fewer)</li>
+  <li><b>message</b> - pointer to message, 8 or fewer bytes in length</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="platform_can_recv" /><pre><code>int platform_can_recv( unsigned id, u32 *canid, u8 *idtype, u8 *len, u8 *data );</code></pre>
+<p>Receive CAN bus message.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - CAN interface ID.</li>
+  <li><b>canid</b> - pointer where CAN identifier number will be written.</li>
+  <li><b>canidtype</b> - pointer where identifier type as defined <a href="#can_id_types">here</a> will be written</li>
+  <li><b>len</b> - pointer where message length in bytes will be written</li>
+  <li><b>message</b> - pointer to message buffer (8 bytes in lenth)</li>
+</ul>
+<p><b>Returns</b>: PLATFORM_OK for success, PLATFORM_UNDERFLOW for error. (see <a href="arch_platform_ll.html">here</a> for details)</p>
+
+</div>
+$$FOOTER$$

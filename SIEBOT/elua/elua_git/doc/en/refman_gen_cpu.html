@@ -1,0 +1,114 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This module deals with low-level access to CPU (and related modules) functionality, such as reading and writing memory, or    enabling and disabling interrupts. It also offers access to platform specific CPU-related constants using a special macro defined in the   platform's <b>platform_conf.h</b> file, as explained <a href="#cpu_constants">here</a>.</p>
+
+<a name="structures" /><h3>Data structures, constants and types</h3>
+<a name="cpu_constants" /><pre><code>cpu.INT_GPIOA
+cpu.INT_GPIOB
+.............
+cpu.INT_UDMA</code></pre>
+<div class="docdiv">
+<p><b>eLua</b> has a mechanism that lets the user export an unlimited number of constants to the <b>cpu</b> module. Although in theory any kind of constant can be exposed by this module, one should only use constants related to the CPU and its subsystems (as shown above, where a number of CPU specific interrupt masks are exposed to Lua using this mechanism). To use this mechanism, just declare the <b>PLATFORM_CPU_CONSTANTS</b> macro in your platform's <b>platform_conf.h</b> file and list all your constants as part of this macro, each enclosed in a special macro called <b>_C</b>. For example, to get the constants listed above declare your <b>PLATFORM_CPU_CONSTANTS</b> macro like this:</p> <pre class="code">#define PLATFORM_CPU_CONSTANTS\
+  _C( INT_GPIOA ),\
+  _C( INT_GPIOB ),\
+  .................
+  _C( INT_UDMA )</pre> <p>It's worth to note that adding more constants does not increase RAM usage, only Flash usage, so you can expose as many constants as you need without worrying about RAM consumption.<br /> This mechanism is also used to expose interrupt IDs to the CPU module, check <a href="inthandlers.html">here</a> for an overview of <b>eLua</b> interrupt support.</p>
+</div>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="cpu.w32" /><pre><code>cpu.w32( address, data )</code></pre>
+<p>Writes a 32-bit word to memory.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>address</b> - the memory address.</li>
+  <li><b>data</b> - the 32-bit data to write.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="cpu.r32" /><pre><code>data = cpu.r32( address )</code></pre>
+<p>Read a 32-bit word from memory.</p>
+<p><b>Arguments</b>: <b>address</b> - the memory address.</p>
+<p><b>Returns</b>: <b>data</b> - the 32-bit word read from memory.</p>
+
+<a name="cpu.w16" /><pre><code>cpu.w16( address, data )</code></pre>
+<p>Writes a 16-bit word to memory.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>address</b> - the memory address.</li>
+  <li><b>data</b> - the 16-bit data to write.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="cpu.r16" /><pre><code>data = cpu.r16( address )</code></pre>
+<p>Reads a 16-bit word from memory.</p>
+<p><b>Arguments</b>: <b>address</b> - the memory address.</p>
+<p><b>Returns</b>: <b>data</b> - the 16-bit word read from memory.</p>
+
+<a name="cpu.w8" /><pre><code>cpu.w8( address, data )</code></pre>
+<p>Writes a byte to memory.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>address</b> - the memory address.</li>
+  <li><b>data</b> - the byte to write.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="cpu.r8" /><pre><code>data = cpu.r8( address )</code></pre>
+<p>Reads a byte from memory.</p>
+<p><b>Arguments</b>: <b>address</b> - the memory address</p>
+<p><b>Returns</b>: <b>data</b> - the byte read from memory.</p>
+
+<a name="cpu.cli" /><pre><code>cpu.cli( [id], [resnum1], [resnum2], ... [resnumn])</code></pre>
+<p>Disables the global CPU interrupt flag if called without arguments, or a specific interrupt for a list of resource IDs if called with arguments.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the interrupt ID. If specified, at least one resource ID must also be specified.</li>
+  <li><b>resnum1</b> - the first resource ID, required if <b>id</b> is specified.</li>
+  <li><b>resnum2 (optional)</b> - the second resource ID.</li>
+  <li><b>resnumn (optional)</b> - the <b>n</b>-th resource ID.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="cpu.sei" /><pre><code>cpu.sei( [id], [resnum1], [resnum2], ... [resnumn])</code></pre>
+<p>Enables the global CPU interrupt flag if called without arguments, or a specific interrupt for a list of resource IDs if called with arguments.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the interrupt ID. If specified, at least one resource ID must also be specified.</li>
+  <li><b>resnum1</b> - the first resource ID, required if <b>id</b> is specified.</li>
+  <li><b>resnum2 (optional)</b> - the second resource ID.</li>
+  <li><b>resnumn (optional)</b> - the <b>n</b>-th resource ID.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="cpu.clock" /><pre><code>clock = cpu.clock()</code></pre>
+<p>Get the CPU core frequency.</p>
+<p><b>Arguments</b>: none.</p>
+<p><b>Returns</b>: <b>clock</b> - the CPU clock (in Hertz).</p>
+
+<a name="cpu.set_int_handler" /><pre><code>prev_handler = cpu.set_int_handler( id, handler )</code></pre>
+<p>Sets the Lua interrupt handler for interrupt <b>id</b> to function <b>handler</b>. <b>handler</b> can be <b>nil</b> to disable the interrupt handler. Only available if interrupt support is enabled, check <a href="inthandlers.html">here</a> for details.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the interrupt ID.</li>
+  <li><b>handler</b> - the Lua interrupt handler function, or <b>nil</b> to disable the Lua interrupt handler feature.</li>
+</ul>
+<p><b>Returns</b>: <b>prev_handler</b> - the previous interrupt handler for interrupt <b>id</b>, or <b>nil</b> if an interrupt handler was not set for interrupt <b>id</b>.</p>
+
+<a name="cpu.get_int_handler" /><pre><code>handler = cpu.get_int_handler( id )</code></pre>
+<p>Returns the Lua interrupt handler for interrupt <b>id</b></p>
+<p><b>Arguments</b>: <b>id</b> - the interrupt ID.</p>
+<p><b>Returns</b>: <b>handler</b> - the interrupt handler for interrupt <b>id</b>, or <b>nil</b> if an interrupt handler is not set for interrupt <b>id</b>.</p>
+
+<a name="cpu.get_int_flag" /><pre><code>cpu.get_int_flag( id, resnum, [clear] )</code></pre>
+<p>Get the interrupt pending flag of an interrupt ID/resource ID combination, and optionally clear the pending flag. Only available if interrupt support is enabled, check <a href="inthandlers.html">here</a> for details.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the interrupt ID.</li>
+  <li><b>resnum</b> - the resource ID.</li>
+  <li><b>clear (optional)</b> - <b>true</b> to clear the interrupt pending flag or <b>false</b> to leave the interrupt pending flag untouched. Defaults to <b>true</b> if not specified.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+</div>
+$$FOOTER$$

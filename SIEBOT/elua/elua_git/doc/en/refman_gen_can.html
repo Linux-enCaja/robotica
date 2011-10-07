@@ -1,0 +1,49 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This module contains functions for accessing the CAN interfaces of the <b>eLua</b> CPU</p>
+
+<a name="structures" /><h3>Data structures, constants and types</h3>
+<a name="can_id_types" /><pre><code>// <b>eLua</b> CAN ID types
+enum
+{
+  ELUA_CAN_ID_STD = 0,      // exported as <b>can.ID_STD</b>
+  ELUA_CAN_ID_EXT,          // exported as <b>can.ID_EXT</b>
+};</code></pre>
+<div class="docdiv">
+<p>These are the CAN identifier types supported by <b>eLua</b>. Standard identifiers are 11 bits in length, extended identifiers are 29 bits.</p>
+</div>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="can.setup" /><pre><code>clock = can.setup( id, clock )</code></pre>
+<p>Setup the CAN interface</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the CAN interface.</li>
+  <li><b>clock</b> - the clock of the CAN interface.</li>
+</ul>
+<p><b>Returns</b>: The actual clock set on the CAN interface. Depending on the hardware, this might have a different value than the <b>clock</b> parameter.</p>
+
+<a name="can.send" /><pre><code>can.send( id, canid, canidtype, message )</code></pre>
+<p>Send message over the CAN bus.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the CAN interface.</li>
+  <li><b>canid</b> - CAN identifier number.</li>
+  <li><b>canidtype</b> - identifier type as defined <a href="#can_id_types">here</a>.</li>
+  <li><b>message</b> - message in string format, 8 or fewer bytes.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="can.recv" /><pre><code>canid, canidtype, message = can.recv( id )</code></pre>
+<p>Receive CAN bus message.</p>
+<p><b>Arguments</b>: <b>id</b> - the ID of the CAN interface.</p>
+<p><b>Returns</b>: </p>
+<ul>
+  <li><b>canid</b> - CAN identifier number.</li>
+  <li><b>canidtype</b> - identifier type as defined <a href="#can_id_types">here</a>.</li>
+  <li><b>message</b> - message in string format, 8 or fewer bytes.</li>
+</ul>
+
+</div>
+$$FOOTER$$

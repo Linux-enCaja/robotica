@@ -1,0 +1,22 @@
+scons: Reading SConscript files ...
+Checking whether the C compiler works(cached) yes
+
+*********************************
+Compiling eLua ...
+CPU:             STM32F103RE
+Board:           ET-STM32
+Platform:        stm32
+Allocator:       newlib
+Boot Mode:       standard
+Target:          lua
+Toolchain:       arm-gcc
+ROMFS mode:      verbatim
+*********************************
+
+Building ROM File System...
+Done, total size is 1 bytes
+
+scons: done reading SConscript files.
+scons: Building targets ...
+arm-elf-gcc -o src/main.o -c -mcpu=cortex-m3 -mthumb -mlittle-endian -Os -fomit-frame-pointer -ffunction-sections -fdata-sections -fno-strict-aliasing -Wall -DCORTEX_M3 -DELUA_BOARD=ET-STM32 -DELUA_BOARD_ETSTM32 -DELUA_CPU=STM32F103RE -DELUA_CPU_STM32F103RE -DELUA_PLATFORM=STM32 -DELUA_PLATFORM_STM32 -DFORETSTM32 -DFORSTM32F103RE -DLUA_OPTIMIZE_MEMORY=2 -D__BUFSIZ__=128 -Dgcc -Iinc -Iinc/newlib -Iinc/remotefs -Isrc/platform -Isrc/lua -Isrc/modules -Isrc/platform/stm32 -Isrc/uip -Isrc/fatfs -Isrc/platform/stm32/FWLib/library/inc src/main.c
+scons: building terminated because of errors.

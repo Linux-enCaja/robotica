@@ -1,0 +1,80 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This module contains functions that access analog to digital converter (ADC) peripherals.</p>   <p>When utilizing this module, acquiring ADC data is a two step process: requesting sample conversions (using <b>adc.sample</b>) and extraction of conversion results from a conversion buffer (using <b>adc.getsample</b>, <b>adc.getsamples</b> or <b>adc.insertsamples</b>). Various configuration parameters are available to set conversion rate, how results are extracted from the buffer and how these results are processed prior to extraction.</p>   <p>This module can be utilized if the device in use has a supported ADC peripheral (see <a href="status.html">status</a> for details) and if ADC functionality is enabled at build time (see <a href="building.html">building</a>).</p> <p><span class="warning">IMPORTANT</span>: Platform support varies for this module (see <a href="status.html#plat_notes">status notes</a> for details) .   </p>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="adc.sample" /><pre><code>adc.sample( id, count )</code></pre>
+<p>Initiate conversion and buffering of samples on an ADC channel.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - ADC channel ID. Optionally, this may be a table containing a list of channel IDs (i.e.: {0, 2, 3}), allowing synchronization of acquisition. NOTE: This acceptance of mixed types is only for the sample function.</li>
+  <li><b>count</b> - number of samples to acquire and place in buffer.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="adc.getsample" /><pre><code>sample = adc.getsample( id )</code></pre>
+<p>Get a single conversion value from the buffer associated with a given channel.</p>
+<p><b>Arguments</b>: <b>id</b> - ADC channel ID.</p>
+<p><b>Returns</b>: <b>sample</b> - numeric value of conversion, or nil if sample was not available.</p>
+
+<a name="adc.getsamples" /><pre><code>samples = adc.getsamples( id, count )</code></pre>
+<p>Get multiple conversion values from the buffer associated with a given channel.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - ADC channel ID.</li>
+  <li><b>count</b> - optional parameter to indicate number of samples to return. If not included, all available samples are returned.</li>
+</ul>
+<p><b>Returns</b>: <b>samples</b> - table containing integer conversion values. If not enough samples are available, remaining indices will be nil.</p>
+
+<a name="adc.insertsamples" /><pre><code>adc.insertsamples( id, table, idx, count )</code></pre>
+<p>Get multiple conversion values from a channel's buffer, and write them into a table.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - ADC channel ID.</li>
+  <li><b>table</b> - table to write samples to. Values at <b>table</b>[<b>idx</b>] to <b>table</b>[<b>idx</b> + <b>count</b> -1] will be overwritten with samples (or nil if not enough samples are available).</li>
+  <li><b>idx</b> - first index to use in the table for writing samples.</li>
+  <li><b>count</b> - number of samples to return. If not enough samples are available (after blocking, if enabled) remaining values will be nil.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="adc.maxval" /><pre><code>maxval = adc.maxval( id )</code></pre>
+<p>Get the maximum value (corresponding to the maximum voltage) that can be returned on a given channel.</p>
+<p><b>Arguments</b>: <b>id</b> - ADC channel ID.</p>
+<p><b>Returns</b>: <b>maxval</b> - maximum integer conversion value (based on channel resolution)</p>
+
+<a name="adc.setclock" /><pre><code>clock = adc.setclock( id, clock, timer_id )</code></pre>
+<p>Set the frequency (number of samples per second) at which voltages will be converted into samples.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - ADC channel ID.</li>
+  <li><b>clock</b> - frequency to acquire samples at in Hz (number of samples per second), 0 to acquire as fast as possible.</li>
+  <li><b>timer_id</b> - Timer channel ID to use to control ADC conversion. <strong>Note:</strong> At this time, a timer selection will apply to all channels on a given ADC peripheral.</li>
+</ul>
+<p><b>Returns</b>: <b>clock</b> - actual acquisition frequency that was set</p>
+
+<a name="adc.isdone" /><pre><code>status = adc.isdone( id )</code></pre>
+<p>Check whether samples are still being acquired on a channel.</p>
+<p><b>Arguments</b>: <b>id</b> - ADC channel ID.</p>
+<p><b>Returns</b>: <b>status</b> - 1 if no samples are being acquired, 0 if samples are pending acquisition.</p>
+
+<a name="adc.setblocking" /><pre><code>adc.setblocking( id, mode )</code></pre>
+<p>Set whether or not functions that request converted samples should wait for requested samples or return immediately with what is available. If this function is not called, each channel starts in blocking mode.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - ADC channel ID.</li>
+  <li><b>mode</b> - 1 if requests to get samples should block until requested samples are available or sampling has completed, 0 to return immediately with available samples</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="adc.setsmoothing" /><pre><code>adc.setsmoothing( id, length )</code></pre>
+<p>Set the length of the moving average filter. When <b>length</b> is greater than 1, samples pulled from the conversion buffer will be averaged with the preceding <b>length</b> - 1 buffered values.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - ADC channel ID.</li>
+  <li><b>length</b> - number of preceding samples to include in moving average filter (must be a power of 2). If 1, filter is disabled. When enabled, a filter buffer is filled before the main conversion buffer, so that averages are always over the same number of samples.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+</div>
+$$FOOTER$$

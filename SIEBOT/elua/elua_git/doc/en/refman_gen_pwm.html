@@ -1,0 +1,42 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p>This module contains functions for accessing the PWM (Pulse Width Modulation) modules of the <b>eLua</b> CPU.</p>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="pwm.setup" /><pre><code>frequency = pwm.setup( id, frequency, duty )</code></pre>
+<p>Setup the PWM modules.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the PWM module.</li>
+  <li><b>frequency</b> - the frequency of the PWM module (in Hz).</li>
+  <li><b>duty</b> - the duty cycle of the PWM module given in percents. This must be an integer between 0 and 100. <b>NOTE</b>: depending on the hardware, some duty cycles (particulary 0 and 100) might not be achievable.</li>
+</ul>
+<p><b>Returns</b>: The actual frequency set on the PWM module. Depending on the hardware, this might have a different value than the <b>frequency</b> argument.</p>
+
+<a name="pwm.start" /><pre><code>pwm.start( id )</code></pre>
+<p>Start the PWM signal on the given module.</p>
+<p><b>Arguments</b>: <b>id</b> - the ID of the PWM module.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="pwm.stop" /><pre><code>pwm.stop( id )</code></pre>
+<p>Stop the PWM signal on the given module.</p>
+<p><b>Arguments</b>: <b>id</b> - the ID of the PWM module.</p>
+<p><b>Returns</b>: nothing.</p>
+
+<a name="pwm.setclock" /><pre><code>clock = pwm.setclock( id, clock )</code></pre>
+<p>Set the base clock of the given PWM module.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>id</b> - the ID of the PWM module.</li>
+  <li><b>clock</b> - the desired base clock.</li>
+</ul>
+<p><b>Returns</b>: The actual base clock set on the PWM module.  Depending on the hardware, this might have a different value than the <b>clock</b> argument.</p>
+
+<a name="pwm.getclock" /><pre><code>clock = pwm.getclock( id )</code></pre>
+<p>Get the base clock of the given PWM module.</p>
+<p><b>Arguments</b>: <b>id</b> - the ID of the PWM module.</p>
+<p><b>Returns</b>: The base clock of the PWM module.</p>
+
+</div>
+$$FOOTER$$

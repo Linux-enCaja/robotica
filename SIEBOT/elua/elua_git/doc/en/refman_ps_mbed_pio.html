@@ -1,0 +1,19 @@
+$$HEADER$$
+<a name="overview" /><h3>Overview</h3>
+<p><p>This module provide a function for accessing pin configuration  features on the LPC17xx family of CPUs, and provides provides a pin  mapping which corresponds to the pins and LEDs on the MBED platform.  The pin configuration function allows the user to reconfigure pin  function (as decribed in section 8.5 of the  <a href="http://ics.nxp.com/support/documents/microcontrollers/pdf/user.manual.lpc17xx.pdf">lpc17xx user manual</a>,  configure the pin as an open drain, and configure the  pin as pullup, pulldown or tristate.  Note that this module is a  supplement of the platform independent <a href="refman_gen_pio.html">pio</a>  module, not a replacement. Use this module only for setting up the  MBED PIO pins, and the <a href="refman_gen_pio.html">pio</a> module for all the  other PIO related operations.  Below is a subset of available pin functions:</p>  <ul> <li>PWM <table style="text-align: left; margin-left: 2em;"> <tbody> <tr>   <th>MBED Pin</th>   <th>ID</th>   <th>Function</th> </tr> </tr>   <td>LED1</th>   <td>1</th>   <td>FUNCTION_2</th> </tr> <tr>   <td>LED2</th>   <td>2</th>   <td>FUNCTION_2</th> </tr> <tr>   <td>LED3</th>   <td>3</th>   <td>FUNCTION_2</th> </tr> <tr>   <td>LED4</th>   <td>4</th>   <td>FUNCTION_2</th> </tr> <tr>   <td>p21</th>   <td>6</th>   <td>FUNCTION_1</th> </tr> <tr>   <td>p22</th>   <td>5</th>   <td>FUNCTION_1</th> </tr> <tr>   <td>p23</th>   <td>4</th>   <td>FUNCTION_1</th> </tr> <tr>   <td>p24</th>   <td>3</th>   <td>FUNCTION_1</th> </tr> <tr>   <td>p25</th>   <td>2</th>   <td>FUNCTION_1</th> </tr> <tr>   <td>p26</th>   <td>1</th>   <td>FUNCTION_1</th> </tr> </tbody> </table> </li>  <li>UART <table style="text-align: left; margin-left: 2em;"> <tbody> <tr>   <th>MBED Pin</th>   <th>ID</th>   <th>Function</th> </tr> <tr>   <td>p13</th>   <td>1 (TX)</th>   <td>FUNCTION_1</th> </tr> <tr>   <td>p14</th>   <td>1 (RX)</th>   <td>FUNCTION_1</th> </tr> <tr>   <td>p28</th>   <td>2 (TX)</th>   <td>FUNCTION_1</th> </tr> <tr>   <td>p27</th>   <td>2 (RX)</th>   <td>FUNCTION_1</th> </tr> </tbody> </table> </li> </ul>   <p>In addition, this module provides pin mapping as found on the mbed  board so that <b>mbed.pio.p5</b> through <b>mbed.pio.p30</b> map onto the mbed  pins as described in the  <a href="http://mbed.org/handbook/mbed-NXP-LPC1768">mbed handbook</a>. LED pins  are also usable, for example LED1 would correspond to  <b>mbed.pio.LED1</b>.</p></p>
+
+<a name="funcs" /><h3>Functions</h3>
+<div class="docdiv">
+<a name="mbed.pio.configpin" /><pre><code>mbed.pio.configpin( pin, function, mode, resistor)</code></pre>
+<p>Configure the pin.</p>
+<p><b>Arguments</b>: </p>
+<ul>
+  <li><b>pin</b> - the pin, as encoded in the <a href="refman_gen_pio.html">pio</a> or <b>mbed.pio</b> module.</li>
+  <li><b>function</b> - alternate pin function, Must be either <b>mbed.pio.FUNCTION_0 (default)</b>, <b>mbed.pio.FUNCTION_1</b>, <b>mbed.pio.FUNCTION_2</b>, or <b>mbed.pio.FUNCTION_3</b></li>
+  <li><b>mode</b> - open drain mode, can be either <b>mbed.pio.MODE_DEFAULT</b> (no open drain) or <b>mbed.pio.MODE_OD</b> (open drain).</li>
+  <li><b>resistor</b> - alternate pin function. Must be either <b>mbed.pio.RES_PULLUP</b> (default), <b>mbed.pio.RES_TRISTATE</b>, <b>mbed.pio.RES_PULLDOWN</b>.</li>
+</ul>
+<p><b>Returns</b>: nothing.</p>
+
+</div>
+$$FOOTER$$
