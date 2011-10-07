@@ -1,0 +1,18 @@
+Se debe adicionar lo siguiente a los archivos:
+
+src/platform/stm32/conf.py src/platform/stm32/conf.lua
+
+
+, '-Wl,--unresolved-symbols=ignore-all'
+
+en el archivo src/newlib/stubs.c
+
+
+/*
+int _gettimeofday_r( struct _reent *r, struct timeval *tv, void *tz )
+{
+  r->_errno = ENOSYS;
+  return -1;  
+}
+*/
+
