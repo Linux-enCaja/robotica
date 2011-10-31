@@ -1,0 +1,230 @@
+# EESchema Netlist Version 1.1 created  Mon 31 Oct 2011 08:35:58 AM COT
+(
+ ( /4EAE993A/4EAE9C5E pin_array_12x2  P8 CONN_12X2 {Lib=CONN_12X2}
+  (    1 3V3 )
+  (    2 3V3 )
+  (    3 GND )
+  (    4 GND )
+  (    5 ? )
+  (    6 ? )
+  (    7 ? )
+  (    8 ? )
+  (    9 ? )
+  (   10 ? )
+  (   11 ? )
+  (   12 ? )
+  (   13 ? )
+  (   14 ? )
+  (   15 ? )
+  (   16 ? )
+  (   17 ? )
+  (   18 ? )
+  (   19 ? )
+  (   20 ? )
+  (   21 ? )
+  (   22 ? )
+  (   23 ? )
+  (   24 ? )
+ )
+ ( /4EAE993A/4EAE9C5D pin_array_12x2  P9 CONN_12X2 {Lib=CONN_12X2}
+  (    1 ? )
+  (    2 ? )
+  (    3 ? )
+  (    4 ? )
+  (    5 ? )
+  (    6 ? )
+  (    7 ? )
+  (    8 ? )
+  (    9 ? )
+  (   10 ? )
+  (   11 ? )
+  (   12 ? )
+  (   13 ? )
+  (   14 ? )
+  (   15 ? )
+  (   16 ? )
+  (   17 ? )
+  (   18 ? )
+  (   19 ? )
+  (   20 ? )
+  (   21 ? )
+  (   22 ? )
+  (   23 GND )
+  (   24 3V3 )
+ )
+ ( /4EAE993A/4EAE9C5C pin_array_3x2  P11 CONN_3X2 {Lib=CONN_3X2}
+  (    1 ? )
+  (    2 ? )
+  (    3 ? )
+  (    4 ? )
+  (    5 ? )
+  (    6 ? )
+ )
+ ( /4EAE993A/4EAE9C5B pin_array_3x2  P12 CONN_3X2 {Lib=CONN_3X2}
+  (    1 ? )
+  (    2 ? )
+  (    3 ? )
+  (    4 ? )
+  (    5 ? )
+  (    6 ? )
+ )
+ ( /4EAE993A/4EAE9C5A pin_array_3x2  P13 CONN_3X2 {Lib=CONN_3X2}
+  (    1 ? )
+  (    2 ? )
+  (    3 ? )
+  (    4 ? )
+  (    5 ? )
+  (    6 ? )
+ )
+ ( /4EAE993A/4EAE9C56 pin_array_3x2  P14 CONN_3X2 {Lib=CONN_3X2}
+  (    1 ? )
+  (    2 ? )
+  (    3 ? )
+  (    4 ? )
+  (    5 ? )
+  (    6 ? )
+ )
+ ( /4EAE993A/4E85FA6B MHOLE  P10 CONN_1 {Lib=CONN_1}
+  (    1 /stamp/GND_CASE )
+ )
+ ( /4EAE993A/4E4BC769 MHOLE  P7 CONN_1 {Lib=CONN_1}
+  (    1 /stamp/GND_CASE )
+ )
+ ( /4EAE993A/4DA8A543 $noname  P4 CONN_4X2 {Lib=CONN_4X2}
+  (    1 ? )
+  (    2 ? )
+  (    3 ? )
+  (    4 ? )
+  (    5 ? )
+  (    6 ? )
+  (    7 VDD5V )
+  (    8 GND )
+ )
+ ( /4EAE993A/4E434391 MHOLE  P5 CONN_1 {Lib=CONN_1}
+  (    1 /stamp/GND_CASE )
+ )
+ ( /4EAE993A/4E4341F9 MHOLE  P3 CONN_1 {Lib=CONN_1}
+  (    1 /stamp/GND_CASE )
+ )
+ ( /4EAE993A/4E3D723D $noname  P1 CONN_12X2 {Lib=CONN_12X2}
+  (    1 3V3 )
+  (    2 3V3 )
+  (    3 3V3 )
+  (    4 3V3 )
+  (    5 ? )
+  (    6 GND )
+  (    7 ? )
+  (    8 ? )
+  (    9 GND )
+  (   10 ? )
+  (   11 ? )
+  (   12 ? )
+  (   13 ? )
+  (   14 ? )
+  (   15 GND )
+  (   16 GND )
+  (   17 ? )
+  (   18 ? )
+  (   19 ? )
+  (   20 ? )
+  (   21 ? )
+  (   22 ? )
+  (   23 GND )
+  (   24 ? )
+ )
+ ( /4EAE993A/4DA86970 $noname  P6 CONN_2 {Lib=CONN_2}
+  (    1 VDD5V )
+  (    2 GND )
+ )
+ ( /4EAE993A/4D7E9CC8 $noname  R30 1k {Lib=R}
+  (    1 GND )
+  (    2 N-000020 )
+ )
+ ( /4EAE993A/4D7E9C51 $noname  D4 LED {Lib=LED}
+  (    1 VDD5V )
+  (    2 N-000020 )
+ )
+ ( /4EAE993A/4D52FF9F CONN_12X2  P2 CONN_12X2 {Lib=CONN_12X2}
+  (    1 VDD5V )
+  (    2 ? )
+  (    3 ? )
+  (    4 ? )
+  (    5 ? )
+  (    6 ? )
+  (    7 ? )
+  (    8 ? )
+  (    9 ? )
+  (   10 ? )
+  (   11 ? )
+  (   12 ? )
+  (   13 ? )
+  (   14 ? )
+  (   15 ? )
+  (   16 ? )
+  (   17 ? )
+  (   18 ? )
+  (   19 VDD5V )
+  (   20 ? )
+  (   21 GND )
+  (   22 GND )
+  (   23 ? )
+  (   24 ? )
+ )
+)
+*
+{ Allowed footprints by component:
+$component R30
+ R?
+ SM0603
+ SM0805
+$endlist
+$component D4
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 1 "3V3" "3V3"
+ P1 1
+ P8 2
+ P1 2
+ P8 1
+ P1 3
+ P1 4
+ P9 24
+Net 2 "VDD5V" "VDD5V"
+ P4 7
+ P2 19
+ P6 1
+ D4 1
+ P2 1
+Net 8 "GND" "GND"
+ P1 9
+ P1 23
+ P1 15
+ P2 22
+ P2 21
+ P1 16
+ P6 2
+ P8 4
+ P9 23
+ P1 6
+ R30 1
+ P8 3
+ P4 8
+Net 20 "" ""
+ R30 2
+ D4 2
+Net 44 "/stamp/GND_CASE" "GND_CASE"
+ P5 1
+ P3 1
+ P10 1
+ P7 1
+}
+#End

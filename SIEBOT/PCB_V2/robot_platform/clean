@@ -1,0 +1,10 @@
+git rm *jpg
+git rm *bak
+git rm *savepcb*
+git rm *~
+
+rm *jpg
+rm *bak
+rm *savepcb*
+rm *~
+ 
