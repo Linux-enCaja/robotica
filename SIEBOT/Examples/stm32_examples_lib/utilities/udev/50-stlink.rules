@@ -1,0 +1,46 @@
+# This file watches for a STMicro ST-Link or STM32VLDiscovery board
+# and creates a device named /dev/stlink
+# See udev(7) for syntax.
+#
+# Written 2010,2011 by Donald Becker
+#
+# Cleaned up and modified by Philip Munts 2011
+#
+# $Id: 50-stlink.rules 3421 2011-11-26 12:21:11Z svn $
+#
+# The STLink on the Discovery has a USB ID 0483:3744 and presents itself
+# as a mass storage (i.e. SCSI) device.  The SCSI emulation is signficantly
+# broken, and the kernel spews error reports for a while until it is
+# accepted.  Further problems are encountered when if it is automatically
+# mounted.
+
+ACTION!="add|change", GOTO="stlink_rules_end"
+
+# ST-Link V1 (e.g. STM32 Value Line Discovery)
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3744", \
+  MODE:="0666", GROUP:="wheel"
+
+KERNEL=="sg[0-9]*", \
+  ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3744", \
+  NAME+="sg%n", SYMLINK+="stlink-v1", \
+  MODE="0666", GROUP:="wheel", \
+  ENV{UDISKS_PRESENTATION_HIDE}="1", \
+  ENV{UDISKS_PRESENTATION_NOPOLICY}="1", \
+  ENV{DM_UDEV_DISABLE_DISK_RULES_FLAG}="1"
+
+# ST-Link V2 (e.g. STM32L Discovery or STM32F4 Discovery)
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3748", \
+  SYMLINK+="stlink-v2" \
+  MODE:="0666", GROUP:="wheel"
+
+LABEL="stlink_rules_end"
+
+# Remove any device nodes or links we have created
+
+ACTION=="remove", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3744", \
+  RUN+="/bin/sh -c '/bin/rm /dev/stlink-v1'"
+
+ACTION=="remove", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3748", \
+  RUN+="/bin/sh -c '/bin/rm /dev/stlink-v2'"

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+ <HEAD>
+  <TITLE>Index of /MCU/Frameworks/ARM/utilities/stlink-v1-flash</TITLE>
+ </HEAD>
+ <BODY>
+<H1>Index of /MCU/Frameworks/ARM/utilities/stlink-v1-flash</H1>
+<PRE><IMG SRC="/icons/blank.gif" ALT="     "> Name                    Size  
+<HR>
+<IMG SRC="/icons/back.gif" ALT="[DIR]"> <A HREF="/MCU/Frameworks/ARM/utilities/">Parent Directory</A>            -  
+<IMG SRC="/icons/unknown.gif" ALT="[   ]"> <A HREF="Makefile">Makefile</A>                   1k  
+<IMG SRC="/icons/c.gif" ALT="[   ]"> <A HREF="stlink-v1-flash.c">stlink-v1-flash.c</A>         51k  
+</PRE><HR>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<meta name="generator" content=
+"HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org">
+<title>ST-LINK Utility for Linux</title>
+</head>
+<body>
+<h1>ST-LINK Utility for Linux</h1>
+<p>The STM32 Value Line Discovery board contains a secondary MCU programmed
+with the ST-LINK module code. The <tt>stlink-v1-flash</tt> program here may be used to
+flash the target MCU from Linux. It came from <a href=
+"http://code.google.com/p/arm-utilities/">here</a>.</p>
+<pre>
+Usage: stlink-v1-flash /dev/stlink-v1 <command> ...
+
+Commands are:
+  info version blink
+  debug reg<regnum> wreg<regnum>=<value> regs reset run step status
+  erase=<addr> erase=all
+  read<memaddr> write<memaddr>=<val>
+  flash:r:<file> flash:w:<file> flash:v:<file>
+
+Note: The STLink firmware does a flawed job of pretending to be a USB
+ storage devices.  It may take several minutes after plugging in before
+ it is usable.
+ To speed up the process unplug the STLink and do:
+sudo modprobe -r usb-storage && 
+sudo modprobe usb-storage quirks=483:3744:lrwsro
+</pre>
+<p>The ST-LINK module emulates a USB mass storage device, but does so in a
+very buggy and imperfect fashion. For a more detailed discussion, read <a href=
+"http://comments.gmane.org/gmane.linux.usb.general/34815">here</a>.</p>
+<hr>
+Questions or comments to Philip Munts <a href=
+"mailto:phil@munts.net">phil@munts.net</a>
+<p><i>$Id: README.html 3273 2011-11-09 11:28:13Z svn $</i></p>
+<p>I am available for custom system development (hardware and software) of
+products using the STM32F100R or other microcontrollers.</p>
+</body>
+</html>
+</BODY></HTML>
