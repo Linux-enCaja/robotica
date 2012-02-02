@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 06 Oct 2011 07:47:42 AM COT
+EESchema Schematic File Version 2  date Sat 21 Jan 2012 09:46:46 PM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -64,7 +64,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 5
 Title ""
-Date "6 oct 2011"
+Date "22 jan 2012"
 Rev ""
 Comp ""
 Comment1 ""

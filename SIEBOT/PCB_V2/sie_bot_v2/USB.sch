@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 06 Oct 2011 07:47:42 AM COT
+EESchema Schematic File Version 2  date Sat 21 Jan 2012 09:46:46 PM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -64,7 +64,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 5 5
 Title ""
-Date "6 oct 2011"
+Date "22 jan 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -74,15 +74,15 @@ Comment4 ""
 $EndDescr
 Text Notes 9600 2850 0    60   ~ 0
 JP4, se utiliza para programar\nlos bits OTP (modo usb device)
-Connection ~ 9950 2600
+Connection ~ 10450 2600
 Wire Wire Line
 	8600 2300 9800 2300
 Wire Wire Line
-	9800 2300 9800 2600
+	10300 2300 10300 2600
 Wire Wire Line
-	9800 2600 10250 2600
+	10300 2600 10750 2600
 Wire Wire Line
-	10250 2600 10250 2300
+	10750 2600 10750 2300
 Wire Wire Line
 	2450 2900 3100 2900
 Connection ~ 7750 750 
@@ -384,34 +384,34 @@ Wire Wire Line
 	6500 1750 6700 1750
 Connection ~ 6700 1750
 Wire Wire Line
-	10250 2200 10250 2000
+	10750 2200 10750 2000
 Wire Wire Line
-	10250 2000 9800 2000
+	10750 2000 10300 2000
 Wire Wire Line
-	9800 2000 9800 2200
+	10300 2000 10300 2200
 Wire Wire Line
 	9800 2200 8600 2200
-Connection ~ 9950 2000
+Connection ~ 10450 2000
 Text Notes 9700 1500 0    60   ~ 0
 R42, R43, se deben montar \ndespués de configurar el imx233 \npara iniciar desde la SD.
 $Comp
 L R R42
 U 1 1 4E8C8ADC
-P 10500 2200
-F 0 "R42" V 10580 2200 50  0000 C CNN
-F 1 "0" V 10500 2200 50  0000 C CNN
-F 2 "SM0603" H 10500 2200 60  0001 C CNN
-	1    10500 2200
+P 10050 2200
+F 0 "R42" V 10130 2200 50  0000 C CNN
+F 1 "0" V 10050 2200 50  0000 C CNN
+F 2 "SM0603" H 10050 2200 60  0001 C CNN
+	1    10050 2200
 	0    -1   -1   0   
 $EndComp
 $Comp
 L R R43
 U 1 1 4E8C8AD6
-P 10500 2300
-F 0 "R43" V 10400 2300 50  0000 C CNN
-F 1 "0" V 10500 2300 50  0000 C CNN
-F 2 "SM0603" H 10500 2300 60  0001 C CNN
-	1    10500 2300
+P 10050 2300
+F 0 "R43" V 9950 2300 50  0000 C CNN
+F 1 "0" V 10050 2300 50  0000 C CNN
+F 2 "SM0603" H 10050 2300 60  0001 C CNN
+	1    10050 2300
 	0    -1   -1   0   
 $EndComp
 Text HLabel 2450 2900 0    60   BiDi ~ 0
@@ -432,11 +432,11 @@ GND_CASE
 $Comp
 L JUMPER JP4
 U 1 1 4E4A57B4
-P 9950 2300
-F 0 "JP4" H 9550 2350 60  0000 C CNN
-F 1 "JUMPER" H 9950 2500 40  0000 C CNN
-F 2 "PIN_ARRAY_2X1" H 9950 2300 60  0001 C CNN
-	1    9950 2300
+P 10450 2300
+F 0 "JP4" H 10050 2350 60  0000 C CNN
+F 1 "JUMPER" H 10450 2500 40  0000 C CNN
+F 2 "PIN_ARRAY_2X1" H 10450 2300 60  0001 C CNN
+	1    10450 2300
 	0    1    1    0   
 $EndComp
 Text HLabel 2300 5250 0    60   BiDi ~ 0
