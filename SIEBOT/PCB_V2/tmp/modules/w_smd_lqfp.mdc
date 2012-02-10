@@ -1,0 +1,33 @@
+PCBNEW-LibDoc----V1  mié 24 ago 2011 17:48:58 COT
+#
+$MODULE lqfp44
+Li lqfp44
+Cd LQFP-44
+$EndMODULE
+#
+$MODULE lqfp48
+Li lqfp48
+Cd LQFP-48
+$EndMODULE
+#
+$MODULE lqfp52
+Li lqfp52
+Cd LQFP-52
+$EndMODULE
+#
+$MODULE lqfp128
+Li lqfp128
+Cd LQFP-128
+$EndMODULE
+#
+$MODULE lqfp32
+Li lqfp32
+Cd LQFP-32
+$EndMODULE
+#
+$MODULE LQFP-64
+Li LQFP-64
+Cd LQFP-64
+$EndMODULE
+#
+$EndLIBDOC

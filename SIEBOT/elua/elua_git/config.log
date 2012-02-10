@@ -1,3 +1,20 @@
-file /home/cain/Embedded/robotica/SIEBOT/elua/elua/SConstruct,line 201:
+file /home/cain/Embedded/robotica/SIEBOT/elua/elua_git/SConstruct,line 201:
 	Configure(confdir = .sconf_temp)
+scons: Configure: Checking whether the C compiler works
+scons: Configure: ".sconf_temp/conftest_0.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_0.c <-
+  |  |
+  |  |int main()
+  |  |{
+  |  |    return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_0.o" is up to date.
+scons: Configure: The original builder output was:
+  |arm-none-eabi-gcc -o .sconf_temp/conftest_0.o -c .sconf_temp/conftest_0.c
+  |
+scons: Configure: (cached) yes
+
 

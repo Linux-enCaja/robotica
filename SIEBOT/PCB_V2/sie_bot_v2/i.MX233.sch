@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 21 Jan 2012 09:46:46 PM COT
+EESchema Schematic File Version 2  date Fri 10 Feb 2012 10:54:05 AM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -62,9 +62,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 3 5
+Sheet 2 5
 Title ""
-Date "22 jan 2012"
+Date "10 feb 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -72,6 +72,10 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text HLabel 1950 6800 0    60   BiDi ~ 0
+AUART_TX
+Text HLabel 1950 6700 0    60   BiDi ~ 0
+AUART_RX
 Text Label 13050 5000 0    60   ~ 0
 GND
 Connection ~ 11050 6900
@@ -913,8 +917,6 @@ Wire Wire Line
 Wire Wire Line
 	11800 9000 12500 9000
 Wire Wire Line
-	11800 9200 12500 9200
-Wire Wire Line
 	12850 5000 13600 5000
 Wire Wire Line
 	12850 5200 13600 5200
@@ -922,8 +924,6 @@ Wire Wire Line
 	12850 5500 13600 5500
 Wire Wire Line
 	12500 9100 11800 9100
-Wire Wire Line
-	12500 9300 11800 9300
 Wire Wire Line
 	15150 5000 14400 5000
 Wire Wire Line
@@ -1099,12 +1099,8 @@ Text HLabel 12500 9700 2    60   BiDi ~ 0
 I2C_SDA
 Text HLabel 12500 9100 2    60   BiDi ~ 0
 GPMI_CE0N
-Text HLabel 12500 9200 2    60   BiDi ~ 0
-SSPI_DATA1
 Text HLabel 12500 9550 2    60   BiDi ~ 0
 SSPI_DETECT
-Text HLabel 12500 9300 2    60   BiDi ~ 0
-SSPI_DATA2
 Text HLabel 12500 9000 2    60   BiDi ~ 0
 GPMI_CE1N
 Text HLabel 12500 8900 2    60   BiDi ~ 0
@@ -1882,20 +1878,12 @@ Text Label 15100 4900 2    60   ~ 0
 SSPI_DATA0
 Text Label 13550 4900 2    60   ~ 0
 SSPI_DATA3
-Text Label 12300 9200 2    60   ~ 0
-SSPI_DATA1
-Text Label 12300 9300 2    60   ~ 0
-SSPI_DATA2
 Text Label 13450 4800 2    60   ~ 0
 SSPI_CMD
 Text Label 2350 7000 2    60   ~ 0
 SSPI_CMD
 Text Label 2450 7100 2    60   ~ 0
 SSPI_DATA0
-Text Label 2450 7200 2    60   ~ 0
-SSPI_DATA1
-Text Label 2450 7300 2    60   ~ 0
-SSPI_DATA2
 Text Label 2300 7600 2    60   ~ 0
 SSPI_SCK
 Text HLabel 1950 4900 0    60   Output ~ 0
@@ -2656,9 +2644,9 @@ Text Label 11800 9800 0    60   ~ 0
 I2C_SCL
 Text Label 11800 9700 0    60   ~ 0
 I2C_SDA
-Text Label 2050 6800 0    60   ~ 0
+Text Label 1950 7200 0    60   ~ 0
 I2C_SCL
-Text Label 2050 6700 0    60   ~ 0
+Text Label 1950 7300 0    60   ~ 0
 I2C_SDA
 Text Label 6250 6950 0    60   ~ 0
 LINE1_INL

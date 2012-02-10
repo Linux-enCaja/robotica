@@ -1,0 +1,14 @@
+dd if=elua_lua_stm32f103re.bin of=elua.bin   bs=1024 count=200
+
+
+modificar el cristal en el archivo src/platform/stm32/stm32f10x.h
+
+#if !defined  HSE_Value
+ #ifdef STM32F10X_CL   
+  #define HSE_Value    ((uint32_t)25000000) /*!< Value of the External oscillator in Hz */
+ #else 
+  #define HSE_Value    ((uint32_t)12000000) /*!< Value of the External oscillator in Hz */
+ #endif /* STM32F10X_CL */
+#endif /* HSE_Value */
+
+

@@ -1,0 +1,24 @@
+Conectar las líneas de control de los puente H al STM32
+Conectar  el pin 28 del stm32  a una resistencia de pull up o down y dejarlo disponible como  gpio.
+
+Quitar J2 (power jack) y dejarlo como parte de las señales en el conector de la derecha del IMX
+cambiar el conector USB por uno horizontal
+Eliminar el pulsador de reset y dejarlo como parte de las señales en el conector de la derecha del IMX
+
+
+Eliminar la conexión entre boot0 y gpmi-c1n  (pin 81 del imx, bank2 pin27) conectar  esta ultima al jtag del stm32  para liberar sspi_data1.
+Quitar la conexion entre pwm2 (pin 91 del imx, bank 1 pin 28 ) y el conector y usarlo para liberar sspi_data2
+
+Conectar los pines 127 (auart_tx) y 128 (auart_rx)  del imx  a los pines  43 usart1_rx y 42 usart1_tx
+
+
+Conectat sspi_data1 (i2c_scl)  y  sspi_data2(i2c_sda)  a  los pines 29 (scl) y 30 (sda) del segundo canal i2c del stm32  a o los pines 58 (scl) y 59 (sda) del primer canal i2c
+
+
+
+
+
+
+
+
+
