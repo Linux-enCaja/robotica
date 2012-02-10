@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 10 Feb 2012 10:54:05 AM COT
+EESchema Schematic File Version 2  date Fri 10 Feb 2012 05:02:18 PM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -193,6 +193,7 @@ F36 "USM_P2" B L 3150 4150 60
 F37 "USB_M2" B L 3150 4250 60 
 F38 "AUART_TX" B L 3150 1950 60 
 F39 "AUART_RX" B L 3150 1850 60 
+F40 "PWM2" B L 3150 2250 60 
 $EndSheet
 $Sheet
 S 1550 1750 1350 1250
