@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 10 Feb 2012 06:23:52 PM COT
+EESchema Schematic File Version 2  date Thu 16 Feb 2012 07:24:53 AM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -64,7 +64,7 @@ $Descr User 12000 10000
 encoding utf-8
 Sheet 3 5
 Title ""
-Date "10 feb 2012"
+Date "16 feb 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -72,6 +72,20 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 5950 4500 0    60   ~ 0
+C2M4
+Text Label 5950 4200 0    60   ~ 0
+C1M4
+Text Label 5950 3850 0    60   ~ 0
+C1M1
+Text Label 5950 3750 0    60   ~ 0
+C2M1
+Text Label 5950 3650 0    60   ~ 0
+C1M3
+Text Label 5950 3550 0    60   ~ 0
+C2M3
+Wire Wire Line
+	5750 3750 6650 3750
 Wire Wire Line
 	6000 4400 5750 4400
 Wire Wire Line
@@ -258,8 +272,6 @@ Wire Wire Line
 	6650 3650 5750 3650
 Wire Wire Line
 	6650 3550 5750 3550
-Wire Wire Line
-	5750 3750 6650 3750
 Wire Wire Line
 	5750 3350 6650 3350
 Wire Wire Line
@@ -1041,8 +1053,6 @@ Text Label 5550 8750 0    60   ~ 0
 FP39
 Text Label 4000 8850 0    60   ~ 0
 FP38
-Text Label 5550 8650 0    60   ~ 0
-FP23
 Text Label 5550 7850 0    60   ~ 0
 FP5
 Text Label 5550 7950 0    60   ~ 0
@@ -1057,8 +1067,6 @@ Text Label 5550 8350 0    60   ~ 0
 FP34
 Text Label 5550 8450 0    60   ~ 0
 FP32
-Text Label 5550 8550 0    60   ~ 0
-FP21
 Text Label 4000 7950 0    60   ~ 0
 FP6
 Text Label 4000 8050 0    60   ~ 0
@@ -1071,10 +1079,6 @@ Text Label 4000 8350 0    60   ~ 0
 FP17
 Text Label 4000 8450 0    60   ~ 0
 FP33
-Text Label 4000 8550 0    60   ~ 0
-FP20
-Text Label 4000 8650 0    60   ~ 0
-FP22
 Text Label 4000 8750 0    60   ~ 0
 FP40
 Text Label 4000 7850 0    60   ~ 0
@@ -1237,10 +1241,6 @@ Text Label 6000 2300 0    60   ~ 0
 FP42
 Text Label 6000 2200 0    60   ~ 0
 FP41
-Text Label 5950 4500 0    60   ~ 0
-FP40
-Text Label 5950 4200 0    60   ~ 0
-FP37
 Text Label 5950 4100 0    60   ~ 0
 FP36
 $Comp
@@ -1427,14 +1427,6 @@ Text Label 1000 6100 0    60   ~ 0
 FP34
 Text Label 1000 6550 0    60   ~ 0
 FP35
-Text Label 5950 3550 0    60   ~ 0
-FP20
-Text Label 5950 3650 0    60   ~ 0
-FP21
-Text Label 5950 3750 0    60   ~ 0
-FP22
-Text Label 5950 3850 0    60   ~ 0
-FP23
 Text Label 5950 3450 0    60   ~ 0
 FP19
 Text Label 5950 3350 0    60   ~ 0
