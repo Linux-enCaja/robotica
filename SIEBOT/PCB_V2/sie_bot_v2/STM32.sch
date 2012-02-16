@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 16 Feb 2012 07:24:53 AM COT
+EESchema Schematic File Version 2  date Thu 16 Feb 2012 10:36:53 AM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -1093,8 +1093,6 @@ Text Label 3200 8700 0    60   ~ 0
 FP10
 Text Label 3200 8600 0    60   ~ 0
 FP41
-Text Label 3200 8500 0    60   ~ 0
-FP27
 Text Label 3050 8400 0    60   ~ 0
 FP25
 Text Label 3200 8300 0    60   ~ 0
@@ -1115,8 +1113,6 @@ Text Label 1650 8600 0    60   ~ 0
 FP42
 Text Label 1650 8500 0    60   ~ 0
 FP35
-Text Label 1650 8400 0    60   ~ 0
-FP26
 Text Label 1550 8300 0    60   ~ 0
 FP24
 Text Label 1650 8200 0    60   ~ 0
@@ -1407,10 +1403,6 @@ Text Label 1000 4650 0    60   ~ 0
 FP24
 Text Label 1000 4750 0    60   ~ 0
 FP25
-Text Label 1000 4850 0    60   ~ 0
-FP26
-Text Label 1000 4950 0    60   ~ 0
-FP27
 Text Label 1000 5200 0    60   ~ 0
 FP28
 Text Label 1000 5300 0    60   ~ 0
@@ -1497,9 +1489,9 @@ TIM5_CH4
 Text Label 1650 2850 0    60   ~ 0
 TIM5_CH3
 Text Label 2000 4950 0    60   ~ 0
-TIM4_CH4
+C2M2
 Text Label 2000 4850 0    60   ~ 0
-TIM4_CH3
+C1M2
 Text Label 1650 3550 0    60   ~ 0
 TIM3_CH4
 Text Label 1650 3450 0    60   ~ 0
