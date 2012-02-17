@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPCB (2011-05-31)-stable date = Fri 10 Feb 2012 05:56:02 PM COT
+Cmp-Mod V01 Created by CvPCB (2011-05-31)-stable date = Fri 17 Feb 2012 08:04:51 AM COT
 
 BeginCmp
 TimeStamp = /4D30AC69/4D42D643;
@@ -592,7 +592,7 @@ BeginCmp
 TimeStamp = /4E3BEC51/4E4530F2;
 Reference = J3;
 ValeurCmp = USB_2A;
-IdModule  = conn_usb_A-vert;
+IdModule  = CONN_USB-A_Vertical_Opendous;
 EndCmp
 
 BeginCmp

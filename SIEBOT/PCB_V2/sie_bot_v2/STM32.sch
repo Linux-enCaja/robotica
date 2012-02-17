@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 16 Feb 2012 10:36:53 AM COT
+EESchema Schematic File Version 2  date Fri 17 Feb 2012 09:28:31 AM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -64,7 +64,7 @@ $Descr User 12000 10000
 encoding utf-8
 Sheet 3 5
 Title ""
-Date "16 feb 2012"
+Date "17 feb 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -72,6 +72,54 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L 3V3 #PWR89
+U 1 1 4F3E63FA
+P 6050 8850
+F 0 "#PWR89" H 6050 8950 30  0001 C CNN
+F 1 "3V3" H 6050 8960 30  0000 C CNN
+	1    6050 8850
+	0    1    1    0   
+$EndComp
+$Comp
+L 3V3 #PWR88
+U 1 1 4F3E63F9
+P 6050 8750
+F 0 "#PWR88" H 6050 8850 30  0001 C CNN
+F 1 "3V3" H 6050 8860 30  0000 C CNN
+	1    6050 8750
+	0    1    1    0   
+$EndComp
+Text Label 4000 8850 0    60   ~ 0
+GND
+Text Label 4000 8750 0    60   ~ 0
+GND
+Text Label 1650 8400 0    60   ~ 0
+GND
+Text Label 3200 8500 0    60   ~ 0
+GND
+$Comp
+L 3V3 #PWR86
+U 1 1 4F3E4E25
+P 6050 8550
+F 0 "#PWR86" H 6050 8650 30  0001 C CNN
+F 1 "3V3" H 6050 8660 30  0000 C CNN
+	1    6050 8550
+	0    1    1    0   
+$EndComp
+$Comp
+L 3V3 #PWR87
+U 1 1 4F3E4E22
+P 6050 8650
+F 0 "#PWR87" H 6050 8750 30  0001 C CNN
+F 1 "3V3" H 6050 8760 30  0000 C CNN
+	1    6050 8650
+	0    1    1    0   
+$EndComp
+Text Label 4000 8650 0    60   ~ 0
+GND
+Text Label 4000 8550 0    60   ~ 0
+GND
 Text Label 5950 4500 0    60   ~ 0
 C2M4
 Text Label 5950 4200 0    60   ~ 0
@@ -793,10 +841,10 @@ I2C1_SCL
 Text Label 3400 8400 0    60   ~ 0
 I2C1_SDA
 $Comp
-L 3V3 #PWR86
+L 3V3 #PWR90
 U 1 1 4E8A099D
 P 6050 8950
-F 0 "#PWR86" H 6050 9050 30  0001 C CNN
+F 0 "#PWR90" H 6050 9050 30  0001 C CNN
 F 1 "3V3" H 6050 9060 30  0000 C CNN
 	1    6050 8950
 	0    1    1    0   
@@ -1047,12 +1095,6 @@ F 2 "-SO8" H 7850 5250 60  0001 C CNN
 	1    7850 5250
 	1    0    0    -1  
 $EndComp
-Text Label 5550 8850 0    60   ~ 0
-FP37
-Text Label 5550 8750 0    60   ~ 0
-FP39
-Text Label 4000 8850 0    60   ~ 0
-FP38
 Text Label 5550 7850 0    60   ~ 0
 FP5
 Text Label 5550 7950 0    60   ~ 0
@@ -1079,8 +1121,6 @@ Text Label 4000 8350 0    60   ~ 0
 FP17
 Text Label 4000 8450 0    60   ~ 0
 FP33
-Text Label 4000 8750 0    60   ~ 0
-FP40
 Text Label 4000 7850 0    60   ~ 0
 FP4
 Text Label 3200 9000 0    60   ~ 0
@@ -1205,10 +1245,10 @@ F 1 "GND" H 6900 1180 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 3V3 #PWR91
+L 3V3 #PWR95
 U 1 1 4E7B4482
 P 8150 900
-F 0 "#PWR91" H 8150 1000 30  0001 C CNN
+F 0 "#PWR95" H 8150 1000 30  0001 C CNN
 F 1 "3V3" H 8150 1010 30  0000 C CNN
 	1    8150 900 
 	1    0    0    -1  
@@ -1271,10 +1311,10 @@ F 2 "SM0603" H 10800 2500 60  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L 3V3 #PWR94
+L 3V3 #PWR98
 U 1 1 4E78C319
 P 8550 2150
-F 0 "#PWR94" H 8550 2250 30  0001 C CNN
+F 0 "#PWR98" H 8550 2250 30  0001 C CNN
 F 1 "3V3" H 8550 2260 30  0000 C CNN
 	1    8550 2150
 	1    0    0    -1  
@@ -1338,19 +1378,19 @@ F 2 "SM1206" H 8350 2500 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 3V3 #PWR93
+L 3V3 #PWR97
 U 1 1 4E2A2E11
 P 8350 2150
-F 0 "#PWR93" H 8350 2250 30  0001 C CNN
+F 0 "#PWR97" H 8350 2250 30  0001 C CNN
 F 1 "3V3" H 8350 2260 30  0000 C CNN
 	1    8350 2150
 	1    0    0    -1  
 $EndComp
 $Comp
-L 3V3 #PWR96
+L 3V3 #PWR100
 U 1 1 4E2A2E03
 P 8750 1000
-F 0 "#PWR96" H 8750 1100 30  0001 C CNN
+F 0 "#PWR100" H 8750 1100 30  0001 C CNN
 F 1 "3V3" H 8750 1110 30  0000 C CNN
 	1    8750 1000
 	1    0    0    -1  
