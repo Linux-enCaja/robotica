@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date Sat 18 Feb 2012 11:57:26 AM COT
+PCBNEW-BOARD Version 1 date Fri 24 Feb 2012 05:43:38 PM COT
 
 # Created by Pcbnew(2011-05-31)-stable
 
@@ -21,7 +21,7 @@ $EndGENERAL
 $SHEETDESCR
 Sheet A4 11700 8267
 Title ""
-Date "18 feb 2012"
+Date "24 feb 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -71,7 +71,7 @@ PadDrill 0
 Pad2MaskClearance 100
 GridOrigin 49914 33630
 AuxiliaryAxisOrg 33255 34063
-PcbPlotParams (pcbplotparams (layerselection 3178497) (usegerberextensions true) (excludeedgelayer true) (linewidth 60) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin false) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 0) (pscolor true) (psnegative false) (psa4output false) (plotreference true) (plotvalue true) (plotothertext true) (plotinvisibletext false) (padsonsilk false) (subtractmaskfromsilk false) (outputformat 1) (mirror false) (drillshape 1) (scaleselection 1) (outputdirectory ""))
+PcbPlotParams (pcbplotparams (layerselection 284983297) (usegerberextensions true) (excludeedgelayer true) (linewidth 60) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin false) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 0) (pscolor true) (psnegative false) (psa4output false) (plotreference true) (plotvalue true) (plotothertext true) (plotinvisibletext false) (padsonsilk false) (subtractmaskfromsilk false) (outputformat 1) (mirror false) (drillshape 1) (scaleselection 1) (outputdirectory ""))
 $EndSETUP
 
 $EQUIPOT
@@ -7145,14 +7145,14 @@ Po 0 255
 $EndPAD
 $EndMODULE  SOT-523
 $MODULE SOT-523
-Po 59366 53240 0 0 4E4ABA06 4E415735 ~~
+Po 59366 53240 0 0 4F465EA3 4E415735 ~~
 Li SOT-523
 Cd Small Outline Transistor package, 3 pins, 0.5 mm pin pitch, for reflow
 Sc 4E415735
 AR /4E3BEC51/4E415735
 Op 0 0 0
 At SMD 
-T0 -582 4 200 200 900 40 M V 20 N "U7"
+T0 595 28 200 200 900 40 M V 20 N "U7"
 T1 0 0 200 200 0 40 M I 20 N "RCLAMP0502B"
 DS -393 -474 393 -474 50 20
 DS 393 -474 393 474 50 20
@@ -9569,14 +9569,14 @@ Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  SM0603
 $MODULE pin_array_12x2
-Po 35000 42000 2700 15 4E8DA999 4E85BD3D ~~
+Po 35000 42000 2700 15 4F465E1A 4E85BD3D ~~
 Li pin_array_12x2
 Cd Double rangee de contacts 2 x 12 pins
 Kw CONN
 Sc 4E85BD3D
 AR /4E78AF25/4E831B93
 Op 0 0 0
-T0 6588 -155 276 276 3600 59 N V 21 N "P9"
+T0 3236 -1579 276 276 2700 59 N V 21 N "P9"
 T1 0 1500 400 400 2700 80 N I 21 N "CONN_12X2"
 DS -6000 -1000 -6000 1000 150 21
 DS -6000 1000 6000 1000 150 21
@@ -11477,7 +11477,7 @@ De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
 Te "23"
-Po 34430 48388 300 300 35 0
+Po 33296 47516 300 300 35 0
 De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
