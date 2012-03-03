@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 18 Feb 2012 11:36:23 AM COT
+EESchema Schematic File Version 2  date sáb 03 mar 2012 09:20:54 COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -58,13 +58,12 @@ LIBS:stm32f100vxx
 LIBS:lt1117cst
 LIBS:zxmhc3f381n8
 LIBS:i.mx233stamp-cache
-EELAYER 25  0
+EELAYER 24  0
 EELAYER END
 $Descr A4 11700 8267
-encoding utf-8
 Sheet 5 5
 Title ""
-Date "18 feb 2012"
+Date "3 mar 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -72,10 +71,12 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 1700 2100 0    60   ~ 0
-UE27AC54100
-Text Notes 9600 2850 0    60   ~ 0
-JP4, se utiliza para programar\nlos bits OTP (modo usb device)
+Text HLabel 6000 3200 0    60   BiDi ~ 0
+USB_reset
+Wire Wire Line
+	6050 3200 6000 3200
+Wire Wire Line
+	6550 3350 6550 3200
 Connection ~ 10450 2600
 Wire Wire Line
 	8600 2300 9800 2300
@@ -108,10 +109,6 @@ Wire Wire Line
 	2400 1800 3050 1800
 Wire Wire Line
 	6700 3350 6700 3300
-Wire Wire Line
-	6800 3200 6500 3200
-Wire Wire Line
-	6500 3200 6500 3400
 Wire Wire Line
 	6800 2600 5250 2600
 Connection ~ 5250 2700
@@ -358,10 +355,6 @@ Connection ~ 2700 4800
 Wire Wire Line
 	6000 2300 5900 2300
 Wire Wire Line
-	5500 3500 5500 3750
-Wire Wire Line
-	7150 3600 6500 3600
-Wire Wire Line
 	3050 1650 2500 1650
 Wire Wire Line
 	2500 1650 2500 1700
@@ -394,6 +387,43 @@ Wire Wire Line
 Wire Wire Line
 	9800 2200 8600 2200
 Connection ~ 10450 2000
+Wire Wire Line
+	6550 3850 6550 3750
+Wire Wire Line
+	6550 3200 6800 3200
+$Comp
+L C C?
+U 1 1 4F522649
+P 6550 3550
+F 0 "C?" H 6600 3650 50  0000 L CNN
+F 1 "0.1uF" H 6600 3450 50  0000 L CNN
+F 2 "SM0603" H 6550 3550 60  0001 C CNN
+	1    6550 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 4F522478
+P 6550 3850
+F 0 "#PWR?" H 6550 3850 30  0001 C CNN
+F 1 "GND" H 6550 3780 30  0001 C CNN
+	1    6550 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 4F522458
+P 6300 3200
+F 0 "R?" V 6400 3200 50  0000 C CNN
+F 1 "10k" V 6300 3200 50  0000 C CNN
+F 2 "SM0603" H 6300 3200 60  0001 C CNN
+	1    6300 3200
+	0    1    1    0   
+$EndComp
+Text Notes 1700 2100 0    60   ~ 0
+UE27AC54100
+Text Notes 9600 2850 0    60   ~ 0
+JP4, se utiliza para programar\nlos bits OTP (modo usb device)
 Text Notes 9700 1500 0    60   ~ 0
 R42, R43, se deben montar \ndespués de configurar el imx233 \npara iniciar desde la SD.
 $Comp
@@ -481,8 +511,6 @@ F 2 "ABM8G" H 4950 2700 60  0001 C CNN
 	1    4950 2700
 	1    0    0    -1  
 $EndComp
-Text Label 6550 3600 0    60   ~ 0
-USBH_P33VD
 $Comp
 L GND #PWR0114
 U 1 1 4E41C8A5
@@ -492,27 +520,8 @@ F 1 "GND" H 6700 3280 30  0001 C CNN
 	1    6700 3350
 	1    0    0    -1  
 $EndComp
-$Comp
-L GND #PWR0115
-U 1 1 4E41C7BC
-P 5500 3750
-F 0 "#PWR0115" H 5500 3750 30  0001 C CNN
-F 1 "GND" H 5500 3680 30  0001 C CNN
-	1    5500 3750
-	1    0    0    -1  
-$EndComp
 Text Label 5500 2600 0    60   ~ 0
 X2
-$Comp
-L MCP130 U9
-U 1 1 4E41C620
-P 5100 4650
-F 0 "U9" V 4150 5550 60  0000 C CNN
-F 1 "MCP130" V 3750 5500 60  0000 C CNN
-F 2 "SOT23B-3" H 5100 4650 60  0001 C CNN
-	1    5100 4650
-	0    1    1    0   
-$EndComp
 $Comp
 L INDUCTOR L9
 U 1 1 4E41B9E1

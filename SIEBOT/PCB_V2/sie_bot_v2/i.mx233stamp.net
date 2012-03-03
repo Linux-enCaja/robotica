@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Sat 18 Feb 2012 11:07:30 AM COT
+# EESchema Netlist Version 1.1 created  sáb 03 mar 2012 09:29:09 COT
 (
  ( /4D30AC69/4F3FC9AE sm0805  R49 0 {Lib=R}
   (    1 /i.MX233/D03_SPI )
@@ -27,38 +27,38 @@
   (    2 /i.MX233/D03_SPI )
  )
  ( /4D30AC69/4E85FA6B MHOLE  P10 CONN_1 {Lib=CONN_1}
-  (    1 GND_CASE )
+  (    1 /i.MX233/GND_CASE )
  )
  ( /4D30AC69/4E4D033C SM0805  L13 HZ0805D152R-10_(1500_ohm) {Lib=INDUCTOR}
-  (    1 GND_CASE )
+  (    1 /i.MX233/GND_CASE )
   (    2 GND )
  )
  ( /4D30AC69/4E4D0338 SM0805  L12 HZ0805D152R-10_(1500_ohm) {Lib=INDUCTOR}
-  (    1 GND_CASE )
+  (    1 /i.MX233/GND_CASE )
   (    2 GND )
  )
  ( /4D30AC69/4E4D0325 SM0805  L11 HZ0805D152R-10_(1500_ohm) {Lib=INDUCTOR}
-  (    1 GND_CASE )
+  (    1 /i.MX233/GND_CASE )
   (    2 GND )
  )
  ( /4D30AC69/4E4BC769 MHOLE  P7 CONN_1 {Lib=CONN_1}
-  (    1 GND_CASE )
+  (    1 /i.MX233/GND_CASE )
  )
  ( /4D30AC69/4DA8A543 $noname  P4 CONN_4X2 {Lib=CONN_4X2}
-  (    1 /USB/USB_M2 )
-  (    2 /USB/USM_P2 )
+  (    1 /i.MX233/USB_M2 )
+  (    2 /i.MX233/USM_P2 )
   (    3 /i.MX233/USB_M3 )
-  (    4 /USB/USM_P3 )
-  (    5 /USB/USB_M4 )
-  (    6 /USB/USB_P4 )
+  (    4 /i.MX233/USM_P3 )
+  (    5 /i.MX233/USB_M4 )
+  (    6 /i.MX233/USB_P4 )
   (    7 VDD5V )
   (    8 GND )
  )
  ( /4D30AC69/4E434391 MHOLE  P5 CONN_1 {Lib=CONN_1}
-  (    1 GND_CASE )
+  (    1 /i.MX233/GND_CASE )
  )
  ( /4D30AC69/4E4341F9 MHOLE  P3 CONN_1 {Lib=CONN_1}
-  (    1 GND_CASE )
+  (    1 /i.MX233/GND_CASE )
  )
  ( /4D30AC69/4E431143 ABM8G  X1 24MHz {Lib=ABM8G}
   (    1 /i.MX233/XTAL0 )
@@ -81,7 +81,7 @@
   (    4 3V3 )
   (    5 /i.MX233/SSPI_CMD )
   (    6 GND )
-  (    7 /STM32/JTMS )
+  (    7 /i.MX233/SSPI_DATA3 )
   (    8 /i.MX233/SSPI_DATA0 )
   (    9 GND )
   (   10 /i.MX233/SSPI_SCK )
@@ -101,7 +101,7 @@
   (   24 /i.MX233/PSWITCH )
  )
  ( /4D30AC69/4DAF6E3C $noname  JP2 JUMPER {Lib=JUMPER}
-  (    1 N-000057 )
+  (    1 N-000103 )
   (    2 /i.MX233/LCD_D1 )
  )
  ( /4D30AC69/4DAF6E3B $noname  R18 11k {Lib=R}
@@ -110,10 +110,10 @@
  )
  ( /4D30AC69/4DAF6E3A $noname  R12 1.5k {Lib=R}
   (    1 GND )
-  (    2 N-000057 )
+  (    2 N-000103 )
  )
  ( /4D30AC69/4DAF62ED $noname  JP3 JUMPER {Lib=JUMPER}
-  (    1 N-000056 )
+  (    1 N-000052 )
   (    2 /i.MX233/LCD_D3 )
  )
  ( /4D30AC69/4DAF62EC $noname  R19 11k {Lib=R}
@@ -122,18 +122,18 @@
  )
  ( /4D30AC69/4DAF62EB $noname  R14 1.5k {Lib=R}
   (    1 GND )
-  (    2 N-000056 )
+  (    2 N-000052 )
  )
  ( /4D30AC69/4DAF62D8 $noname  R11 1.5k {Lib=R}
   (    1 VDDIO_3V3 )
-  (    2 N-000059 )
+  (    2 N-000055 )
  )
  ( /4D30AC69/4DAF62D7 $noname  R17 11k {Lib=R}
   (    1 /i.MX233/LCD_D0 )
   (    2 GND )
  )
  ( /4D30AC69/4DAF62D6 $noname  JP1 JUMPER {Lib=JUMPER}
-  (    1 N-000059 )
+  (    1 N-000055 )
   (    2 /i.MX233/LCD_D0 )
  )
  ( /4D30AC69/4DAF627D $noname  R15 11k {Lib=R}
@@ -146,14 +146,14 @@
  )
  ( /4D30AC69/4DA85BBA $noname  L2 HZ0805D152R-10_(1500_ohm) {Lib=INDUCTOR}
   (    1 /i.MX233/HP_VGND )
-  (    2 N-000044 )
+  (    2 N-000040 )
  )
  ( /4D30AC69/4D7EAC88 $noname  C2 0.1uF {Lib=C}
-  (    1 N-000066 )
+  (    1 N-000062 )
   (    2 VDDIO_3V3 )
  )
  ( /4D30AC69/4D7EAC84 $noname  C5 0.1uF {Lib=C}
-  (    1 N-000065 )
+  (    1 N-000061 )
   (    2 GND )
  )
  ( /4D30AC69/4D7EAC82 $noname  C3 0.1uF {Lib=C}
@@ -161,68 +161,71 @@
   (    2 GND )
  )
  ( /4D30AC69/4D7EAC7D $noname  C1 0.1uF {Lib=C}
-  (    1 N-000050 )
-  (    2 N-000069 )
+  (    1 N-000047 )
+  (    2 N-000060 )
  )
  ( /4D30AC69/4D7EAC77 $noname  C4 .1uF {Lib=C}
-  (    1 N-000072 )
-  (    2 N-000073 )
+  (    1 N-000124 )
+  (    2 N-000067 )
  )
  ( /4D30AC69/4D7E9EF6 $noname  D5 LED {Lib=LED}
   (    1 VDDIO_3V3 )
-  (    2 N-000049 )
+  (    2 N-000046 )
  )
  ( /4D30AC69/4D7E9EED $noname  R31 1k {Lib=R}
-  (    1 N-000049 )
+  (    1 N-000046 )
   (    2 /i.MX233/PWM1 )
  )
  ( /4D30AC69/4D7E9E03 $noname  R28 1k {Lib=R}
-  (    1 N-000055 )
+  (    1 N-000051 )
   (    2 GND )
  )
  ( /4D30AC69/4D7E9DFD $noname  D3 LED {Lib=LED}
   (    1 /i.MX233/GPMI_D07 )
-  (    2 N-000055 )
+  (    2 N-000051 )
  )
  ( /4D30AC69/4D7E9D93 $noname  R9 1k {Lib=R}
   (    1 GND )
-  (    2 N-000054 )
+  (    2 N-000050 )
  )
  ( /4D30AC69/4D7E9D8D $noname  D2 LED {Lib=LED}
   (    1 VDDIO_3V3 )
-  (    2 N-000054 )
+  (    2 N-000050 )
  )
  ( /4D30AC69/4D7E9CC8 $noname  R30 1k {Lib=R}
   (    1 GND )
-  (    2 N-000053 )
+  (    2 N-000049 )
  )
  ( /4D30AC69/4D7E9C51 $noname  D4 LED {Lib=LED}
   (    1 VDD5V )
-  (    2 N-000053 )
+  (    2 N-000049 )
  )
  ( /4D30AC69/4D7E9426 QSOP16  U1 ADM3101E {Lib=ADM3101E}
-  (    1 N-000069 )
-  (    2 N-000050 )
+  (    1 N-000060 )
+  (    2 N-000047 )
   (    3 ? )
   (    4 /i.MX233/PWM0 )
   (    5 /i.MX233/PWM1 )
   (    6 ? )
-  (    7 N-000066 )
+  (    7 N-000062 )
   (    8 VDDIO_3V3 )
   (    9 GND )
-  (   10 N-000065 )
+  (   10 N-000061 )
   (   11 ? )
   (   12 /i.MX233/TX )
   (   13 /i.MX233/RX )
   (   14 ? )
-  (   15 N-000073 )
-  (   16 N-000072 )
+  (   15 N-000067 )
+  (   16 N-000124 )
  )
  ( /4D30AC69/4D7E7656 $noname  R29 47k {Lib=R}
   (    1 /i.MX233/GPMI_RDY0 )
   (    2 VDDIO_3V3 )
  )
  ( /4D30AC69/4D59B1E9 $noname  J1 MICROSD {Lib=MICROSD}
+  (  COM GND )
+  ( CASE GND )
+  (   CD /i.MX233/GPMI_RDY0 )
   (    1 /i.MX233/GPMI_D02 )
   (    2 /i.MX233/D03_SD )
   (    3 /i.MX233/GPMI_RDY1 )
@@ -231,9 +234,6 @@
   (    6 GND )
   (    7 /i.MX233/GPMI_D00 )
   (    8 /i.MX233/GPMI_D01 )
-  ( CASE GND )
-  (   CD /i.MX233/GPMI_RDY0 )
-  (  COM GND )
  )
  ( /4D30AC69/4D52FF9F CONN_12X2  P2 CONN_12X2 {Lib=CONN_12X2}
   (    1 VDD5V )
@@ -288,7 +288,7 @@
   (   24 /i.MX233/GPMI_D02 )
   (   25 /i.MX233/D03 )
   (   26 /i.MX233/GPMI_D05 )
-  (   27 ? )
+  (   27 /i.MX233/GPMI_D04 )
   (   28 /i.MX233/GPMI_D07 )
   (   29 /i.MX233/GPMI_D06 )
   (   30 GND )
@@ -298,48 +298,48 @@
   (   34 ? )
   (   35 GND )
   (   36 /DDR/DDR_CLK )
-  (   37 /i.MX233/DDR_CLKN )
+  (   37 /DDR/DDR_CLKN )
   (   38 VDDM_2V5 )
   (   39 /DDR/DDR_DQS0 )
   (   40 /i.MX233/DDR_DQS1 )
   (   41 /DDR/DDR_DQ0 )
   (   42 /DDR/DDR_DQ2 )
   (   43 /DDR/DDR_DQ1 )
-  (   44 /DDR/DDR_DQ3 )
+  (   44 /i.MX233/DDR_DQ3 )
   (   45 VDDM_2V5 )
-  (   46 /i.MX233/DDR_DQM0 )
-  (   47 /i.MX233/DDR_DQ4 )
+  (   46 /DDR/DDR_DQM0 )
+  (   47 /DDR/DDR_DQ4 )
   (   48 /i.MX233/DDR_DQ5 )
-  (   49 /DDR/DDR_DQ6 )
+  (   49 /i.MX233/DDR_DQ6 )
   (   50 /DDR/DDR_DQ7 )
   (   51 /i.MX233/DDR_DQ8 )
-  (   52 /i.MX233/DDR_DQ9 )
+  (   52 /DDR/DDR_DQ9 )
   (   53 VDDM_2V5 )
-  (   54 /DDR/DDR_DQ10 )
-  (   55 /i.MX233/DDR_DQ11 )
-  (   56 /i.MX233/DDR_DQM1 )
+  (   54 /i.MX233/DDR_DQ10 )
+  (   55 /DDR/DDR_DQ11 )
+  (   56 /DDR/DDR_DQM1 )
   (   57 /DDR/DDR_DQ12 )
   (   58 /DDR/DDR_DQ13 )
   (   59 /DDR/DDR_DQ15 )
-  (   60 /i.MX233/DDR_DQ14 )
+  (   60 /DDR/DDR_DQ14 )
   (   61 /DDR/DDR_CASN )
   (   62 /DDR/DDR_RASN )
-  (   63 /i.MX233/DDR_CE0 )
-  (   64 /i.MX233/DDR_A12 )
-  (   65 /DDR/DDR_A11 )
+  (   63 /DDR/DDR_CE0 )
+  (   64 /DDR/DDR_A12 )
+  (   65 /i.MX233/DDR_A11 )
   (   66 /DDR/DDR_A10 )
   (   67 /DDR/DDR_A9 )
-  (   68 /i.MX233/DDR_A8 )
+  (   68 /DDR/DDR_A8 )
   (   69 /DDR/DDR_A7 )
   (   70 /DDR/DDR_A6 )
   (   71 /DDR/DDR_A5 )
   (   72 /DDR/DDR_A4 )
   (   73 /DDR/DDR_A3 )
   (   74 /DDR/DDR_A2 )
-  (   75 /DDR/DDR_A1 )
+  (   75 /i.MX233/DDR_A1 )
   (   76 /DDR/DDR_A0 )
   (   77 /i.MX233/DDR_WEN )
-  (   78 /i.MX233/DDR_CKE )
+  (   78 /DDR/DDR_CKE )
   (   79 /DDR/DDR_BA0 )
   (   80 /DDR/DDR_BA1 )
   (   81 /i.MX233/GPMI_CE1N )
@@ -348,8 +348,8 @@
   (   84 /i.MX233/SSPI_DATA0 )
   (   85 /STM32/I2C1_SCL )
   (   86 /STM32/I2C1_SDA )
-  (   87 /STM32/JTMS )
-  (   88 /STM32/JTCK )
+  (   87 /i.MX233/SSPI_DATA3 )
+  (   88 /i.MX233/SSPI_DETECT )
   (   89 ? )
   (   90 /i.MX233/SSPI_SCK )
   (   91 /STM32/JTDI )
@@ -358,9 +358,9 @@
   (   94 VDDD )
   (   95 VDDIO_3V3 )
   (   96 VDDA )
-  (   97 N-000102 )
+  (   97 N-000096 )
   (   98 GND )
-  (   99 N-000101 )
+  (   99 N-000095 )
   (  100 VDD_BATT )
   (  101 VDD4P2 )
   (  102 VDD5V )
@@ -372,7 +372,7 @@
   (  108 /i.MX233/LRADC0 )
   (  109 /i.MX233/HPR )
   (  110 VDDA )
-  (  111 N-000044 )
+  (  111 N-000040 )
   (  112 GND )
   (  113 /i.MX233/HPL )
   (  114 /i.MX233/LINE1_INR )
@@ -388,7 +388,7 @@
   (  124 /i.MX233/USB_DP )
   (  125 /i.MX233/PWM0 )
   (  126 /i.MX233/PWM1 )
-  (  127 /i.MX233/AUART_TX )
+  (  127 /STM32/STM_UART_RX )
   (  128 /i.MX233/AUART_RX )
  )
  ( /4D30AC69/4D42D64E $noname  C23 0.1uF {Lib=C}
@@ -404,12 +404,12 @@
   (    2 GND )
  )
  ( /4D30AC69/4D42D646 $noname  C34 4.7uF {Lib=C}
-  (    1 N-000100 )
+  (    1 N-000094 )
   (    2 GND )
  )
  ( /4D30AC69/4D42D645 $noname  R1 1 {Lib=R}
   (    1 VDD5V )
-  (    2 N-000100 )
+  (    2 N-000094 )
  )
  ( /4D30AC69/4D42D643 $noname  BT1 BATTERY {Lib=BATTERY}
   (    1 VDD_BATT )
@@ -417,10 +417,10 @@
  )
  ( /4D30AC69/4D42D641 $noname  R2 0.1 {Lib=R}
   (    1 VDD_BATT )
-  (    2 N-000098 )
+  (    2 N-000092 )
  )
  ( /4D30AC69/4D42D640 $noname  C40 33uF_Ceramic {Lib=CP1}
-  (    1 N-000098 )
+  (    1 N-000092 )
   (    2 GND )
  )
  ( /4D30AC69/4D42D63E $noname  C41 0.1uF {Lib=C}
@@ -441,10 +441,10 @@
  )
  ( /4D30AC69/4D42D639 $noname  R3 0.1 {Lib=R}
   (    1 VDD4P2 )
-  (    2 N-000097 )
+  (    2 N-000091 )
  )
  ( /4D30AC69/4D42D638 $noname  C48 33uF_Ceramic {Lib=CP1}
-  (    1 N-000097 )
+  (    1 N-000091 )
   (    2 GND )
  )
  ( /4D30AC69/4D42D637 $noname  C50 1uF {Lib=C}
@@ -524,24 +524,24 @@
   (    2 /i.MX233/LCD_RS )
  )
  ( /4D30AC69/4D41A28D $noname  L1 15uH {Lib=INDUCTOR}
-  (    1 N-000102 )
-  (    2 N-000101 )
+  (    1 N-000096 )
+  (    2 N-000095 )
  )
  ( /4D30AC69/4D408680 $noname  R13 1k {Lib=R}
-  (    1 N-000104 )
+  (    1 N-000098 )
   (    2 /i.MX233/RESET_PB )
  )
  ( /4D30AC69/4D40866C $noname  R16 1k {Lib=R}
-  (    1 N-000104 )
+  (    1 N-000098 )
   (    2 GND )
  )
  ( /4D30AC69/4D40865C $noname  C60 0.1uF {Lib=C}
-  (    1 N-000104 )
+  (    1 N-000098 )
   (    2 GND )
  )
  ( /4D30AC69/4D408387 SOT363_PHILIPS  Q1 MMDT3904 {Lib=MMDT3904}
   (    1 GND )
-  (    2 N-000104 )
+  (    2 N-000098 )
   (    3 /i.MX233/XTAL0 )
   (    4 GND )
   (    5 GND )
@@ -552,11 +552,11 @@
   (    2 GND )
  )
  ( /4D30AC69/4D407830 $noname  R6 100K {Lib=R}
-  (    1 N-000092 )
+  (    1 N-000086 )
   (    2 GND )
  )
  ( /4D30AC69/4D407823 $noname  R4 1K {Lib=R}
-  (    1 N-000092 )
+  (    1 N-000086 )
   (    2 /i.MX233/PSWITCH )
  )
  ( /4D30AC69/4D404D44 $noname  C53 20_pF {Lib=CAP}
@@ -567,8 +567,136 @@
   (    1 GND )
   (    2 /i.MX233/XTAL0 )
  )
+ ( /4D30B991/4D7E6AED $noname  R7 47k {Lib=R}
+  (    1 /DDR/DDR_CE0 )
+  (    2 VDDM_2V5 )
+ )
+ ( /4D30B991/4D41DFB8 $noname  R22 110 {Lib=R}
+  (    1 /DDR/DDR_CLK )
+  (    2 /DDR/DDR_CLKN )
+ )
+ ( /4D30B991/4D418363 $noname  R23 47K {Lib=R}
+  (    1 /DDR/DDR_CKE )
+  (    2 GND )
+ )
+ ( /4D30B991/4D417AA2 $noname  R25 1K_1% {Lib=R}
+  (    1 N-000132 )
+  (    2 GND )
+ )
+ ( /4D30B991/4D417A9C $noname  R24 1K_1% {Lib=R}
+  (    1 VDDM_2V5 )
+  (    2 N-000132 )
+ )
+ ( /4D30B991/4D417A94 $noname  C71 0.1uF {Lib=C}
+  (    1 N-000132 )
+  (    2 GND )
+ )
+ ( /4D30B991/4D417A8B $noname  C70 0.1uF {Lib=C}
+  (    1 VDDM_2V5 )
+  (    2 N-000132 )
+ )
+ ( /4D30B991/4D417911 $noname  C61 0.1uF {Lib=C}
+  (    1 VDDM_2V5 )
+  (    2 GND )
+ )
+ ( /4D30B991/4D41790C $noname  C62 0.1uF {Lib=C}
+  (    1 VDDM_2V5 )
+  (    2 GND )
+ )
+ ( /4D30B991/4D417905 $noname  C63 0.1uF {Lib=C}
+  (    1 VDDM_2V5 )
+  (    2 GND )
+ )
+ ( /4D30B991/4D417845 $noname  C69 1uF {Lib=C}
+  (    1 VDDM_2V5 )
+  (    2 GND )
+ )
+ ( /4D30B991/4D41783A $noname  C67 0.1uF {Lib=C}
+  (    1 VDDM_2V5 )
+  (    2 GND )
+ )
+ ( /4D30B991/4D417834 $noname  C66 0.1uF {Lib=C}
+  (    1 VDDM_2V5 )
+  (    2 GND )
+ )
+ ( /4D30B991/4D41782F $noname  C65 0.1uF {Lib=C}
+  (    1 VDDM_2V5 )
+  (    2 GND )
+ )
+ ( /4D30B991/4D417828 $noname  C64 0.1uF {Lib=C}
+  (    1 VDDM_2V5 )
+  (    2 GND )
+ )
+ ( /4D30B991/4D30BA6E TSOP66_JEDEC_DDR_SDRAM  U2 MT46V32M16TG {Lib=MT46V32M16TG}
+  (    1 VDDM_2V5 )
+  (    2 /DDR/DDR_DQ0 )
+  (    3 VDDM_2V5 )
+  (    4 /DDR/DDR_DQ1 )
+  (    5 /DDR/DDR_DQ2 )
+  (    6 GND )
+  (    7 /i.MX233/DDR_DQ3 )
+  (    8 /DDR/DDR_DQ4 )
+  (    9 VDDM_2V5 )
+  (   10 /i.MX233/DDR_DQ5 )
+  (   11 /i.MX233/DDR_DQ6 )
+  (   12 GND )
+  (   13 /DDR/DDR_DQ7 )
+  (   14 ? )
+  (   15 VDDM_2V5 )
+  (   16 /DDR/DDR_DQS0 )
+  (   17 ? )
+  (   18 VDDM_2V5 )
+  (   19 ? )
+  (   20 /DDR/DDR_DQM0 )
+  (   21 /i.MX233/DDR_WEN )
+  (   22 /DDR/DDR_CASN )
+  (   23 /DDR/DDR_RASN )
+  (   24 /DDR/DDR_CE0 )
+  (   25 ? )
+  (   26 /DDR/DDR_BA0 )
+  (   27 /DDR/DDR_BA1 )
+  (   28 /DDR/DDR_A10 )
+  (   29 /DDR/DDR_A0 )
+  (   30 /i.MX233/DDR_A1 )
+  (   31 /DDR/DDR_A2 )
+  (   32 /DDR/DDR_A3 )
+  (   33 VDDM_2V5 )
+  (   34 GND )
+  (   35 /DDR/DDR_A4 )
+  (   36 /DDR/DDR_A5 )
+  (   37 /DDR/DDR_A6 )
+  (   38 /DDR/DDR_A7 )
+  (   39 /DDR/DDR_A8 )
+  (   40 /DDR/DDR_A9 )
+  (   41 /i.MX233/DDR_A11 )
+  (   42 /DDR/DDR_A12 )
+  (   43 ? )
+  (   44 /DDR/DDR_CKE )
+  (   45 /DDR/DDR_CLK )
+  (   46 /DDR/DDR_CLKN )
+  (   47 /DDR/DDR_DQM1 )
+  (   48 GND )
+  (   49 N-000132 )
+  (   50 ? )
+  (   51 /i.MX233/DDR_DQS1 )
+  (   52 GND )
+  (   53 ? )
+  (   54 /i.MX233/DDR_DQ8 )
+  (   55 VDDM_2V5 )
+  (   56 /DDR/DDR_DQ9 )
+  (   57 /i.MX233/DDR_DQ10 )
+  (   58 GND )
+  (   59 /DDR/DDR_DQ11 )
+  (   60 /DDR/DDR_DQ12 )
+  (   61 VDDM_2V5 )
+  (   62 /DDR/DDR_DQ13 )
+  (   63 /DDR/DDR_DQ14 )
+  (   64 GND )
+  (   65 /DDR/DDR_DQ15 )
+  (   66 GND )
+ )
  ( /4E78AF25/4F3EDEE6 SM0805  C21 2.2uF {Lib=C}
-  (    1 N-000183 )
+  (    1 N-000182 )
   (    2 GND )
  )
  ( /4E78AF25/4F3EDEDE SM0805  C19 2.2uF {Lib=C}
@@ -636,11 +764,11 @@
  ( /4E78AF25/4E876537 BS170F  Q7 BS170F {Lib=MOSFET_N_OPENDOUS}
   (    1 /STM32/C2M3 )
   (    2 /STM32/GMTR )
-  (    3 N-000163 )
+  (    3 N-000161 )
  )
  ( /4E78AF25/4E876536 SM0603  R41 2.2k {Lib=R}
   (    1 /STM32/VMTR )
-  (    2 N-000163 )
+  (    2 N-000161 )
  )
  ( /4E78AF25/4E876535 SM0603  R40 2.2k {Lib=R}
   (    1 /STM32/VMTR )
@@ -656,7 +784,7 @@
   (    2 /STM32/M31 )
   (    3 /STM32/GMTR )
   (    4 /STM32/C1M3 )
-  (    5 N-000163 )
+  (    5 N-000161 )
   (    6 /STM32/M32 )
   (    7 /STM32/VMTR )
   (    8 N-000158 )
@@ -669,16 +797,16 @@
   (    5 N-000164 )
   (    6 /STM32/M22 )
   (    7 /STM32/VMTR )
-  (    8 N-000161 )
+  (    8 N-000163 )
  )
  ( /4E78AF25/4E8763E7 BS170F  Q4 BS170F {Lib=MOSFET_N_OPENDOUS}
   (    1 /STM32/C1M2 )
   (    2 /STM32/GMTR )
-  (    3 N-000161 )
+  (    3 N-000163 )
  )
  ( /4E78AF25/4E8763E6 SM0603  R38 2.2k {Lib=R}
   (    1 /STM32/VMTR )
-  (    2 N-000161 )
+  (    2 N-000163 )
  )
  ( /4E78AF25/4E8763E5 SM0603  R39 2.2k {Lib=R}
   (    1 /STM32/VMTR )
@@ -692,11 +820,11 @@
  ( /4E78AF25/4E8758ED BS170F  Q3 BS170F {Lib=MOSFET_N_OPENDOUS}
   (    1 /STM32/C2M1 )
   (    2 /STM32/GMTR )
-  (    3 N-000182 )
+  (    3 N-000181 )
  )
  ( /4E78AF25/4E8758EC SM0603  R37 2.2k {Lib=R}
   (    1 /STM32/VMTR )
-  (    2 N-000182 )
+  (    2 N-000181 )
  )
  ( /4E78AF25/4E8756FC SM0603  R35 2.2k {Lib=R}
   (    1 /STM32/VMTR )
@@ -712,7 +840,7 @@
   (    2 /STM32/M11 )
   (    3 /STM32/GMTR )
   (    4 /STM32/C1M1 )
-  (    5 N-000182 )
+  (    5 N-000181 )
   (    6 /STM32/M12 )
   (    7 /STM32/VMTR )
   (    8 N-000162 )
@@ -724,12 +852,12 @@
   (    4 /STM32/FP7 )
   (    5 /STM32/FP14 )
   (    6 /STM32/FP15 )
-  (    7 /STM32/FP8 )
+  (    7 /STM32/TIM3_CH3 )
   (    8 /STM32/FP9 )
-  (    9 /STM32/FP28 )
+  (    9 /STM32/I2C2_SCL )
   (   10 /STM32/FP29 )
   (   11 /STM32/FP17 )
-  (   12 /STM32/FP34 )
+  (   12 /STM32/SPI2_SCK )
   (   13 /STM32/FP33 )
   (   14 /STM32/FP32 )
   (   15 GND )
@@ -764,9 +892,9 @@
   (   18 /STM32/FP10 )
   (   19 /STM32/FP13 )
   (   20 /STM32/FP12 )
-  (   21 /STM32/FP1 )
+  (   21 /STM32/TIM5_CH2 )
   (   22 /STM32/FP0 )
-  (   23 /STM32/FP3 )
+  (   23 /STM32/TIM5_CH4 )
   (   24 /STM32/FP2 )
  )
  ( /4E78AF25/4E7B4A85 SM1206  C76 33uF {Lib=C}
@@ -801,7 +929,7 @@
  )
  ( /4E78AF25/4E78C2C1 SM0805  L14 2A_120_ohm {Lib=INDUCTOR}
   (    1 GND )
-  (    2 N-000181 )
+  (    2 N-000180 )
  )
  ( /4E78AF25/4E2DF30C SM1206  C59 10uF_Tant. {Lib=CP1}
   (    1 3V3 )
@@ -809,11 +937,11 @@
  )
  ( /4E78AF25/4E188E50 SM0603  R33 1k {Lib=R}
   (    1 GND )
-  (    2 N-000180 )
+  (    2 N-000179 )
  )
  ( /4E78AF25/4E188E4F SM0603  D9 LED {Lib=LED}
   (    1 /STM32/FP16 )
-  (    2 N-000180 )
+  (    2 N-000179 )
  )
  ( /4E78AF25/4E07C22E TQFP_64  U10 STM32F105RC {Lib=STM32F105RC}
   (    1 3V3 )
@@ -827,12 +955,12 @@
   (    9 /STM32/FP11 )
   (   10 /STM32/FP12 )
   (   11 /STM32/FP13 )
-  (   12 N-000181 )
+  (   12 N-000180 )
   (   13 /STM32/VDDAST )
   (   14 /STM32/FP0 )
-  (   15 /STM32/FP1 )
+  (   15 /STM32/TIM5_CH2 )
   (   16 /STM32/FP2 )
-  (   17 /STM32/FP3 )
+  (   17 /STM32/TIM5_CH4 )
   (   18 GND )
   (   19 3V3 )
   (   20 /STM32/DAC1 )
@@ -841,15 +969,15 @@
   (   23 /STM32/FP7 )
   (   24 /STM32/FP14 )
   (   25 /STM32/FP15 )
-  (   26 /STM32/FP8 )
+  (   26 /STM32/TIM3_CH3 )
   (   27 /STM32/FP9 )
   (   28 /STM32/BOOT1 )
-  (   29 /STM32/FP28 )
+  (   29 /STM32/I2C2_SCL )
   (   30 /STM32/FP29 )
-  (   31 N-000183 )
+  (   31 N-000182 )
   (   32 3V3 )
   (   33 /STM32/FP17 )
-  (   34 /STM32/FP34 )
+  (   34 /STM32/SPI2_SCK )
   (   35 /STM32/FP33 )
   (   36 /STM32/FP32 )
   (   37 /STM32/C2M3 )
@@ -858,13 +986,13 @@
   (   40 /STM32/C1M1 )
   (   41 /STM32/C2M4 )
   (   42 /i.MX233/AUART_RX )
-  (   43 /i.MX233/AUART_TX )
+  (   43 /STM32/STM_UART_RX )
   (   44 /STM32/C1M4 )
   (   45 ? )
-  (   46 /STM32/JTMS )
+  (   46 /i.MX233/SSPI_DATA3 )
   (   47 N-000176 )
   (   48 3V3 )
-  (   49 /STM32/JTCK )
+  (   49 /i.MX233/SSPI_DETECT )
   (   50 /STM32/JTDI )
   (   51 /STM32/FP30 )
   (   52 /STM32/FP31 )
@@ -907,11 +1035,11 @@
  )
  ( /4E78AF25/4DCDB178 SM0603  D8 LED {Lib=LED}
   (    1 3V3 )
-  (    2 N-000185 )
+  (    2 N-000183 )
  )
  ( /4E78AF25/4DCDB177 SM0603  R5 1k {Lib=R}
   (    1 GND )
-  (    2 N-000185 )
+  (    2 N-000183 )
  )
  ( /4E78AF25/4DCDB175 SM0603  C26 22pF {Lib=C}
   (    1 N-000187 )
@@ -921,136 +1049,16 @@
   (    1 N-000169 )
   (    2 GND )
  )
- ( /4D30B991/4D7E6AED $noname  R7 47k {Lib=R}
-  (    1 /i.MX233/DDR_CE0 )
-  (    2 VDDM_2V5 )
- )
- ( /4D30B991/4D41DFB8 $noname  R22 110 {Lib=R}
-  (    1 /DDR/DDR_CLK )
-  (    2 /i.MX233/DDR_CLKN )
- )
- ( /4D30B991/4D418363 $noname  R23 47K {Lib=R}
-  (    1 /i.MX233/DDR_CKE )
+ ( /4E3BEC51/4F522649 SM0603  C77 0.1uF {Lib=C}
+  (    1 N-000135 )
   (    2 GND )
  )
- ( /4D30B991/4D417AA2 $noname  R25 1K_1% {Lib=R}
-  (    1 N-000130 )
-  (    2 GND )
- )
- ( /4D30B991/4D417A9C $noname  R24 1K_1% {Lib=R}
-  (    1 VDDM_2V5 )
-  (    2 N-000130 )
- )
- ( /4D30B991/4D417A94 $noname  C71 0.1uF {Lib=C}
-  (    1 N-000130 )
-  (    2 GND )
- )
- ( /4D30B991/4D417A8B $noname  C70 0.1uF {Lib=C}
-  (    1 VDDM_2V5 )
-  (    2 N-000130 )
- )
- ( /4D30B991/4D417911 $noname  C61 0.1uF {Lib=C}
-  (    1 VDDM_2V5 )
-  (    2 GND )
- )
- ( /4D30B991/4D41790C $noname  C62 0.1uF {Lib=C}
-  (    1 VDDM_2V5 )
-  (    2 GND )
- )
- ( /4D30B991/4D417905 $noname  C63 0.1uF {Lib=C}
-  (    1 VDDM_2V5 )
-  (    2 GND )
- )
- ( /4D30B991/4D417845 $noname  C69 1uF {Lib=C}
-  (    1 VDDM_2V5 )
-  (    2 GND )
- )
- ( /4D30B991/4D41783A $noname  C67 0.1uF {Lib=C}
-  (    1 VDDM_2V5 )
-  (    2 GND )
- )
- ( /4D30B991/4D417834 $noname  C66 0.1uF {Lib=C}
-  (    1 VDDM_2V5 )
-  (    2 GND )
- )
- ( /4D30B991/4D41782F $noname  C65 0.1uF {Lib=C}
-  (    1 VDDM_2V5 )
-  (    2 GND )
- )
- ( /4D30B991/4D417828 $noname  C64 0.1uF {Lib=C}
-  (    1 VDDM_2V5 )
-  (    2 GND )
- )
- ( /4D30B991/4D30BA6E TSOP66_JEDEC_DDR_SDRAM  U2 MT46V32M16TG {Lib=MT46V32M16TG}
-  (    1 VDDM_2V5 )
-  (    2 /DDR/DDR_DQ0 )
-  (    3 VDDM_2V5 )
-  (    4 /DDR/DDR_DQ1 )
-  (    5 /DDR/DDR_DQ2 )
-  (    6 GND )
-  (    7 /DDR/DDR_DQ3 )
-  (    8 /i.MX233/DDR_DQ4 )
-  (    9 VDDM_2V5 )
-  (   10 /i.MX233/DDR_DQ5 )
-  (   11 /DDR/DDR_DQ6 )
-  (   12 GND )
-  (   13 /DDR/DDR_DQ7 )
-  (   14 ? )
-  (   15 VDDM_2V5 )
-  (   16 /DDR/DDR_DQS0 )
-  (   17 ? )
-  (   18 VDDM_2V5 )
-  (   19 ? )
-  (   20 /i.MX233/DDR_DQM0 )
-  (   21 /i.MX233/DDR_WEN )
-  (   22 /DDR/DDR_CASN )
-  (   23 /DDR/DDR_RASN )
-  (   24 /i.MX233/DDR_CE0 )
-  (   25 ? )
-  (   26 /DDR/DDR_BA0 )
-  (   27 /DDR/DDR_BA1 )
-  (   28 /DDR/DDR_A10 )
-  (   29 /DDR/DDR_A0 )
-  (   30 /DDR/DDR_A1 )
-  (   31 /DDR/DDR_A2 )
-  (   32 /DDR/DDR_A3 )
-  (   33 VDDM_2V5 )
-  (   34 GND )
-  (   35 /DDR/DDR_A4 )
-  (   36 /DDR/DDR_A5 )
-  (   37 /DDR/DDR_A6 )
-  (   38 /DDR/DDR_A7 )
-  (   39 /i.MX233/DDR_A8 )
-  (   40 /DDR/DDR_A9 )
-  (   41 /DDR/DDR_A11 )
-  (   42 /i.MX233/DDR_A12 )
-  (   43 ? )
-  (   44 /i.MX233/DDR_CKE )
-  (   45 /DDR/DDR_CLK )
-  (   46 /i.MX233/DDR_CLKN )
-  (   47 /i.MX233/DDR_DQM1 )
-  (   48 GND )
-  (   49 N-000130 )
-  (   50 ? )
-  (   51 /i.MX233/DDR_DQS1 )
-  (   52 GND )
-  (   53 ? )
-  (   54 /i.MX233/DDR_DQ8 )
-  (   55 VDDM_2V5 )
-  (   56 /i.MX233/DDR_DQ9 )
-  (   57 /DDR/DDR_DQ10 )
-  (   58 GND )
-  (   59 /i.MX233/DDR_DQ11 )
-  (   60 /DDR/DDR_DQ12 )
-  (   61 VDDM_2V5 )
-  (   62 /DDR/DDR_DQ13 )
-  (   63 /i.MX233/DDR_DQ14 )
-  (   64 GND )
-  (   65 /DDR/DDR_DQ15 )
-  (   66 GND )
+ ( /4E3BEC51/4F522458 SM0603  R50 10k {Lib=R}
+  (    1 N-000135 )
+  (    2 /i.MX233/GPMI_D04 )
  )
  ( /4E3BEC51/4E8C8ADC SM0603  R42 0 {Lib=R}
-  (    1 N-000151 )
+  (    1 N-000134 )
   (    2 /i.MX233/USB_DP )
  )
  ( /4E3BEC51/4E8C8AD6 SM0603  R43 0 {Lib=R}
@@ -1062,14 +1070,14 @@
   (    2 /i.MX233/USB_DM )
  )
  ( /4E3BEC51/4E4530F2 $noname  J3 USB_2A {Lib=USB_2A}
-  (    1 N-000155 )
-  (    2 N-000132 )
-  (    3 N-000154 )
+  (    1 N-000137 )
+  (    2 N-000136 )
+  (    3 N-000133 )
   (    4 GND )
-  (    5 GND_CASE )
-  (    6 GND_CASE )
-  (    7 GND_CASE )
-  (    8 GND_CASE )
+  (    5 /i.MX233/GND_CASE )
+  (    6 /i.MX233/GND_CASE )
+  (    7 /i.MX233/GND_CASE )
+  (    8 /i.MX233/GND_CASE )
  )
  ( /4E3BEC51/4E4310B7 ABM8G  X2 12MHz {Lib=ABM8G}
   (    1 /USB/X1 )
@@ -1077,45 +1085,40 @@
   (    3 /USB/X2 )
   (    4 GND )
  )
- ( /4E3BEC51/4E41C620 SOT23B-3  U9 MCP130 {Lib=MCP130}
-  (    1 N-000137 )
-  (    2 /USB/USBH_P33VD )
-  (    3 GND )
- )
  ( /4E3BEC51/4E41B9E1 SM0805  L9 2A_120_ohm {Lib=INDUCTOR}
   (    1 VDD5V )
-  (    2 N-000155 )
+  (    2 N-000137 )
  )
  ( /4E3BEC51/4E4157F9 SOD523  U6 RCLAMP0502B {Lib=RCLAMP0502B}
-  (    1 /USB/USB_M4 )
-  (    2 /USB/USB_P4 )
+  (    1 /i.MX233/USB_M4 )
+  (    2 /i.MX233/USB_P4 )
   (    3 GND )
  )
  ( /4E3BEC51/4E4157EA SOD523  U5 RCLAMP0502B {Lib=RCLAMP0502B}
   (    1 /i.MX233/USB_M3 )
-  (    2 /USB/USM_P3 )
+  (    2 /i.MX233/USM_P3 )
   (    3 GND )
  )
  ( /4E3BEC51/4E41574D SOD523  U8 RCLAMP0502B {Lib=RCLAMP0502B}
-  (    1 /USB/USB_M2 )
-  (    2 /USB/USM_P2 )
+  (    1 /i.MX233/USB_M2 )
+  (    2 /i.MX233/USM_P2 )
   (    3 GND )
  )
  ( /4E3BEC51/4E415735 SOD523  U7 RCLAMP0502B {Lib=RCLAMP0502B}
-  (    1 N-000132 )
-  (    2 N-000154 )
+  (    1 N-000136 )
+  (    2 N-000133 )
   (    3 GND )
  )
  ( /4E3BEC51/4E415351 diode-1-SOD123  D6 RSA5M {Lib=DIODE}
   (    1 GND )
-  (    2 N-000155 )
+  (    2 N-000137 )
  )
  ( /4E3BEC51/4E4150EC SM1206  C18 33uF {Lib=C}
-  (    1 N-000155 )
+  (    1 N-000137 )
   (    2 GND )
  )
  ( /4E3BEC51/4E414FF2 SM0603  C20 100nF {Lib=C}
-  (    1 N-000155 )
+  (    1 N-000137 )
   (    2 GND )
  )
  ( /4E3BEC51/4E3C4442 SM0603  C16 100nF {Lib=C}
@@ -1160,11 +1163,11 @@
  )
  ( /4E3BEC51/4E3C37F3 SM0603  R36 680_1% {Lib=R}
   (    1 GND )
-  (    2 N-000143 )
+  (    2 N-000142 )
  )
  ( /4E3BEC51/4E3C36E7 SM0603  R21 100k {Lib=R}
   (    1 GND )
-  (    2 N-000142 )
+  (    2 N-000143 )
  )
  ( /4E3BEC51/4E3C36D9 SM0603  R20 1M {Lib=R}
   (    1 /USB/X2 )
@@ -1179,34 +1182,34 @@
   (    2 GND )
  )
  ( /4E3BEC51/4E3C1756 SRF2012  L6 SRF2012 {Lib=SRF2012}
-  (    1 /USB/USB_M4 )
+  (    1 /i.MX233/USB_M4 )
   (    2 /USB/USB_DM4 )
   (    3 /USB/USB_DP4 )
-  (    4 /USB/USB_P4 )
+  (    4 /i.MX233/USB_P4 )
  )
  ( /4E3BEC51/4E3C1750 SRF2012  L5 SRF2012 {Lib=SRF2012}
   (    1 /i.MX233/USB_M3 )
   (    2 /USB/USB_DM3 )
   (    3 /USB/USB_DP3 )
-  (    4 /USB/USM_P3 )
+  (    4 /i.MX233/USM_P3 )
  )
  ( /4E3BEC51/4E3C173D SRF2012  L4 SRF2012 {Lib=SRF2012}
-  (    1 /USB/USB_M2 )
+  (    1 /i.MX233/USB_M2 )
   (    2 /USB/USB_DM2 )
   (    3 /USB/USB_DP2 )
-  (    4 /USB/USM_P2 )
+  (    4 /i.MX233/USM_P2 )
  )
  ( /4E3BEC51/4E3C172F SRF2012  L3 SRF2012 {Lib=SRF2012}
-  (    1 N-000132 )
+  (    1 N-000136 )
   (    2 /USB/USB_DM1 )
   (    3 /USB/USB_DP1 )
-  (    4 N-000154 )
+  (    4 N-000133 )
  )
  ( /4E3BEC51/4E3BF185 TSSOP28  U4 GL850G {Lib=GL850G}
   (    1 VDDIO_3V3 )
   (    2 /USB/USB_DM2 )
   (    3 /USB/USB_DP2 )
-  (    4 N-000143 )
+  (    4 N-000142 )
   (    5 VDDIO_3V3 )
   (    6 /USB/X1 )
   (    7 /USB/X2 )
@@ -1215,12 +1218,12 @@
   (   10 VDDIO_3V3 )
   (   11 /USB/USB_DM4 )
   (   12 /USB/USB_DP4 )
-  (   13 N-000137 )
+  (   13 N-000135 )
   (   14 GND )
   (   15 GND )
   (   16 /USB/USBH_P33VD )
   (   17 VDD5V )
-  (   18 N-000142 )
+  (   18 N-000143 )
   (   19 ? )
   (   20 ? )
   (   21 ? )
@@ -1228,7 +1231,7 @@
   (   23 VDD5V )
   (   24 /USB/USBH_P33VD )
   (   25 N-000138 )
-  (   26 N-000151 )
+  (   26 N-000134 )
   (   27 /USB/USB_DM1 )
   (   28 /USB/USB_DP1 )
  )
@@ -1239,11 +1242,13 @@ $component R49
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R48
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component C68
  SM*
@@ -1254,6 +1259,7 @@ $component R8
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component C17
  SM*
@@ -1264,41 +1270,49 @@ $component R18
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R12
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R19
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R14
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R11
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R17
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R15
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R32
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component C2
  SM*
@@ -1338,11 +1352,13 @@ $component R31
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R28
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component D3
  LED-3MM
@@ -1357,6 +1373,7 @@ $component R9
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component D2
  LED-3MM
@@ -1371,6 +1388,7 @@ $component R30
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component D4
  LED-3MM
@@ -1385,6 +1403,7 @@ $component R29
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component C23
  SM*
@@ -1410,11 +1429,13 @@ $component R1
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R2
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component C40
  CP*
@@ -1443,6 +1464,7 @@ $component R3
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component C48
  CP*
@@ -1542,16 +1564,19 @@ $component R10
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R13
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R16
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component C60
  SM*
@@ -1567,11 +1592,13 @@ $component R6
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R4
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component C53
  SM*
@@ -1579,6 +1606,86 @@ $component C53
  C1-1
 $endlist
 $component C52
+ SM*
+ C?
+ C1-1
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R22
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R23
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R25
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R24
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component C71
+ SM*
+ C?
+ C1-1
+$endlist
+$component C70
+ SM*
+ C?
+ C1-1
+$endlist
+$component C61
+ SM*
+ C?
+ C1-1
+$endlist
+$component C62
+ SM*
+ C?
+ C1-1
+$endlist
+$component C63
+ SM*
+ C?
+ C1-1
+$endlist
+$component C69
+ SM*
+ C?
+ C1-1
+$endlist
+$component C67
+ SM*
+ C?
+ C1-1
+$endlist
+$component C66
+ SM*
+ C?
+ C1-1
+$endlist
+$component C65
+ SM*
+ C?
+ C1-1
+$endlist
+$component C64
  SM*
  C?
  C1-1
@@ -1597,56 +1704,67 @@ $component R47
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R26
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R46
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R44
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R45
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R41
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R40
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R38
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R39
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R37
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R35
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component C76
  SM*
@@ -1667,11 +1785,13 @@ $component R27
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R34
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component C59
  CP*
@@ -1681,6 +1801,7 @@ $component R33
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component D9
  LED-3MM
@@ -1734,6 +1855,7 @@ $component R5
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component C26
  SM*
@@ -1745,90 +1867,28 @@ $component C28
  C?
  C1-1
 $endlist
-$component R7
+$component C77
+ SM*
+ C?
+ C1-1
+$endlist
+$component R50
  R?
  SM0603
  SM0805
-$endlist
-$component R22
- R?
- SM0603
- SM0805
-$endlist
-$component R23
- R?
- SM0603
- SM0805
-$endlist
-$component R25
- R?
- SM0603
- SM0805
-$endlist
-$component R24
- R?
- SM0603
- SM0805
-$endlist
-$component C71
- SM*
- C?
- C1-1
-$endlist
-$component C70
- SM*
- C?
- C1-1
-$endlist
-$component C61
- SM*
- C?
- C1-1
-$endlist
-$component C62
- SM*
- C?
- C1-1
-$endlist
-$component C63
- SM*
- C?
- C1-1
-$endlist
-$component C69
- SM*
- C?
- C1-1
-$endlist
-$component C67
- SM*
- C?
- C1-1
-$endlist
-$component C66
- SM*
- C?
- C1-1
-$endlist
-$component C65
- SM*
- C?
- C1-1
-$endlist
-$component C64
- SM*
- C?
- C1-1
+ R?-*
 $endlist
 $component R42
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R43
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component D6
  D?
@@ -1893,16 +1953,19 @@ $component R36
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R21
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component R20
  R?
  SM0603
  SM0805
+ R?-*
 $endlist
 $component C6
  SM*
@@ -1917,1059 +1980,1063 @@ $endlist
 $endfootprintlist
 }
 { Pin List by Nets
-Net 1 "/STM32/I2C1_SCL" "I2C1_SCL"
- IC1 85
- R47 1
- P8 9
- U10 58
-Net 2 "/STM32/I2C1_SDA" "I2C1_SDA"
- IC1 86
- U10 59
- R26 1
- P8 12
-Net 3 "/STM32/JTCK" "JTCK"
+Net 1 "/i.MX233/GPMI_D04" "GPMI_D04"
+ IC1 27
+ R50 2
+Net 2 "/i.MX233/SSPI_DETECT" "SSPI_DETECT"
  U10 49
  IC1 88
-Net 4 "/i.MX233/GPMI_CE1N" "GPMI_CE1N"
- IC1 81
- R46 2
-Net 5 "/i.MX233/GPMI_D06" "GPMI_D06"
- IC1 29
- U10 7
-Net 6 "/i.MX233/AUART_TX" "AUART_TX"
- U10 43
- IC1 127
-Net 7 "/i.MX233/AUART_RX" "AUART_RX"
- IC1 128
- U10 42
-Net 8 "/STM32/JTDI" "JTDI"
+Net 3 "/i.MX233/USB_DM" "USB_DM"
+ JP4 2
+ R43 2
+ IC1 123
+Net 4 "/i.MX233/USB_M2" "USB_M2"
+ P4 1
+ U8 1
+ L4 1
+Net 5 "/STM32/JTDI" "JTDI"
  IC1 91
  U10 50
-Net 9 "/i.MX233/GPMI_CE0N" "GPMI_CE0N"
- IC1 82
- U10 56
-Net 10 "/STM32/JTMS" "JTMS"
- IC1 87
- U10 46
- P1 7
-Net 11 "/DDR/DDR_CLK" "DDR_CLK"
- R22 1
- IC1 36
- U2 45
-Net 12 "/i.MX233/DDR_DQM0" "DDR_DQM0"
- IC1 46
- U2 20
-Net 13 "/i.MX233/DDR_DQM1" "DDR_DQM1"
- U2 47
- IC1 56
-Net 14 "/DDR/DDR_DQS0" "DDR_DQS0"
- IC1 39
- U2 16
-Net 15 "/i.MX233/DDR_DQS1" "DDR_DQS1"
- IC1 40
- U2 51
-Net 16 "/DDR/DDR_RASN" "DDR_RASN"
- U2 23
- IC1 62
-Net 17 "/i.MX233/DDR_WEN" "DDR_WEN"
- U2 21
- IC1 77
-Net 19 "/i.MX233/GPMI_D02" "GPMI_D02"
- IC1 24
- J1 1
- U3 7
-Net 20 "/i.MX233/GPMI_WRN" "GPMI_WRN"
- IC1 33
- U3 6
- J1 5
-Net 21 "/i.MX233/GPMI_RDY1" "GPMI_RDY1"
- IC1 21
- J1 3
- U3 5
-Net 22 "/i.MX233/GPMI_D01" "GPMI_D01"
- IC1 23
- J1 8
- U3 3
-Net 23 "/i.MX233/GPMI_D00" "GPMI_D00"
- J1 7
- U3 2
- IC1 22
-Net 24 "/i.MX233/USB_DM" "USB_DM"
- JP4 2
- IC1 123
- R43 2
-Net 25 "/i.MX233/USB_DP" "USB_DP"
- JP4 1
- R42 2
- IC1 124
-Net 26 "/USB/USB_P4" "USB_P4"
- L6 4
- U6 2
+Net 6 "/i.MX233/AUART_RX" "AUART_RX"
+ IC1 128
+ U10 42
+Net 7 "/i.MX233/USB_P4" "USB_P4"
  P4 6
-Net 27 "/USB/USB_M4" "USB_M4"
- P4 5
- U6 1
+ U6 2
+ L6 4
+Net 8 "/i.MX233/SSPI_DATA3" "SSPI_DATA3"
+ IC1 87
+ P1 7
+ U10 46
+Net 9 "/STM32/STM_UART_RX" "STM_UART_RX"
+ U10 43
+ IC1 127
+Net 10 "/i.MX233/GPMI_D06" "GPMI_D06"
+ U10 7
+ IC1 29
+Net 11 "/STM32/I2C1_SDA" "I2C1_SDA"
+ R26 1
+ U10 59
+ P8 12
+ IC1 86
+Net 12 "/i.MX233/USB_M4" "USB_M4"
  L6 1
-Net 28 "/USB/USM_P3" "USM_P3"
- U5 2
- L5 4
- P4 4
-Net 29 "/i.MX233/USB_M3" "USB_M3"
- L5 1
- P4 3
- U5 1
-Net 30 "/USB/USB_M2" "USB_M2"
- P4 1
- L4 1
- U8 1
-Net 31 "/USB/USM_P2" "USM_P2"
+ U6 1
+ P4 5
+Net 13 "/i.MX233/GPMI_CE1N" "GPMI_CE1N"
+ IC1 81
+ R46 2
+Net 14 "/i.MX233/USM_P2" "USM_P2"
  P4 2
  U8 2
  L4 4
-Net 32 "/DDR/DDR_BA0" "DDR_BA0"
- IC1 79
- U2 26
-Net 33 "/DDR/DDR_BA1" "DDR_BA1"
+Net 15 "/i.MX233/USB_DP" "USB_DP"
+ R42 2
+ IC1 124
+ JP4 1
+Net 16 "/i.MX233/GPMI_CE0N" "GPMI_CE0N"
+ U10 56
+ IC1 82
+Net 17 "/i.MX233/USM_P3" "USM_P3"
+ P4 4
+ L5 4
+ U5 2
+Net 18 "/STM32/I2C1_SCL" "I2C1_SCL"
+ R47 1
+ IC1 85
+ U10 58
+ P8 9
+Net 19 "/DDR/DDR_CASN" "DDR_CASN"
+ U2 22
+ IC1 61
+Net 20 "/DDR/DDR_DQS0" "DDR_DQS0"
+ IC1 39
+ U2 16
+Net 21 "/DDR/DDR_BA1" "DDR_BA1"
  U2 27
  IC1 80
-Net 34 "/i.MX233/DDR_CE0" "DDR_CE0"
- IC1 63
- R7 1
- U2 24
-Net 35 "/DDR/DDR_CASN" "DDR_CASN"
- IC1 61
- U2 22
-Net 36 "/i.MX233/DDR_CKE" "DDR_CKE"
+Net 22 "/DDR/DDR_CLKN" "DDR_CLKN"
+ U2 46
+ R22 2
+ IC1 37
+Net 23 "/DDR/DDR_CKE" "DDR_CKE"
  IC1 78
  U2 44
  R23 1
-Net 37 "/i.MX233/DDR_CLKN" "DDR_CLKN"
- U2 46
- IC1 37
- R22 2
-Net 38 "VDDM_2V5" "VDDM_2V5"
- R7 2
- U2 18
- C42 1
- C46 1
+Net 24 "/i.MX233/DDR_WEN" "DDR_WEN"
+ U2 21
+ IC1 77
+Net 25 "/DDR/DDR_CE0" "DDR_CE0"
+ U2 24
+ IC1 63
+ R7 1
+Net 26 "/DDR/DDR_DQM1" "DDR_DQM1"
+ IC1 56
+ U2 47
+Net 27 "/DDR/DDR_BA0" "DDR_BA0"
+ U2 26
+ IC1 79
+Net 28 "/DDR/DDR_CLK" "DDR_CLK"
+ R22 1
+ U2 45
+ IC1 36
+Net 29 "/i.MX233/DDR_DQS1" "DDR_DQS1"
+ IC1 40
+ U2 51
+Net 30 "/i.MX233/USB_M3" "USB_M3"
+ P4 3
+ U5 1
+ L5 1
+Net 31 "/DDR/DDR_RASN" "DDR_RASN"
+ IC1 62
+ U2 23
+Net 32 "/DDR/DDR_DQM0" "DDR_DQM0"
+ U2 20
+ IC1 46
+Net 33 "VDDM_2V5" "VDDM_2V5"
  C44 1
- C69 1
- C67 1
- C66 1
- C65 1
- C64 1
- R24 1
- C70 1
- C61 1
+ C46 1
+ C42 1
  C62 1
- U2 1
- U2 3
+ R7 2
+ C64 1
+ C67 1
+ C69 1
+ C63 1
+ C61 1
+ C70 1
+ R24 1
+ C65 1
+ C66 1
  U2 15
+ U2 33
+ U2 61
+ U2 18
  U2 55
  U2 9
- U2 61
- U2 33
- C63 1
+ U2 3
+ U2 1
  IC1 45
  IC1 53
- IC1 38
  IC1 106
-Net 39 "/i.MX233/GPMI_RDY0" "GPMI_RDY0"
- R29 1
- J1 CD
+ IC1 38
+Net 34 "VDDIO_3V3" "VDDIO_3V3"
+ C47 1
+ C49 1
+ R29 2
+ IC1 95
+ U4 10
+ U4 5
+ C10 1
+ C11 1
+ C9 1
+ C27 1
+ C25 1
+ C22 1
+ C24 1
+ C8 1
+ R10 1
+ U1 8
+ R18 2
+ C3 1
+ C2 2
+ D2 1
+ L7 2
+ U3 8
+ C68 2
+ R11 1
+ R8 1
+ R19 2
+ J1 4
+ D5 1
+ IC1 18
+ IC1 92
+ U4 1
+Net 35 "/i.MX233/GPMI_RDY0" "GPMI_RDY0"
  IC1 32
-Net 40 "/i.MX233/SSPI_DATA0" "SSPI_DATA0"
- IC1 84
+ J1 CD
+ R29 1
+Net 36 "/i.MX233/SSPI_DATA0" "SSPI_DATA0"
  P1 8
-Net 41 "/i.MX233/SSPI_CMD" "SSPI_CMD"
+ IC1 84
+Net 37 "/i.MX233/SSPI_CMD" "SSPI_CMD"
  IC1 83
  P1 5
-Net 42 "/i.MX233/SSPI_SCK" "SSPI_SCK"
+Net 38 "/i.MX233/SSPI_SCK" "SSPI_SCK"
  IC1 90
  P1 10
-Net 43 "VDD_BATT" "VDD_BATT"
- BT1 1
+Net 39 "VDD_BATT" "VDD_BATT"
+ IC1 103
+ IC1 100
  R2 1
+ BT1 1
  C41 1
  C43 1
- C45 1
  D1 1
- IC1 100
- IC1 103
-Net 44 "" ""
+ C45 1
+Net 40 "" ""
  L2 2
  IC1 111
-Net 46 "VDDD" "VDDD"
+Net 43 "VDDD" "VDDD"
  C51 1
- C37 1
- IC1 94
+ IC1 1
+ IC1 93
  C38 1
  C39 1
- IC1 1
+ C37 1
+ IC1 94
  C36 1
- IC1 93
-Net 47 "VDDA" "VDDA"
- C30 1
- C31 1
+Net 44 "VDDA" "VDDA"
  IC1 110
  C35 1
- C29 1
  IC1 96
-Net 48 "/i.MX233/PWM1" "PWM1"
+ C30 1
+ C31 1
+ C29 1
+Net 45 "/i.MX233/PWM1" "PWM1"
  U1 5
- R31 2
  IC1 126
-Net 49 "" ""
- D5 2
+ R31 2
+Net 46 "" ""
  R31 1
-Net 50 "" ""
- U1 2
+ D5 2
+Net 47 "" ""
  C1 1
-Net 52 "VDD5V" "VDD5V"
- IC1 102
- C74 1
- C16 1
- U11 3
- P2 1
- L9 1
- R1 1
+ U1 2
+Net 48 "VDD5V" "VDD5V"
  U4 23
- C32 1
- P2 19
  P4 7
  U4 17
+ L9 1
+ U11 3
+ C74 1
  D4 1
-Net 53 "" ""
+ C16 1
+ P2 19
+ R1 1
+ P2 1
+ IC1 102
+ C32 1
+Net 49 "" ""
  D4 2
  R30 2
-Net 54 "" ""
+Net 50 "" ""
  D2 2
  R9 2
-Net 55 "" ""
- R28 1
+Net 51 "" ""
  D3 2
-Net 56 "" ""
- R14 2
+ R28 1
+Net 52 "" ""
  JP3 1
-Net 57 "" ""
- JP2 1
- R12 2
-Net 58 "/i.MX233/LCD_D5" "LCD_D5"
+ R14 2
+Net 54 "/i.MX233/LCD_D5" "LCD_D5"
  IC1 7
- R32 1
  P2 13
-Net 59 "" ""
+ R32 1
+Net 55 "" ""
  JP1 1
  R11 2
-Net 62 "/i.MX233/TX" "TX"
- P2 24
+Net 58 "/i.MX233/TX" "TX"
  U1 12
-Net 63 "/i.MX233/RX" "RX"
- P2 23
+ P2 24
+Net 59 "/i.MX233/RX" "RX"
  U1 13
-Net 65 "" ""
- U1 10
- C5 1
-Net 66 "" ""
- U1 7
- C2 1
-Net 68 "/i.MX233/PWM0" "PWM0"
- IC1 125
- U1 4
-Net 69 "" ""
+ P2 23
+Net 60 "" ""
  U1 1
  C1 2
-Net 71 "/i.MX233/D03_SD" "D03_SD"
+Net 61 "" ""
+ C5 1
+ U1 10
+Net 62 "" ""
+ U1 7
+ C2 1
+Net 64 "/i.MX233/PWM0" "PWM0"
+ U1 4
+ IC1 125
+Net 66 "/i.MX233/D03_SD" "D03_SD"
  R48 2
  J1 2
-Net 72 "" ""
- C4 1
- U1 16
-Net 73 "" ""
+Net 67 "" ""
  U1 15
  C4 2
-Net 75 "/i.MX233/LCD_WR" "LCD_WR"
- P2 7
+Net 69 "/i.MX233/LCD_CS" "LCD_CS"
+ IC1 10
+ P2 12
+Net 70 "/i.MX233/LCD_WR" "LCD_WR"
  IC1 13
-Net 76 "/i.MX233/LCD_VSYNC" "LCD_VSYNC"
+ P2 7
+Net 71 "/i.MX233/LCD_VSYNC" "LCD_VSYNC"
  IC1 16
  P2 6
-Net 77 "/i.MX233/LCD_RS" "LCD_RS"
+Net 72 "/i.MX233/LCD_RS" "LCD_RS"
  R10 2
  P2 8
  IC1 14
-Net 78 "/i.MX233/LCD_RESET" "LCD_RESET"
+Net 73 "/i.MX233/LCD_RESET" "LCD_RESET"
  IC1 12
  P2 10
-Net 79 "/i.MX233/LCD_DOTCK" "LCD_DOTCK"
- P2 3
+Net 74 "/i.MX233/LCD_DOTCK" "LCD_DOTCK"
  IC1 17
-Net 80 "/i.MX233/LCD_ENABLE" "LCD_ENABLE"
- IC1 11
+ P2 3
+Net 75 "/i.MX233/LCD_ENABLE" "LCD_ENABLE"
  P2 9
-Net 81 "/i.MX233/LCD_HSYNC" "LCD_HSYNC"
+ IC1 11
+Net 76 "/i.MX233/LCD_HSYNC" "LCD_HSYNC"
  IC1 15
  P2 5
-Net 82 "/i.MX233/LCD_CS" "LCD_CS"
- P2 12
- IC1 10
-Net 83 "/i.MX233/LCD_D7" "LCD_D7"
+Net 77 "/i.MX233/LCD_D7" "LCD_D7"
  IC1 9
  P2 11
-Net 84 "/i.MX233/LCD_D6" "LCD_D6"
- IC1 8
+Net 78 "/i.MX233/LCD_D6" "LCD_D6"
  P2 14
-Net 85 "/i.MX233/LCD_D4" "LCD_D4"
+ IC1 8
+Net 79 "/i.MX233/LCD_D4" "LCD_D4"
  IC1 6
  P2 16
-Net 86 "/i.MX233/LCD_D2" "LCD_D2"
+Net 80 "/i.MX233/LCD_D2" "LCD_D2"
  R15 1
  P2 18
  IC1 4
-Net 87 "/i.MX233/LCD_D3" "LCD_D3"
+Net 81 "/i.MX233/LCD_D3" "LCD_D3"
  IC1 5
- P2 15
  R19 1
  JP3 2
-Net 88 "/i.MX233/LCD_D1" "LCD_D1"
+ P2 15
+Net 82 "/i.MX233/LCD_D1" "LCD_D1"
  IC1 3
- JP2 2
  R18 1
+ JP2 2
  P2 17
-Net 89 "/i.MX233/LCD_D0" "LCD_D0"
- IC1 2
+Net 83 "/i.MX233/LCD_D0" "LCD_D0"
  R17 1
- JP1 2
+ IC1 2
  P2 20
-Net 91 "/i.MX233/PSWITCH" "PSWITCH"
- IC1 119
- C57 1
+ JP1 2
+Net 85 "/i.MX233/PSWITCH" "PSWITCH"
  R4 2
+ C57 1
+ IC1 119
  P1 24
-Net 92 "" ""
- R6 1
+Net 86 "" ""
  R4 1
-Net 93 "VDD4P2" "VDD4P2"
- R3 1
+ R6 1
+Net 87 "VDD4P2" "VDD4P2"
  D1 2
+ R3 1
  C50 1
  IC1 101
-Net 94 "VDD_XTAL" "VDD_XTAL"
- IC1 120
+Net 88 "VDD_XTAL" "VDD_XTAL"
  C23 1
-Net 95 "/i.MX233/GPMI_D05" "GPMI_D05"
- P2 4
+ IC1 120
+Net 89 "/i.MX233/GPMI_D05" "GPMI_D05"
  IC1 26
-Net 96 "/i.MX233/GPMI_D07" "GPMI_D07"
- D3 1
+ P2 4
+Net 90 "/i.MX233/GPMI_D07" "GPMI_D07"
  P2 2
+ D3 1
  IC1 28
-Net 97 "" ""
- R3 2
+Net 91 "" ""
  C48 1
-Net 98 "" ""
- C40 1
+ R3 2
+Net 92 "" ""
  R2 2
-Net 100 "" ""
- C34 1
+ C40 1
+Net 94 "" ""
  R1 2
-Net 101 "" ""
+ C34 1
+Net 95 "" ""
  L1 2
  IC1 99
-Net 102 "" ""
- IC1 97
+Net 96 "" ""
  L1 1
-Net 104 "" ""
+ IC1 97
+Net 98 "" ""
  Q1 2
- C60 1
  R16 1
+ C60 1
  R13 1
-Net 105 "/i.MX233/LRADC1" "LRADC1"
+Net 99 "/i.MX233/LRADC1" "LRADC1"
  IC1 107
  P1 13
-Net 106 "/i.MX233/LRADC0" "LRADC0"
+Net 100 "/i.MX233/LRADC0" "LRADC0"
  P1 14
  IC1 108
-Net 107 "/i.MX233/LINE1_INR" "LINE1_INR"
+Net 101 "/i.MX233/LINE1_INR" "LINE1_INR"
  P1 19
  IC1 114
-Net 108 "/i.MX233/LINE1_INL" "LINE1_INL"
- P1 22
+Net 102 "/i.MX233/LINE1_INL" "LINE1_INL"
  IC1 115
-Net 109 "GND_CASE" "GND_CASE"
- P3 1
- P5 1
- P10 1
- J3 6
- J3 7
- J3 8
- J3 5
- P7 1
- L12 1
+ P1 22
+Net 103 "" ""
+ R12 2
+ JP2 1
+Net 104 "/i.MX233/GND_CASE" "GND_CASE"
  L11 1
+ L12 1
  L13 1
-Net 110 "/i.MX233/D03" "D03"
- IC1 25
+ P5 1
+ P3 1
+ J3 5
+ P10 1
+ J3 8
+ J3 7
+ J3 6
+ P7 1
+Net 106 "/i.MX233/VAG" "VAG"
+ C17 1
+ IC1 117
+Net 107 "/i.MX233/D03" "D03"
  R48 1
  R49 2
-Net 111 "/i.MX233/D03_SPI" "D03_SPI"
- U3 1
- R49 1
- R8 2
-Net 112 "/i.MX233/VAG" "VAG"
- IC1 117
- C17 1
-Net 114 "/i.MX233/RESET_PB" "RESET_PB"
- P2 22
+ IC1 25
+Net 108 "/i.MX233/RESET_PB" "RESET_PB"
  R13 2
-Net 115 "3V3" "3V3"
- U10 48
+ P2 22
+Net 109 "/i.MX233/GPMI_RDY1" "GPMI_RDY1"
+ U3 5
+ J1 3
+ IC1 21
+Net 110 "/i.MX233/D03_SPI" "D03_SPI"
+ R49 1
+ U3 1
+ R8 2
+Net 111 "/i.MX233/GPMI_D02" "GPMI_D02"
+ J1 1
+ IC1 24
+ U3 7
+Net 112 "/i.MX233/GPMI_WRN" "GPMI_WRN"
+ J1 5
+ U3 6
+ IC1 33
+Net 113 "/i.MX233/GPMI_D00" "GPMI_D00"
+ IC1 22
+ J1 7
+ U3 2
+Net 114 "/i.MX233/GPMI_D01" "GPMI_D01"
+ J1 8
+ IC1 23
+ U3 3
+Net 115 "/i.MX233/HPR" "HPR"
+ IC1 109
+ P1 17
+Net 116 "3V3" "3V3"
+ R26 2
+ R47 2
+ C54 1
+ C58 1
+ C55 1
+ C56 1
  U10 19
+ U10 48
+ D8 1
  U10 32
+ U10 64
+ U10 1
+ C59 1
+ L15 1
  P1 4
  P1 3
  P1 2
  P1 1
- U10 64
- D8 1
- C59 1
- R47 2
- C76 1
- U10 1
- C56 1
- C54 1
- C55 1
- C58 1
- R26 2
- L15 1
- U11 2
- U11 4
- C75 1
- P9 20
  P9 22
- P9 24
- P9 16
- P9 18
+ C76 1
+ C75 1
+ U11 4
+ U11 2
+ P9 20
  P8 2
  P8 1
-Net 116 "/i.MX233/HPL" "HPL"
+ P9 18
+ P9 16
+ P9 24
+Net 117 "/i.MX233/HPL" "HPL"
  IC1 113
  P1 20
-Net 117 "/i.MX233/HPR" "HPR"
- P1 17
- IC1 109
 Net 118 "/i.MX233/VDAC1" "VDAC1"
  IC1 104
  P1 12
 Net 119 "/i.MX233/MIC" "MIC"
- IC1 116
  P1 21
+ IC1 116
 Net 120 "/i.MX233/HP_VGND" "HP_VGND"
- L2 1
  P1 18
+ L2 1
 Net 121 "" ""
  L8 2
  C17 2
 Net 122 "/i.MX233/XTALI" "XTALI"
- X1 3
  Q1 6
- IC1 122
  C53 2
+ IC1 122
+ X1 3
 Net 123 "/i.MX233/XTAL0" "XTAL0"
- Q1 3
- X1 1
  IC1 121
  C52 2
-Net 130 "" ""
+ Q1 3
+ X1 1
+Net 124 "" ""
+ U1 16
+ C4 1
+Net 132 "" ""
  U2 49
  R25 1
  C70 2
  C71 1
  R24 2
-Net 132 "" ""
- U7 1
+Net 133 "" ""
+ U7 2
+ J3 3
+ L3 4
+Net 134 "" ""
+ R42 1
+ U4 26
+Net 135 "" ""
+ U4 13
+ R50 1
+ C77 1
+Net 136 "" ""
  L3 1
+ U7 1
  J3 2
 Net 137 "" ""
- U4 13
- U9 1
+ L9 2
+ C18 1
+ D6 2
+ J3 1
+ C20 1
 Net 138 "" ""
- R43 1
  U4 25
-Net 139 "/USB/USB_DP3" "USB_DP3"
- L5 3
- U4 9
-Net 140 "/USB/USB_DM3" "USB_DM3"
- L5 2
- U4 8
-Net 141 "/USB/X2" "X2"
- R20 1
- U4 7
- X2 3
- C7 1
-Net 142 "" ""
- R21 2
- U4 18
-Net 143 "" ""
- R36 2
- U4 4
-Net 144 "/USB/USBH_P33VD" "USBH_P33VD"
- U9 2
- C14 1
- C15 1
- U4 16
- L7 1
+ R43 1
+Net 139 "/USB/USBH_P33VD" "USBH_P33VD"
+ C12 1
  C13 1
  U4 24
- C12 1
+ U4 16
+ C14 1
+ C15 1
+ L7 1
+Net 140 "/USB/USB_DM3" "USB_DM3"
+ U4 8
+ L5 2
+Net 141 "/USB/USB_DP4" "USB_DP4"
+ U4 12
+ L6 3
+Net 142 "" ""
+ R36 2
+ U4 4
+Net 143 "" ""
+ R21 2
+ U4 18
+Net 144 "/USB/USB_DM4" "USB_DM4"
+ U4 11
+ L6 2
 Net 145 "/USB/USB_DM2" "USB_DM2"
  L4 2
  U4 2
 Net 146 "/USB/USB_DP2" "USB_DP2"
- U4 3
  L4 3
-Net 147 "/USB/USB_DM4" "USB_DM4"
- L6 2
- U4 11
-Net 148 "/USB/USB_DP4" "USB_DP4"
- U4 12
- L6 3
-Net 149 "/USB/USB_DP1" "USB_DP1"
- L3 3
+ U4 3
+Net 147 "/USB/USB_DP1" "USB_DP1"
  U4 28
-Net 150 "/USB/USB_DM1" "USB_DM1"
+ L3 3
+Net 148 "/USB/USB_DM1" "USB_DM1"
  L3 2
  U4 27
-Net 151 "" ""
- U4 26
- R42 1
-Net 152 "/USB/X1" "X1"
- U4 6
- R20 2
- C6 1
+Net 149 "/USB/USB_DP3" "USB_DP3"
+ U4 9
+ L5 3
+Net 154 "/USB/X2" "X2"
+ C7 1
+ R20 1
+ U4 7
+ X2 3
+Net 155 "/USB/X1" "X1"
  X2 1
-Net 153 "VDDIO_3V3" "VDDIO_3V3"
- C3 1
- IC1 92
- U1 8
- U3 8
- D2 1
- C68 2
- R8 1
- U4 1
- R11 1
- C2 2
- R10 1
- R18 2
- R19 2
- C22 1
- C24 1
- C25 1
- C27 1
- U4 5
- U4 10
- C8 1
- C9 1
- C11 1
- L7 2
- C10 1
- R29 2
- IC1 95
- J1 4
- IC1 18
- C49 1
- C47 1
- D5 1
-Net 154 "" ""
- L3 4
- U7 2
- J3 3
-Net 155 "" ""
- L9 2
- J3 1
- D6 2
- C18 1
- C20 1
-Net 156 "/STM32/M31" "M31"
- U14 2
- P6 1
-Net 157 "/STM32/M21" "M21"
- U13 2
+ R20 2
+ U4 6
+ C6 1
+Net 156 "/STM32/M21" "M21"
  P6 9
+ U13 2
+Net 157 "/STM32/M11" "M11"
+ U12 2
+ P6 7
 Net 158 "" ""
  R40 2
- Q6 3
  U14 8
+ Q6 3
 Net 159 "" ""
  U15 5
- R45 2
  Q9 3
+ R45 2
 Net 160 "" ""
  U15 8
  Q8 3
  R44 2
 Net 161 "" ""
- Q4 3
- R38 2
- U13 8
-Net 162 "" ""
- R35 2
- Q2 3
- U12 8
-Net 163 "" ""
- U14 5
  R41 2
  Q7 3
+ U14 5
+Net 162 "" ""
+ Q2 3
+ U12 8
+ R35 2
+Net 163 "" ""
+ U13 8
+ R38 2
+ Q4 3
 Net 164 "" ""
  U13 5
  R39 2
  Q5 3
-Net 165 "/STM32/GMTR" "GMTR"
+Net 165 "/STM32/VMTR" "VMTR"
+ R38 1
+ U12 7
+ U14 7
+ U13 7
+ R35 1
+ U15 7
+ R44 1
+ P6 5
+ R40 1
+ R45 1
+ R37 1
+ R39 1
+ R41 1
+Net 166 "/STM32/GMTR" "GMTR"
+ Q3 2
  Q5 2
  U13 3
- Q9 2
- P6 6
- Q4 2
+ U14 3
+ U12 3
  Q7 2
+ Q4 2
+ Q6 2
+ P6 6
  Q8 2
  U15 3
  Q2 2
- U14 3
- U12 3
- Q6 2
- Q3 2
-Net 166 "/STM32/M42" "M42"
- P6 4
+ Q9 2
+Net 167 "/STM32/M42" "M42"
  U15 6
-Net 167 "/STM32/M41" "M41"
+ P6 4
+Net 168 "/STM32/M41" "M41"
  U15 2
  P6 3
-Net 168 "/STM32/VMTR" "VMTR"
- U12 7
- R38 1
- R44 1
- R39 1
- R41 1
- R40 1
- R35 1
- R37 1
- R45 1
- U15 7
- U13 7
- P6 5
- U14 7
 Net 169 "" ""
  U10 6
- C28 1
  X3 3
-Net 170 "/STM32/M32" "M32"
- U14 6
- P6 2
-Net 171 "GND" "GND"
- C52 1
+ C28 1
+Net 170 "/STM32/C1M4" "C1M4"
+ U15 4
+ U10 44
+ Q8 1
+Net 171 "/STM32/C2M4" "C2M4"
+ U15 1
+ U10 41
+ Q9 1
+Net 172 "GND" "GND"
  C74 2
- C76 2
- C53 1
- R6 2
- C57 2
- C8 2
- C12 2
- C13 2
  C7 2
  C6 2
- R27 1
- C75 2
- R21 1
- R36 1
+ C12 2
+ C8 2
  C10 2
- C11 2
+ C13 2
  C9 2
- U11 1
- C27 2
- C25 2
- C24 2
- C22 2
- C29 2
- C32 2
- C34 2
- BT1 2
- C50 2
+ C11 2
  P9 21
+ L13 2
+ X1 2
  P9 23
+ L11 2
  P9 15
  P9 17
  P9 19
- C48 2
  P8 3
- P8 4
- C45 2
- C43 2
- C40 2
- C41 2
- C46 2
- C44 2
- Q1 4
- Q1 5
- C23 2
- C51 2
- C60 2
- R16 2
- C49 2
  IC1 35
- C47 2
- Q1 1
- C42 2
- C35 2
- C31 2
- C30 2
- C36 2
- C37 2
- C38 2
- C39 2
- IC1 98
- R17 2
- C3 2
- R32 2
- R25 2
- C71 2
- R15 2
- C61 2
- C62 2
- X3 2
+ P4 8
+ X1 4
+ C76 2
+ L8 1
+ U8 3
+ C19 2
+ U7 3
+ D6 1
+ C21 2
+ C52 1
+ C15 2
+ C14 2
+ C53 1
+ J1 CASE
+ J3 4
+ R27 1
  X3 4
- IC1 112
- IC1 118
- R23 2
- U2 66
- R30 1
- R5 1
+ X3 2
+ P8 11
  C26 2
  C28 2
- C56 2
- R28 2
- C54 2
- C55 2
- C58 2
- U2 34
- U10 18
- U2 64
- C21 2
- C19 2
- U10 63
- R9 1
- U2 6
+ P8 4
+ P2 21
+ P8 14
+ C57 2
+ C16 2
+ Q1 5
+ Q1 4
+ C20 2
+ C18 2
+ U4 14
+ U4 15
+ R6 2
+ U11 1
+ R21 1
+ R36 1
+ U5 3
+ U6 3
+ R17 2
+ X2 2
+ C75 2
+ X2 4
+ J1 CASE
+ C68 1
  C59 2
- C69 2
  C67 2
+ C3 2
+ R12 1
+ R25 2
+ U10 18
+ C71 2
+ C69 2
+ IC1 98
+ U10 63
+ C44 2
+ C46 2
+ C47 2
+ C42 2
+ IC1 118
+ C49 2
+ C61 2
+ C62 2
+ C63 2
+ J1 6
+ U2 66
+ R30 1
+ R34 1
+ R33 1
+ P1 9
+ U2 34
+ U2 64
+ C72 2
+ C58 2
+ C55 2
+ U2 12
+ U2 52
+ L14 1
+ R9 1
+ J1 COM
+ U2 58
+ U2 48
+ U3 4
+ P1 6
+ C5 2
  C66 2
  C65 2
  C64 2
- R12 1
- C5 2
- C72 2
  C73 2
- R33 1
- U2 12
- L14 1
- U2 52
  R14 1
- C63 2
- U6 3
- L8 1
- L13 2
- L12 2
- L11 2
- U9 3
- P2 21
- P1 23
- P1 15
+ R32 2
+ C54 2
+ J1 CASE
+ C56 2
  P1 16
- J3 4
- P4 8
- X1 2
- X1 4
+ P1 15
+ R5 1
+ P1 23
+ R28 2
+ U2 6
  IC1 30
- U5 3
- J1 6
- U4 15
- U4 14
- R34 1
- P8 11
- P1 6
- P1 9
+ C77 2
+ C22 2
+ C25 2
+ BT1 2
+ R15 2
+ C45 2
+ C34 2
+ C23 2
+ L12 2
  U1 9
- U3 4
- C68 1
- C18 2
- C20 2
- C16 2
- D6 1
- U7 3
- U8 3
+ C24 2
+ C40 2
+ C48 2
+ C50 2
+ C43 2
+ C27 2
+ C41 2
+ C37 2
+ C51 2
+ IC1 112
+ Q1 1
+ R23 2
  IC1 105
- U2 48
- U2 58
- C15 2
- C14 2
- J1 COM
- X2 4
- P8 14
- X2 2
- J1 CASE
- J1 CASE
-Net 172 "/STM32/C1M4" "C1M4"
- U15 4
- Q8 1
- U10 44
-Net 173 "/STM32/C2M4" "C2M4"
- U10 41
- U15 1
- Q9 1
-Net 174 "/STM32/C2M1" "C2M1"
+ R16 2
+ C60 2
+ C39 2
+ C38 2
+ C31 2
+ C29 2
+ C32 2
+ C35 2
+ C30 2
+ C36 2
+Net 173 "/STM32/C2M1" "C2M1"
+ U12 1
  U10 39
  Q3 1
- U12 1
-Net 175 "/STM32/C1M1" "C1M1"
- U10 40
- Q2 1
+Net 174 "/STM32/C1M1" "C1M1"
  U12 4
+ Q2 1
+ U10 40
+Net 175 "/STM32/C1M3" "C1M3"
+ U10 38
+ U14 4
+ Q6 1
 Net 176 "" ""
- C19 1
  U10 47
+ C19 1
 Net 177 "/STM32/TDO" "TDO"
- R46 1
  U10 55
+ R46 1
 Net 178 "/STM32/C2M3" "C2M3"
  Q7 1
  U10 37
  U14 1
-Net 179 "/STM32/C1M3" "C1M3"
- U10 38
- U14 4
- Q6 1
-Net 180 "" ""
+Net 179 "" ""
  R33 2
  D9 2
-Net 181 "" ""
- L14 2
+Net 180 "" ""
  U10 12
-Net 182 "" ""
+ L14 2
+Net 181 "" ""
  Q3 3
- R37 2
  U12 5
-Net 183 "" ""
- U10 31
+ R37 2
+Net 182 "" ""
  C21 1
-Net 184 "/STM32/BOOT0" "BOOT0"
- U10 60
- R27 2
-Net 185 "" ""
+ U10 31
+Net 183 "" ""
  D8 2
  R5 2
-Net 186 "/STM32/BOOT1" "BOOT1"
+Net 184 "/STM32/BOOT1" "BOOT1"
  R34 2
  U10 28
+Net 185 "/STM32/VDDAST" "VDDAST"
+ C73 1
+ L15 2
+ C72 1
+ U10 13
+Net 186 "/STM32/BOOT0" "BOOT0"
+ U10 60
+ R27 2
 Net 187 "" ""
  C26 1
  X3 1
  U10 5
-Net 188 "/STM32/DAC2" "DAC2"
- P9 2
- U10 21
-Net 189 "/STM32/FP10" "FP10"
- P8 18
- U10 8
-Net 190 "/STM32/FP11" "FP11"
- P8 17
- U10 9
-Net 191 "/STM32/FP12" "FP12"
+Net 188 "/STM32/FP18" "FP18"
+ U10 53
+ P8 8
+Net 189 "/STM32/I2C2_SCL" "I2C2_SCL"
+ P9 9
+ U10 29
+Net 190 "/STM32/FP17" "FP17"
+ P9 11
+ U10 33
+Net 191 "/STM32/FP33" "FP33"
+ P9 13
+ U10 35
+Net 192 "/STM32/DAC1" "DAC1"
+ U10 20
+ P9 1
+Net 193 "/STM32/FP2" "FP2"
+ U10 16
+ P8 24
+Net 194 "/STM32/FP0" "FP0"
+ P8 22
+ U10 14
+Net 195 "/STM32/FP12" "FP12"
  U10 10
  P8 20
-Net 192 "/STM32/FP13" "FP13"
- U10 11
- P8 19
-Net 193 "/STM32/FP14" "FP14"
- P9 5
- U10 24
-Net 194 "/STM32/FP1" "FP1"
+Net 196 "/STM32/FP10" "FP10"
+ P8 18
+ U10 8
+Net 197 "/STM32/FP41" "FP41"
+ P8 16
+ U10 3
+Net 198 "/STM32/FP19" "FP19"
+ P8 10
+ U10 57
+Net 199 "/STM32/FP31" "FP31"
+ P8 5
+ U10 52
+Net 200 "/STM32/TIM5_CH4" "TIM5_CH4"
+ P8 23
+ U10 17
+Net 201 "/STM32/TIM5_CH2" "TIM5_CH2"
  P8 21
  U10 15
-Net 195 "/STM32/FP6" "FP6"
- P9 3
- U10 22
-Net 196 "/STM32/FP7" "FP7"
- P9 4
- U10 23
-Net 197 "/STM32/FP8" "FP8"
+Net 202 "/STM32/FP13" "FP13"
+ U10 11
+ P8 19
+Net 203 "/STM32/FP11" "FP11"
+ P8 17
+ U10 9
+Net 204 "/STM32/FP42" "FP42"
+ U10 4
+ P8 15
+Net 205 "/STM32/FP35" "FP35"
+ P8 13
+ U10 2
+Net 206 "/STM32/FP16" "FP16"
+ U10 54
+ D9 1
+ P8 7
+Net 207 "/STM32/FP30" "FP30"
+ P8 6
+ U10 51
+Net 209 "/STM32/TIM3_CH3" "TIM3_CH3"
  U10 26
  P9 7
-Net 198 "/STM32/FP9" "FP9"
- U10 27
- P9 8
-Net 199 "/STM32/C1M2" "C1M2"
- U10 61
- Q4 1
+Net 210 "/STM32/M32" "M32"
+ U14 6
+ P6 2
+Net 211 "/STM32/M31" "M31"
+ U14 2
+ P6 1
+Net 212 "/STM32/C1M2" "C1M2"
  U13 4
-Net 200 "/STM32/C2M2" "C2M2"
+ Q4 1
+ U10 61
+Net 213 "/STM32/M22" "M22"
+ P6 10
+ U13 6
+Net 214 "/STM32/M12" "M12"
+ P6 8
+ U12 6
+Net 215 "/STM32/C2M2" "C2M2"
  U10 62
  Q5 1
  U13 1
-Net 201 "/STM32/FP2" "FP2"
- U10 16
- P8 24
-Net 202 "/STM32/FP3" "FP3"
- U10 17
- P8 23
-Net 203 "/STM32/DAC1" "DAC1"
- P9 1
- U10 20
-Net 204 "/STM32/FP15" "FP15"
+Net 216 "/STM32/DAC2" "DAC2"
+ U10 21
+ P9 2
+Net 217 "/STM32/FP7" "FP7"
+ U10 23
+ P9 4
+Net 218 "/STM32/FP15" "FP15"
  P9 6
  U10 25
-Net 205 "/STM32/FP16" "FP16"
- D9 1
- U10 54
- P8 7
-Net 206 "/STM32/FP17" "FP17"
- P9 11
- U10 33
-Net 207 "/STM32/FP18" "FP18"
- U10 53
- P8 8
-Net 208 "/STM32/FP19" "FP19"
- U10 57
- P8 10
-Net 209 "/STM32/FP35" "FP35"
- P8 13
- U10 2
-Net 210 "/STM32/FP34" "FP34"
+Net 219 "/STM32/FP9" "FP9"
+ P9 8
+ U10 27
+Net 220 "/STM32/FP29" "FP29"
+ P9 10
+ U10 30
+Net 221 "/STM32/SPI2_SCK" "SPI2_SCK"
  U10 34
  P9 12
-Net 211 "/STM32/FP33" "FP33"
- U10 35
- P9 13
-Net 212 "/STM32/VDDAST" "VDDAST"
- L15 2
- C73 1
- U10 13
- C72 1
-Net 213 "/STM32/FP29" "FP29"
- U10 30
- P9 10
-Net 214 "/STM32/FP28" "FP28"
- P9 9
- U10 29
-Net 215 "/STM32/FP31" "FP31"
- P8 5
- U10 52
-Net 216 "/STM32/FP30" "FP30"
- U10 51
- P8 6
-Net 217 "/STM32/FP32" "FP32"
- P9 14
+Net 222 "/STM32/FP32" "FP32"
  U10 36
-Net 218 "/STM32/FP0" "FP0"
- U10 14
- P8 22
-Net 219 "/STM32/M11" "M11"
- U12 2
- P6 7
-Net 220 "/STM32/M12" "M12"
- U12 6
- P6 8
-Net 221 "/STM32/M22" "M22"
- P6 10
- U13 6
-Net 223 "/STM32/FP41" "FP41"
- U10 3
- P8 16
-Net 224 "/STM32/FP42" "FP42"
- U10 4
- P8 15
-Net 225 "/DDR/DDR_A0" "DDR_A0"
- U2 29
- IC1 76
-Net 226 "/DDR/DDR_A1" "DDR_A1"
- IC1 75
- U2 30
-Net 227 "/DDR/DDR_A2" "DDR_A2"
- IC1 74
- U2 31
-Net 228 "/DDR/DDR_A3" "DDR_A3"
- U2 32
- IC1 73
-Net 229 "/DDR/DDR_A4" "DDR_A4"
- IC1 72
- U2 35
-Net 230 "/DDR/DDR_A5" "DDR_A5"
+ P9 14
+Net 223 "/STM32/FP6" "FP6"
+ U10 22
+ P9 3
+Net 224 "/STM32/FP14" "FP14"
+ U10 24
+ P9 5
+Net 225 "/DDR/DDR_A5" "DDR_A5"
  U2 36
  IC1 71
-Net 231 "/DDR/DDR_A6" "DDR_A6"
- IC1 70
- U2 37
-Net 232 "/DDR/DDR_A7" "DDR_A7"
+Net 226 "/DDR/DDR_DQ0" "DDR_DQ0"
+ U2 2
+ IC1 41
+Net 227 "/i.MX233/DDR_DQ6" "DDR_DQ6"
+ IC1 49
+ U2 11
+Net 228 "/DDR/DDR_A7" "DDR_A7"
  U2 38
  IC1 69
-Net 233 "/i.MX233/DDR_A8" "DDR_A8"
- U2 39
- IC1 68
-Net 234 "/DDR/DDR_A9" "DDR_A9"
- U2 40
- IC1 67
-Net 235 "/DDR/DDR_A10" "DDR_A10"
- IC1 66
- U2 28
-Net 236 "/DDR/DDR_A11" "DDR_A11"
- U2 41
+Net 229 "/i.MX233/DDR_A11" "DDR_A11"
  IC1 65
-Net 237 "/i.MX233/DDR_A12" "DDR_A12"
- U2 42
- IC1 64
-Net 238 "/DDR/DDR_DQ0" "DDR_DQ0"
- IC1 41
- U2 2
-Net 239 "/DDR/DDR_DQ1" "DDR_DQ1"
- IC1 43
- U2 4
-Net 240 "/DDR/DDR_DQ2" "DDR_DQ2"
+ U2 41
+Net 230 "/DDR/DDR_DQ2" "DDR_DQ2"
  U2 5
  IC1 42
-Net 241 "/DDR/DDR_DQ3" "DDR_DQ3"
- IC1 44
- U2 7
-Net 242 "/i.MX233/DDR_DQ4" "DDR_DQ4"
- IC1 47
- U2 8
-Net 243 "/i.MX233/DDR_DQ5" "DDR_DQ5"
- IC1 48
- U2 10
-Net 244 "/DDR/DDR_DQ6" "DDR_DQ6"
- U2 11
- IC1 49
-Net 245 "/DDR/DDR_DQ7" "DDR_DQ7"
- IC1 50
- U2 13
-Net 246 "/i.MX233/DDR_DQ8" "DDR_DQ8"
- U2 54
- IC1 51
-Net 247 "/i.MX233/DDR_DQ9" "DDR_DQ9"
+Net 231 "/DDR/DDR_A4" "DDR_A4"
+ U2 35
+ IC1 72
+Net 232 "/DDR/DDR_DQ9" "DDR_DQ9"
  U2 56
  IC1 52
-Net 248 "/DDR/DDR_DQ10" "DDR_DQ10"
- U2 57
+Net 233 "/DDR/DDR_A12" "DDR_A12"
+ IC1 64
+ U2 42
+Net 234 "/i.MX233/DDR_DQ5" "DDR_DQ5"
+ U2 10
+ IC1 48
+Net 235 "/DDR/DDR_A8" "DDR_A8"
+ U2 39
+ IC1 68
+Net 236 "/DDR/DDR_A10" "DDR_A10"
+ IC1 66
+ U2 28
+Net 237 "/i.MX233/DDR_DQ3" "DDR_DQ3"
+ U2 7
+ IC1 44
+Net 238 "/DDR/DDR_A6" "DDR_A6"
+ U2 37
+ IC1 70
+Net 239 "/DDR/DDR_DQ7" "DDR_DQ7"
+ U2 13
+ IC1 50
+Net 240 "/DDR/DDR_DQ1" "DDR_DQ1"
+ IC1 43
+ U2 4
+Net 241 "/DDR/DDR_A3" "DDR_A3"
+ IC1 73
+ U2 32
+Net 242 "/i.MX233/DDR_DQ8" "DDR_DQ8"
+ IC1 51
+ U2 54
+Net 243 "/DDR/DDR_DQ4" "DDR_DQ4"
+ U2 8
+ IC1 47
+Net 244 "/DDR/DDR_A9" "DDR_A9"
+ U2 40
+ IC1 67
+Net 245 "/DDR/DDR_A2" "DDR_A2"
+ U2 31
+ IC1 74
+Net 246 "/DDR/DDR_A0" "DDR_A0"
+ IC1 76
+ U2 29
+Net 247 "/i.MX233/DDR_DQ10" "DDR_DQ10"
  IC1 54
-Net 249 "/i.MX233/DDR_DQ11" "DDR_DQ11"
+ U2 57
+Net 248 "/i.MX233/DDR_A1" "DDR_A1"
+ U2 30
+ IC1 75
+Net 249 "/DDR/DDR_DQ11" "DDR_DQ11"
  U2 59
  IC1 55
-Net 250 "/DDR/DDR_DQ12" "DDR_DQ12"
+Net 250 "/DDR/DDR_DQ13" "DDR_DQ13"
+ IC1 58
+ U2 62
+Net 251 "/DDR/DDR_DQ14" "DDR_DQ14"
+ U2 63
+ IC1 60
+Net 252 "/DDR/DDR_DQ12" "DDR_DQ12"
  U2 60
  IC1 57
-Net 251 "/DDR/DDR_DQ13" "DDR_DQ13"
- U2 62
- IC1 58
-Net 252 "/i.MX233/DDR_DQ14" "DDR_DQ14"
- IC1 60
- U2 63
 Net 253 "/DDR/DDR_DQ15" "DDR_DQ15"
  IC1 59
  U2 65
