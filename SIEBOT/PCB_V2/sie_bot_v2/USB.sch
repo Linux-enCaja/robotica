@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date sáb 03 mar 2012 09:20:54 COT
+EESchema Schematic File Version 2  date Fri 30 Mar 2012 08:38:46 AM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -58,12 +58,13 @@ LIBS:stm32f100vxx
 LIBS:lt1117cst
 LIBS:zxmhc3f381n8
 LIBS:i.mx233stamp-cache
-EELAYER 24  0
+EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
+encoding utf-8
 Sheet 5 5
 Title ""
-Date "3 mar 2012"
+Date "30 mar 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -392,10 +393,10 @@ Wire Wire Line
 Wire Wire Line
 	6550 3200 6800 3200
 $Comp
-L C C?
+L C C77
 U 1 1 4F522649
 P 6550 3550
-F 0 "C?" H 6600 3650 50  0000 L CNN
+F 0 "C77" H 6600 3650 50  0000 L CNN
 F 1 "0.1uF" H 6600 3450 50  0000 L CNN
 F 2 "SM0603" H 6550 3550 60  0001 C CNN
 	1    6550 3550
@@ -411,10 +412,10 @@ F 1 "GND" H 6550 3780 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R?
+L R R50
 U 1 1 4F522458
 P 6300 3200
-F 0 "R?" V 6400 3200 50  0000 C CNN
+F 0 "R50" V 6400 3200 50  0000 C CNN
 F 1 "10k" V 6300 3200 50  0000 C CNN
 F 2 "SM0603" H 6300 3200 60  0001 C CNN
 	1    6300 3200

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date sáb 03 mar 2012 09:20:54 COT
+EESchema Schematic File Version 2  date Fri 30 Mar 2012 08:38:46 AM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -58,12 +58,13 @@ LIBS:stm32f100vxx
 LIBS:lt1117cst
 LIBS:zxmhc3f381n8
 LIBS:i.mx233stamp-cache
-EELAYER 24  0
+EELAYER 25  0
 EELAYER END
 $Descr User 12000 10000
+encoding utf-8
 Sheet 3 5
 Title ""
-Date "3 mar 2012"
+Date "30 mar 2012"
 Rev ""
 Comp ""
 Comment1 ""
