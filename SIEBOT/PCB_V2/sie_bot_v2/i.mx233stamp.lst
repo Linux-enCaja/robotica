@@ -1,0 +1,198 @@
+eeschema (2012-02-19 BZR 3421)-stable  >> Creation date: lun 26 mar 2012 00:56:41 COT
+
+#Cmp ( order = Reference )
+| BT1        BATTERY     
+| C1         0.1uF       
+| C2         0.1uF       
+| C3         0.1uF       
+| C4         .1uF        
+| C5         0.1uF       
+| C6         8pF         
+| C7         8pF         
+| C8         10nF        
+| C9         100nF       
+| C10        100nF       
+| C11        100nF       
+| C12        10nF        
+| C13        100nF       
+| C14        4.7uF       
+| C15        100nF       
+| C16        100nF       
+| C17        1uF         
+| C18        33uF        
+| C19        2.2uF       
+| C20        100nF       
+| C21        2.2uF       
+| C22        0.01uF      
+| C23        0.1uF       
+| C24        0.1uF       
+| C25        1uF         
+| C26        22pF        
+| C27        33uF        
+| C28        22pF        
+| C29        1uF         
+| C30        0.01uF      
+| C31        0.1uF       
+| C32        0.1uF       
+| C34        4.7uF       
+| C35        33uF        
+| C36        0.01uF      
+| C37        0.1uF       
+| C38        1uF         
+| C39        33uF        
+| C40        33uF Ceramic
+| C41        0.1uF       
+| C42        1uF         
+| C43        1uF         
+| C44        0.1uF       
+| C45        0.01uF      
+| C46        0.1uF       
+| C47        0.1uF       
+| C48        33uF Ceramic
+| C49        0.1uF       
+| C50        1uF         
+| C51        0.1uF       
+| C52        20 pF       
+| C53        20 pF       
+| C54        .1uF        
+| C55        0.1uF       
+| C56        0.1uF       
+| C57        0.1uF       
+| C58        0.1uF       
+| C59        10uF Tant.  
+| C60        0.1uF       
+| C61        0.1uF       
+| C62        0.1uF       
+| C63        0.1uF       
+| C64        0.1uF       
+| C65        0.1uF       
+| C66        0.1uF       
+| C67        0.1uF       
+| C68        0.1uF       
+| C69        1uF         
+| C70        0.1uF       
+| C71        0.1uF       
+| C72        0.1uF       
+| C73        1uF         
+| C74        33uF        
+| C75        100n        
+| C76        33uF        
+| C?         0.1uF       
+| D1         10BQ015     
+| D2         LED         
+| D3         LED         
+| D4         LED         
+| D5         LED         
+| D6         RSA5M       
+| D8         LED         
+| D9         LED         
+| IC1        iMX233      
+| J1         MICROSD     
+| J3         USB_2A      
+| JP1        JUMPER      
+| JP2        JUMPER      
+| JP3        JUMPER      
+| JP4        JUMPER      
+| L1         15uH        
+| L2         HZ0805D152R-10 (1500 ohm)
+| L3         SRF2012     
+| L4         SRF2012     
+| L5         SRF2012     
+| L6         SRF2012     
+| L7         2A 120 ohm  
+| L8         HZ0805D152R-10 (1500 ohm)
+| L9         2A 120 ohm  
+| L11        HZ0805D152R-10 (1500 ohm)
+| L12        HZ0805D152R-10 (1500 ohm)
+| L13        HZ0805D152R-10 (1500 ohm)
+| L14        2A 120 ohm  
+| L15        2A 120 ohm  
+| P1         CONN_12X2   
+| P2         CONN_12X2   
+| P3         CONN_1      
+| P4         CONN_4X2    
+| P5         CONN_1      
+| P6         CONN_5X2    
+| P7         CONN_1      
+| P8         CONN_12X2   
+| P9         CONN_12X2   
+| P10        CONN_1      
+| Q1         MMDT3904    
+| Q2         BS170F      
+| Q3         BS170F      
+| Q4         BS170F      
+| Q5         BS170F      
+| Q6         BS170F      
+| Q7         BS170F      
+| Q8         BS170F      
+| Q9         BS170F      
+| R1         1           
+| R2         0.1         
+| R3         0.1         
+| R4         1K          
+| R5         1k          
+| R6         100K        
+| R7         47k         
+| R8         10k         
+| R9         1k          
+| R10        47K         
+| R11        1.5k        
+| R12        1.5k        
+| R13        1k          
+| R14        1.5k        
+| R15        11k         
+| R16        1k          
+| R17        11k         
+| R18        11k         
+| R19        11k         
+| R20        1M          
+| R21        100k        
+| R22        110         
+| R23        47K         
+| R24        1K 1%       
+| R25        1K 1%       
+| R26        4.7k        
+| R27        10k         
+| R28        1k          
+| R29        47k         
+| R30        1k          
+| R31        1k          
+| R32        47k         
+| R33        1k          
+| R34        10k         
+| R35        2.2k        
+| R36        680 1%      
+| R37        2.2k        
+| R38        2.2k        
+| R39        2.2k        
+| R40        2.2k        
+| R41        2.2k        
+| R42        0           
+| R43        0           
+| R44        2.2k        
+| R45        2.2k        
+| R46        150         
+| R47        4.7k        
+| R48        0           
+| R49        0           
+| R?         10k         
+| U1         ADM3101E    
+| U2         MT46V32M16TG
+| U3         M25P32      
+| U4         GL850G      
+| U5         RCLAMP0502B 
+| U6         RCLAMP0502B 
+| U7         RCLAMP0502B 
+| U8         RCLAMP0502B 
+| U10        STM32F105RC 
+| U11        LT1117CST-3.3
+| U12        ZXMHC3F381N8
+| U13        ZXMHC3F381N8
+| U14        ZXMHC3F381N8
+| U15        ZXMHC3F381N8
+| X1         24MHz       
+| X2         12MHz       
+| X3         12MHz       
+#End Cmp
+
+#End List

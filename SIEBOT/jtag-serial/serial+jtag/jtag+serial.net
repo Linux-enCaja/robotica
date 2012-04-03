@@ -1,0 +1,453 @@
+# EESchema Netlist Version 1.1 created  mar 03 abr 2012 00:18:20 COT
+(
+ ( /4F7A8747 $noname  K2 CONN_3 {Lib=CONN_3}
+  (    1 3V3OUT )
+  (    2 VCC_IOB )
+  (    3 VCC )
+ )
+ ( /4F7A873A $noname  K1 CONN_3 {Lib=CONN_3}
+  (    1 3V3OUT )
+  (    2 VCC_IOA )
+  (    3 VCC )
+ )
+ ( /4F7A3C40 $noname  P2 CONN_14 {Lib=CONN_14}
+  (    1 BDBUS0 )
+  (    2 BDBUS1 )
+  (    3 BDBUS2 )
+  (    4 BDBUS3 )
+  (    5 BDBUS4 )
+  (    6 BDBUS5 )
+  (    7 BDBUS6 )
+  (    8 BDBUS7 )
+  (    9 BCBUS0 )
+  (   10 BCBUS1 )
+  (   11 BCBUS2 )
+  (   12 BCBUS3 )
+  (   13 VCC_IOB )
+  (   14 GND )
+ )
+ ( /4F7A3C33 $noname  P1 CONN_14 {Lib=CONN_14}
+  (    1 ADBUS0 )
+  (    2 ADBUS1 )
+  (    3 ADBUS2 )
+  (    4 ADBUS3 )
+  (    5 ADBUS4 )
+  (    6 ADBUS5 )
+  (    7 ADBUS6 )
+  (    8 ADBUS7 )
+  (    9 ACBUS0 )
+  (   10 ACBUS1 )
+  (   11 ACBUS2 )
+  (   12 ACBUS3 )
+  (   13 VCC_IOA )
+  (   14 VCC )
+ )
+ ( /4F7A29CD $noname  C3 0.1uF {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4F7A2625 $noname  R2 2K2 {Lib=R}
+  (    1 N-000003 )
+  (    2 EEDATA )
+ )
+ ( /4F7A261F $noname  R1 10K {Lib=R}
+  (    1 VCC )
+  (    2 N-000003 )
+ )
+ ( /4F7A25B8 $noname  U1 93LC46BT-I/OT {Lib=93LC46BT-I/OT}
+  (    1 N-000003 )
+  (    2 GND )
+  (    3 EEDATA )
+  (    4 EESK )
+  (    5 EECS )
+  (    6 VCC )
+ )
+ ( /4F7A1A0E $noname  C6 47pF {Lib=C}
+  (    1 GND )
+  (    2 USB_DM )
+ )
+ ( /4F7A19E7 $noname  C5 47pF {Lib=C}
+  (    1 GND )
+  (    2 USB_DP )
+ )
+ ( /4F793BF4 $noname  C11 33nF {Lib=C}
+  (    1 GND )
+  (    2 3V3OUT )
+ )
+ ( /4F7938BB $noname  C9 0.uF {Lib=C}
+  (    1 GND )
+  (    2 N-000037 )
+ )
+ ( /4F7937AD $noname  C8 27pF {Lib=C}
+  (    1 GND )
+  (    2 N-000036 )
+ )
+ ( /4F7937A2 $noname  C7 27pF {Lib=C}
+  (    1 GND )
+  (    2 N-000017 )
+ )
+ ( /4F793795 $noname  X1 CRYSTAL {Lib=CRYSTAL}
+  (    1 N-000036 )
+  (    2 N-000017 )
+ )
+ ( /4F793699 $noname  R6 470R {Lib=R}
+  (    1 VCC )
+  (    2 N-000037 )
+ )
+ ( /4F793657 $noname  R5 1.5K {Lib=R}
+  (    1 N-000035 )
+  (    2 N-000040 )
+ )
+ ( /4F793651 $noname  R3 27R {Lib=R}
+  (    1 USB_DM )
+  (    2 N-000034 )
+ )
+ ( /4F793644 $noname  R4 27R {Lib=R}
+  (    1 USB_DP )
+  (    2 N-000035 )
+ )
+ ( /4F793596 $noname  C1 0.1uF {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4F793589 $noname  C2 0.1uF {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4F79357A $noname  C4 10uF {Lib=CP1}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /4F79356B $noname  C10 10nF {Lib=C}
+  (    1 N-000039 )
+  (    2 GND )
+ )
+ ( /4F79355C $noname  FB1 FILTER {Lib=FILTER}
+  (    1 N-000039 )
+  (    2 VCC )
+ )
+ ( /4F793506 $noname  J1 USB_2 {Lib=USB_2}
+  (    1 N-000039 )
+  (    2 USB_DM )
+  (    3 USB_DP )
+  (    4 GND )
+ )
+ ( /4F7934E8 $noname  U2 FT2232D {Lib=FT2232D}
+  (    1 EESK )
+  (    2 EEDATA )
+  (    3 VCC )
+  (    4 VCC )
+  (    5 N-000040 )
+  (    6 3V3OUT )
+  (    7 N-000035 )
+  (    8 N-000034 )
+  (    9 GND )
+  (   10 VCC_IOA )
+  (   11 ACBUS3 )
+  (   12 ACBUS2 )
+  (   13 ACBUS1 )
+  (   14 VCC_IOA )
+  (   15 ACBUS0 )
+  (   16 ADBUS7 )
+  (   17 ADBUS6 )
+  (   18 GND )
+  (   19 ADBUS5 )
+  (   20 ADBUS4 )
+  (   21 ADBUS3 )
+  (   22 ADBUS2 )
+  (   23 ADBUS1 )
+  (   24 ADBUS0 )
+  (   25 GND )
+  (   26 VCC_IOB )
+  (   27 BCBUS3 )
+  (   28 BCBUS2 )
+  (   29 BCBUS1 )
+  (   30 BCBUS0 )
+  (   31 VCC_IOB )
+  (   32 BDBUS7 )
+  (   33 BDBUS6 )
+  (   34 GND )
+  (   35 BDBUS5 )
+  (   36 BDBUS4 )
+  (   37 BDBUS3 )
+  (   38 BDBUS2 )
+  (   39 BDBUS1 )
+  (   40 BDBUS0 )
+  (   41 ? )
+  (   42 VCC )
+  (   43 N-000017 )
+  (   44 N-000036 )
+  (   45 GND )
+  (   46 N-000037 )
+  (   47 GND )
+  (   48 EECS )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C3
+ SM*
+ C?
+ C1-1
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component C6
+ SM*
+ C?
+ C1-1
+$endlist
+$component C5
+ SM*
+ C?
+ C1-1
+$endlist
+$component C11
+ SM*
+ C?
+ C1-1
+$endlist
+$component C9
+ SM*
+ C?
+ C1-1
+$endlist
+$component C8
+ SM*
+ C?
+ C1-1
+$endlist
+$component C7
+ SM*
+ C?
+ C1-1
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+$endlist
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C4
+ CP*
+ SM*
+$endlist
+$component C10
+ SM*
+ C?
+ C1-1
+$endlist
+$endfootprintlist
+}
+{ Pin List by Nets
+Net 1 "VCC" "VCC"
+ U2 3
+ R6 1
+ U1 6
+ C1 1
+ U2 4
+ K1 3
+ K2 3
+ P1 14
+ U2 42
+ R1 1
+ C3 1
+ C2 1
+ C4 1
+ FB1 2
+Net 2 "EEDATA" "EEDATA"
+ U2 2
+ U1 3
+ R2 2
+Net 3 "" ""
+ R1 2
+ R2 1
+ U1 1
+Net 5 "3V3OUT" "3V3OUT"
+ K1 1
+ K2 1
+ C11 2
+ U2 6
+Net 6 "USB_DP" "USB_DP"
+ R4 1
+ J1 3
+ C5 2
+Net 7 "USB_DM" "USB_DM"
+ R3 1
+ C6 2
+ J1 2
+Net 8 "EECS" "EECS"
+ U2 48
+ U1 5
+Net 9 "EESK" "EESK"
+ U1 4
+ U2 1
+Net 10 "ADBUS7" "ADBUS7"
+ P1 8
+ U2 16
+Net 11 "ACBUS0" "ACBUS0"
+ U2 15
+ P1 9
+Net 12 "ACBUS1" "ACBUS1"
+ P1 10
+ U2 13
+Net 13 "BDBUS1" "BDBUS1"
+ P2 2
+ U2 39
+Net 14 "BDBUS3" "BDBUS3"
+ P2 4
+ U2 37
+Net 15 "ACBUS3" "ACBUS3"
+ U2 11
+ P1 12
+Net 16 "ADBUS3" "ADBUS3"
+ P1 4
+ U2 21
+Net 17 "" ""
+ C7 2
+ X1 2
+ U2 43
+Net 18 "BDBUS6" "BDBUS6"
+ P2 7
+ U2 33
+Net 19 "ADBUS1" "ADBUS1"
+ U2 23
+ P1 2
+Net 20 "BDBUS7" "BDBUS7"
+ U2 32
+ P2 8
+Net 21 "ADBUS2" "ADBUS2"
+ P1 3
+ U2 22
+Net 22 "ADBUS0" "ADBUS0"
+ U2 24
+ P1 1
+Net 23 "BCBUS0" "BCBUS0"
+ U2 30
+ P2 9
+Net 24 "ADBUS4" "ADBUS4"
+ P1 5
+ U2 20
+Net 25 "VCC_IOA" "VCC_IOA"
+ K1 2
+ P1 13
+ U2 14
+ U2 10
+Net 26 "BCBUS1" "BCBUS1"
+ P2 10
+ U2 29
+Net 27 "ADBUS5" "ADBUS5"
+ U2 19
+ P1 6
+Net 28 "BDBUS2" "BDBUS2"
+ U2 38
+ P2 3
+Net 29 "BCBUS2" "BCBUS2"
+ U2 28
+ P2 11
+Net 30 "BCBUS3" "BCBUS3"
+ U2 27
+ P2 12
+Net 31 "BDBUS4" "BDBUS4"
+ U2 36
+ P2 5
+Net 32 "VCC_IOB" "VCC_IOB"
+ P2 13
+ U2 26
+ U2 31
+ K2 2
+Net 33 "BDBUS5" "BDBUS5"
+ P2 6
+ U2 35
+Net 34 "" ""
+ R3 2
+ U2 8
+Net 35 "" ""
+ U2 7
+ R4 2
+ R5 1
+Net 36 "" ""
+ X1 1
+ C8 2
+ U2 44
+Net 37 "" ""
+ R6 2
+ U2 46
+ C9 2
+Net 38 "ACBUS2" "ACBUS2"
+ U2 12
+ P1 11
+Net 39 "" ""
+ C10 1
+ FB1 1
+ J1 1
+Net 40 "" ""
+ R5 2
+ U2 5
+Net 41 "GND" "GND"
+ U1 2
+ C3 2
+ C5 1
+ C11 1
+ C6 1
+ C9 1
+ J1 4
+ C10 2
+ C4 2
+ C8 1
+ C2 2
+ C1 2
+ U2 34
+ U2 18
+ U2 47
+ U2 9
+ P2 14
+ U2 45
+ U2 25
+ C7 1
+Net 42 "BDBUS0" "BDBUS0"
+ P2 1
+ U2 40
+Net 43 "ADBUS6" "ADBUS6"
+ U2 17
+ P1 7
+}
+#End
