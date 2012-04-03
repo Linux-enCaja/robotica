@@ -1,0 +1,18 @@
+Conectar las líneas de control de los puente H al STM32
+Conectar  el pin 28 del stm32  a una resistencia de pull up o down y dejarlo disponible como  gpio.
+
+cambiar el conector USB por uno horizontal
+
+conectar gpmi-c1n  (pin 81 del imx, bank2 pin 27) a TDO del jtag del stm32.
+Conectar pwm2      (pin 91 del imx, bank1 pin 28) a TDI del jtag del stm32.
+
+Conectar	 sspi_data1 (i2c_scl)  y  sspi_data2(i2c_sda)  a  los pines 29 (scl) y 30 (sda) del segundo canal i2c del stm32  a o los pines 58 (scl) y 59 (sda) del primer canal i2c
+
+
+
+
+
+
+
+
+
