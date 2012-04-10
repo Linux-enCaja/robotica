@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date mar 03 abr 2012 00:17:15 COT
+EESchema Schematic File Version 2  date mar 10 abr 2012 00:39:02 COT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "3 apr 2012"
+Date "10 apr 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -366,19 +366,19 @@ Text GLabel 2900 6100 0    60   Input ~ 0
 Text GLabel 2900 5650 0    60   Input ~ 0
 3V3OUT
 $Comp
-L CONN_3 K?
+L CONN_3 K2
 U 1 1 4F7A8747
 P 3550 6200
-F 0 "K?" V 3500 6200 50  0000 C CNN
+F 0 "K2" V 3500 6200 50  0000 C CNN
 F 1 "CONN_3" V 3600 6200 40  0000 C CNN
 	1    3550 6200
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_3 K?
+L CONN_3 K1
 U 1 1 4F7A873A
 P 3550 5750
-F 0 "K?" V 3500 5750 50  0000 C CNN
+F 0 "K1" V 3500 5750 50  0000 C CNN
 F 1 "CONN_3" V 3600 5750 40  0000 C CNN
 	1    3550 5750
 	1    0    0    -1  
@@ -633,7 +633,7 @@ L C C8
 U 1 1 4F7937AD
 P 6200 4450
 F 0 "C8" H 6250 4550 50  0000 L CNN
-F 1 "27pF" H 6250 4350 50  0000 L CNN
+F 1 "18pF" H 6250 4350 50  0000 L CNN
 	1    6200 4450
 	0    -1   -1   0   
 $EndComp
@@ -642,7 +642,7 @@ L C C7
 U 1 1 4F7937A2
 P 6200 3850
 F 0 "C7" H 6250 3950 50  0000 L CNN
-F 1 "27pF" H 6250 3750 50  0000 L CNN
+F 1 "18pF" H 6250 3750 50  0000 L CNN
 	1    6200 3850
 	0    -1   -1   0   
 $EndComp

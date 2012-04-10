@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date mar 03 abr 2012 00:18:22 COT
+EESchema Schematic File Version 2  date mar 10 abr 2012 00:47:13 COT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "3 apr 2012"
+Date "10 apr 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -622,7 +622,7 @@ L C C9
 U 1 1 4F7938BB
 P 7750 1700
 F 0 "C9" H 7800 1800 50  0000 L CNN
-F 1 "0.uF" H 7800 1600 50  0000 L CNN
+F 1 "0.1uF" H 7800 1600 50  0000 L CNN
 	1    7750 1700
 	1    0    0    -1  
 $EndComp
@@ -633,7 +633,7 @@ L C C8
 U 1 1 4F7937AD
 P 6200 4450
 F 0 "C8" H 6250 4550 50  0000 L CNN
-F 1 "27pF" H 6250 4350 50  0000 L CNN
+F 1 "18pF" H 6250 4350 50  0000 L CNN
 	1    6200 4450
 	0    -1   -1   0   
 $EndComp
@@ -642,7 +642,7 @@ L C C7
 U 1 1 4F7937A2
 P 6200 3850
 F 0 "C7" H 6250 3950 50  0000 L CNN
-F 1 "27pF" H 6250 3750 50  0000 L CNN
+F 1 "18pF" H 6250 3750 50  0000 L CNN
 	1    6200 3850
 	0    -1   -1   0   
 $EndComp

@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  mar 03 abr 2012 00:18:20 COT
+# EESchema Netlist Version 1.1 created  mar 10 abr 2012 00:47:17 COT
 (
  ( /4F7A8747 $noname  K2 CONN_3 {Lib=CONN_3}
   (    1 3V3OUT )
@@ -74,15 +74,15 @@
   (    1 GND )
   (    2 3V3OUT )
  )
- ( /4F7938BB $noname  C9 0.uF {Lib=C}
+ ( /4F7938BB $noname  C9 0.1uF {Lib=C}
   (    1 GND )
   (    2 N-000037 )
  )
- ( /4F7937AD $noname  C8 27pF {Lib=C}
+ ( /4F7937AD $noname  C8 18pF {Lib=C}
   (    1 GND )
   (    2 N-000036 )
  )
- ( /4F7937A2 $noname  C7 27pF {Lib=C}
+ ( /4F7937A2 $noname  C7 18pF {Lib=C}
   (    1 GND )
   (    2 N-000017 )
  )

@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-02-19 BZR 3421)-stable date = mar 03 abr 2012 00:18:43 COT
+Cmp-Mod V01 Created by CvPcb (2012-02-19 BZR 3421)-stable date = mar 10 abr 2012 01:18:02 COT
 
 BeginCmp
 TimeStamp = /4F793596;
@@ -45,21 +45,21 @@ EndCmp
 BeginCmp
 TimeStamp = /4F7937A2;
 Reference = C7;
-ValeurCmp = 27pF;
+ValeurCmp = 18pF;
 IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F7937AD;
 Reference = C8;
-ValeurCmp = 27pF;
+ValeurCmp = 18pF;
 IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /4F7938BB;
 Reference = C9;
-ValeurCmp = 0.uF;
+ValeurCmp = 0.1uF;
 IdModule  = SM0805;
 EndCmp
 
@@ -81,7 +81,7 @@ BeginCmp
 TimeStamp = /4F79355C;
 Reference = FB1;
 ValeurCmp = FILTER;
-IdModule  = SM1206;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
