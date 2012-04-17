@@ -1,20 +1,20 @@
-"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";"Digikey part Number";"Price Unitary";"Link";"Cantidad"
-1;"U1";"SOT23_6";1;"93LC46BT-I/OT";"93LC46BT-I/OT";"93LC46BT-I/OTCT-ND";"0.32000";"http://search.digikey.com/us/es/products/93LC46BT-I%2FOT/93LC46BT-I%2FOTCT-ND/857643";
-2;"FB1";"SM1206";1;"FILTER";"BK0603HS330-T";"587-1828-1-ND";"0.46000";"http://search.digikey.com/us/es/products/BK0603HS330-T/587-1828-1-ND/1465298";
-3;"C7,C8";"SM0805";2;"18pF";"08055A180JAT2A";"478-1307-1-ND";"0.15000";"http://search.digikey.com/us/es/products/08055A180JAT2A/478-1307-1-ND/564339";10
-4;"C10";"SM0805";1;"10nF";"C2012X7R2E103M";"445-4452-1-ND";"0.16000";"http://search.digikey.com/us/es/products/C2012X7R2E103M/445-4452-1-ND/2042248";
-5;"C4";"SM0805";1;"10uF";"C2012Y5V1A106Z";"445-1371-1-ND";"0.15000";"http://search.digikey.com/us/es/products/C2012Y5V1A106Z/445-1371-1-ND/567608";
-6;"C2,C1,C3, C9";"SM0805";4;"0.1uF";"GCM21BR72A104KA37L";"490-4789-1-ND";"0.12000";"http://search.digikey.com/us/es/products/GCM21BR72A104KA37L/490-4789-1-ND/1641708";
-7;"R4,R3";"SM0805";2;"27R";"ERJ-6ENF27R0V";"P27.0CCT-ND";"0.07000";"http://search.digikey.com/us/es/products/ERJ-6ENF27R0V/P27.0CCT-ND/1746845";
-8;"R5";"SM0805";1;"1.5K";"ERJ-6GEYJ152V";"P1.5KACT-ND";"0.04000";"http://search.digikey.com/us/es/products/ERJ-6GEYJ152V/P1.5KACT-ND/77705";
-9;"R6";"SM0805";1;"470R";"ERJ-6GEYJ471V";"P470ACT-ND";"0.04000";"http://search.digikey.com/us/es/products/ERJ-6GEYJ471V/P470ACT-ND/90029";
+Id;Designator;Package;Quantity;Designation;Supplier and ref;Digikey part Number;Price Unitary;Link;Cantidad
+1;U1;SOT23_6;1;93LC46BT-I/OT;93LC46BT-I/OT;93LC46BT-I/OTCT-ND;0.32000;http://search.digikey.com/us/es/products/93LC46BT-I%2FOT/93LC46BT-I%2FOTCT-ND/857643;
+2;FB1;SM1206;1;FILTER;BK0603HS330-T;587-1828-1-ND;0.46000;http://search.digikey.com/us/es/products/BK0603HS330-T/587-1828-1-ND/1465298;
+3;C7,C8;SM0805;2;18pF;08055A180JAT2A;478-1307-1-ND;0.15000;http://search.digikey.com/us/es/products/08055A180JAT2A/478-1307-1-ND/564339;10
+4;C10;SM0805;1;10nF;C2012X7R2E103M;445-4452-1-ND;0.16000;http://search.digikey.com/us/es/products/C2012X7R2E103M/445-4452-1-ND/2042248;
+5;C4;SM0805;1;10uF;C2012Y5V1A106Z;445-1371-1-ND;0.15000;http://search.digikey.com/us/es/products/C2012Y5V1A106Z/445-1371-1-ND/567608;
+6;C2,C1,C3, C9;SM0805;4;0.1uF;GCM21BR72A104KA37L;490-4789-1-ND;0.12000;http://search.digikey.com/us/es/products/GCM21BR72A104KA37L/490-4789-1-ND/1641708;
+7;R4,R3;SM0805;2;27R;ERJ-6ENF27R0V;P27.0CCT-ND;0.07000;http://search.digikey.com/us/es/products/ERJ-6ENF27R0V/P27.0CCT-ND/1746845;
+8;R5;SM0805;1;1.5K;ERJ-6GEYJ152V;P1.5KACT-ND;0.04000;http://search.digikey.com/us/es/products/ERJ-6GEYJ152V/P1.5KACT-ND/77705;
+9;R6;SM0805;1;470R;ERJ-6GEYJ471V;P470ACT-ND;0.04000;http://search.digikey.com/us/es/products/ERJ-6GEYJ471V/P470ACT-ND/90029;
 ;;;;;;;;;
-11;"C11";"SM0805";1;"33nF";"08055C332KAT2A";"478-1377-1-ND";"0.15000";"http://search.digikey.com/us/es/products/08055C332KAT2A/478-1377-1-ND/564409";
-12;"C5,C6";"SM0805";2;"47pF";"08055A470JAT2A";"478-1312-1-ND";"0.12000";"http://search.digikey.com/us/es/products/08055A470JAT2A/478-1312-1-ND/564344";
-13;"R1";"SM0805";1;"10K";"ERJ-6GEYJ103V";"P10KACT-ND";"0.04000";"http://search.digikey.com/us/es/products/ERJ-6GEYJ103V/P10KACT-ND/43118";
-14;"R2";"SM0805";1;"2K2";"ERJ-6GEYJ222V";"P2.2KACT-ND";"0.04000";"http://search.digikey.com/us/es/products/ERJ-6GEYJ222V/P2.2KACT-ND/93214";
-15;"P2,P1";"pin_strip_14";2;"CONN_14";;;;;
-16;"U2";"lqfp48";1;"FT2232D";"FT2232D-REEL";"768-1010-2-ND";"3.80001";"http://search.digikey.com/us/es/products/FT2232D-REEL/768-1010-2-ND/1836388";
-17;"X1";"crystal_hc-49/smd";1;"CRYSTAL";"ABLS-6.000MHZ-B4-T";"535-10208-1-ND";"0.41000";"http://search.digikey.com/us/es/products/ABLS-6.000MHZ-B4-T/535-10208-1-ND/2184243";
-18;"J1";"conn_usb_A";1;"USB";;;;;
-19;"K2,K1";"pin_strip_3";2;"CONN_3";;;;;
+11;C11;SM0805;1;33nF;08055C332KAT2A;478-1377-1-ND;0.15000;http://search.digikey.com/us/es/products/08055C332KAT2A/478-1377-1-ND/564409;
+12;C5,C6;SM0805;2;47pF;08055A470JAT2A;478-1312-1-ND;0.12000;http://search.digikey.com/us/es/products/08055A470JAT2A/478-1312-1-ND/564344;
+13;R1;SM0805;1;10K;ERJ-6GEYJ103V;P10KACT-ND;0.04000;http://search.digikey.com/us/es/products/ERJ-6GEYJ103V/P10KACT-ND/43118;
+14;R2;SM0805;1;2K2;ERJ-6GEYJ222V;P2.2KACT-ND;0.04000;http://search.digikey.com/us/es/products/ERJ-6GEYJ222V/P2.2KACT-ND/93214;
+15;P2,P1;pin_strip_14;2;CONN_14;;;;;
+16;U2;lqfp48;1;FT2232D;FT2232D-REEL;768-1010-2-ND;699.000;http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&itemSeq=113368271&uq=634701230868427074;
+17;X1;crystal_hc-49/smd;1;CRYSTAL;ABLS-6.000MHZ-B4-T;535-10208-1-ND;0.41000;http://search.digikey.com/us/es/products/ABLS-6.000MHZ-B4-T/535-10208-1-ND/2184243;
+18;J1;conn_usb_A;1;USB;;;;;
+19;K2,K1;pin_strip_3;2;CONN_3;;;;;
