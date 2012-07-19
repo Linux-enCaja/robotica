@@ -1,5 +1,0 @@
-AMI-go 105RC TODO list
-
-* Test if the shield of the USB A CONN gets grounded when a cable is inserted
-* Clean files
-* Add circuit for power source autoselection, arduino uno like, maybe?
