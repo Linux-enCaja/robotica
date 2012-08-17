@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by PcbNew date = Thu 16 Aug 2012 06:41:54 PM COT
+Cmp-Mod V01 Created by PcbNew date = Fri 17 Aug 2012 06:25:54 PM COT
 
 BeginCmp
 TimeStamp = 4D408387
@@ -1285,7 +1285,7 @@ TimeStamp = 4E85BD3D
 Path = /4E78AF25/4E831B93
 Reference = P9;
 ValeurCmp = CONN_12X2;
-IdModule  = pin_array_12x2;
+IdModule  = pin_array_8x2;
 EndCmp
 
 BeginCmp
@@ -1469,7 +1469,7 @@ TimeStamp = 4F35A099
 Path = /4E78AF25/4F352742
 Reference = P6;
 ValeurCmp = CONN_5X2;
-IdModule  = PIN_ARRAY_6x2;
+IdModule  = pin_array_10x2;
 EndCmp
 
 BeginCmp

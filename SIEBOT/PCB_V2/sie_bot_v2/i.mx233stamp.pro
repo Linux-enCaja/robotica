@@ -1,4 +1,4 @@
-update=Wed 15 Aug 2012 09:45:05 AM COT
+update=Fri 17 Aug 2012 06:25:31 PM COT
 version=1
 last_client=pcbnew
 [cvpcb]
@@ -131,3 +131,4 @@ LibName29=BS170F
 LibName30=lead10_micropak
 LibName31=mini-usb
 LibName32=DC_JACK
+LibName33=pin_array_10x2
