@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 16 Aug 2012 06:41:07 PM COT
+EESchema Schematic File Version 2  date Thu 16 Aug 2012 07:11:49 PM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -66,7 +66,7 @@ $Descr User 12000 10000
 encoding utf-8
 Sheet 4 5
 Title ""
-Date "16 aug 2012"
+Date "17 aug 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -209,9 +209,9 @@ F 1 "3V3" H 2050 6960 30  0000 C CNN
 	1    2050 6850
 	1    0    0    -1  
 $EndComp
-Text Label 9500 6200 0    60   ~ 0
+Text Label 9500 6100 0    60   ~ 0
 GMTR
-Text Label 8300 6200 0    60   ~ 0
+Text Label 8300 6100 0    60   ~ 0
 VMTR
 $Comp
 L R R46
@@ -299,9 +299,9 @@ Text Label 9650 8400 0    60   ~ 0
 C2M4
 Text Label 9700 6800 0    60   ~ 0
 C1M4
-Text Label 8300 6100 0    60   ~ 0
+Text Label 8300 6000 0    60   ~ 0
 M41
-Text Label 9500 6100 0    60   ~ 0
+Text Label 9500 6000 0    60   ~ 0
 M42
 Text Label 1400 7450 0    60   ~ 0
 I2C1_SDA
@@ -348,17 +348,17 @@ Text Label 3200 8000 0    60   ~ 0
 GND
 Text Label 1650 8000 0    60   ~ 0
 GND
-Text Label 9500 6000 0    60   ~ 0
+Text Label 9500 5900 0    60   ~ 0
 M32
-Text Label 8300 6000 0    60   ~ 0
+Text Label 8300 5900 0    60   ~ 0
 M31
-Text Label 9500 6500 0    60   ~ 0
-M22
-Text Label 8300 6500 0    60   ~ 0
-M21
 Text Label 9500 6400 0    60   ~ 0
-M12
+M22
 Text Label 8300 6400 0    60   ~ 0
+M21
+Text Label 9500 6300 0    60   ~ 0
+M12
+Text Label 8300 6300 0    60   ~ 0
 M11
 Text Label 7050 6800 0    60   ~ 0
 C1M3
@@ -1201,11 +1201,11 @@ $EndComp
 $Comp
 L CONN_6X2 P6
 U 1 1 502D8FFB
-P 9050 6250
-F 0 "P6" H 9050 6600 60  0000 C CNN
-F 1 "CONN_6X2" V 9050 6250 60  0000 C CNN
-F 2 "PIN_ARRAY_6x2" H 9050 6250 60  0001 C CNN
-	1    9050 6250
+P 9050 6150
+F 0 "P6" H 9050 6500 60  0000 C CNN
+F 1 "CONN_6X2" V 9050 6150 60  0000 C CNN
+F 2 "PIN_ARRAY_6x2" H 9050 6150 60  0001 C CNN
+	1    9050 6150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1228,7 +1228,7 @@ Wire Wire Line
 Wire Wire Line
 	2050 7600 1350 7600
 Wire Wire Line
-	8650 6200 8300 6200
+	8650 6100 8300 6100
 Wire Wire Line
 	1900 7450 1350 7450
 Wire Wire Line
@@ -1679,25 +1679,25 @@ Wire Wire Line
 	6900 7800 6900 6800
 Connection ~ 8750 7600
 Wire Wire Line
+	8300 6300 8650 6300
+Wire Wire Line
+	9450 6300 9850 6300
+Wire Wire Line
 	8300 6400 8650 6400
 Wire Wire Line
 	9450 6400 9850 6400
 Wire Wire Line
-	8300 6500 8650 6500
+	8300 5900 8650 5900
 Wire Wire Line
-	9450 6500 9850 6500
-Wire Wire Line
-	8300 6000 8650 6000
-Wire Wire Line
-	9450 6000 9850 6000
+	9450 5900 9850 5900
 Wire Wire Line
 	1500 7900 2200 7900
 Wire Wire Line
 	3700 8000 3000 8000
 Wire Wire Line
-	9450 6100 9850 6100
+	9450 6000 9850 6000
 Wire Wire Line
-	8300 6100 8650 6100
+	8300 6000 8650 6000
 Connection ~ 11400 7600
 Wire Wire Line
 	9550 7800 9550 6800
@@ -1738,7 +1738,7 @@ Wire Wire Line
 	11150 7800 11150 8100
 Connection ~ 11150 8100
 Wire Wire Line
-	9850 6200 9450 6200
+	9850 6100 9450 6100
 Wire Wire Line
 	2050 6950 2050 6850
 Wire Wire Line
@@ -1748,13 +1748,13 @@ Wire Wire Line
 Wire Wire Line
 	4200 7200 4200 7250
 Wire Wire Line
-	9450 6300 9500 6300
+	9450 6200 9500 6200
 Wire Wire Line
-	9500 6300 9500 6200
-Connection ~ 9500 6200
+	9500 6200 9500 6100
+Connection ~ 9500 6100
 Wire Wire Line
-	8600 6300 8650 6300
+	8600 6200 8650 6200
 Wire Wire Line
-	8600 6200 8600 6300
-Connection ~ 8600 6200
+	8600 6100 8600 6200
+Connection ~ 8600 6100
 $EndSCHEMATC
