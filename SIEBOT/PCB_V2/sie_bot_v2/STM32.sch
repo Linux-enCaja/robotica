@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 17 Aug 2012 06:30:04 PM COT
+EESchema Schematic File Version 2  date Mon 20 Aug 2012 09:02:40 PM COT
 LIBS:con-jack
 LIBS:adm3101e
 LIBS:microsd
@@ -215,9 +215,9 @@ VMTR
 Text Label 9150 7700 0    60   ~ 0
 GMTR
 Text Label 9150 7600 0    60   ~ 0
-M41
+M31
 Text Label 11050 7700 0    60   ~ 0
-M42
+M32
 $Comp
 L MOSFET_N_OPENDOUS Q8
 U 1 1 4E8DA296
@@ -267,9 +267,9 @@ C2M4
 Text Label 9700 6800 0    60   ~ 0
 C1M4
 Text Label 7800 6050 0    60   ~ 0
-M41
+M31
 Text Label 9000 5950 0    60   ~ 0
-M42
+M32
 Text Label 1400 7450 0    60   ~ 0
 I2C1_SDA
 Text Label 1400 7600 0    60   ~ 0
@@ -305,17 +305,17 @@ GND
 Text Label 1650 8000 0    60   ~ 0
 GND
 Text Label 9000 5750 0    60   ~ 0
-M32
+M42
 Text Label 7800 5850 0    60   ~ 0
-M31
+M41
 Text Label 9000 6350 0    60   ~ 0
-M22
-Text Label 7800 6450 0    60   ~ 0
-M21
-Text Label 9000 6150 0    60   ~ 0
 M12
-Text Label 7800 6250 0    60   ~ 0
+Text Label 7800 6450 0    60   ~ 0
 M11
+Text Label 9000 6150 0    60   ~ 0
+M22
+Text Label 7800 6250 0    60   ~ 0
+M21
 Text Label 7050 6800 0    60   ~ 0
 C1M3
 Text Label 7000 8400 0    60   ~ 0
@@ -373,9 +373,9 @@ F 2 "BS170F" H 7650 7000 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 Text Label 8400 7700 0    60   ~ 0
-M32
+M42
 Text Label 6500 7600 0    60   ~ 0
-M31
+M41
 Text Label 6500 7700 0    60   ~ 0
 GMTR
 Text Label 8400 7600 0    60   ~ 0
@@ -405,9 +405,9 @@ VMTR
 Text Label 9150 4900 0    60   ~ 0
 GMTR
 Text Label 9150 4800 0    60   ~ 0
-M21
+M11
 Text Label 11050 4900 0    60   ~ 0
-M22
+M12
 $Comp
 L MOSFET_N_OPENDOUS Q4
 U 1 1 4E8763E7
@@ -497,9 +497,9 @@ F 2 "BS170F" H 7800 4200 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 Text Label 8550 4900 0    60   ~ 0
-M12
+M22
 Text Label 6650 4800 0    60   ~ 0
-M11
+M21
 Text Label 6650 4900 0    60   ~ 0
 GMTR
 Text Label 8550 4800 0    60   ~ 0
@@ -1167,13 +1167,13 @@ $EndComp
 Text Label 9000 6550 0    60   ~ 0
 VMTR
 Text Label 7800 5750 0    60   ~ 0
-M32
-Text Label 7800 5950 0    60   ~ 0
 M42
+Text Label 7800 5950 0    60   ~ 0
+M32
 Text Label 7800 6150 0    60   ~ 0
-M12
-Text Label 7800 6350 0    60   ~ 0
 M22
+Text Label 7800 6350 0    60   ~ 0
+M12
 Wire Wire Line
 	4400 7250 4400 7200
 Wire Wire Line
@@ -1722,11 +1722,11 @@ Wire Wire Line
 Text Label 7800 6650 0    60   ~ 0
 GMTR
 Text Label 9000 5850 0    60   ~ 0
-M31
-Text Label 9000 6050 0    60   ~ 0
 M41
+Text Label 9000 6050 0    60   ~ 0
+M31
 Text Label 9000 6250 0    60   ~ 0
-M11
-Text Label 9000 6450 0    60   ~ 0
 M21
+Text Label 9000 6450 0    60   ~ 0
+M11
 $EndSCHEMATC

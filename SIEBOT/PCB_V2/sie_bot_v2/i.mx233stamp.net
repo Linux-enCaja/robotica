@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Fri 17 Aug 2012 06:30:02 PM COT
+# EESchema Netlist Version 1.1 created  Mon 20 Aug 2012 09:03:11 PM COT
 (
  ( /4D30AC69/4F3FC9AE sm0805  R49 0 {Lib=R}
   (    1 /i.MX233/D03_SPI )
@@ -728,11 +728,11 @@
  )
  ( /4E78AF25/4E8DA297 -SO8  U15 ZXMHC3F381N8 {Lib=ZXMHC3F381N8}
   (    1 /STM32/C2M4 )
-  (    2 /STM32/M41 )
+  (    2 /STM32/M31 )
   (    3 /STM32/GMTR )
   (    4 /STM32/C1M4 )
   (    5 N-000198 )
-  (    6 /STM32/M42 )
+  (    6 /STM32/M32 )
   (    7 /STM32/VMTR )
   (    8 N-000196 )
  )
@@ -774,21 +774,21 @@
  )
  ( /4E78AF25/4E876533 -SO8  U14 ZXMHC3F381N8 {Lib=ZXMHC3F381N8}
   (    1 /STM32/C2M3 )
-  (    2 /STM32/M31 )
+  (    2 /STM32/M41 )
   (    3 /STM32/GMTR )
   (    4 /STM32/C1M3 )
   (    5 N-000229 )
-  (    6 /STM32/M32 )
+  (    6 /STM32/M42 )
   (    7 /STM32/VMTR )
   (    8 N-000208 )
  )
  ( /4E78AF25/4E8763E8 -SO8  U13 ZXMHC3F381N8 {Lib=ZXMHC3F381N8}
   (    1 /STM32/C2M2 )
-  (    2 /STM32/M21 )
+  (    2 /STM32/M11 )
   (    3 /STM32/GMTR )
   (    4 /STM32/C1M2 )
   (    5 N-000207 )
-  (    6 /STM32/M22 )
+  (    6 /STM32/M12 )
   (    7 /STM32/VMTR )
   (    8 N-000206 )
  )
@@ -830,11 +830,11 @@
  )
  ( /4E78AF25/4E85F567 -SO8  U12 ZXMHC3F381N8 {Lib=ZXMHC3F381N8}
   (    1 /STM32/C2M1 )
-  (    2 /STM32/M11 )
+  (    2 /STM32/M21 )
   (    3 /STM32/GMTR )
   (    4 /STM32/C1M1 )
   (    5 N-000220 )
-  (    6 /STM32/M12 )
+  (    6 /STM32/M22 )
   (    7 /STM32/VMTR )
   (    8 N-000221 )
  )
@@ -1035,22 +1035,22 @@
   (   16 3V3 )
  )
  ( /4E78AF25/502EDD1B pin_array_10x2  P6 CONN_10X2 {Lib=CONN_10X2}
-  (    1 /STM32/M32 )
-  (    2 /STM32/M32 )
-  (    3 /STM32/M31 )
-  (    4 /STM32/M31 )
-  (    5 /STM32/M42 )
-  (    6 /STM32/M42 )
-  (    7 /STM32/M41 )
-  (    8 /STM32/M41 )
-  (    9 /STM32/M12 )
-  (   10 /STM32/M12 )
-  (   11 /STM32/M11 )
-  (   12 /STM32/M11 )
-  (   13 /STM32/M22 )
-  (   14 /STM32/M22 )
-  (   15 /STM32/M21 )
-  (   16 /STM32/M21 )
+  (    1 /STM32/M42 )
+  (    2 /STM32/M42 )
+  (    3 /STM32/M41 )
+  (    4 /STM32/M41 )
+  (    5 /STM32/M32 )
+  (    6 /STM32/M32 )
+  (    7 /STM32/M31 )
+  (    8 /STM32/M31 )
+  (    9 /STM32/M22 )
+  (   10 /STM32/M22 )
+  (   11 /STM32/M21 )
+  (   12 /STM32/M21 )
+  (   13 /STM32/M12 )
+  (   14 /STM32/M12 )
+  (   15 /STM32/M11 )
+  (   16 /STM32/M11 )
   (   17 /STM32/VMTR )
   (   18 /STM32/VMTR )
   (   19 /STM32/GMTR )
@@ -2944,35 +2944,35 @@ Net 210 "/STM32/C2M3" "C2M3"
 Net 211 "" ""
  D9 2
  R33 2
-Net 212 "/STM32/M11" "M11"
+Net 212 "/STM32/M21" "M21"
  U12 2
  P6 12
  P6 11
-Net 213 "/STM32/M22" "M22"
+Net 213 "/STM32/M12" "M12"
  U13 6
  P6 14
  P6 13
-Net 214 "/STM32/M21" "M21"
+Net 214 "/STM32/M11" "M11"
  P6 16
  P6 15
  U13 2
-Net 215 "/STM32/M12" "M12"
+Net 215 "/STM32/M22" "M22"
  P6 10
  P6 9
  U12 6
-Net 216 "/STM32/M32" "M32"
+Net 216 "/STM32/M42" "M42"
  U14 6
  P6 2
  P6 1
-Net 217 "/STM32/M31" "M31"
+Net 217 "/STM32/M41" "M41"
  U14 2
  P6 3
  P6 4
-Net 218 "/STM32/M42" "M42"
+Net 218 "/STM32/M32" "M32"
  P6 5
  P6 6
  U15 6
-Net 219 "/STM32/M41" "M41"
+Net 219 "/STM32/M31" "M31"
  P6 7
  P6 8
  U15 2
