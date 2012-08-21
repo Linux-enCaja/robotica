@@ -9,8 +9,8 @@ pwm.setup( pwmid, pwmfreq, crtduty )
 pwm.start( pwmid )
 
 term.clrscr()
-print "Control LED with PWM (fade up/down)\n"
-print "Press any key to exit.\n"
+term.print "Control LED with PWM (fade up/down)\n"
+term.print "Press any key to exit.\n"
 
 -- Routine to change PWM duty cicle up and down
 while uart.getchar( uartid, 0 ) == "" do

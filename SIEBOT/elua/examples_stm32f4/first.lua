@@ -12,4 +12,4 @@ platform = pd.platform()
 
 -- Routine to print a message in the console output
 term.clrscr()
-print("Hello from " .. platform .. "Platform :P")
+term.print("Hello from " .. platform .. "Platform :P")
