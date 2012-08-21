@@ -78,8 +78,8 @@ LibName55=../components/Reset
 LibName56=../components/stm32f100vxx
 LibName57=../components/lt1117cst
 LibName58=../components/zxmhc3f381n8
-LibName59=/home/afc/devel/robotica/SIEBOT/PCB_V2/components/fsusb43
-LibName60=/home/afc/devel/robotica/SIEBOT/PCB_V2/components/usb-mini
+LibName59=../components/fsusb43
+LibName60=../components/usb-mini
 [pcbnew]
 version=1
 LastNetListRead=i.mx233stamp.net
